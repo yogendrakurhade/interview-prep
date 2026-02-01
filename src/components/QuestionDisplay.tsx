@@ -11,12 +11,12 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
   const [showAnswer, setShowAnswer] = useState(false);
 
   return (
-    <div
-      className="bg-white border-2 border-gray-200 rounded-2xl p-7 hover:shadow-xl hover:border-indigo-200 transition-all duration-300 cursor-pointer"
-      onClick={() => setShowAnswer(!showAnswer)}
-    >
-      {/* Question Section */}
-      <div className="flex items-start justify-between gap-4">
+    <div className="bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all duration-300">
+      {/* Question Section - Clickable */}
+      <div
+        className="flex items-center justify-between gap-4 cursor-pointer px-6 py-4"
+        onClick={() => setShowAnswer(!showAnswer)}
+      >
         <p className="text-lg font-bold text-gray-900 leading-relaxed flex-1">
           {question.question}
         </p>
@@ -33,7 +33,7 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
         </div>
       </div>
 
-      {/* Answer Section */}
+      {/* Answer Section - Not clickable for toggle */}
       {showAnswer && (
         <div className="mt-8 pt-8 px-6 pb-6 border-t-2 border-gray-100 space-y-6 animate-in fade-in duration-300">
           {/* Answer Text */}

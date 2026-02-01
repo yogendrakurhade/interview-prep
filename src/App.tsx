@@ -9,17 +9,16 @@ function App() {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [isNavbarOpen, setIsNavbarOpen] = useState(true);
 
-  // Auto-select first topic when subject is selected
-  useEffect(() => {
-    if (selectedSubject) {
-      const subject = subjects.find((s) => s.id === selectedSubject);
-      if (subject && subject.topics.length > 0) {
-        setSelectedTopic(subject.topics[0].id);
-      } else {
-        setSelectedTopic(null);
-      }
+  const handleSubjectSelect = (subjectId: string) => {
+    setSelectedSubject(subjectId);
+    // Auto-select first topic of the subject
+    const subject = subjects.find((s) => s.id === subjectId);
+    if (subject && subject.topics.length > 0) {
+      setSelectedTopic(subject.topics[0].id);
+    } else {
+      setSelectedTopic(null);
     }
-  }, [selectedSubject]);
+  };
 
   // Scroll to top when topic changes
   useEffect(() => {
@@ -35,9 +34,7 @@ function App() {
         subjects={subjects}
         selectedSubject={selectedSubject}
         selectedTopic={selectedTopic}
-        onSubjectSelect={(subjectId) => {
-          setSelectedSubject(subjectId);
-        }}
+        onSubjectSelect={handleSubjectSelect}
         onTopicSelect={setSelectedTopic}
         isOpen={isNavbarOpen}
         onToggle={() => setIsNavbarOpen(!isNavbarOpen)}

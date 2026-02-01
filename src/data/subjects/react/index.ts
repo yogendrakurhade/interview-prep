@@ -2,9 +2,10 @@ import type { Subject } from "../../../types";
 import { reactBasicsTopic } from "./basics";
 import { reactHooksTopic } from "./hooks";
 import { reactPerformanceTopic } from "./performance";
+import { reactUnitTestingTopic } from "./unit-testing";
 
 export const reactSubject: Subject = {
   id: "react",
   name: "React",
-  topics: [reactBasicsTopic, reactHooksTopic, reactPerformanceTopic],
+  topics: [reactBasicsTopic, reactHooksTopic, reactPerformanceTopic, reactUnitTestingTopic],
 };
