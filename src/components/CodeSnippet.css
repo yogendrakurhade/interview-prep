@@ -1,0 +1,87 @@
+.code-snippet-container {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 15px 0;
+  font-family: "Fira Code", "Monaco", "Courier New", monospace;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #2d2d2d;
+  border-bottom: 1px solid #333;
+}
+
+.language-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #764ba2;
+  transform: translateY(-1px);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+.code-block {
+  padding: 16px;
+  margin: 0;
+  overflow-x: auto;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.6;
+  background: #1e1e1e;
+}
+
+.code-block code {
+  font-family: inherit;
+}
+
+/* Syntax highlighting colors */
+.code-block {
+  --keyword: #569cd6;
+  --string: #ce9178;
+  --function: #dcdcaa;
+  --number: #b5cea8;
+  --comment: #6a9955;
+}
+
+/* Scrollbar for code block */
+.code-block::-webkit-scrollbar {
+  height: 6px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
