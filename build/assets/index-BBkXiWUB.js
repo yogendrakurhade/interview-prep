@@ -1,12 +1,12 @@
-(function(){const F=document.createElement("link").relList;if(F&&F.supports&&F.supports("modulepreload"))return;for(const x of document.querySelectorAll('link[rel="modulepreload"]'))m(x);new MutationObserver(x=>{for(const U of x)if(U.type==="childList")for(const X of U.addedNodes)X.tagName==="LINK"&&X.rel==="modulepreload"&&m(X)}).observe(document,{childList:!0,subtree:!0});function q(x){const U={};return x.integrity&&(U.integrity=x.integrity),x.referrerPolicy&&(U.referrerPolicy=x.referrerPolicy),x.crossOrigin==="use-credentials"?U.credentials="include":x.crossOrigin==="anonymous"?U.credentials="omit":U.credentials="same-origin",U}function m(x){if(x.ep)return;x.ep=!0;const U=q(x);fetch(x.href,U)}})();var rl={exports:{}},Ci={};var fp;function Yf(){if(fp)return Ci;fp=1;var L=Symbol.for("react.transitional.element"),F=Symbol.for("react.fragment");function q(m,x,U){var X=null;if(U!==void 0&&(X=""+U),x.key!==void 0&&(X=""+x.key),"key"in x){U={};for(var ue in x)ue!=="key"&&(U[ue]=x[ue])}else U=x;return x=U.ref,{$$typeof:L,type:m,key:X,ref:x!==void 0?x:null,props:U}}return Ci.Fragment=F,Ci.jsx=q,Ci.jsxs=q,Ci}var gp;function Kf(){return gp||(gp=1,rl.exports=Yf()),rl.exports}var S=Kf(),ol={exports:{}},G={};var yp;function Xf(){if(yp)return G;yp=1;var L=Symbol.for("react.transitional.element"),F=Symbol.for("react.portal"),q=Symbol.for("react.fragment"),m=Symbol.for("react.strict_mode"),x=Symbol.for("react.profiler"),U=Symbol.for("react.consumer"),X=Symbol.for("react.context"),ue=Symbol.for("react.forward_ref"),E=Symbol.for("react.suspense"),A=Symbol.for("react.memo"),ee=Symbol.for("react.lazy"),N=Symbol.for("react.activity"),me=Symbol.iterator;function Ye(u){return u===null||typeof u!="object"?null:(u=me&&u[me]||u["@@iterator"],typeof u=="function"?u:null)}var qe={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},Ne=Object.assign,Rt={};function Ke(u,w,D){this.props=u,this.context=w,this.refs=Rt,this.updater=D||qe}Ke.prototype.isReactComponent={},Ke.prototype.setState=function(u,w){if(typeof u!="object"&&typeof u!="function"&&u!=null)throw Error("takes an object of state variables to update or a function which returns an object of state variables.");this.updater.enqueueSetState(this,u,w,"setState")},Ke.prototype.forceUpdate=function(u){this.updater.enqueueForceUpdate(this,u,"forceUpdate")};function Kt(){}Kt.prototype=Ke.prototype;function xe(u,w,D){this.props=u,this.context=w,this.refs=Rt,this.updater=D||qe}var ot=xe.prototype=new Kt;ot.constructor=xe,Ne(ot,Ke.prototype),ot.isPureReactComponent=!0;var St=Array.isArray;function Ge(){}var Y={H:null,A:null,T:null,S:null},Pe=Object.prototype.hasOwnProperty;function wt(u,w,D){var W=D.ref;return{$$typeof:L,type:u,key:w,ref:W!==void 0?W:null,props:D}}function za(u,w){return wt(u.type,w,u.props)}function At(u){return typeof u=="object"&&u!==null&&u.$$typeof===L}function Be(u){var w={"=":"=0",":":"=2"};return"$"+u.replace(/[=:]/g,function(D){return w[D]})}var Sa=/\/+/g;function Wt(u,w){return typeof u=="object"&&u!==null&&u.key!=null?Be(""+u.key):w.toString(36)}function vt(u){switch(u.status){case"fulfilled":return u.value;case"rejected":throw u.reason;default:switch(typeof u.status=="string"?u.then(Ge,Ge):(u.status="pending",u.then(function(w){u.status==="pending"&&(u.status="fulfilled",u.value=w)},function(w){u.status==="pending"&&(u.status="rejected",u.reason=w)})),u.status){case"fulfilled":return u.value;case"rejected":throw u.reason}}throw u}function h(u,w,D,W,P){var j=typeof u;(j==="undefined"||j==="boolean")&&(u=null);var te=!1;if(u===null)te=!0;else switch(j){case"bigint":case"string":case"number":te=!0;break;case"object":switch(u.$$typeof){case L:case F:te=!0;break;case ee:return te=u._init,h(te(u._payload),w,D,W,P)}}if(te)return P=P(u),te=W===""?"."+Wt(u,0):W,St(P)?(D="",te!=null&&(D=te.replace(Sa,"$&/")+"/"),h(P,w,D,"",function(Dn){return Dn})):P!=null&&(At(P)&&(P=za(P,D+(P.key==null||u&&u.key===P.key?"":(""+P.key).replace(Sa,"$&/")+"/")+te)),w.push(P)),1;te=0;var Me=W===""?".":W+":";if(St(u))for(var ve=0;ve<u.length;ve++)W=u[ve],j=Me+Wt(W,ve),te+=h(W,w,D,j,P);else if(ve=Ye(u),typeof ve=="function")for(u=ve.call(u),ve=0;!(W=u.next()).done;)W=W.value,j=Me+Wt(W,ve++),te+=h(W,w,D,j,P);else if(j==="object"){if(typeof u.then=="function")return h(vt(u),w,D,W,P);throw w=String(u),Error("Objects are not valid as a React child (found: "+(w==="[object Object]"?"object with keys {"+Object.keys(u).join(", ")+"}":w)+"). If you meant to render a collection of children, use an array instead.")}return te}function T(u,w,D){if(u==null)return u;var W=[],P=0;return h(u,W,"","",function(j){return w.call(D,j,P++)}),W}function M(u){if(u._status===-1){var w=u._result;w=w(),w.then(function(D){(u._status===0||u._status===-1)&&(u._status=1,u._result=D)},function(D){(u._status===0||u._status===-1)&&(u._status=2,u._result=D)}),u._status===-1&&(u._status=0,u._result=w)}if(u._status===1)return u._result.default;throw u._result}var ie=typeof reportError=="function"?reportError:function(u){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var w=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof u=="object"&&u!==null&&typeof u.message=="string"?String(u.message):String(u),error:u});if(!window.dispatchEvent(w))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",u);return}console.error(u)},le={map:T,forEach:function(u,w,D){T(u,function(){w.apply(this,arguments)},D)},count:function(u){var w=0;return T(u,function(){w++}),w},toArray:function(u){return T(u,function(w){return w})||[]},only:function(u){if(!At(u))throw Error("React.Children.only expected to receive a single React element child.");return u}};return G.Activity=N,G.Children=le,G.Component=Ke,G.Fragment=q,G.Profiler=x,G.PureComponent=xe,G.StrictMode=m,G.Suspense=E,G.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=Y,G.__COMPILER_RUNTIME={__proto__:null,c:function(u){return Y.H.useMemoCache(u)}},G.cache=function(u){return function(){return u.apply(null,arguments)}},G.cacheSignal=function(){return null},G.cloneElement=function(u,w,D){if(u==null)throw Error("The argument must be a React element, but you passed "+u+".");var W=Ne({},u.props),P=u.key;if(w!=null)for(j in w.key!==void 0&&(P=""+w.key),w)!Pe.call(w,j)||j==="key"||j==="__self"||j==="__source"||j==="ref"&&w.ref===void 0||(W[j]=w[j]);var j=arguments.length-2;if(j===1)W.children=D;else if(1<j){for(var te=Array(j),Me=0;Me<j;Me++)te[Me]=arguments[Me+2];W.children=te}return wt(u.type,P,W)},G.createContext=function(u){return u={$$typeof:X,_currentValue:u,_currentValue2:u,_threadCount:0,Provider:null,Consumer:null},u.Provider=u,u.Consumer={$$typeof:U,_context:u},u},G.createElement=function(u,w,D){var W,P={},j=null;if(w!=null)for(W in w.key!==void 0&&(j=""+w.key),w)Pe.call(w,W)&&W!=="key"&&W!=="__self"&&W!=="__source"&&(P[W]=w[W]);var te=arguments.length-2;if(te===1)P.children=D;else if(1<te){for(var Me=Array(te),ve=0;ve<te;ve++)Me[ve]=arguments[ve+2];P.children=Me}if(u&&u.defaultProps)for(W in te=u.defaultProps,te)P[W]===void 0&&(P[W]=te[W]);return wt(u,j,P)},G.createRef=function(){return{current:null}},G.forwardRef=function(u){return{$$typeof:ue,render:u}},G.isValidElement=At,G.lazy=function(u){return{$$typeof:ee,_payload:{_status:-1,_result:u},_init:M}},G.memo=function(u,w){return{$$typeof:A,type:u,compare:w===void 0?null:w}},G.startTransition=function(u){var w=Y.T,D={};Y.T=D;try{var W=u(),P=Y.S;P!==null&&P(D,W),typeof W=="object"&&W!==null&&typeof W.then=="function"&&W.then(Ge,ie)}catch(j){ie(j)}finally{w!==null&&D.types!==null&&(w.types=D.types),Y.T=w}},G.unstable_useCacheRefresh=function(){return Y.H.useCacheRefresh()},G.use=function(u){return Y.H.use(u)},G.useActionState=function(u,w,D){return Y.H.useActionState(u,w,D)},G.useCallback=function(u,w){return Y.H.useCallback(u,w)},G.useContext=function(u){return Y.H.useContext(u)},G.useDebugValue=function(){},G.useDeferredValue=function(u,w){return Y.H.useDeferredValue(u,w)},G.useEffect=function(u,w){return Y.H.useEffect(u,w)},G.useEffectEvent=function(u){return Y.H.useEffectEvent(u)},G.useId=function(){return Y.H.useId()},G.useImperativeHandle=function(u,w,D){return Y.H.useImperativeHandle(u,w,D)},G.useInsertionEffect=function(u,w){return Y.H.useInsertionEffect(u,w)},G.useLayoutEffect=function(u,w){return Y.H.useLayoutEffect(u,w)},G.useMemo=function(u,w){return Y.H.useMemo(u,w)},G.useOptimistic=function(u,w){return Y.H.useOptimistic(u,w)},G.useReducer=function(u,w,D){return Y.H.useReducer(u,w,D)},G.useRef=function(u){return Y.H.useRef(u)},G.useState=function(u){return Y.H.useState(u)},G.useSyncExternalStore=function(u,w,D){return Y.H.useSyncExternalStore(u,w,D)},G.useTransition=function(){return Y.H.useTransition()},G.version="19.2.4",G}var vp;function pl(){return vp||(vp=1,ol.exports=Xf()),ol.exports}var Yt=pl(),sl={exports:{}},Si={},ll={exports:{}},cl={};var hp;function Zf(){return hp||(hp=1,(function(L){function F(h,T){var M=h.length;h.push(T);e:for(;0<M;){var ie=M-1>>>1,le=h[ie];if(0<x(le,T))h[ie]=T,h[M]=le,M=ie;else break e}}function q(h){return h.length===0?null:h[0]}function m(h){if(h.length===0)return null;var T=h[0],M=h.pop();if(M!==T){h[0]=M;e:for(var ie=0,le=h.length,u=le>>>1;ie<u;){var w=2*(ie+1)-1,D=h[w],W=w+1,P=h[W];if(0>x(D,M))W<le&&0>x(P,D)?(h[ie]=P,h[W]=M,ie=W):(h[ie]=D,h[w]=M,ie=w);else if(W<le&&0>x(P,M))h[ie]=P,h[W]=M,ie=W;else break e}}return T}function x(h,T){var M=h.sortIndex-T.sortIndex;return M!==0?M:h.id-T.id}if(L.unstable_now=void 0,typeof performance=="object"&&typeof performance.now=="function"){var U=performance;L.unstable_now=function(){return U.now()}}else{var X=Date,ue=X.now();L.unstable_now=function(){return X.now()-ue}}var E=[],A=[],ee=1,N=null,me=3,Ye=!1,qe=!1,Ne=!1,Rt=!1,Ke=typeof setTimeout=="function"?setTimeout:null,Kt=typeof clearTimeout=="function"?clearTimeout:null,xe=typeof setImmediate<"u"?setImmediate:null;function ot(h){for(var T=q(A);T!==null;){if(T.callback===null)m(A);else if(T.startTime<=h)m(A),T.sortIndex=T.expirationTime,F(E,T);else break;T=q(A)}}function St(h){if(Ne=!1,ot(h),!qe)if(q(E)!==null)qe=!0,Ge||(Ge=!0,Be());else{var T=q(A);T!==null&&vt(St,T.startTime-h)}}var Ge=!1,Y=-1,Pe=5,wt=-1;function za(){return Rt?!0:!(L.unstable_now()-wt<Pe)}function At(){if(Rt=!1,Ge){var h=L.unstable_now();wt=h;var T=!0;try{e:{qe=!1,Ne&&(Ne=!1,Kt(Y),Y=-1),Ye=!0;var M=me;try{t:{for(ot(h),N=q(E);N!==null&&!(N.expirationTime>h&&za());){var ie=N.callback;if(typeof ie=="function"){N.callback=null,me=N.priorityLevel;var le=ie(N.expirationTime<=h);if(h=L.unstable_now(),typeof le=="function"){N.callback=le,ot(h),T=!0;break t}N===q(E)&&m(E),ot(h)}else m(E);N=q(E)}if(N!==null)T=!0;else{var u=q(A);u!==null&&vt(St,u.startTime-h),T=!1}}break e}finally{N=null,me=M,Ye=!1}T=void 0}}finally{T?Be():Ge=!1}}}var Be;if(typeof xe=="function")Be=function(){xe(At)};else if(typeof MessageChannel<"u"){var Sa=new MessageChannel,Wt=Sa.port2;Sa.port1.onmessage=At,Be=function(){Wt.postMessage(null)}}else Be=function(){Ke(At,0)};function vt(h,T){Y=Ke(function(){h(L.unstable_now())},T)}L.unstable_IdlePriority=5,L.unstable_ImmediatePriority=1,L.unstable_LowPriority=4,L.unstable_NormalPriority=3,L.unstable_Profiling=null,L.unstable_UserBlockingPriority=2,L.unstable_cancelCallback=function(h){h.callback=null},L.unstable_forceFrameRate=function(h){0>h||125<h?console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"):Pe=0<h?Math.floor(1e3/h):5},L.unstable_getCurrentPriorityLevel=function(){return me},L.unstable_next=function(h){switch(me){case 1:case 2:case 3:var T=3;break;default:T=me}var M=me;me=T;try{return h()}finally{me=M}},L.unstable_requestPaint=function(){Rt=!0},L.unstable_runWithPriority=function(h,T){switch(h){case 1:case 2:case 3:case 4:case 5:break;default:h=3}var M=me;me=h;try{return T()}finally{me=M}},L.unstable_scheduleCallback=function(h,T,M){var ie=L.unstable_now();switch(typeof M=="object"&&M!==null?(M=M.delay,M=typeof M=="number"&&0<M?ie+M:ie):M=ie,h){case 1:var le=-1;break;case 2:le=250;break;case 5:le=1073741823;break;case 4:le=1e4;break;default:le=5e3}return le=M+le,h={id:ee++,callback:T,priorityLevel:h,startTime:M,expirationTime:le,sortIndex:-1},M>ie?(h.sortIndex=M,F(A,h),q(E)===null&&h===q(A)&&(Ne?(Kt(Y),Y=-1):Ne=!0,vt(St,M-ie))):(h.sortIndex=le,F(E,h),qe||Ye||(qe=!0,Ge||(Ge=!0,Be()))),h},L.unstable_shouldYield=za,L.unstable_wrapCallback=function(h){var T=me;return function(){var M=me;me=T;try{return h.apply(this,arguments)}finally{me=M}}}})(cl)),cl}var bp;function Jf(){return bp||(bp=1,ll.exports=Zf()),ll.exports}var ul={exports:{}},ke={};var Cp;function $f(){if(Cp)return ke;Cp=1;var L=pl();function F(E){var A="https://react.dev/errors/"+E;if(1<arguments.length){A+="?args[]="+encodeURIComponent(arguments[1]);for(var ee=2;ee<arguments.length;ee++)A+="&args[]="+encodeURIComponent(arguments[ee])}return"Minified React error #"+E+"; visit "+A+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function q(){}var m={d:{f:q,r:function(){throw Error(F(522))},D:q,C:q,L:q,m:q,X:q,S:q,M:q},p:0,findDOMNode:null},x=Symbol.for("react.portal");function U(E,A,ee){var N=3<arguments.length&&arguments[3]!==void 0?arguments[3]:null;return{$$typeof:x,key:N==null?null:""+N,children:E,containerInfo:A,implementation:ee}}var X=L.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;function ue(E,A){if(E==="font")return"";if(typeof A=="string")return A==="use-credentials"?A:""}return ke.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=m,ke.createPortal=function(E,A){var ee=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;if(!A||A.nodeType!==1&&A.nodeType!==9&&A.nodeType!==11)throw Error(F(299));return U(E,A,null,ee)},ke.flushSync=function(E){var A=X.T,ee=m.p;try{if(X.T=null,m.p=2,E)return E()}finally{X.T=A,m.p=ee,m.d.f()}},ke.preconnect=function(E,A){typeof E=="string"&&(A?(A=A.crossOrigin,A=typeof A=="string"?A==="use-credentials"?A:"":void 0):A=null,m.d.C(E,A))},ke.prefetchDNS=function(E){typeof E=="string"&&m.d.D(E)},ke.preinit=function(E,A){if(typeof E=="string"&&A&&typeof A.as=="string"){var ee=A.as,N=ue(ee,A.crossOrigin),me=typeof A.integrity=="string"?A.integrity:void 0,Ye=typeof A.fetchPriority=="string"?A.fetchPriority:void 0;ee==="style"?m.d.S(E,typeof A.precedence=="string"?A.precedence:void 0,{crossOrigin:N,integrity:me,fetchPriority:Ye}):ee==="script"&&m.d.X(E,{crossOrigin:N,integrity:me,fetchPriority:Ye,nonce:typeof A.nonce=="string"?A.nonce:void 0})}},ke.preinitModule=function(E,A){if(typeof E=="string")if(typeof A=="object"&&A!==null){if(A.as==null||A.as==="script"){var ee=ue(A.as,A.crossOrigin);m.d.M(E,{crossOrigin:ee,integrity:typeof A.integrity=="string"?A.integrity:void 0,nonce:typeof A.nonce=="string"?A.nonce:void 0})}}else A==null&&m.d.M(E)},ke.preload=function(E,A){if(typeof E=="string"&&typeof A=="object"&&A!==null&&typeof A.as=="string"){var ee=A.as,N=ue(ee,A.crossOrigin);m.d.L(E,ee,{crossOrigin:N,integrity:typeof A.integrity=="string"?A.integrity:void 0,nonce:typeof A.nonce=="string"?A.nonce:void 0,type:typeof A.type=="string"?A.type:void 0,fetchPriority:typeof A.fetchPriority=="string"?A.fetchPriority:void 0,referrerPolicy:typeof A.referrerPolicy=="string"?A.referrerPolicy:void 0,imageSrcSet:typeof A.imageSrcSet=="string"?A.imageSrcSet:void 0,imageSizes:typeof A.imageSizes=="string"?A.imageSizes:void 0,media:typeof A.media=="string"?A.media:void 0})}},ke.preloadModule=function(E,A){if(typeof E=="string")if(A){var ee=ue(A.as,A.crossOrigin);m.d.m(E,{as:typeof A.as=="string"&&A.as!=="script"?A.as:void 0,crossOrigin:ee,integrity:typeof A.integrity=="string"?A.integrity:void 0})}else m.d.m(E)},ke.requestFormReset=function(E){m.d.r(E)},ke.unstable_batchedUpdates=function(E,A){return E(A)},ke.useFormState=function(E,A,ee){return X.H.useFormState(E,A,ee)},ke.useFormStatus=function(){return X.H.useHostTransitionStatus()},ke.version="19.2.4",ke}var Sp;function eg(){if(Sp)return ul.exports;Sp=1;function L(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(L)}catch(F){console.error(F)}}return L(),ul.exports=$f(),ul.exports}var wp;function tg(){if(wp)return Si;wp=1;var L=Jf(),F=pl(),q=eg();function m(e){var t="https://react.dev/errors/"+e;if(1<arguments.length){t+="?args[]="+encodeURIComponent(arguments[1]);for(var a=2;a<arguments.length;a++)t+="&args[]="+encodeURIComponent(arguments[a])}return"Minified React error #"+e+"; visit "+t+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function x(e){return!(!e||e.nodeType!==1&&e.nodeType!==9&&e.nodeType!==11)}function U(e){var t=e,a=e;if(e.alternate)for(;t.return;)t=t.return;else{e=t;do t=e,(t.flags&4098)!==0&&(a=t.return),e=t.return;while(e)}return t.tag===3?a:null}function X(e){if(e.tag===13){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function ue(e){if(e.tag===31){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function E(e){if(U(e)!==e)throw Error(m(188))}function A(e){var t=e.alternate;if(!t){if(t=U(e),t===null)throw Error(m(188));return t!==e?null:e}for(var a=e,n=t;;){var i=a.return;if(i===null)break;var r=i.alternate;if(r===null){if(n=i.return,n!==null){a=n;continue}break}if(i.child===r.child){for(r=i.child;r;){if(r===a)return E(i),e;if(r===n)return E(i),t;r=r.sibling}throw Error(m(188))}if(a.return!==n.return)a=i,n=r;else{for(var o=!1,s=i.child;s;){if(s===a){o=!0,a=i,n=r;break}if(s===n){o=!0,n=i,a=r;break}s=s.sibling}if(!o){for(s=r.child;s;){if(s===a){o=!0,a=r,n=i;break}if(s===n){o=!0,n=r,a=i;break}s=s.sibling}if(!o)throw Error(m(189))}}if(a.alternate!==n)throw Error(m(190))}if(a.tag!==3)throw Error(m(188));return a.stateNode.current===a?e:t}function ee(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e;for(e=e.child;e!==null;){if(t=ee(e),t!==null)return t;e=e.sibling}return null}var N=Object.assign,me=Symbol.for("react.element"),Ye=Symbol.for("react.transitional.element"),qe=Symbol.for("react.portal"),Ne=Symbol.for("react.fragment"),Rt=Symbol.for("react.strict_mode"),Ke=Symbol.for("react.profiler"),Kt=Symbol.for("react.consumer"),xe=Symbol.for("react.context"),ot=Symbol.for("react.forward_ref"),St=Symbol.for("react.suspense"),Ge=Symbol.for("react.suspense_list"),Y=Symbol.for("react.memo"),Pe=Symbol.for("react.lazy"),wt=Symbol.for("react.activity"),za=Symbol.for("react.memo_cache_sentinel"),At=Symbol.iterator;function Be(e){return e===null||typeof e!="object"?null:(e=At&&e[At]||e["@@iterator"],typeof e=="function"?e:null)}var Sa=Symbol.for("react.client.reference");function Wt(e){if(e==null)return null;if(typeof e=="function")return e.$$typeof===Sa?null:e.displayName||e.name||null;if(typeof e=="string")return e;switch(e){case Ne:return"Fragment";case Ke:return"Profiler";case Rt:return"StrictMode";case St:return"Suspense";case Ge:return"SuspenseList";case wt:return"Activity"}if(typeof e=="object")switch(e.$$typeof){case qe:return"Portal";case xe:return e.displayName||"Context";case Kt:return(e._context.displayName||"Context")+".Consumer";case ot:var t=e.render;return e=e.displayName,e||(e=t.displayName||t.name||"",e=e!==""?"ForwardRef("+e+")":"ForwardRef"),e;case Y:return t=e.displayName||null,t!==null?t:Wt(e.type)||"Memo";case Pe:t=e._payload,e=e._init;try{return Wt(e(t))}catch{}}return null}var vt=Array.isArray,h=F.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,T=q.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,M={pending:!1,data:null,method:null,action:null},ie=[],le=-1;function u(e){return{current:e}}function w(e){0>le||(e.current=ie[le],ie[le]=null,le--)}function D(e,t){le++,ie[le]=e.current,e.current=t}var W=u(null),P=u(null),j=u(null),te=u(null);function Me(e,t){switch(D(j,t),D(P,e),D(W,null),t.nodeType){case 9:case 11:e=(e=t.documentElement)&&(e=e.namespaceURI)?qd(e):0;break;default:if(e=t.tagName,t=t.namespaceURI)t=qd(t),e=Gd(t,e);else switch(e){case"svg":e=1;break;case"math":e=2;break;default:e=0}}w(W),D(W,e)}function ve(){w(W),w(P),w(j)}function Dn(e){e.memoizedState!==null&&D(te,e);var t=W.current,a=Gd(t,e.type);t!==a&&(D(P,e),D(W,a))}function wi(e){P.current===e&&(w(W),w(P)),te.current===e&&(w(te),yi._currentValue=M)}var Br,ml;function wa(e){if(Br===void 0)try{throw Error()}catch(a){var t=a.stack.trim().match(/\n( *(at )?)/);Br=t&&t[1]||"",ml=-1<a.stack.indexOf(`
-    at`)?" (<anonymous>)":-1<a.stack.indexOf("@")?"@unknown:0:0":""}return`
-`+Br+e+ml}var zr=!1;function jr(e,t){if(!e||zr)return"";zr=!0;var a=Error.prepareStackTrace;Error.prepareStackTrace=void 0;try{var n={DetermineComponentFrameRoot:function(){try{if(t){var C=function(){throw Error()};if(Object.defineProperty(C.prototype,"props",{set:function(){throw Error()}}),typeof Reflect=="object"&&Reflect.construct){try{Reflect.construct(C,[])}catch(y){var g=y}Reflect.construct(e,[],C)}else{try{C.call()}catch(y){g=y}e.call(C.prototype)}}else{try{throw Error()}catch(y){g=y}(C=e())&&typeof C.catch=="function"&&C.catch(function(){})}}catch(y){if(y&&g&&typeof y.stack=="string")return[y.stack,g.stack]}return[null,null]}};n.DetermineComponentFrameRoot.displayName="DetermineComponentFrameRoot";var i=Object.getOwnPropertyDescriptor(n.DetermineComponentFrameRoot,"name");i&&i.configurable&&Object.defineProperty(n.DetermineComponentFrameRoot,"name",{value:"DetermineComponentFrameRoot"});var r=n.DetermineComponentFrameRoot(),o=r[0],s=r[1];if(o&&s){var l=o.split(`
-`),f=s.split(`
-`);for(i=n=0;n<l.length&&!l[n].includes("DetermineComponentFrameRoot");)n++;for(;i<f.length&&!f[i].includes("DetermineComponentFrameRoot");)i++;if(n===l.length||i===f.length)for(n=l.length-1,i=f.length-1;1<=n&&0<=i&&l[n]!==f[i];)i--;for(;1<=n&&0<=i;n--,i--)if(l[n]!==f[i]){if(n!==1||i!==1)do if(n--,i--,0>i||l[n]!==f[i]){var v=`
-`+l[n].replace(" at new "," at ");return e.displayName&&v.includes("<anonymous>")&&(v=v.replace("<anonymous>",e.displayName)),v}while(1<=n&&0<=i);break}}}finally{zr=!1,Error.prepareStackTrace=a}return(a=e?e.displayName||e.name:"")?wa(a):""}function Lp(e,t){switch(e.tag){case 26:case 27:case 5:return wa(e.type);case 16:return wa("Lazy");case 13:return e.child!==t&&t!==null?wa("Suspense Fallback"):wa("Suspense");case 19:return wa("SuspenseList");case 0:case 15:return jr(e.type,!1);case 11:return jr(e.type.render,!1);case 1:return jr(e.type,!0);case 31:return wa("Activity");default:return""}}function fl(e){try{var t="",a=null;do t+=Lp(e,a),a=e,e=e.return;while(e);return t}catch(n){return`
-Error generating stack: `+n.message+`
-`+n.stack}}var Hr=Object.prototype.hasOwnProperty,_r=L.unstable_scheduleCallback,Fr=L.unstable_cancelCallback,Tp=L.unstable_shouldYield,Ep=L.unstable_requestPaint,Xe=L.unstable_now,Dp=L.unstable_getCurrentPriorityLevel,gl=L.unstable_ImmediatePriority,yl=L.unstable_UserBlockingPriority,Ai=L.unstable_NormalPriority,Rp=L.unstable_LowPriority,vl=L.unstable_IdlePriority,Wp=L.log,Op=L.unstable_setDisableYieldValue,Rn=null,Ze=null;function Xt(e){if(typeof Wp=="function"&&Op(e),Ze&&typeof Ze.setStrictMode=="function")try{Ze.setStrictMode(Rn,e)}catch{}}var Je=Math.clz32?Math.clz32:kp,Ip=Math.log,xp=Math.LN2;function kp(e){return e>>>=0,e===0?32:31-(Ip(e)/xp|0)|0}var Li=256,Ti=262144,Ei=4194304;function Aa(e){var t=e&42;if(t!==0)return t;switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:return 64;case 128:return 128;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:return e&261888;case 262144:case 524288:case 1048576:case 2097152:return e&3932160;case 4194304:case 8388608:case 16777216:case 33554432:return e&62914560;case 67108864:return 67108864;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 0;default:return e}}function Di(e,t,a){var n=e.pendingLanes;if(n===0)return 0;var i=0,r=e.suspendedLanes,o=e.pingedLanes;e=e.warmLanes;var s=n&134217727;return s!==0?(n=s&~r,n!==0?i=Aa(n):(o&=s,o!==0?i=Aa(o):a||(a=s&~e,a!==0&&(i=Aa(a))))):(s=n&~r,s!==0?i=Aa(s):o!==0?i=Aa(o):a||(a=n&~e,a!==0&&(i=Aa(a)))),i===0?0:t!==0&&t!==i&&(t&r)===0&&(r=i&-i,a=t&-t,r>=a||r===32&&(a&4194048)!==0)?t:i}function Wn(e,t){return(e.pendingLanes&~(e.suspendedLanes&~e.pingedLanes)&t)===0}function Np(e,t){switch(e){case 1:case 2:case 4:case 8:case 64:return t+250;case 16:case 32:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5e3;case 4194304:case 8388608:case 16777216:case 33554432:return-1;case 67108864:case 134217728:case 268435456:case 536870912:case 1073741824:return-1;default:return-1}}function hl(){var e=Ei;return Ei<<=1,(Ei&62914560)===0&&(Ei=4194304),e}function Qr(e){for(var t=[],a=0;31>a;a++)t.push(e);return t}function On(e,t){e.pendingLanes|=t,t!==268435456&&(e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0)}function Mp(e,t,a,n,i,r){var o=e.pendingLanes;e.pendingLanes=a,e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0,e.expiredLanes&=a,e.entangledLanes&=a,e.errorRecoveryDisabledLanes&=a,e.shellSuspendCounter=0;var s=e.entanglements,l=e.expirationTimes,f=e.hiddenUpdates;for(a=o&~a;0<a;){var v=31-Je(a),C=1<<v;s[v]=0,l[v]=-1;var g=f[v];if(g!==null)for(f[v]=null,v=0;v<g.length;v++){var y=g[v];y!==null&&(y.lane&=-536870913)}a&=~C}n!==0&&bl(e,n,0),r!==0&&i===0&&e.tag!==0&&(e.suspendedLanes|=r&~(o&~t))}function bl(e,t,a){e.pendingLanes|=t,e.suspendedLanes&=~t;var n=31-Je(t);e.entangledLanes|=t,e.entanglements[n]=e.entanglements[n]|1073741824|a&261930}function Cl(e,t){var a=e.entangledLanes|=t;for(e=e.entanglements;a;){var n=31-Je(a),i=1<<n;i&t|e[n]&t&&(e[n]|=t),a&=~i}}function Sl(e,t){var a=t&-t;return a=(a&42)!==0?1:Vr(a),(a&(e.suspendedLanes|t))!==0?0:a}function Vr(e){switch(e){case 2:e=1;break;case 8:e=4;break;case 32:e=16;break;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:e=128;break;case 268435456:e=134217728;break;default:e=0}return e}function Yr(e){return e&=-e,2<e?8<e?(e&134217727)!==0?32:268435456:8:2}function wl(){var e=T.p;return e!==0?e:(e=window.event,e===void 0?32:sp(e.type))}function Al(e,t){var a=T.p;try{return T.p=e,t()}finally{T.p=a}}var Zt=Math.random().toString(36).slice(2),De="__reactFiber$"+Zt,ze="__reactProps$"+Zt,ja="__reactContainer$"+Zt,Kr="__reactEvents$"+Zt,Up="__reactListeners$"+Zt,qp="__reactHandles$"+Zt,Ll="__reactResources$"+Zt,In="__reactMarker$"+Zt;function Xr(e){delete e[De],delete e[ze],delete e[Kr],delete e[Up],delete e[qp]}function Ha(e){var t=e[De];if(t)return t;for(var a=e.parentNode;a;){if(t=a[ja]||a[De]){if(a=t.alternate,t.child!==null||a!==null&&a.child!==null)for(e=Fd(e);e!==null;){if(a=e[De])return a;e=Fd(e)}return t}e=a,a=e.parentNode}return null}function _a(e){if(e=e[De]||e[ja]){var t=e.tag;if(t===5||t===6||t===13||t===31||t===26||t===27||t===3)return e}return null}function xn(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e.stateNode;throw Error(m(33))}function Fa(e){var t=e[Ll];return t||(t=e[Ll]={hoistableStyles:new Map,hoistableScripts:new Map}),t}function Te(e){e[In]=!0}var Tl=new Set,El={};function La(e,t){Qa(e,t),Qa(e+"Capture",t)}function Qa(e,t){for(El[e]=t,e=0;e<t.length;e++)Tl.add(t[e])}var Gp=RegExp("^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$"),Dl={},Rl={};function Pp(e){return Hr.call(Rl,e)?!0:Hr.call(Dl,e)?!1:Gp.test(e)?Rl[e]=!0:(Dl[e]=!0,!1)}function Ri(e,t,a){if(Pp(t))if(a===null)e.removeAttribute(t);else{switch(typeof a){case"undefined":case"function":case"symbol":e.removeAttribute(t);return;case"boolean":var n=t.toLowerCase().slice(0,5);if(n!=="data-"&&n!=="aria-"){e.removeAttribute(t);return}}e.setAttribute(t,""+a)}}function Wi(e,t,a){if(a===null)e.removeAttribute(t);else{switch(typeof a){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(t);return}e.setAttribute(t,""+a)}}function Ot(e,t,a,n){if(n===null)e.removeAttribute(a);else{switch(typeof n){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(a);return}e.setAttributeNS(t,a,""+n)}}function st(e){switch(typeof e){case"bigint":case"boolean":case"number":case"string":case"undefined":return e;case"object":return e;default:return""}}function Wl(e){var t=e.type;return(e=e.nodeName)&&e.toLowerCase()==="input"&&(t==="checkbox"||t==="radio")}function Bp(e,t,a){var n=Object.getOwnPropertyDescriptor(e.constructor.prototype,t);if(!e.hasOwnProperty(t)&&typeof n<"u"&&typeof n.get=="function"&&typeof n.set=="function"){var i=n.get,r=n.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return i.call(this)},set:function(o){a=""+o,r.call(this,o)}}),Object.defineProperty(e,t,{enumerable:n.enumerable}),{getValue:function(){return a},setValue:function(o){a=""+o},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}function Zr(e){if(!e._valueTracker){var t=Wl(e)?"checked":"value";e._valueTracker=Bp(e,t,""+e[t])}}function Ol(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var a=t.getValue(),n="";return e&&(n=Wl(e)?e.checked?"true":"false":e.value),e=n,e!==a?(t.setValue(e),!0):!1}function Oi(e){if(e=e||(typeof document<"u"?document:void 0),typeof e>"u")return null;try{return e.activeElement||e.body}catch{return e.body}}var zp=/[\n"\\]/g;function lt(e){return e.replace(zp,function(t){return"\\"+t.charCodeAt(0).toString(16)+" "})}function Jr(e,t,a,n,i,r,o,s){e.name="",o!=null&&typeof o!="function"&&typeof o!="symbol"&&typeof o!="boolean"?e.type=o:e.removeAttribute("type"),t!=null?o==="number"?(t===0&&e.value===""||e.value!=t)&&(e.value=""+st(t)):e.value!==""+st(t)&&(e.value=""+st(t)):o!=="submit"&&o!=="reset"||e.removeAttribute("value"),t!=null?$r(e,o,st(t)):a!=null?$r(e,o,st(a)):n!=null&&e.removeAttribute("value"),i==null&&r!=null&&(e.defaultChecked=!!r),i!=null&&(e.checked=i&&typeof i!="function"&&typeof i!="symbol"),s!=null&&typeof s!="function"&&typeof s!="symbol"&&typeof s!="boolean"?e.name=""+st(s):e.removeAttribute("name")}function Il(e,t,a,n,i,r,o,s){if(r!=null&&typeof r!="function"&&typeof r!="symbol"&&typeof r!="boolean"&&(e.type=r),t!=null||a!=null){if(!(r!=="submit"&&r!=="reset"||t!=null)){Zr(e);return}a=a!=null?""+st(a):"",t=t!=null?""+st(t):a,s||t===e.value||(e.value=t),e.defaultValue=t}n=n??i,n=typeof n!="function"&&typeof n!="symbol"&&!!n,e.checked=s?e.checked:!!n,e.defaultChecked=!!n,o!=null&&typeof o!="function"&&typeof o!="symbol"&&typeof o!="boolean"&&(e.name=o),Zr(e)}function $r(e,t,a){t==="number"&&Oi(e.ownerDocument)===e||e.defaultValue===""+a||(e.defaultValue=""+a)}function Va(e,t,a,n){if(e=e.options,t){t={};for(var i=0;i<a.length;i++)t["$"+a[i]]=!0;for(a=0;a<e.length;a++)i=t.hasOwnProperty("$"+e[a].value),e[a].selected!==i&&(e[a].selected=i),i&&n&&(e[a].defaultSelected=!0)}else{for(a=""+st(a),t=null,i=0;i<e.length;i++){if(e[i].value===a){e[i].selected=!0,n&&(e[i].defaultSelected=!0);return}t!==null||e[i].disabled||(t=e[i])}t!==null&&(t.selected=!0)}}function xl(e,t,a){if(t!=null&&(t=""+st(t),t!==e.value&&(e.value=t),a==null)){e.defaultValue!==t&&(e.defaultValue=t);return}e.defaultValue=a!=null?""+st(a):""}function kl(e,t,a,n){if(t==null){if(n!=null){if(a!=null)throw Error(m(92));if(vt(n)){if(1<n.length)throw Error(m(93));n=n[0]}a=n}a==null&&(a=""),t=a}a=st(t),e.defaultValue=a,n=e.textContent,n===a&&n!==""&&n!==null&&(e.value=n),Zr(e)}function Ya(e,t){if(t){var a=e.firstChild;if(a&&a===e.lastChild&&a.nodeType===3){a.nodeValue=t;return}}e.textContent=t}var jp=new Set("animationIterationCount aspectRatio borderImageOutset borderImageSlice borderImageWidth boxFlex boxFlexGroup boxOrdinalGroup columnCount columns flex flexGrow flexPositive flexShrink flexNegative flexOrder gridArea gridRow gridRowEnd gridRowSpan gridRowStart gridColumn gridColumnEnd gridColumnSpan gridColumnStart fontWeight lineClamp lineHeight opacity order orphans scale tabSize widows zIndex zoom fillOpacity floodOpacity stopOpacity strokeDasharray strokeDashoffset strokeMiterlimit strokeOpacity strokeWidth MozAnimationIterationCount MozBoxFlex MozBoxFlexGroup MozLineClamp msAnimationIterationCount msFlex msZoom msFlexGrow msFlexNegative msFlexOrder msFlexPositive msFlexShrink msGridColumn msGridColumnSpan msGridRow msGridRowSpan WebkitAnimationIterationCount WebkitBoxFlex WebKitBoxFlexGroup WebkitBoxOrdinalGroup WebkitColumnCount WebkitColumns WebkitFlex WebkitFlexGrow WebkitFlexPositive WebkitFlexShrink WebkitLineClamp".split(" "));function Nl(e,t,a){var n=t.indexOf("--")===0;a==null||typeof a=="boolean"||a===""?n?e.setProperty(t,""):t==="float"?e.cssFloat="":e[t]="":n?e.setProperty(t,a):typeof a!="number"||a===0||jp.has(t)?t==="float"?e.cssFloat=a:e[t]=(""+a).trim():e[t]=a+"px"}function Ml(e,t,a){if(t!=null&&typeof t!="object")throw Error(m(62));if(e=e.style,a!=null){for(var n in a)!a.hasOwnProperty(n)||t!=null&&t.hasOwnProperty(n)||(n.indexOf("--")===0?e.setProperty(n,""):n==="float"?e.cssFloat="":e[n]="");for(var i in t)n=t[i],t.hasOwnProperty(i)&&a[i]!==n&&Nl(e,i,n)}else for(var r in t)t.hasOwnProperty(r)&&Nl(e,r,t[r])}function eo(e){if(e.indexOf("-")===-1)return!1;switch(e){case"annotation-xml":case"color-profile":case"font-face":case"font-face-src":case"font-face-uri":case"font-face-format":case"font-face-name":case"missing-glyph":return!1;default:return!0}}var Hp=new Map([["acceptCharset","accept-charset"],["htmlFor","for"],["httpEquiv","http-equiv"],["crossOrigin","crossorigin"],["accentHeight","accent-height"],["alignmentBaseline","alignment-baseline"],["arabicForm","arabic-form"],["baselineShift","baseline-shift"],["capHeight","cap-height"],["clipPath","clip-path"],["clipRule","clip-rule"],["colorInterpolation","color-interpolation"],["colorInterpolationFilters","color-interpolation-filters"],["colorProfile","color-profile"],["colorRendering","color-rendering"],["dominantBaseline","dominant-baseline"],["enableBackground","enable-background"],["fillOpacity","fill-opacity"],["fillRule","fill-rule"],["floodColor","flood-color"],["floodOpacity","flood-opacity"],["fontFamily","font-family"],["fontSize","font-size"],["fontSizeAdjust","font-size-adjust"],["fontStretch","font-stretch"],["fontStyle","font-style"],["fontVariant","font-variant"],["fontWeight","font-weight"],["glyphName","glyph-name"],["glyphOrientationHorizontal","glyph-orientation-horizontal"],["glyphOrientationVertical","glyph-orientation-vertical"],["horizAdvX","horiz-adv-x"],["horizOriginX","horiz-origin-x"],["imageRendering","image-rendering"],["letterSpacing","letter-spacing"],["lightingColor","lighting-color"],["markerEnd","marker-end"],["markerMid","marker-mid"],["markerStart","marker-start"],["overlinePosition","overline-position"],["overlineThickness","overline-thickness"],["paintOrder","paint-order"],["panose-1","panose-1"],["pointerEvents","pointer-events"],["renderingIntent","rendering-intent"],["shapeRendering","shape-rendering"],["stopColor","stop-color"],["stopOpacity","stop-opacity"],["strikethroughPosition","strikethrough-position"],["strikethroughThickness","strikethrough-thickness"],["strokeDasharray","stroke-dasharray"],["strokeDashoffset","stroke-dashoffset"],["strokeLinecap","stroke-linecap"],["strokeLinejoin","stroke-linejoin"],["strokeMiterlimit","stroke-miterlimit"],["strokeOpacity","stroke-opacity"],["strokeWidth","stroke-width"],["textAnchor","text-anchor"],["textDecoration","text-decoration"],["textRendering","text-rendering"],["transformOrigin","transform-origin"],["underlinePosition","underline-position"],["underlineThickness","underline-thickness"],["unicodeBidi","unicode-bidi"],["unicodeRange","unicode-range"],["unitsPerEm","units-per-em"],["vAlphabetic","v-alphabetic"],["vHanging","v-hanging"],["vIdeographic","v-ideographic"],["vMathematical","v-mathematical"],["vectorEffect","vector-effect"],["vertAdvY","vert-adv-y"],["vertOriginX","vert-origin-x"],["vertOriginY","vert-origin-y"],["wordSpacing","word-spacing"],["writingMode","writing-mode"],["xmlnsXlink","xmlns:xlink"],["xHeight","x-height"]]),_p=/^[\u0000-\u001F ]*j[\r\n\t]*a[\r\n\t]*v[\r\n\t]*a[\r\n\t]*s[\r\n\t]*c[\r\n\t]*r[\r\n\t]*i[\r\n\t]*p[\r\n\t]*t[\r\n\t]*:/i;function Ii(e){return _p.test(""+e)?"javascript:throw new Error('React has blocked a javascript: URL as a security precaution.')":e}function It(){}var to=null;function ao(e){return e=e.target||e.srcElement||window,e.correspondingUseElement&&(e=e.correspondingUseElement),e.nodeType===3?e.parentNode:e}var Ka=null,Xa=null;function Ul(e){var t=_a(e);if(t&&(e=t.stateNode)){var a=e[ze]||null;e:switch(e=t.stateNode,t.type){case"input":if(Jr(e,a.value,a.defaultValue,a.defaultValue,a.checked,a.defaultChecked,a.type,a.name),t=a.name,a.type==="radio"&&t!=null){for(a=e;a.parentNode;)a=a.parentNode;for(a=a.querySelectorAll('input[name="'+lt(""+t)+'"][type="radio"]'),t=0;t<a.length;t++){var n=a[t];if(n!==e&&n.form===e.form){var i=n[ze]||null;if(!i)throw Error(m(90));Jr(n,i.value,i.defaultValue,i.defaultValue,i.checked,i.defaultChecked,i.type,i.name)}}for(t=0;t<a.length;t++)n=a[t],n.form===e.form&&Ol(n)}break e;case"textarea":xl(e,a.value,a.defaultValue);break e;case"select":t=a.value,t!=null&&Va(e,!!a.multiple,t,!1)}}}var no=!1;function ql(e,t,a){if(no)return e(t,a);no=!0;try{var n=e(t);return n}finally{if(no=!1,(Ka!==null||Xa!==null)&&(hr(),Ka&&(t=Ka,e=Xa,Xa=Ka=null,Ul(t),e)))for(t=0;t<e.length;t++)Ul(e[t])}}function kn(e,t){var a=e.stateNode;if(a===null)return null;var n=a[ze]||null;if(n===null)return null;a=n[t];e:switch(t){case"onClick":case"onClickCapture":case"onDoubleClick":case"onDoubleClickCapture":case"onMouseDown":case"onMouseDownCapture":case"onMouseMove":case"onMouseMoveCapture":case"onMouseUp":case"onMouseUpCapture":case"onMouseEnter":(n=!n.disabled)||(e=e.type,n=!(e==="button"||e==="input"||e==="select"||e==="textarea")),e=!n;break e;default:e=!1}if(e)return null;if(a&&typeof a!="function")throw Error(m(231,t,typeof a));return a}var xt=!(typeof window>"u"||typeof window.document>"u"||typeof window.document.createElement>"u"),io=!1;if(xt)try{var Nn={};Object.defineProperty(Nn,"passive",{get:function(){io=!0}}),window.addEventListener("test",Nn,Nn),window.removeEventListener("test",Nn,Nn)}catch{io=!1}var Jt=null,ro=null,xi=null;function Gl(){if(xi)return xi;var e,t=ro,a=t.length,n,i="value"in Jt?Jt.value:Jt.textContent,r=i.length;for(e=0;e<a&&t[e]===i[e];e++);var o=a-e;for(n=1;n<=o&&t[a-n]===i[r-n];n++);return xi=i.slice(e,1<n?1-n:void 0)}function ki(e){var t=e.keyCode;return"charCode"in e?(e=e.charCode,e===0&&t===13&&(e=13)):e=t,e===10&&(e=13),32<=e||e===13?e:0}function Ni(){return!0}function Pl(){return!1}function je(e){function t(a,n,i,r,o){this._reactName=a,this._targetInst=i,this.type=n,this.nativeEvent=r,this.target=o,this.currentTarget=null;for(var s in e)e.hasOwnProperty(s)&&(a=e[s],this[s]=a?a(r):r[s]);return this.isDefaultPrevented=(r.defaultPrevented!=null?r.defaultPrevented:r.returnValue===!1)?Ni:Pl,this.isPropagationStopped=Pl,this}return N(t.prototype,{preventDefault:function(){this.defaultPrevented=!0;var a=this.nativeEvent;a&&(a.preventDefault?a.preventDefault():typeof a.returnValue!="unknown"&&(a.returnValue=!1),this.isDefaultPrevented=Ni)},stopPropagation:function(){var a=this.nativeEvent;a&&(a.stopPropagation?a.stopPropagation():typeof a.cancelBubble!="unknown"&&(a.cancelBubble=!0),this.isPropagationStopped=Ni)},persist:function(){},isPersistent:Ni}),t}var Ta={eventPhase:0,bubbles:0,cancelable:0,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:0,isTrusted:0},Mi=je(Ta),Mn=N({},Ta,{view:0,detail:0}),Fp=je(Mn),oo,so,Un,Ui=N({},Mn,{screenX:0,screenY:0,clientX:0,clientY:0,pageX:0,pageY:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,getModifierState:co,button:0,buttons:0,relatedTarget:function(e){return e.relatedTarget===void 0?e.fromElement===e.srcElement?e.toElement:e.fromElement:e.relatedTarget},movementX:function(e){return"movementX"in e?e.movementX:(e!==Un&&(Un&&e.type==="mousemove"?(oo=e.screenX-Un.screenX,so=e.screenY-Un.screenY):so=oo=0,Un=e),oo)},movementY:function(e){return"movementY"in e?e.movementY:so}}),Bl=je(Ui),Qp=N({},Ui,{dataTransfer:0}),Vp=je(Qp),Yp=N({},Mn,{relatedTarget:0}),lo=je(Yp),Kp=N({},Ta,{animationName:0,elapsedTime:0,pseudoElement:0}),Xp=je(Kp),Zp=N({},Ta,{clipboardData:function(e){return"clipboardData"in e?e.clipboardData:window.clipboardData}}),Jp=je(Zp),$p=N({},Ta,{data:0}),zl=je($p),em={Esc:"Escape",Spacebar:" ",Left:"ArrowLeft",Up:"ArrowUp",Right:"ArrowRight",Down:"ArrowDown",Del:"Delete",Win:"OS",Menu:"ContextMenu",Apps:"ContextMenu",Scroll:"ScrollLock",MozPrintableKey:"Unidentified"},tm={8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",45:"Insert",46:"Delete",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"NumLock",145:"ScrollLock",224:"Meta"},am={Alt:"altKey",Control:"ctrlKey",Meta:"metaKey",Shift:"shiftKey"};function nm(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):(e=am[e])?!!t[e]:!1}function co(){return nm}var im=N({},Mn,{key:function(e){if(e.key){var t=em[e.key]||e.key;if(t!=="Unidentified")return t}return e.type==="keypress"?(e=ki(e),e===13?"Enter":String.fromCharCode(e)):e.type==="keydown"||e.type==="keyup"?tm[e.keyCode]||"Unidentified":""},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:co,charCode:function(e){return e.type==="keypress"?ki(e):0},keyCode:function(e){return e.type==="keydown"||e.type==="keyup"?e.keyCode:0},which:function(e){return e.type==="keypress"?ki(e):e.type==="keydown"||e.type==="keyup"?e.keyCode:0}}),rm=je(im),om=N({},Ui,{pointerId:0,width:0,height:0,pressure:0,tangentialPressure:0,tiltX:0,tiltY:0,twist:0,pointerType:0,isPrimary:0}),jl=je(om),sm=N({},Mn,{touches:0,targetTouches:0,changedTouches:0,altKey:0,metaKey:0,ctrlKey:0,shiftKey:0,getModifierState:co}),lm=je(sm),cm=N({},Ta,{propertyName:0,elapsedTime:0,pseudoElement:0}),um=je(cm),dm=N({},Ui,{deltaX:function(e){return"deltaX"in e?e.deltaX:"wheelDeltaX"in e?-e.wheelDeltaX:0},deltaY:function(e){return"deltaY"in e?e.deltaY:"wheelDeltaY"in e?-e.wheelDeltaY:"wheelDelta"in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),pm=je(dm),mm=N({},Ta,{newState:0,oldState:0}),fm=je(mm),gm=[9,13,27,32],uo=xt&&"CompositionEvent"in window,qn=null;xt&&"documentMode"in document&&(qn=document.documentMode);var ym=xt&&"TextEvent"in window&&!qn,Hl=xt&&(!uo||qn&&8<qn&&11>=qn),_l=" ",Fl=!1;function Ql(e,t){switch(e){case"keyup":return gm.indexOf(t.keyCode)!==-1;case"keydown":return t.keyCode!==229;case"keypress":case"mousedown":case"focusout":return!0;default:return!1}}function Vl(e){return e=e.detail,typeof e=="object"&&"data"in e?e.data:null}var Za=!1;function vm(e,t){switch(e){case"compositionend":return Vl(t);case"keypress":return t.which!==32?null:(Fl=!0,_l);case"textInput":return e=t.data,e===_l&&Fl?null:e;default:return null}}function hm(e,t){if(Za)return e==="compositionend"||!uo&&Ql(e,t)?(e=Gl(),xi=ro=Jt=null,Za=!1,e):null;switch(e){case"paste":return null;case"keypress":if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case"compositionend":return Hl&&t.locale!=="ko"?null:t.data;default:return null}}var bm={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function Yl(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t==="input"?!!bm[e.type]:t==="textarea"}function Kl(e,t,a,n){Ka?Xa?Xa.push(n):Xa=[n]:Ka=n,t=Tr(t,"onChange"),0<t.length&&(a=new Mi("onChange","change",null,a,n),e.push({event:a,listeners:t}))}var Gn=null,Pn=null;function Cm(e){Id(e,0)}function qi(e){var t=xn(e);if(Ol(t))return e}function Xl(e,t){if(e==="change")return t}var Zl=!1;if(xt){var po;if(xt){var mo="oninput"in document;if(!mo){var Jl=document.createElement("div");Jl.setAttribute("oninput","return;"),mo=typeof Jl.oninput=="function"}po=mo}else po=!1;Zl=po&&(!document.documentMode||9<document.documentMode)}function $l(){Gn&&(Gn.detachEvent("onpropertychange",ec),Pn=Gn=null)}function ec(e){if(e.propertyName==="value"&&qi(Pn)){var t=[];Kl(t,Pn,e,ao(e)),ql(Cm,t)}}function Sm(e,t,a){e==="focusin"?($l(),Gn=t,Pn=a,Gn.attachEvent("onpropertychange",ec)):e==="focusout"&&$l()}function wm(e){if(e==="selectionchange"||e==="keyup"||e==="keydown")return qi(Pn)}function Am(e,t){if(e==="click")return qi(t)}function Lm(e,t){if(e==="input"||e==="change")return qi(t)}function Tm(e,t){return e===t&&(e!==0||1/e===1/t)||e!==e&&t!==t}var $e=typeof Object.is=="function"?Object.is:Tm;function Bn(e,t){if($e(e,t))return!0;if(typeof e!="object"||e===null||typeof t!="object"||t===null)return!1;var a=Object.keys(e),n=Object.keys(t);if(a.length!==n.length)return!1;for(n=0;n<a.length;n++){var i=a[n];if(!Hr.call(t,i)||!$e(e[i],t[i]))return!1}return!0}function tc(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function ac(e,t){var a=tc(e);e=0;for(var n;a;){if(a.nodeType===3){if(n=e+a.textContent.length,e<=t&&n>=t)return{node:a,offset:t-e};e=n}e:{for(;a;){if(a.nextSibling){a=a.nextSibling;break e}a=a.parentNode}a=void 0}a=tc(a)}}function nc(e,t){return e&&t?e===t?!0:e&&e.nodeType===3?!1:t&&t.nodeType===3?nc(e,t.parentNode):"contains"in e?e.contains(t):e.compareDocumentPosition?!!(e.compareDocumentPosition(t)&16):!1:!1}function ic(e){e=e!=null&&e.ownerDocument!=null&&e.ownerDocument.defaultView!=null?e.ownerDocument.defaultView:window;for(var t=Oi(e.document);t instanceof e.HTMLIFrameElement;){try{var a=typeof t.contentWindow.location.href=="string"}catch{a=!1}if(a)e=t.contentWindow;else break;t=Oi(e.document)}return t}function fo(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&(t==="input"&&(e.type==="text"||e.type==="search"||e.type==="tel"||e.type==="url"||e.type==="password")||t==="textarea"||e.contentEditable==="true")}var Em=xt&&"documentMode"in document&&11>=document.documentMode,Ja=null,go=null,zn=null,yo=!1;function rc(e,t,a){var n=a.window===a?a.document:a.nodeType===9?a:a.ownerDocument;yo||Ja==null||Ja!==Oi(n)||(n=Ja,"selectionStart"in n&&fo(n)?n={start:n.selectionStart,end:n.selectionEnd}:(n=(n.ownerDocument&&n.ownerDocument.defaultView||window).getSelection(),n={anchorNode:n.anchorNode,anchorOffset:n.anchorOffset,focusNode:n.focusNode,focusOffset:n.focusOffset}),zn&&Bn(zn,n)||(zn=n,n=Tr(go,"onSelect"),0<n.length&&(t=new Mi("onSelect","select",null,t,a),e.push({event:t,listeners:n}),t.target=Ja)))}function Ea(e,t){var a={};return a[e.toLowerCase()]=t.toLowerCase(),a["Webkit"+e]="webkit"+t,a["Moz"+e]="moz"+t,a}var $a={animationend:Ea("Animation","AnimationEnd"),animationiteration:Ea("Animation","AnimationIteration"),animationstart:Ea("Animation","AnimationStart"),transitionrun:Ea("Transition","TransitionRun"),transitionstart:Ea("Transition","TransitionStart"),transitioncancel:Ea("Transition","TransitionCancel"),transitionend:Ea("Transition","TransitionEnd")},vo={},oc={};xt&&(oc=document.createElement("div").style,"AnimationEvent"in window||(delete $a.animationend.animation,delete $a.animationiteration.animation,delete $a.animationstart.animation),"TransitionEvent"in window||delete $a.transitionend.transition);function Da(e){if(vo[e])return vo[e];if(!$a[e])return e;var t=$a[e],a;for(a in t)if(t.hasOwnProperty(a)&&a in oc)return vo[e]=t[a];return e}var sc=Da("animationend"),lc=Da("animationiteration"),cc=Da("animationstart"),Dm=Da("transitionrun"),Rm=Da("transitionstart"),Wm=Da("transitioncancel"),uc=Da("transitionend"),dc=new Map,ho="abort auxClick beforeToggle cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");ho.push("scrollEnd");function ht(e,t){dc.set(e,t),La(t,[e])}var Gi=typeof reportError=="function"?reportError:function(e){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var t=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof e=="object"&&e!==null&&typeof e.message=="string"?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",e);return}console.error(e)},ct=[],en=0,bo=0;function Pi(){for(var e=en,t=bo=en=0;t<e;){var a=ct[t];ct[t++]=null;var n=ct[t];ct[t++]=null;var i=ct[t];ct[t++]=null;var r=ct[t];if(ct[t++]=null,n!==null&&i!==null){var o=n.pending;o===null?i.next=i:(i.next=o.next,o.next=i),n.pending=i}r!==0&&pc(a,i,r)}}function Bi(e,t,a,n){ct[en++]=e,ct[en++]=t,ct[en++]=a,ct[en++]=n,bo|=n,e.lanes|=n,e=e.alternate,e!==null&&(e.lanes|=n)}function Co(e,t,a,n){return Bi(e,t,a,n),zi(e)}function Ra(e,t){return Bi(e,null,null,t),zi(e)}function pc(e,t,a){e.lanes|=a;var n=e.alternate;n!==null&&(n.lanes|=a);for(var i=!1,r=e.return;r!==null;)r.childLanes|=a,n=r.alternate,n!==null&&(n.childLanes|=a),r.tag===22&&(e=r.stateNode,e===null||e._visibility&1||(i=!0)),e=r,r=r.return;return e.tag===3?(r=e.stateNode,i&&t!==null&&(i=31-Je(a),e=r.hiddenUpdates,n=e[i],n===null?e[i]=[t]:n.push(t),t.lane=a|536870912),r):null}function zi(e){if(50<ci)throw ci=0,Ws=null,Error(m(185));for(var t=e.return;t!==null;)e=t,t=e.return;return e.tag===3?e.stateNode:null}var tn={};function Om(e,t,a,n){this.tag=e,this.key=a,this.sibling=this.child=this.return=this.stateNode=this.type=this.elementType=null,this.index=0,this.refCleanup=this.ref=null,this.pendingProps=t,this.dependencies=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=n,this.subtreeFlags=this.flags=0,this.deletions=null,this.childLanes=this.lanes=0,this.alternate=null}function et(e,t,a,n){return new Om(e,t,a,n)}function So(e){return e=e.prototype,!(!e||!e.isReactComponent)}function kt(e,t){var a=e.alternate;return a===null?(a=et(e.tag,t,e.key,e.mode),a.elementType=e.elementType,a.type=e.type,a.stateNode=e.stateNode,a.alternate=e,e.alternate=a):(a.pendingProps=t,a.type=e.type,a.flags=0,a.subtreeFlags=0,a.deletions=null),a.flags=e.flags&65011712,a.childLanes=e.childLanes,a.lanes=e.lanes,a.child=e.child,a.memoizedProps=e.memoizedProps,a.memoizedState=e.memoizedState,a.updateQueue=e.updateQueue,t=e.dependencies,a.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext},a.sibling=e.sibling,a.index=e.index,a.ref=e.ref,a.refCleanup=e.refCleanup,a}function mc(e,t){e.flags&=65011714;var a=e.alternate;return a===null?(e.childLanes=0,e.lanes=t,e.child=null,e.subtreeFlags=0,e.memoizedProps=null,e.memoizedState=null,e.updateQueue=null,e.dependencies=null,e.stateNode=null):(e.childLanes=a.childLanes,e.lanes=a.lanes,e.child=a.child,e.subtreeFlags=0,e.deletions=null,e.memoizedProps=a.memoizedProps,e.memoizedState=a.memoizedState,e.updateQueue=a.updateQueue,e.type=a.type,t=a.dependencies,e.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext}),e}function ji(e,t,a,n,i,r){var o=0;if(n=e,typeof e=="function")So(e)&&(o=1);else if(typeof e=="string")o=Uf(e,a,W.current)?26:e==="html"||e==="head"||e==="body"?27:5;else e:switch(e){case wt:return e=et(31,a,t,i),e.elementType=wt,e.lanes=r,e;case Ne:return Wa(a.children,i,r,t);case Rt:o=8,i|=24;break;case Ke:return e=et(12,a,t,i|2),e.elementType=Ke,e.lanes=r,e;case St:return e=et(13,a,t,i),e.elementType=St,e.lanes=r,e;case Ge:return e=et(19,a,t,i),e.elementType=Ge,e.lanes=r,e;default:if(typeof e=="object"&&e!==null)switch(e.$$typeof){case xe:o=10;break e;case Kt:o=9;break e;case ot:o=11;break e;case Y:o=14;break e;case Pe:o=16,n=null;break e}o=29,a=Error(m(130,e===null?"null":typeof e,"")),n=null}return t=et(o,a,t,i),t.elementType=e,t.type=n,t.lanes=r,t}function Wa(e,t,a,n){return e=et(7,e,n,t),e.lanes=a,e}function wo(e,t,a){return e=et(6,e,null,t),e.lanes=a,e}function fc(e){var t=et(18,null,null,0);return t.stateNode=e,t}function Ao(e,t,a){return t=et(4,e.children!==null?e.children:[],e.key,t),t.lanes=a,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}var gc=new WeakMap;function ut(e,t){if(typeof e=="object"&&e!==null){var a=gc.get(e);return a!==void 0?a:(t={value:e,source:t,stack:fl(t)},gc.set(e,t),t)}return{value:e,source:t,stack:fl(t)}}var an=[],nn=0,Hi=null,jn=0,dt=[],pt=0,$t=null,Lt=1,Tt="";function Nt(e,t){an[nn++]=jn,an[nn++]=Hi,Hi=e,jn=t}function yc(e,t,a){dt[pt++]=Lt,dt[pt++]=Tt,dt[pt++]=$t,$t=e;var n=Lt;e=Tt;var i=32-Je(n)-1;n&=~(1<<i),a+=1;var r=32-Je(t)+i;if(30<r){var o=i-i%5;r=(n&(1<<o)-1).toString(32),n>>=o,i-=o,Lt=1<<32-Je(t)+i|a<<i|n,Tt=r+e}else Lt=1<<r|a<<i|n,Tt=e}function Lo(e){e.return!==null&&(Nt(e,1),yc(e,1,0))}function To(e){for(;e===Hi;)Hi=an[--nn],an[nn]=null,jn=an[--nn],an[nn]=null;for(;e===$t;)$t=dt[--pt],dt[pt]=null,Tt=dt[--pt],dt[pt]=null,Lt=dt[--pt],dt[pt]=null}function vc(e,t){dt[pt++]=Lt,dt[pt++]=Tt,dt[pt++]=$t,Lt=t.id,Tt=t.overflow,$t=e}var Re=null,de=null,K=!1,ea=null,mt=!1,Eo=Error(m(519));function ta(e){var t=Error(m(418,1<arguments.length&&arguments[1]!==void 0&&arguments[1]?"text":"HTML",""));throw Hn(ut(t,e)),Eo}function hc(e){var t=e.stateNode,a=e.type,n=e.memoizedProps;switch(t[De]=e,t[ze]=n,a){case"dialog":_("cancel",t),_("close",t);break;case"iframe":case"object":case"embed":_("load",t);break;case"video":case"audio":for(a=0;a<di.length;a++)_(di[a],t);break;case"source":_("error",t);break;case"img":case"image":case"link":_("error",t),_("load",t);break;case"details":_("toggle",t);break;case"input":_("invalid",t),Il(t,n.value,n.defaultValue,n.checked,n.defaultChecked,n.type,n.name,!0);break;case"select":_("invalid",t);break;case"textarea":_("invalid",t),kl(t,n.value,n.defaultValue,n.children)}a=n.children,typeof a!="string"&&typeof a!="number"&&typeof a!="bigint"||t.textContent===""+a||n.suppressHydrationWarning===!0||Md(t.textContent,a)?(n.popover!=null&&(_("beforetoggle",t),_("toggle",t)),n.onScroll!=null&&_("scroll",t),n.onScrollEnd!=null&&_("scrollend",t),n.onClick!=null&&(t.onclick=It),t=!0):t=!1,t||ta(e,!0)}function bc(e){for(Re=e.return;Re;)switch(Re.tag){case 5:case 31:case 13:mt=!1;return;case 27:case 3:mt=!0;return;default:Re=Re.return}}function rn(e){if(e!==Re)return!1;if(!K)return bc(e),K=!0,!1;var t=e.tag,a;if((a=t!==3&&t!==27)&&((a=t===5)&&(a=e.type,a=!(a!=="form"&&a!=="button")||_s(e.type,e.memoizedProps)),a=!a),a&&de&&ta(e),bc(e),t===13){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(317));de=_d(e)}else if(t===31){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(317));de=_d(e)}else t===27?(t=de,ga(e.type)?(e=Ks,Ks=null,de=e):de=t):de=Re?gt(e.stateNode.nextSibling):null;return!0}function Oa(){de=Re=null,K=!1}function Do(){var e=ea;return e!==null&&(Qe===null?Qe=e:Qe.push.apply(Qe,e),ea=null),e}function Hn(e){ea===null?ea=[e]:ea.push(e)}var Ro=u(null),Ia=null,Mt=null;function aa(e,t,a){D(Ro,t._currentValue),t._currentValue=a}function Ut(e){e._currentValue=Ro.current,w(Ro)}function Wo(e,t,a){for(;e!==null;){var n=e.alternate;if((e.childLanes&t)!==t?(e.childLanes|=t,n!==null&&(n.childLanes|=t)):n!==null&&(n.childLanes&t)!==t&&(n.childLanes|=t),e===a)break;e=e.return}}function Oo(e,t,a,n){var i=e.child;for(i!==null&&(i.return=e);i!==null;){var r=i.dependencies;if(r!==null){var o=i.child;r=r.firstContext;e:for(;r!==null;){var s=r;r=i;for(var l=0;l<t.length;l++)if(s.context===t[l]){r.lanes|=a,s=r.alternate,s!==null&&(s.lanes|=a),Wo(r.return,a,e),n||(o=null);break e}r=s.next}}else if(i.tag===18){if(o=i.return,o===null)throw Error(m(341));o.lanes|=a,r=o.alternate,r!==null&&(r.lanes|=a),Wo(o,a,e),o=null}else o=i.child;if(o!==null)o.return=i;else for(o=i;o!==null;){if(o===e){o=null;break}if(i=o.sibling,i!==null){i.return=o.return,o=i;break}o=o.return}i=o}}function on(e,t,a,n){e=null;for(var i=t,r=!1;i!==null;){if(!r){if((i.flags&524288)!==0)r=!0;else if((i.flags&262144)!==0)break}if(i.tag===10){var o=i.alternate;if(o===null)throw Error(m(387));if(o=o.memoizedProps,o!==null){var s=i.type;$e(i.pendingProps.value,o.value)||(e!==null?e.push(s):e=[s])}}else if(i===te.current){if(o=i.alternate,o===null)throw Error(m(387));o.memoizedState.memoizedState!==i.memoizedState.memoizedState&&(e!==null?e.push(yi):e=[yi])}i=i.return}e!==null&&Oo(t,e,a,n),t.flags|=262144}function _i(e){for(e=e.firstContext;e!==null;){if(!$e(e.context._currentValue,e.memoizedValue))return!0;e=e.next}return!1}function xa(e){Ia=e,Mt=null,e=e.dependencies,e!==null&&(e.firstContext=null)}function We(e){return Cc(Ia,e)}function Fi(e,t){return Ia===null&&xa(e),Cc(e,t)}function Cc(e,t){var a=t._currentValue;if(t={context:t,memoizedValue:a,next:null},Mt===null){if(e===null)throw Error(m(308));Mt=t,e.dependencies={lanes:0,firstContext:t},e.flags|=524288}else Mt=Mt.next=t;return a}var Im=typeof AbortController<"u"?AbortController:function(){var e=[],t=this.signal={aborted:!1,addEventListener:function(a,n){e.push(n)}};this.abort=function(){t.aborted=!0,e.forEach(function(a){return a()})}},xm=L.unstable_scheduleCallback,km=L.unstable_NormalPriority,Ce={$$typeof:xe,Consumer:null,Provider:null,_currentValue:null,_currentValue2:null,_threadCount:0};function Io(){return{controller:new Im,data:new Map,refCount:0}}function _n(e){e.refCount--,e.refCount===0&&xm(km,function(){e.controller.abort()})}var Fn=null,xo=0,sn=0,ln=null;function Nm(e,t){if(Fn===null){var a=Fn=[];xo=0,sn=Ms(),ln={status:"pending",value:void 0,then:function(n){a.push(n)}}}return xo++,t.then(Sc,Sc),t}function Sc(){if(--xo===0&&Fn!==null){ln!==null&&(ln.status="fulfilled");var e=Fn;Fn=null,sn=0,ln=null;for(var t=0;t<e.length;t++)(0,e[t])()}}function Mm(e,t){var a=[],n={status:"pending",value:null,reason:null,then:function(i){a.push(i)}};return e.then(function(){n.status="fulfilled",n.value=t;for(var i=0;i<a.length;i++)(0,a[i])(t)},function(i){for(n.status="rejected",n.reason=i,i=0;i<a.length;i++)(0,a[i])(void 0)}),n}var wc=h.S;h.S=function(e,t){rd=Xe(),typeof t=="object"&&t!==null&&typeof t.then=="function"&&Nm(e,t),wc!==null&&wc(e,t)};var ka=u(null);function ko(){var e=ka.current;return e!==null?e:ce.pooledCache}function Qi(e,t){t===null?D(ka,ka.current):D(ka,t.pool)}function Ac(){var e=ko();return e===null?null:{parent:Ce._currentValue,pool:e}}var cn=Error(m(460)),No=Error(m(474)),Vi=Error(m(542)),Yi={then:function(){}};function Lc(e){return e=e.status,e==="fulfilled"||e==="rejected"}function Tc(e,t,a){switch(a=e[a],a===void 0?e.push(t):a!==t&&(t.then(It,It),t=a),t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Dc(e),e;default:if(typeof t.status=="string")t.then(It,It);else{if(e=ce,e!==null&&100<e.shellSuspendCounter)throw Error(m(482));e=t,e.status="pending",e.then(function(n){if(t.status==="pending"){var i=t;i.status="fulfilled",i.value=n}},function(n){if(t.status==="pending"){var i=t;i.status="rejected",i.reason=n}})}switch(t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Dc(e),e}throw Ma=t,cn}}function Na(e){try{var t=e._init;return t(e._payload)}catch(a){throw a!==null&&typeof a=="object"&&typeof a.then=="function"?(Ma=a,cn):a}}var Ma=null;function Ec(){if(Ma===null)throw Error(m(459));var e=Ma;return Ma=null,e}function Dc(e){if(e===cn||e===Vi)throw Error(m(483))}var un=null,Qn=0;function Ki(e){var t=Qn;return Qn+=1,un===null&&(un=[]),Tc(un,e,t)}function Vn(e,t){t=t.props.ref,e.ref=t!==void 0?t:null}function Xi(e,t){throw t.$$typeof===me?Error(m(525)):(e=Object.prototype.toString.call(t),Error(m(31,e==="[object Object]"?"object with keys {"+Object.keys(t).join(", ")+"}":e)))}function Rc(e){function t(d,c){if(e){var p=d.deletions;p===null?(d.deletions=[c],d.flags|=16):p.push(c)}}function a(d,c){if(!e)return null;for(;c!==null;)t(d,c),c=c.sibling;return null}function n(d){for(var c=new Map;d!==null;)d.key!==null?c.set(d.key,d):c.set(d.index,d),d=d.sibling;return c}function i(d,c){return d=kt(d,c),d.index=0,d.sibling=null,d}function r(d,c,p){return d.index=p,e?(p=d.alternate,p!==null?(p=p.index,p<c?(d.flags|=67108866,c):p):(d.flags|=67108866,c)):(d.flags|=1048576,c)}function o(d){return e&&d.alternate===null&&(d.flags|=67108866),d}function s(d,c,p,b){return c===null||c.tag!==6?(c=wo(p,d.mode,b),c.return=d,c):(c=i(c,p),c.return=d,c)}function l(d,c,p,b){var I=p.type;return I===Ne?v(d,c,p.props.children,b,p.key):c!==null&&(c.elementType===I||typeof I=="object"&&I!==null&&I.$$typeof===Pe&&Na(I)===c.type)?(c=i(c,p.props),Vn(c,p),c.return=d,c):(c=ji(p.type,p.key,p.props,null,d.mode,b),Vn(c,p),c.return=d,c)}function f(d,c,p,b){return c===null||c.tag!==4||c.stateNode.containerInfo!==p.containerInfo||c.stateNode.implementation!==p.implementation?(c=Ao(p,d.mode,b),c.return=d,c):(c=i(c,p.children||[]),c.return=d,c)}function v(d,c,p,b,I){return c===null||c.tag!==7?(c=Wa(p,d.mode,b,I),c.return=d,c):(c=i(c,p),c.return=d,c)}function C(d,c,p){if(typeof c=="string"&&c!==""||typeof c=="number"||typeof c=="bigint")return c=wo(""+c,d.mode,p),c.return=d,c;if(typeof c=="object"&&c!==null){switch(c.$$typeof){case Ye:return p=ji(c.type,c.key,c.props,null,d.mode,p),Vn(p,c),p.return=d,p;case qe:return c=Ao(c,d.mode,p),c.return=d,c;case Pe:return c=Na(c),C(d,c,p)}if(vt(c)||Be(c))return c=Wa(c,d.mode,p,null),c.return=d,c;if(typeof c.then=="function")return C(d,Ki(c),p);if(c.$$typeof===xe)return C(d,Fi(d,c),p);Xi(d,c)}return null}function g(d,c,p,b){var I=c!==null?c.key:null;if(typeof p=="string"&&p!==""||typeof p=="number"||typeof p=="bigint")return I!==null?null:s(d,c,""+p,b);if(typeof p=="object"&&p!==null){switch(p.$$typeof){case Ye:return p.key===I?l(d,c,p,b):null;case qe:return p.key===I?f(d,c,p,b):null;case Pe:return p=Na(p),g(d,c,p,b)}if(vt(p)||Be(p))return I!==null?null:v(d,c,p,b,null);if(typeof p.then=="function")return g(d,c,Ki(p),b);if(p.$$typeof===xe)return g(d,c,Fi(d,p),b);Xi(d,p)}return null}function y(d,c,p,b,I){if(typeof b=="string"&&b!==""||typeof b=="number"||typeof b=="bigint")return d=d.get(p)||null,s(c,d,""+b,I);if(typeof b=="object"&&b!==null){switch(b.$$typeof){case Ye:return d=d.get(b.key===null?p:b.key)||null,l(c,d,b,I);case qe:return d=d.get(b.key===null?p:b.key)||null,f(c,d,b,I);case Pe:return b=Na(b),y(d,c,p,b,I)}if(vt(b)||Be(b))return d=d.get(p)||null,v(c,d,b,I,null);if(typeof b.then=="function")return y(d,c,p,Ki(b),I);if(b.$$typeof===xe)return y(d,c,p,Fi(c,b),I);Xi(c,b)}return null}function R(d,c,p,b){for(var I=null,Z=null,O=c,z=c=0,V=null;O!==null&&z<p.length;z++){O.index>z?(V=O,O=null):V=O.sibling;var J=g(d,O,p[z],b);if(J===null){O===null&&(O=V);break}e&&O&&J.alternate===null&&t(d,O),c=r(J,c,z),Z===null?I=J:Z.sibling=J,Z=J,O=V}if(z===p.length)return a(d,O),K&&Nt(d,z),I;if(O===null){for(;z<p.length;z++)O=C(d,p[z],b),O!==null&&(c=r(O,c,z),Z===null?I=O:Z.sibling=O,Z=O);return K&&Nt(d,z),I}for(O=n(O);z<p.length;z++)V=y(O,d,z,p[z],b),V!==null&&(e&&V.alternate!==null&&O.delete(V.key===null?z:V.key),c=r(V,c,z),Z===null?I=V:Z.sibling=V,Z=V);return e&&O.forEach(function(Ca){return t(d,Ca)}),K&&Nt(d,z),I}function k(d,c,p,b){if(p==null)throw Error(m(151));for(var I=null,Z=null,O=c,z=c=0,V=null,J=p.next();O!==null&&!J.done;z++,J=p.next()){O.index>z?(V=O,O=null):V=O.sibling;var Ca=g(d,O,J.value,b);if(Ca===null){O===null&&(O=V);break}e&&O&&Ca.alternate===null&&t(d,O),c=r(Ca,c,z),Z===null?I=Ca:Z.sibling=Ca,Z=Ca,O=V}if(J.done)return a(d,O),K&&Nt(d,z),I;if(O===null){for(;!J.done;z++,J=p.next())J=C(d,J.value,b),J!==null&&(c=r(J,c,z),Z===null?I=J:Z.sibling=J,Z=J);return K&&Nt(d,z),I}for(O=n(O);!J.done;z++,J=p.next())J=y(O,d,z,J.value,b),J!==null&&(e&&J.alternate!==null&&O.delete(J.key===null?z:J.key),c=r(J,c,z),Z===null?I=J:Z.sibling=J,Z=J);return e&&O.forEach(function(Vf){return t(d,Vf)}),K&&Nt(d,z),I}function se(d,c,p,b){if(typeof p=="object"&&p!==null&&p.type===Ne&&p.key===null&&(p=p.props.children),typeof p=="object"&&p!==null){switch(p.$$typeof){case Ye:e:{for(var I=p.key;c!==null;){if(c.key===I){if(I=p.type,I===Ne){if(c.tag===7){a(d,c.sibling),b=i(c,p.props.children),b.return=d,d=b;break e}}else if(c.elementType===I||typeof I=="object"&&I!==null&&I.$$typeof===Pe&&Na(I)===c.type){a(d,c.sibling),b=i(c,p.props),Vn(b,p),b.return=d,d=b;break e}a(d,c);break}else t(d,c);c=c.sibling}p.type===Ne?(b=Wa(p.props.children,d.mode,b,p.key),b.return=d,d=b):(b=ji(p.type,p.key,p.props,null,d.mode,b),Vn(b,p),b.return=d,d=b)}return o(d);case qe:e:{for(I=p.key;c!==null;){if(c.key===I)if(c.tag===4&&c.stateNode.containerInfo===p.containerInfo&&c.stateNode.implementation===p.implementation){a(d,c.sibling),b=i(c,p.children||[]),b.return=d,d=b;break e}else{a(d,c);break}else t(d,c);c=c.sibling}b=Ao(p,d.mode,b),b.return=d,d=b}return o(d);case Pe:return p=Na(p),se(d,c,p,b)}if(vt(p))return R(d,c,p,b);if(Be(p)){if(I=Be(p),typeof I!="function")throw Error(m(150));return p=I.call(p),k(d,c,p,b)}if(typeof p.then=="function")return se(d,c,Ki(p),b);if(p.$$typeof===xe)return se(d,c,Fi(d,p),b);Xi(d,p)}return typeof p=="string"&&p!==""||typeof p=="number"||typeof p=="bigint"?(p=""+p,c!==null&&c.tag===6?(a(d,c.sibling),b=i(c,p),b.return=d,d=b):(a(d,c),b=wo(p,d.mode,b),b.return=d,d=b),o(d)):a(d,c)}return function(d,c,p,b){try{Qn=0;var I=se(d,c,p,b);return un=null,I}catch(O){if(O===cn||O===Vi)throw O;var Z=et(29,O,null,d.mode);return Z.lanes=b,Z.return=d,Z}}}var Ua=Rc(!0),Wc=Rc(!1),na=!1;function Mo(e){e.updateQueue={baseState:e.memoizedState,firstBaseUpdate:null,lastBaseUpdate:null,shared:{pending:null,lanes:0,hiddenCallbacks:null},callbacks:null}}function Uo(e,t){e=e.updateQueue,t.updateQueue===e&&(t.updateQueue={baseState:e.baseState,firstBaseUpdate:e.firstBaseUpdate,lastBaseUpdate:e.lastBaseUpdate,shared:e.shared,callbacks:null})}function ia(e){return{lane:e,tag:0,payload:null,callback:null,next:null}}function ra(e,t,a){var n=e.updateQueue;if(n===null)return null;if(n=n.shared,($&2)!==0){var i=n.pending;return i===null?t.next=t:(t.next=i.next,i.next=t),n.pending=t,t=zi(e),pc(e,null,a),t}return Bi(e,n,t,a),zi(e)}function Yn(e,t,a){if(t=t.updateQueue,t!==null&&(t=t.shared,(a&4194048)!==0)){var n=t.lanes;n&=e.pendingLanes,a|=n,t.lanes=a,Cl(e,a)}}function qo(e,t){var a=e.updateQueue,n=e.alternate;if(n!==null&&(n=n.updateQueue,a===n)){var i=null,r=null;if(a=a.firstBaseUpdate,a!==null){do{var o={lane:a.lane,tag:a.tag,payload:a.payload,callback:null,next:null};r===null?i=r=o:r=r.next=o,a=a.next}while(a!==null);r===null?i=r=t:r=r.next=t}else i=r=t;a={baseState:n.baseState,firstBaseUpdate:i,lastBaseUpdate:r,shared:n.shared,callbacks:n.callbacks},e.updateQueue=a;return}e=a.lastBaseUpdate,e===null?a.firstBaseUpdate=t:e.next=t,a.lastBaseUpdate=t}var Go=!1;function Kn(){if(Go){var e=ln;if(e!==null)throw e}}function Xn(e,t,a,n){Go=!1;var i=e.updateQueue;na=!1;var r=i.firstBaseUpdate,o=i.lastBaseUpdate,s=i.shared.pending;if(s!==null){i.shared.pending=null;var l=s,f=l.next;l.next=null,o===null?r=f:o.next=f,o=l;var v=e.alternate;v!==null&&(v=v.updateQueue,s=v.lastBaseUpdate,s!==o&&(s===null?v.firstBaseUpdate=f:s.next=f,v.lastBaseUpdate=l))}if(r!==null){var C=i.baseState;o=0,v=f=l=null,s=r;do{var g=s.lane&-536870913,y=g!==s.lane;if(y?(Q&g)===g:(n&g)===g){g!==0&&g===sn&&(Go=!0),v!==null&&(v=v.next={lane:0,tag:s.tag,payload:s.payload,callback:null,next:null});e:{var R=e,k=s;g=t;var se=a;switch(k.tag){case 1:if(R=k.payload,typeof R=="function"){C=R.call(se,C,g);break e}C=R;break e;case 3:R.flags=R.flags&-65537|128;case 0:if(R=k.payload,g=typeof R=="function"?R.call(se,C,g):R,g==null)break e;C=N({},C,g);break e;case 2:na=!0}}g=s.callback,g!==null&&(e.flags|=64,y&&(e.flags|=8192),y=i.callbacks,y===null?i.callbacks=[g]:y.push(g))}else y={lane:g,tag:s.tag,payload:s.payload,callback:s.callback,next:null},v===null?(f=v=y,l=C):v=v.next=y,o|=g;if(s=s.next,s===null){if(s=i.shared.pending,s===null)break;y=s,s=y.next,y.next=null,i.lastBaseUpdate=y,i.shared.pending=null}}while(!0);v===null&&(l=C),i.baseState=l,i.firstBaseUpdate=f,i.lastBaseUpdate=v,r===null&&(i.shared.lanes=0),ua|=o,e.lanes=o,e.memoizedState=C}}function Oc(e,t){if(typeof e!="function")throw Error(m(191,e));e.call(t)}function Ic(e,t){var a=e.callbacks;if(a!==null)for(e.callbacks=null,e=0;e<a.length;e++)Oc(a[e],t)}var dn=u(null),Zi=u(0);function xc(e,t){e=Ft,D(Zi,e),D(dn,t),Ft=e|t.baseLanes}function Po(){D(Zi,Ft),D(dn,dn.current)}function Bo(){Ft=Zi.current,w(dn),w(Zi)}var tt=u(null),ft=null;function oa(e){var t=e.alternate;D(he,he.current&1),D(tt,e),ft===null&&(t===null||dn.current!==null||t.memoizedState!==null)&&(ft=e)}function zo(e){D(he,he.current),D(tt,e),ft===null&&(ft=e)}function kc(e){e.tag===22?(D(he,he.current),D(tt,e),ft===null&&(ft=e)):sa()}function sa(){D(he,he.current),D(tt,tt.current)}function at(e){w(tt),ft===e&&(ft=null),w(he)}var he=u(0);function Ji(e){for(var t=e;t!==null;){if(t.tag===13){var a=t.memoizedState;if(a!==null&&(a=a.dehydrated,a===null||Vs(a)||Ys(a)))return t}else if(t.tag===19&&(t.memoizedProps.revealOrder==="forwards"||t.memoizedProps.revealOrder==="backwards"||t.memoizedProps.revealOrder==="unstable_legacy-backwards"||t.memoizedProps.revealOrder==="together")){if((t.flags&128)!==0)return t}else if(t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}return null}var qt=0,B=null,re=null,Se=null,$i=!1,pn=!1,qa=!1,er=0,Zn=0,mn=null,Um=0;function ge(){throw Error(m(321))}function jo(e,t){if(t===null)return!1;for(var a=0;a<t.length&&a<e.length;a++)if(!$e(e[a],t[a]))return!1;return!0}function Ho(e,t,a,n,i,r){return qt=r,B=t,t.memoizedState=null,t.updateQueue=null,t.lanes=0,h.H=e===null||e.memoizedState===null?yu:is,qa=!1,r=a(n,i),qa=!1,pn&&(r=Mc(t,a,n,i)),Nc(e),r}function Nc(e){h.H=ei;var t=re!==null&&re.next!==null;if(qt=0,Se=re=B=null,$i=!1,Zn=0,mn=null,t)throw Error(m(300));e===null||we||(e=e.dependencies,e!==null&&_i(e)&&(we=!0))}function Mc(e,t,a,n){B=e;var i=0;do{if(pn&&(mn=null),Zn=0,pn=!1,25<=i)throw Error(m(301));if(i+=1,Se=re=null,e.updateQueue!=null){var r=e.updateQueue;r.lastEffect=null,r.events=null,r.stores=null,r.memoCache!=null&&(r.memoCache.index=0)}h.H=vu,r=t(a,n)}while(pn);return r}function qm(){var e=h.H,t=e.useState()[0];return t=typeof t.then=="function"?Jn(t):t,e=e.useState()[0],(re!==null?re.memoizedState:null)!==e&&(B.flags|=1024),t}function _o(){var e=er!==0;return er=0,e}function Fo(e,t,a){t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~a}function Qo(e){if($i){for(e=e.memoizedState;e!==null;){var t=e.queue;t!==null&&(t.pending=null),e=e.next}$i=!1}qt=0,Se=re=B=null,pn=!1,Zn=er=0,mn=null}function Ue(){var e={memoizedState:null,baseState:null,baseQueue:null,queue:null,next:null};return Se===null?B.memoizedState=Se=e:Se=Se.next=e,Se}function be(){if(re===null){var e=B.alternate;e=e!==null?e.memoizedState:null}else e=re.next;var t=Se===null?B.memoizedState:Se.next;if(t!==null)Se=t,re=e;else{if(e===null)throw B.alternate===null?Error(m(467)):Error(m(310));re=e,e={memoizedState:re.memoizedState,baseState:re.baseState,baseQueue:re.baseQueue,queue:re.queue,next:null},Se===null?B.memoizedState=Se=e:Se=Se.next=e}return Se}function tr(){return{lastEffect:null,events:null,stores:null,memoCache:null}}function Jn(e){var t=Zn;return Zn+=1,mn===null&&(mn=[]),e=Tc(mn,e,t),t=B,(Se===null?t.memoizedState:Se.next)===null&&(t=t.alternate,h.H=t===null||t.memoizedState===null?yu:is),e}function ar(e){if(e!==null&&typeof e=="object"){if(typeof e.then=="function")return Jn(e);if(e.$$typeof===xe)return We(e)}throw Error(m(438,String(e)))}function Vo(e){var t=null,a=B.updateQueue;if(a!==null&&(t=a.memoCache),t==null){var n=B.alternate;n!==null&&(n=n.updateQueue,n!==null&&(n=n.memoCache,n!=null&&(t={data:n.data.map(function(i){return i.slice()}),index:0})))}if(t==null&&(t={data:[],index:0}),a===null&&(a=tr(),B.updateQueue=a),a.memoCache=t,a=t.data[t.index],a===void 0)for(a=t.data[t.index]=Array(e),n=0;n<e;n++)a[n]=za;return t.index++,a}function Gt(e,t){return typeof t=="function"?t(e):t}function nr(e){var t=be();return Yo(t,re,e)}function Yo(e,t,a){var n=e.queue;if(n===null)throw Error(m(311));n.lastRenderedReducer=a;var i=e.baseQueue,r=n.pending;if(r!==null){if(i!==null){var o=i.next;i.next=r.next,r.next=o}t.baseQueue=i=r,n.pending=null}if(r=e.baseState,i===null)e.memoizedState=r;else{t=i.next;var s=o=null,l=null,f=t,v=!1;do{var C=f.lane&-536870913;if(C!==f.lane?(Q&C)===C:(qt&C)===C){var g=f.revertLane;if(g===0)l!==null&&(l=l.next={lane:0,revertLane:0,gesture:null,action:f.action,hasEagerState:f.hasEagerState,eagerState:f.eagerState,next:null}),C===sn&&(v=!0);else if((qt&g)===g){f=f.next,g===sn&&(v=!0);continue}else C={lane:0,revertLane:f.revertLane,gesture:null,action:f.action,hasEagerState:f.hasEagerState,eagerState:f.eagerState,next:null},l===null?(s=l=C,o=r):l=l.next=C,B.lanes|=g,ua|=g;C=f.action,qa&&a(r,C),r=f.hasEagerState?f.eagerState:a(r,C)}else g={lane:C,revertLane:f.revertLane,gesture:f.gesture,action:f.action,hasEagerState:f.hasEagerState,eagerState:f.eagerState,next:null},l===null?(s=l=g,o=r):l=l.next=g,B.lanes|=C,ua|=C;f=f.next}while(f!==null&&f!==t);if(l===null?o=r:l.next=s,!$e(r,e.memoizedState)&&(we=!0,v&&(a=ln,a!==null)))throw a;e.memoizedState=r,e.baseState=o,e.baseQueue=l,n.lastRenderedState=r}return i===null&&(n.lanes=0),[e.memoizedState,n.dispatch]}function Ko(e){var t=be(),a=t.queue;if(a===null)throw Error(m(311));a.lastRenderedReducer=e;var n=a.dispatch,i=a.pending,r=t.memoizedState;if(i!==null){a.pending=null;var o=i=i.next;do r=e(r,o.action),o=o.next;while(o!==i);$e(r,t.memoizedState)||(we=!0),t.memoizedState=r,t.baseQueue===null&&(t.baseState=r),a.lastRenderedState=r}return[r,n]}function Uc(e,t,a){var n=B,i=be(),r=K;if(r){if(a===void 0)throw Error(m(407));a=a()}else a=t();var o=!$e((re||i).memoizedState,a);if(o&&(i.memoizedState=a,we=!0),i=i.queue,Jo(Pc.bind(null,n,i,e),[e]),i.getSnapshot!==t||o||Se!==null&&Se.memoizedState.tag&1){if(n.flags|=2048,fn(9,{destroy:void 0},Gc.bind(null,n,i,a,t),null),ce===null)throw Error(m(349));r||(qt&127)!==0||qc(n,t,a)}return a}function qc(e,t,a){e.flags|=16384,e={getSnapshot:t,value:a},t=B.updateQueue,t===null?(t=tr(),B.updateQueue=t,t.stores=[e]):(a=t.stores,a===null?t.stores=[e]:a.push(e))}function Gc(e,t,a,n){t.value=a,t.getSnapshot=n,Bc(t)&&zc(e)}function Pc(e,t,a){return a(function(){Bc(t)&&zc(e)})}function Bc(e){var t=e.getSnapshot;e=e.value;try{var a=t();return!$e(e,a)}catch{return!0}}function zc(e){var t=Ra(e,2);t!==null&&Ve(t,e,2)}function Xo(e){var t=Ue();if(typeof e=="function"){var a=e;if(e=a(),qa){Xt(!0);try{a()}finally{Xt(!1)}}}return t.memoizedState=t.baseState=e,t.queue={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:e},t}function jc(e,t,a,n){return e.baseState=a,Yo(e,re,typeof n=="function"?n:Gt)}function Gm(e,t,a,n,i){if(or(e))throw Error(m(485));if(e=t.action,e!==null){var r={payload:i,action:e,next:null,isTransition:!0,status:"pending",value:null,reason:null,listeners:[],then:function(o){r.listeners.push(o)}};h.T!==null?a(!0):r.isTransition=!1,n(r),a=t.pending,a===null?(r.next=t.pending=r,Hc(t,r)):(r.next=a.next,t.pending=a.next=r)}}function Hc(e,t){var a=t.action,n=t.payload,i=e.state;if(t.isTransition){var r=h.T,o={};h.T=o;try{var s=a(i,n),l=h.S;l!==null&&l(o,s),_c(e,t,s)}catch(f){Zo(e,t,f)}finally{r!==null&&o.types!==null&&(r.types=o.types),h.T=r}}else try{r=a(i,n),_c(e,t,r)}catch(f){Zo(e,t,f)}}function _c(e,t,a){a!==null&&typeof a=="object"&&typeof a.then=="function"?a.then(function(n){Fc(e,t,n)},function(n){return Zo(e,t,n)}):Fc(e,t,a)}function Fc(e,t,a){t.status="fulfilled",t.value=a,Qc(t),e.state=a,t=e.pending,t!==null&&(a=t.next,a===t?e.pending=null:(a=a.next,t.next=a,Hc(e,a)))}function Zo(e,t,a){var n=e.pending;if(e.pending=null,n!==null){n=n.next;do t.status="rejected",t.reason=a,Qc(t),t=t.next;while(t!==n)}e.action=null}function Qc(e){e=e.listeners;for(var t=0;t<e.length;t++)(0,e[t])()}function Vc(e,t){return t}function Yc(e,t){if(K){var a=ce.formState;if(a!==null){e:{var n=B;if(K){if(de){t:{for(var i=de,r=mt;i.nodeType!==8;){if(!r){i=null;break t}if(i=gt(i.nextSibling),i===null){i=null;break t}}r=i.data,i=r==="F!"||r==="F"?i:null}if(i){de=gt(i.nextSibling),n=i.data==="F!";break e}}ta(n)}n=!1}n&&(t=a[0])}}return a=Ue(),a.memoizedState=a.baseState=t,n={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Vc,lastRenderedState:t},a.queue=n,a=mu.bind(null,B,n),n.dispatch=a,n=Xo(!1),r=ns.bind(null,B,!1,n.queue),n=Ue(),i={state:t,dispatch:null,action:e,pending:null},n.queue=i,a=Gm.bind(null,B,i,r,a),i.dispatch=a,n.memoizedState=e,[t,a,!1]}function Kc(e){var t=be();return Xc(t,re,e)}function Xc(e,t,a){if(t=Yo(e,t,Vc)[0],e=nr(Gt)[0],typeof t=="object"&&t!==null&&typeof t.then=="function")try{var n=Jn(t)}catch(o){throw o===cn?Vi:o}else n=t;t=be();var i=t.queue,r=i.dispatch;return a!==t.memoizedState&&(B.flags|=2048,fn(9,{destroy:void 0},Pm.bind(null,i,a),null)),[n,r,e]}function Pm(e,t){e.action=t}function Zc(e){var t=be(),a=re;if(a!==null)return Xc(t,a,e);be(),t=t.memoizedState,a=be();var n=a.queue.dispatch;return a.memoizedState=e,[t,n,!1]}function fn(e,t,a,n){return e={tag:e,create:a,deps:n,inst:t,next:null},t=B.updateQueue,t===null&&(t=tr(),B.updateQueue=t),a=t.lastEffect,a===null?t.lastEffect=e.next=e:(n=a.next,a.next=e,e.next=n,t.lastEffect=e),e}function Jc(){return be().memoizedState}function ir(e,t,a,n){var i=Ue();B.flags|=e,i.memoizedState=fn(1|t,{destroy:void 0},a,n===void 0?null:n)}function rr(e,t,a,n){var i=be();n=n===void 0?null:n;var r=i.memoizedState.inst;re!==null&&n!==null&&jo(n,re.memoizedState.deps)?i.memoizedState=fn(t,r,a,n):(B.flags|=e,i.memoizedState=fn(1|t,r,a,n))}function $c(e,t){ir(8390656,8,e,t)}function Jo(e,t){rr(2048,8,e,t)}function Bm(e){B.flags|=4;var t=B.updateQueue;if(t===null)t=tr(),B.updateQueue=t,t.events=[e];else{var a=t.events;a===null?t.events=[e]:a.push(e)}}function eu(e){var t=be().memoizedState;return Bm({ref:t,nextImpl:e}),function(){if(($&2)!==0)throw Error(m(440));return t.impl.apply(void 0,arguments)}}function tu(e,t){return rr(4,2,e,t)}function au(e,t){return rr(4,4,e,t)}function nu(e,t){if(typeof t=="function"){e=e();var a=t(e);return function(){typeof a=="function"?a():t(null)}}if(t!=null)return e=e(),t.current=e,function(){t.current=null}}function iu(e,t,a){a=a!=null?a.concat([e]):null,rr(4,4,nu.bind(null,t,e),a)}function $o(){}function ru(e,t){var a=be();t=t===void 0?null:t;var n=a.memoizedState;return t!==null&&jo(t,n[1])?n[0]:(a.memoizedState=[e,t],e)}function ou(e,t){var a=be();t=t===void 0?null:t;var n=a.memoizedState;if(t!==null&&jo(t,n[1]))return n[0];if(n=e(),qa){Xt(!0);try{e()}finally{Xt(!1)}}return a.memoizedState=[n,t],n}function es(e,t,a){return a===void 0||(qt&1073741824)!==0&&(Q&261930)===0?e.memoizedState=t:(e.memoizedState=a,e=sd(),B.lanes|=e,ua|=e,a)}function su(e,t,a,n){return $e(a,t)?a:dn.current!==null?(e=es(e,a,n),$e(e,t)||(we=!0),e):(qt&42)===0||(qt&1073741824)!==0&&(Q&261930)===0?(we=!0,e.memoizedState=a):(e=sd(),B.lanes|=e,ua|=e,t)}function lu(e,t,a,n,i){var r=T.p;T.p=r!==0&&8>r?r:8;var o=h.T,s={};h.T=s,ns(e,!1,t,a);try{var l=i(),f=h.S;if(f!==null&&f(s,l),l!==null&&typeof l=="object"&&typeof l.then=="function"){var v=Mm(l,n);$n(e,t,v,rt(e))}else $n(e,t,n,rt(e))}catch(C){$n(e,t,{then:function(){},status:"rejected",reason:C},rt())}finally{T.p=r,o!==null&&s.types!==null&&(o.types=s.types),h.T=o}}function zm(){}function ts(e,t,a,n){if(e.tag!==5)throw Error(m(476));var i=cu(e).queue;lu(e,i,t,M,a===null?zm:function(){return uu(e),a(n)})}function cu(e){var t=e.memoizedState;if(t!==null)return t;t={memoizedState:M,baseState:M,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:M},next:null};var a={};return t.next={memoizedState:a,baseState:a,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:a},next:null},e.memoizedState=t,e=e.alternate,e!==null&&(e.memoizedState=t),t}function uu(e){var t=cu(e);t.next===null&&(t=e.alternate.memoizedState),$n(e,t.next.queue,{},rt())}function as(){return We(yi)}function du(){return be().memoizedState}function pu(){return be().memoizedState}function jm(e){for(var t=e.return;t!==null;){switch(t.tag){case 24:case 3:var a=rt();e=ia(a);var n=ra(t,e,a);n!==null&&(Ve(n,t,a),Yn(n,t,a)),t={cache:Io()},e.payload=t;return}t=t.return}}function Hm(e,t,a){var n=rt();a={lane:n,revertLane:0,gesture:null,action:a,hasEagerState:!1,eagerState:null,next:null},or(e)?fu(t,a):(a=Co(e,t,a,n),a!==null&&(Ve(a,e,n),gu(a,t,n)))}function mu(e,t,a){var n=rt();$n(e,t,a,n)}function $n(e,t,a,n){var i={lane:n,revertLane:0,gesture:null,action:a,hasEagerState:!1,eagerState:null,next:null};if(or(e))fu(t,i);else{var r=e.alternate;if(e.lanes===0&&(r===null||r.lanes===0)&&(r=t.lastRenderedReducer,r!==null))try{var o=t.lastRenderedState,s=r(o,a);if(i.hasEagerState=!0,i.eagerState=s,$e(s,o))return Bi(e,t,i,0),ce===null&&Pi(),!1}catch{}if(a=Co(e,t,i,n),a!==null)return Ve(a,e,n),gu(a,t,n),!0}return!1}function ns(e,t,a,n){if(n={lane:2,revertLane:Ms(),gesture:null,action:n,hasEagerState:!1,eagerState:null,next:null},or(e)){if(t)throw Error(m(479))}else t=Co(e,a,n,2),t!==null&&Ve(t,e,2)}function or(e){var t=e.alternate;return e===B||t!==null&&t===B}function fu(e,t){pn=$i=!0;var a=e.pending;a===null?t.next=t:(t.next=a.next,a.next=t),e.pending=t}function gu(e,t,a){if((a&4194048)!==0){var n=t.lanes;n&=e.pendingLanes,a|=n,t.lanes=a,Cl(e,a)}}var ei={readContext:We,use:ar,useCallback:ge,useContext:ge,useEffect:ge,useImperativeHandle:ge,useLayoutEffect:ge,useInsertionEffect:ge,useMemo:ge,useReducer:ge,useRef:ge,useState:ge,useDebugValue:ge,useDeferredValue:ge,useTransition:ge,useSyncExternalStore:ge,useId:ge,useHostTransitionStatus:ge,useFormState:ge,useActionState:ge,useOptimistic:ge,useMemoCache:ge,useCacheRefresh:ge};ei.useEffectEvent=ge;var yu={readContext:We,use:ar,useCallback:function(e,t){return Ue().memoizedState=[e,t===void 0?null:t],e},useContext:We,useEffect:$c,useImperativeHandle:function(e,t,a){a=a!=null?a.concat([e]):null,ir(4194308,4,nu.bind(null,t,e),a)},useLayoutEffect:function(e,t){return ir(4194308,4,e,t)},useInsertionEffect:function(e,t){ir(4,2,e,t)},useMemo:function(e,t){var a=Ue();t=t===void 0?null:t;var n=e();if(qa){Xt(!0);try{e()}finally{Xt(!1)}}return a.memoizedState=[n,t],n},useReducer:function(e,t,a){var n=Ue();if(a!==void 0){var i=a(t);if(qa){Xt(!0);try{a(t)}finally{Xt(!1)}}}else i=t;return n.memoizedState=n.baseState=i,e={pending:null,lanes:0,dispatch:null,lastRenderedReducer:e,lastRenderedState:i},n.queue=e,e=e.dispatch=Hm.bind(null,B,e),[n.memoizedState,e]},useRef:function(e){var t=Ue();return e={current:e},t.memoizedState=e},useState:function(e){e=Xo(e);var t=e.queue,a=mu.bind(null,B,t);return t.dispatch=a,[e.memoizedState,a]},useDebugValue:$o,useDeferredValue:function(e,t){var a=Ue();return es(a,e,t)},useTransition:function(){var e=Xo(!1);return e=lu.bind(null,B,e.queue,!0,!1),Ue().memoizedState=e,[!1,e]},useSyncExternalStore:function(e,t,a){var n=B,i=Ue();if(K){if(a===void 0)throw Error(m(407));a=a()}else{if(a=t(),ce===null)throw Error(m(349));(Q&127)!==0||qc(n,t,a)}i.memoizedState=a;var r={value:a,getSnapshot:t};return i.queue=r,$c(Pc.bind(null,n,r,e),[e]),n.flags|=2048,fn(9,{destroy:void 0},Gc.bind(null,n,r,a,t),null),a},useId:function(){var e=Ue(),t=ce.identifierPrefix;if(K){var a=Tt,n=Lt;a=(n&~(1<<32-Je(n)-1)).toString(32)+a,t="_"+t+"R_"+a,a=er++,0<a&&(t+="H"+a.toString(32)),t+="_"}else a=Um++,t="_"+t+"r_"+a.toString(32)+"_";return e.memoizedState=t},useHostTransitionStatus:as,useFormState:Yc,useActionState:Yc,useOptimistic:function(e){var t=Ue();t.memoizedState=t.baseState=e;var a={pending:null,lanes:0,dispatch:null,lastRenderedReducer:null,lastRenderedState:null};return t.queue=a,t=ns.bind(null,B,!0,a),a.dispatch=t,[e,t]},useMemoCache:Vo,useCacheRefresh:function(){return Ue().memoizedState=jm.bind(null,B)},useEffectEvent:function(e){var t=Ue(),a={impl:e};return t.memoizedState=a,function(){if(($&2)!==0)throw Error(m(440));return a.impl.apply(void 0,arguments)}}},is={readContext:We,use:ar,useCallback:ru,useContext:We,useEffect:Jo,useImperativeHandle:iu,useInsertionEffect:tu,useLayoutEffect:au,useMemo:ou,useReducer:nr,useRef:Jc,useState:function(){return nr(Gt)},useDebugValue:$o,useDeferredValue:function(e,t){var a=be();return su(a,re.memoizedState,e,t)},useTransition:function(){var e=nr(Gt)[0],t=be().memoizedState;return[typeof e=="boolean"?e:Jn(e),t]},useSyncExternalStore:Uc,useId:du,useHostTransitionStatus:as,useFormState:Kc,useActionState:Kc,useOptimistic:function(e,t){var a=be();return jc(a,re,e,t)},useMemoCache:Vo,useCacheRefresh:pu};is.useEffectEvent=eu;var vu={readContext:We,use:ar,useCallback:ru,useContext:We,useEffect:Jo,useImperativeHandle:iu,useInsertionEffect:tu,useLayoutEffect:au,useMemo:ou,useReducer:Ko,useRef:Jc,useState:function(){return Ko(Gt)},useDebugValue:$o,useDeferredValue:function(e,t){var a=be();return re===null?es(a,e,t):su(a,re.memoizedState,e,t)},useTransition:function(){var e=Ko(Gt)[0],t=be().memoizedState;return[typeof e=="boolean"?e:Jn(e),t]},useSyncExternalStore:Uc,useId:du,useHostTransitionStatus:as,useFormState:Zc,useActionState:Zc,useOptimistic:function(e,t){var a=be();return re!==null?jc(a,re,e,t):(a.baseState=e,[e,a.queue.dispatch])},useMemoCache:Vo,useCacheRefresh:pu};vu.useEffectEvent=eu;function rs(e,t,a,n){t=e.memoizedState,a=a(n,t),a=a==null?t:N({},t,a),e.memoizedState=a,e.lanes===0&&(e.updateQueue.baseState=a)}var os={enqueueSetState:function(e,t,a){e=e._reactInternals;var n=rt(),i=ia(n);i.payload=t,a!=null&&(i.callback=a),t=ra(e,i,n),t!==null&&(Ve(t,e,n),Yn(t,e,n))},enqueueReplaceState:function(e,t,a){e=e._reactInternals;var n=rt(),i=ia(n);i.tag=1,i.payload=t,a!=null&&(i.callback=a),t=ra(e,i,n),t!==null&&(Ve(t,e,n),Yn(t,e,n))},enqueueForceUpdate:function(e,t){e=e._reactInternals;var a=rt(),n=ia(a);n.tag=2,t!=null&&(n.callback=t),t=ra(e,n,a),t!==null&&(Ve(t,e,a),Yn(t,e,a))}};function hu(e,t,a,n,i,r,o){return e=e.stateNode,typeof e.shouldComponentUpdate=="function"?e.shouldComponentUpdate(n,r,o):t.prototype&&t.prototype.isPureReactComponent?!Bn(a,n)||!Bn(i,r):!0}function bu(e,t,a,n){e=t.state,typeof t.componentWillReceiveProps=="function"&&t.componentWillReceiveProps(a,n),typeof t.UNSAFE_componentWillReceiveProps=="function"&&t.UNSAFE_componentWillReceiveProps(a,n),t.state!==e&&os.enqueueReplaceState(t,t.state,null)}function Ga(e,t){var a=t;if("ref"in t){a={};for(var n in t)n!=="ref"&&(a[n]=t[n])}if(e=e.defaultProps){a===t&&(a=N({},a));for(var i in e)a[i]===void 0&&(a[i]=e[i])}return a}function Cu(e){Gi(e)}function Su(e){console.error(e)}function wu(e){Gi(e)}function sr(e,t){try{var a=e.onUncaughtError;a(t.value,{componentStack:t.stack})}catch(n){setTimeout(function(){throw n})}}function Au(e,t,a){try{var n=e.onCaughtError;n(a.value,{componentStack:a.stack,errorBoundary:t.tag===1?t.stateNode:null})}catch(i){setTimeout(function(){throw i})}}function ss(e,t,a){return a=ia(a),a.tag=3,a.payload={element:null},a.callback=function(){sr(e,t)},a}function Lu(e){return e=ia(e),e.tag=3,e}function Tu(e,t,a,n){var i=a.type.getDerivedStateFromError;if(typeof i=="function"){var r=n.value;e.payload=function(){return i(r)},e.callback=function(){Au(t,a,n)}}var o=a.stateNode;o!==null&&typeof o.componentDidCatch=="function"&&(e.callback=function(){Au(t,a,n),typeof i!="function"&&(da===null?da=new Set([this]):da.add(this));var s=n.stack;this.componentDidCatch(n.value,{componentStack:s!==null?s:""})})}function _m(e,t,a,n,i){if(a.flags|=32768,n!==null&&typeof n=="object"&&typeof n.then=="function"){if(t=a.alternate,t!==null&&on(t,a,i,!0),a=tt.current,a!==null){switch(a.tag){case 31:case 13:return ft===null?br():a.alternate===null&&ye===0&&(ye=3),a.flags&=-257,a.flags|=65536,a.lanes=i,n===Yi?a.flags|=16384:(t=a.updateQueue,t===null?a.updateQueue=new Set([n]):t.add(n),xs(e,n,i)),!1;case 22:return a.flags|=65536,n===Yi?a.flags|=16384:(t=a.updateQueue,t===null?(t={transitions:null,markerInstances:null,retryQueue:new Set([n])},a.updateQueue=t):(a=t.retryQueue,a===null?t.retryQueue=new Set([n]):a.add(n)),xs(e,n,i)),!1}throw Error(m(435,a.tag))}return xs(e,n,i),br(),!1}if(K)return t=tt.current,t!==null?((t.flags&65536)===0&&(t.flags|=256),t.flags|=65536,t.lanes=i,n!==Eo&&(e=Error(m(422),{cause:n}),Hn(ut(e,a)))):(n!==Eo&&(t=Error(m(423),{cause:n}),Hn(ut(t,a))),e=e.current.alternate,e.flags|=65536,i&=-i,e.lanes|=i,n=ut(n,a),i=ss(e.stateNode,n,i),qo(e,i),ye!==4&&(ye=2)),!1;var r=Error(m(520),{cause:n});if(r=ut(r,a),li===null?li=[r]:li.push(r),ye!==4&&(ye=2),t===null)return!0;n=ut(n,a),a=t;do{switch(a.tag){case 3:return a.flags|=65536,e=i&-i,a.lanes|=e,e=ss(a.stateNode,n,e),qo(a,e),!1;case 1:if(t=a.type,r=a.stateNode,(a.flags&128)===0&&(typeof t.getDerivedStateFromError=="function"||r!==null&&typeof r.componentDidCatch=="function"&&(da===null||!da.has(r))))return a.flags|=65536,i&=-i,a.lanes|=i,i=Lu(i),Tu(i,e,a,n),qo(a,i),!1}a=a.return}while(a!==null);return!1}var ls=Error(m(461)),we=!1;function Oe(e,t,a,n){t.child=e===null?Wc(t,null,a,n):Ua(t,e.child,a,n)}function Eu(e,t,a,n,i){a=a.render;var r=t.ref;if("ref"in n){var o={};for(var s in n)s!=="ref"&&(o[s]=n[s])}else o=n;return xa(t),n=Ho(e,t,a,o,r,i),s=_o(),e!==null&&!we?(Fo(e,t,i),Pt(e,t,i)):(K&&s&&Lo(t),t.flags|=1,Oe(e,t,n,i),t.child)}function Du(e,t,a,n,i){if(e===null){var r=a.type;return typeof r=="function"&&!So(r)&&r.defaultProps===void 0&&a.compare===null?(t.tag=15,t.type=r,Ru(e,t,r,n,i)):(e=ji(a.type,null,n,t,t.mode,i),e.ref=t.ref,e.return=t,t.child=e)}if(r=e.child,!ys(e,i)){var o=r.memoizedProps;if(a=a.compare,a=a!==null?a:Bn,a(o,n)&&e.ref===t.ref)return Pt(e,t,i)}return t.flags|=1,e=kt(r,n),e.ref=t.ref,e.return=t,t.child=e}function Ru(e,t,a,n,i){if(e!==null){var r=e.memoizedProps;if(Bn(r,n)&&e.ref===t.ref)if(we=!1,t.pendingProps=n=r,ys(e,i))(e.flags&131072)!==0&&(we=!0);else return t.lanes=e.lanes,Pt(e,t,i)}return cs(e,t,a,n,i)}function Wu(e,t,a,n){var i=n.children,r=e!==null?e.memoizedState:null;if(e===null&&t.stateNode===null&&(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),n.mode==="hidden"){if((t.flags&128)!==0){if(r=r!==null?r.baseLanes|a:a,e!==null){for(n=t.child=e.child,i=0;n!==null;)i=i|n.lanes|n.childLanes,n=n.sibling;n=i&~r}else n=0,t.child=null;return Ou(e,t,r,a,n)}if((a&536870912)!==0)t.memoizedState={baseLanes:0,cachePool:null},e!==null&&Qi(t,r!==null?r.cachePool:null),r!==null?xc(t,r):Po(),kc(t);else return n=t.lanes=536870912,Ou(e,t,r!==null?r.baseLanes|a:a,a,n)}else r!==null?(Qi(t,r.cachePool),xc(t,r),sa(),t.memoizedState=null):(e!==null&&Qi(t,null),Po(),sa());return Oe(e,t,i,a),t.child}function ti(e,t){return e!==null&&e.tag===22||t.stateNode!==null||(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),t.sibling}function Ou(e,t,a,n,i){var r=ko();return r=r===null?null:{parent:Ce._currentValue,pool:r},t.memoizedState={baseLanes:a,cachePool:r},e!==null&&Qi(t,null),Po(),kc(t),e!==null&&on(e,t,n,!0),t.childLanes=i,null}function lr(e,t){return t=ur({mode:t.mode,children:t.children},e.mode),t.ref=e.ref,e.child=t,t.return=e,t}function Iu(e,t,a){return Ua(t,e.child,null,a),e=lr(t,t.pendingProps),e.flags|=2,at(t),t.memoizedState=null,e}function Fm(e,t,a){var n=t.pendingProps,i=(t.flags&128)!==0;if(t.flags&=-129,e===null){if(K){if(n.mode==="hidden")return e=lr(t,n),t.lanes=536870912,ti(null,e);if(zo(t),(e=de)?(e=Hd(e,mt),e=e!==null&&e.data==="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:$t!==null?{id:Lt,overflow:Tt}:null,retryLane:536870912,hydrationErrors:null},a=fc(e),a.return=t,t.child=a,Re=t,de=null)):e=null,e===null)throw ta(t);return t.lanes=536870912,null}return lr(t,n)}var r=e.memoizedState;if(r!==null){var o=r.dehydrated;if(zo(t),i)if(t.flags&256)t.flags&=-257,t=Iu(e,t,a);else if(t.memoizedState!==null)t.child=e.child,t.flags|=128,t=null;else throw Error(m(558));else if(we||on(e,t,a,!1),i=(a&e.childLanes)!==0,we||i){if(n=ce,n!==null&&(o=Sl(n,a),o!==0&&o!==r.retryLane))throw r.retryLane=o,Ra(e,o),Ve(n,e,o),ls;br(),t=Iu(e,t,a)}else e=r.treeContext,de=gt(o.nextSibling),Re=t,K=!0,ea=null,mt=!1,e!==null&&vc(t,e),t=lr(t,n),t.flags|=4096;return t}return e=kt(e.child,{mode:n.mode,children:n.children}),e.ref=t.ref,t.child=e,e.return=t,e}function cr(e,t){var a=t.ref;if(a===null)e!==null&&e.ref!==null&&(t.flags|=4194816);else{if(typeof a!="function"&&typeof a!="object")throw Error(m(284));(e===null||e.ref!==a)&&(t.flags|=4194816)}}function cs(e,t,a,n,i){return xa(t),a=Ho(e,t,a,n,void 0,i),n=_o(),e!==null&&!we?(Fo(e,t,i),Pt(e,t,i)):(K&&n&&Lo(t),t.flags|=1,Oe(e,t,a,i),t.child)}function xu(e,t,a,n,i,r){return xa(t),t.updateQueue=null,a=Mc(t,n,a,i),Nc(e),n=_o(),e!==null&&!we?(Fo(e,t,r),Pt(e,t,r)):(K&&n&&Lo(t),t.flags|=1,Oe(e,t,a,r),t.child)}function ku(e,t,a,n,i){if(xa(t),t.stateNode===null){var r=tn,o=a.contextType;typeof o=="object"&&o!==null&&(r=We(o)),r=new a(n,r),t.memoizedState=r.state!==null&&r.state!==void 0?r.state:null,r.updater=os,t.stateNode=r,r._reactInternals=t,r=t.stateNode,r.props=n,r.state=t.memoizedState,r.refs={},Mo(t),o=a.contextType,r.context=typeof o=="object"&&o!==null?We(o):tn,r.state=t.memoizedState,o=a.getDerivedStateFromProps,typeof o=="function"&&(rs(t,a,o,n),r.state=t.memoizedState),typeof a.getDerivedStateFromProps=="function"||typeof r.getSnapshotBeforeUpdate=="function"||typeof r.UNSAFE_componentWillMount!="function"&&typeof r.componentWillMount!="function"||(o=r.state,typeof r.componentWillMount=="function"&&r.componentWillMount(),typeof r.UNSAFE_componentWillMount=="function"&&r.UNSAFE_componentWillMount(),o!==r.state&&os.enqueueReplaceState(r,r.state,null),Xn(t,n,r,i),Kn(),r.state=t.memoizedState),typeof r.componentDidMount=="function"&&(t.flags|=4194308),n=!0}else if(e===null){r=t.stateNode;var s=t.memoizedProps,l=Ga(a,s);r.props=l;var f=r.context,v=a.contextType;o=tn,typeof v=="object"&&v!==null&&(o=We(v));var C=a.getDerivedStateFromProps;v=typeof C=="function"||typeof r.getSnapshotBeforeUpdate=="function",s=t.pendingProps!==s,v||typeof r.UNSAFE_componentWillReceiveProps!="function"&&typeof r.componentWillReceiveProps!="function"||(s||f!==o)&&bu(t,r,n,o),na=!1;var g=t.memoizedState;r.state=g,Xn(t,n,r,i),Kn(),f=t.memoizedState,s||g!==f||na?(typeof C=="function"&&(rs(t,a,C,n),f=t.memoizedState),(l=na||hu(t,a,l,n,g,f,o))?(v||typeof r.UNSAFE_componentWillMount!="function"&&typeof r.componentWillMount!="function"||(typeof r.componentWillMount=="function"&&r.componentWillMount(),typeof r.UNSAFE_componentWillMount=="function"&&r.UNSAFE_componentWillMount()),typeof r.componentDidMount=="function"&&(t.flags|=4194308)):(typeof r.componentDidMount=="function"&&(t.flags|=4194308),t.memoizedProps=n,t.memoizedState=f),r.props=n,r.state=f,r.context=o,n=l):(typeof r.componentDidMount=="function"&&(t.flags|=4194308),n=!1)}else{r=t.stateNode,Uo(e,t),o=t.memoizedProps,v=Ga(a,o),r.props=v,C=t.pendingProps,g=r.context,f=a.contextType,l=tn,typeof f=="object"&&f!==null&&(l=We(f)),s=a.getDerivedStateFromProps,(f=typeof s=="function"||typeof r.getSnapshotBeforeUpdate=="function")||typeof r.UNSAFE_componentWillReceiveProps!="function"&&typeof r.componentWillReceiveProps!="function"||(o!==C||g!==l)&&bu(t,r,n,l),na=!1,g=t.memoizedState,r.state=g,Xn(t,n,r,i),Kn();var y=t.memoizedState;o!==C||g!==y||na||e!==null&&e.dependencies!==null&&_i(e.dependencies)?(typeof s=="function"&&(rs(t,a,s,n),y=t.memoizedState),(v=na||hu(t,a,v,n,g,y,l)||e!==null&&e.dependencies!==null&&_i(e.dependencies))?(f||typeof r.UNSAFE_componentWillUpdate!="function"&&typeof r.componentWillUpdate!="function"||(typeof r.componentWillUpdate=="function"&&r.componentWillUpdate(n,y,l),typeof r.UNSAFE_componentWillUpdate=="function"&&r.UNSAFE_componentWillUpdate(n,y,l)),typeof r.componentDidUpdate=="function"&&(t.flags|=4),typeof r.getSnapshotBeforeUpdate=="function"&&(t.flags|=1024)):(typeof r.componentDidUpdate!="function"||o===e.memoizedProps&&g===e.memoizedState||(t.flags|=4),typeof r.getSnapshotBeforeUpdate!="function"||o===e.memoizedProps&&g===e.memoizedState||(t.flags|=1024),t.memoizedProps=n,t.memoizedState=y),r.props=n,r.state=y,r.context=l,n=v):(typeof r.componentDidUpdate!="function"||o===e.memoizedProps&&g===e.memoizedState||(t.flags|=4),typeof r.getSnapshotBeforeUpdate!="function"||o===e.memoizedProps&&g===e.memoizedState||(t.flags|=1024),n=!1)}return r=n,cr(e,t),n=(t.flags&128)!==0,r||n?(r=t.stateNode,a=n&&typeof a.getDerivedStateFromError!="function"?null:r.render(),t.flags|=1,e!==null&&n?(t.child=Ua(t,e.child,null,i),t.child=Ua(t,null,a,i)):Oe(e,t,a,i),t.memoizedState=r.state,e=t.child):e=Pt(e,t,i),e}function Nu(e,t,a,n){return Oa(),t.flags|=256,Oe(e,t,a,n),t.child}var us={dehydrated:null,treeContext:null,retryLane:0,hydrationErrors:null};function ds(e){return{baseLanes:e,cachePool:Ac()}}function ps(e,t,a){return e=e!==null?e.childLanes&~a:0,t&&(e|=it),e}function Mu(e,t,a){var n=t.pendingProps,i=!1,r=(t.flags&128)!==0,o;if((o=r)||(o=e!==null&&e.memoizedState===null?!1:(he.current&2)!==0),o&&(i=!0,t.flags&=-129),o=(t.flags&32)!==0,t.flags&=-33,e===null){if(K){if(i?oa(t):sa(),(e=de)?(e=Hd(e,mt),e=e!==null&&e.data!=="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:$t!==null?{id:Lt,overflow:Tt}:null,retryLane:536870912,hydrationErrors:null},a=fc(e),a.return=t,t.child=a,Re=t,de=null)):e=null,e===null)throw ta(t);return Ys(e)?t.lanes=32:t.lanes=536870912,null}var s=n.children;return n=n.fallback,i?(sa(),i=t.mode,s=ur({mode:"hidden",children:s},i),n=Wa(n,i,a,null),s.return=t,n.return=t,s.sibling=n,t.child=s,n=t.child,n.memoizedState=ds(a),n.childLanes=ps(e,o,a),t.memoizedState=us,ti(null,n)):(oa(t),ms(t,s))}var l=e.memoizedState;if(l!==null&&(s=l.dehydrated,s!==null)){if(r)t.flags&256?(oa(t),t.flags&=-257,t=fs(e,t,a)):t.memoizedState!==null?(sa(),t.child=e.child,t.flags|=128,t=null):(sa(),s=n.fallback,i=t.mode,n=ur({mode:"visible",children:n.children},i),s=Wa(s,i,a,null),s.flags|=2,n.return=t,s.return=t,n.sibling=s,t.child=n,Ua(t,e.child,null,a),n=t.child,n.memoizedState=ds(a),n.childLanes=ps(e,o,a),t.memoizedState=us,t=ti(null,n));else if(oa(t),Ys(s)){if(o=s.nextSibling&&s.nextSibling.dataset,o)var f=o.dgst;o=f,n=Error(m(419)),n.stack="",n.digest=o,Hn({value:n,source:null,stack:null}),t=fs(e,t,a)}else if(we||on(e,t,a,!1),o=(a&e.childLanes)!==0,we||o){if(o=ce,o!==null&&(n=Sl(o,a),n!==0&&n!==l.retryLane))throw l.retryLane=n,Ra(e,n),Ve(o,e,n),ls;Vs(s)||br(),t=fs(e,t,a)}else Vs(s)?(t.flags|=192,t.child=e.child,t=null):(e=l.treeContext,de=gt(s.nextSibling),Re=t,K=!0,ea=null,mt=!1,e!==null&&vc(t,e),t=ms(t,n.children),t.flags|=4096);return t}return i?(sa(),s=n.fallback,i=t.mode,l=e.child,f=l.sibling,n=kt(l,{mode:"hidden",children:n.children}),n.subtreeFlags=l.subtreeFlags&65011712,f!==null?s=kt(f,s):(s=Wa(s,i,a,null),s.flags|=2),s.return=t,n.return=t,n.sibling=s,t.child=n,ti(null,n),n=t.child,s=e.child.memoizedState,s===null?s=ds(a):(i=s.cachePool,i!==null?(l=Ce._currentValue,i=i.parent!==l?{parent:l,pool:l}:i):i=Ac(),s={baseLanes:s.baseLanes|a,cachePool:i}),n.memoizedState=s,n.childLanes=ps(e,o,a),t.memoizedState=us,ti(e.child,n)):(oa(t),a=e.child,e=a.sibling,a=kt(a,{mode:"visible",children:n.children}),a.return=t,a.sibling=null,e!==null&&(o=t.deletions,o===null?(t.deletions=[e],t.flags|=16):o.push(e)),t.child=a,t.memoizedState=null,a)}function ms(e,t){return t=ur({mode:"visible",children:t},e.mode),t.return=e,e.child=t}function ur(e,t){return e=et(22,e,null,t),e.lanes=0,e}function fs(e,t,a){return Ua(t,e.child,null,a),e=ms(t,t.pendingProps.children),e.flags|=2,t.memoizedState=null,e}function Uu(e,t,a){e.lanes|=t;var n=e.alternate;n!==null&&(n.lanes|=t),Wo(e.return,t,a)}function gs(e,t,a,n,i,r){var o=e.memoizedState;o===null?e.memoizedState={isBackwards:t,rendering:null,renderingStartTime:0,last:n,tail:a,tailMode:i,treeForkCount:r}:(o.isBackwards=t,o.rendering=null,o.renderingStartTime=0,o.last=n,o.tail=a,o.tailMode=i,o.treeForkCount=r)}function qu(e,t,a){var n=t.pendingProps,i=n.revealOrder,r=n.tail;n=n.children;var o=he.current,s=(o&2)!==0;if(s?(o=o&1|2,t.flags|=128):o&=1,D(he,o),Oe(e,t,n,a),n=K?jn:0,!s&&e!==null&&(e.flags&128)!==0)e:for(e=t.child;e!==null;){if(e.tag===13)e.memoizedState!==null&&Uu(e,a,t);else if(e.tag===19)Uu(e,a,t);else if(e.child!==null){e.child.return=e,e=e.child;continue}if(e===t)break e;for(;e.sibling===null;){if(e.return===null||e.return===t)break e;e=e.return}e.sibling.return=e.return,e=e.sibling}switch(i){case"forwards":for(a=t.child,i=null;a!==null;)e=a.alternate,e!==null&&Ji(e)===null&&(i=a),a=a.sibling;a=i,a===null?(i=t.child,t.child=null):(i=a.sibling,a.sibling=null),gs(t,!1,i,a,r,n);break;case"backwards":case"unstable_legacy-backwards":for(a=null,i=t.child,t.child=null;i!==null;){if(e=i.alternate,e!==null&&Ji(e)===null){t.child=i;break}e=i.sibling,i.sibling=a,a=i,i=e}gs(t,!0,a,null,r,n);break;case"together":gs(t,!1,null,null,void 0,n);break;default:t.memoizedState=null}return t.child}function Pt(e,t,a){if(e!==null&&(t.dependencies=e.dependencies),ua|=t.lanes,(a&t.childLanes)===0)if(e!==null){if(on(e,t,a,!1),(a&t.childLanes)===0)return null}else return null;if(e!==null&&t.child!==e.child)throw Error(m(153));if(t.child!==null){for(e=t.child,a=kt(e,e.pendingProps),t.child=a,a.return=t;e.sibling!==null;)e=e.sibling,a=a.sibling=kt(e,e.pendingProps),a.return=t;a.sibling=null}return t.child}function ys(e,t){return(e.lanes&t)!==0?!0:(e=e.dependencies,!!(e!==null&&_i(e)))}function Qm(e,t,a){switch(t.tag){case 3:Me(t,t.stateNode.containerInfo),aa(t,Ce,e.memoizedState.cache),Oa();break;case 27:case 5:Dn(t);break;case 4:Me(t,t.stateNode.containerInfo);break;case 10:aa(t,t.type,t.memoizedProps.value);break;case 31:if(t.memoizedState!==null)return t.flags|=128,zo(t),null;break;case 13:var n=t.memoizedState;if(n!==null)return n.dehydrated!==null?(oa(t),t.flags|=128,null):(a&t.child.childLanes)!==0?Mu(e,t,a):(oa(t),e=Pt(e,t,a),e!==null?e.sibling:null);oa(t);break;case 19:var i=(e.flags&128)!==0;if(n=(a&t.childLanes)!==0,n||(on(e,t,a,!1),n=(a&t.childLanes)!==0),i){if(n)return qu(e,t,a);t.flags|=128}if(i=t.memoizedState,i!==null&&(i.rendering=null,i.tail=null,i.lastEffect=null),D(he,he.current),n)break;return null;case 22:return t.lanes=0,Wu(e,t,a,t.pendingProps);case 24:aa(t,Ce,e.memoizedState.cache)}return Pt(e,t,a)}function Gu(e,t,a){if(e!==null)if(e.memoizedProps!==t.pendingProps)we=!0;else{if(!ys(e,a)&&(t.flags&128)===0)return we=!1,Qm(e,t,a);we=(e.flags&131072)!==0}else we=!1,K&&(t.flags&1048576)!==0&&yc(t,jn,t.index);switch(t.lanes=0,t.tag){case 16:e:{var n=t.pendingProps;if(e=Na(t.elementType),t.type=e,typeof e=="function")So(e)?(n=Ga(e,n),t.tag=1,t=ku(null,t,e,n,a)):(t.tag=0,t=cs(null,t,e,n,a));else{if(e!=null){var i=e.$$typeof;if(i===ot){t.tag=11,t=Eu(null,t,e,n,a);break e}else if(i===Y){t.tag=14,t=Du(null,t,e,n,a);break e}}throw t=Wt(e)||e,Error(m(306,t,""))}}return t;case 0:return cs(e,t,t.type,t.pendingProps,a);case 1:return n=t.type,i=Ga(n,t.pendingProps),ku(e,t,n,i,a);case 3:e:{if(Me(t,t.stateNode.containerInfo),e===null)throw Error(m(387));n=t.pendingProps;var r=t.memoizedState;i=r.element,Uo(e,t),Xn(t,n,null,a);var o=t.memoizedState;if(n=o.cache,aa(t,Ce,n),n!==r.cache&&Oo(t,[Ce],a,!0),Kn(),n=o.element,r.isDehydrated)if(r={element:n,isDehydrated:!1,cache:o.cache},t.updateQueue.baseState=r,t.memoizedState=r,t.flags&256){t=Nu(e,t,n,a);break e}else if(n!==i){i=ut(Error(m(424)),t),Hn(i),t=Nu(e,t,n,a);break e}else for(e=t.stateNode.containerInfo,e.nodeType===9?e=e.body:e=e.nodeName==="HTML"?e.ownerDocument.body:e,de=gt(e.firstChild),Re=t,K=!0,ea=null,mt=!0,a=Wc(t,null,n,a),t.child=a;a;)a.flags=a.flags&-3|4096,a=a.sibling;else{if(Oa(),n===i){t=Pt(e,t,a);break e}Oe(e,t,n,a)}t=t.child}return t;case 26:return cr(e,t),e===null?(a=Kd(t.type,null,t.pendingProps,null))?t.memoizedState=a:K||(a=t.type,e=t.pendingProps,n=Er(j.current).createElement(a),n[De]=t,n[ze]=e,Ie(n,a,e),Te(n),t.stateNode=n):t.memoizedState=Kd(t.type,e.memoizedProps,t.pendingProps,e.memoizedState),null;case 27:return Dn(t),e===null&&K&&(n=t.stateNode=Qd(t.type,t.pendingProps,j.current),Re=t,mt=!0,i=de,ga(t.type)?(Ks=i,de=gt(n.firstChild)):de=i),Oe(e,t,t.pendingProps.children,a),cr(e,t),e===null&&(t.flags|=4194304),t.child;case 5:return e===null&&K&&((i=n=de)&&(n=Af(n,t.type,t.pendingProps,mt),n!==null?(t.stateNode=n,Re=t,de=gt(n.firstChild),mt=!1,i=!0):i=!1),i||ta(t)),Dn(t),i=t.type,r=t.pendingProps,o=e!==null?e.memoizedProps:null,n=r.children,_s(i,r)?n=null:o!==null&&_s(i,o)&&(t.flags|=32),t.memoizedState!==null&&(i=Ho(e,t,qm,null,null,a),yi._currentValue=i),cr(e,t),Oe(e,t,n,a),t.child;case 6:return e===null&&K&&((e=a=de)&&(a=Lf(a,t.pendingProps,mt),a!==null?(t.stateNode=a,Re=t,de=null,e=!0):e=!1),e||ta(t)),null;case 13:return Mu(e,t,a);case 4:return Me(t,t.stateNode.containerInfo),n=t.pendingProps,e===null?t.child=Ua(t,null,n,a):Oe(e,t,n,a),t.child;case 11:return Eu(e,t,t.type,t.pendingProps,a);case 7:return Oe(e,t,t.pendingProps,a),t.child;case 8:return Oe(e,t,t.pendingProps.children,a),t.child;case 12:return Oe(e,t,t.pendingProps.children,a),t.child;case 10:return n=t.pendingProps,aa(t,t.type,n.value),Oe(e,t,n.children,a),t.child;case 9:return i=t.type._context,n=t.pendingProps.children,xa(t),i=We(i),n=n(i),t.flags|=1,Oe(e,t,n,a),t.child;case 14:return Du(e,t,t.type,t.pendingProps,a);case 15:return Ru(e,t,t.type,t.pendingProps,a);case 19:return qu(e,t,a);case 31:return Fm(e,t,a);case 22:return Wu(e,t,a,t.pendingProps);case 24:return xa(t),n=We(Ce),e===null?(i=ko(),i===null&&(i=ce,r=Io(),i.pooledCache=r,r.refCount++,r!==null&&(i.pooledCacheLanes|=a),i=r),t.memoizedState={parent:n,cache:i},Mo(t),aa(t,Ce,i)):((e.lanes&a)!==0&&(Uo(e,t),Xn(t,null,null,a),Kn()),i=e.memoizedState,r=t.memoizedState,i.parent!==n?(i={parent:n,cache:n},t.memoizedState=i,t.lanes===0&&(t.memoizedState=t.updateQueue.baseState=i),aa(t,Ce,n)):(n=r.cache,aa(t,Ce,n),n!==i.cache&&Oo(t,[Ce],a,!0))),Oe(e,t,t.pendingProps.children,a),t.child;case 29:throw t.pendingProps}throw Error(m(156,t.tag))}function Bt(e){e.flags|=4}function vs(e,t,a,n,i){if((t=(e.mode&32)!==0)&&(t=!1),t){if(e.flags|=16777216,(i&335544128)===i)if(e.stateNode.complete)e.flags|=8192;else if(dd())e.flags|=8192;else throw Ma=Yi,No}else e.flags&=-16777217}function Pu(e,t){if(t.type!=="stylesheet"||(t.state.loading&4)!==0)e.flags&=-16777217;else if(e.flags|=16777216,!ep(t))if(dd())e.flags|=8192;else throw Ma=Yi,No}function dr(e,t){t!==null&&(e.flags|=4),e.flags&16384&&(t=e.tag!==22?hl():536870912,e.lanes|=t,hn|=t)}function ai(e,t){if(!K)switch(e.tailMode){case"hidden":t=e.tail;for(var a=null;t!==null;)t.alternate!==null&&(a=t),t=t.sibling;a===null?e.tail=null:a.sibling=null;break;case"collapsed":a=e.tail;for(var n=null;a!==null;)a.alternate!==null&&(n=a),a=a.sibling;n===null?t||e.tail===null?e.tail=null:e.tail.sibling=null:n.sibling=null}}function pe(e){var t=e.alternate!==null&&e.alternate.child===e.child,a=0,n=0;if(t)for(var i=e.child;i!==null;)a|=i.lanes|i.childLanes,n|=i.subtreeFlags&65011712,n|=i.flags&65011712,i.return=e,i=i.sibling;else for(i=e.child;i!==null;)a|=i.lanes|i.childLanes,n|=i.subtreeFlags,n|=i.flags,i.return=e,i=i.sibling;return e.subtreeFlags|=n,e.childLanes=a,t}function Vm(e,t,a){var n=t.pendingProps;switch(To(t),t.tag){case 16:case 15:case 0:case 11:case 7:case 8:case 12:case 9:case 14:return pe(t),null;case 1:return pe(t),null;case 3:return a=t.stateNode,n=null,e!==null&&(n=e.memoizedState.cache),t.memoizedState.cache!==n&&(t.flags|=2048),Ut(Ce),ve(),a.pendingContext&&(a.context=a.pendingContext,a.pendingContext=null),(e===null||e.child===null)&&(rn(t)?Bt(t):e===null||e.memoizedState.isDehydrated&&(t.flags&256)===0||(t.flags|=1024,Do())),pe(t),null;case 26:var i=t.type,r=t.memoizedState;return e===null?(Bt(t),r!==null?(pe(t),Pu(t,r)):(pe(t),vs(t,i,null,n,a))):r?r!==e.memoizedState?(Bt(t),pe(t),Pu(t,r)):(pe(t),t.flags&=-16777217):(e=e.memoizedProps,e!==n&&Bt(t),pe(t),vs(t,i,e,n,a)),null;case 27:if(wi(t),a=j.current,i=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==n&&Bt(t);else{if(!n){if(t.stateNode===null)throw Error(m(166));return pe(t),null}e=W.current,rn(t)?hc(t):(e=Qd(i,n,a),t.stateNode=e,Bt(t))}return pe(t),null;case 5:if(wi(t),i=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==n&&Bt(t);else{if(!n){if(t.stateNode===null)throw Error(m(166));return pe(t),null}if(r=W.current,rn(t))hc(t);else{var o=Er(j.current);switch(r){case 1:r=o.createElementNS("http://www.w3.org/2000/svg",i);break;case 2:r=o.createElementNS("http://www.w3.org/1998/Math/MathML",i);break;default:switch(i){case"svg":r=o.createElementNS("http://www.w3.org/2000/svg",i);break;case"math":r=o.createElementNS("http://www.w3.org/1998/Math/MathML",i);break;case"script":r=o.createElement("div"),r.innerHTML="<script><\/script>",r=r.removeChild(r.firstChild);break;case"select":r=typeof n.is=="string"?o.createElement("select",{is:n.is}):o.createElement("select"),n.multiple?r.multiple=!0:n.size&&(r.size=n.size);break;default:r=typeof n.is=="string"?o.createElement(i,{is:n.is}):o.createElement(i)}}r[De]=t,r[ze]=n;e:for(o=t.child;o!==null;){if(o.tag===5||o.tag===6)r.appendChild(o.stateNode);else if(o.tag!==4&&o.tag!==27&&o.child!==null){o.child.return=o,o=o.child;continue}if(o===t)break e;for(;o.sibling===null;){if(o.return===null||o.return===t)break e;o=o.return}o.sibling.return=o.return,o=o.sibling}t.stateNode=r;e:switch(Ie(r,i,n),i){case"button":case"input":case"select":case"textarea":n=!!n.autoFocus;break e;case"img":n=!0;break e;default:n=!1}n&&Bt(t)}}return pe(t),vs(t,t.type,e===null?null:e.memoizedProps,t.pendingProps,a),null;case 6:if(e&&t.stateNode!=null)e.memoizedProps!==n&&Bt(t);else{if(typeof n!="string"&&t.stateNode===null)throw Error(m(166));if(e=j.current,rn(t)){if(e=t.stateNode,a=t.memoizedProps,n=null,i=Re,i!==null)switch(i.tag){case 27:case 5:n=i.memoizedProps}e[De]=t,e=!!(e.nodeValue===a||n!==null&&n.suppressHydrationWarning===!0||Md(e.nodeValue,a)),e||ta(t,!0)}else e=Er(e).createTextNode(n),e[De]=t,t.stateNode=e}return pe(t),null;case 31:if(a=t.memoizedState,e===null||e.memoizedState!==null){if(n=rn(t),a!==null){if(e===null){if(!n)throw Error(m(318));if(e=t.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(557));e[De]=t}else Oa(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;pe(t),e=!1}else a=Do(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=a),e=!0;if(!e)return t.flags&256?(at(t),t):(at(t),null);if((t.flags&128)!==0)throw Error(m(558))}return pe(t),null;case 13:if(n=t.memoizedState,e===null||e.memoizedState!==null&&e.memoizedState.dehydrated!==null){if(i=rn(t),n!==null&&n.dehydrated!==null){if(e===null){if(!i)throw Error(m(318));if(i=t.memoizedState,i=i!==null?i.dehydrated:null,!i)throw Error(m(317));i[De]=t}else Oa(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;pe(t),i=!1}else i=Do(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=i),i=!0;if(!i)return t.flags&256?(at(t),t):(at(t),null)}return at(t),(t.flags&128)!==0?(t.lanes=a,t):(a=n!==null,e=e!==null&&e.memoizedState!==null,a&&(n=t.child,i=null,n.alternate!==null&&n.alternate.memoizedState!==null&&n.alternate.memoizedState.cachePool!==null&&(i=n.alternate.memoizedState.cachePool.pool),r=null,n.memoizedState!==null&&n.memoizedState.cachePool!==null&&(r=n.memoizedState.cachePool.pool),r!==i&&(n.flags|=2048)),a!==e&&a&&(t.child.flags|=8192),dr(t,t.updateQueue),pe(t),null);case 4:return ve(),e===null&&Ps(t.stateNode.containerInfo),pe(t),null;case 10:return Ut(t.type),pe(t),null;case 19:if(w(he),n=t.memoizedState,n===null)return pe(t),null;if(i=(t.flags&128)!==0,r=n.rendering,r===null)if(i)ai(n,!1);else{if(ye!==0||e!==null&&(e.flags&128)!==0)for(e=t.child;e!==null;){if(r=Ji(e),r!==null){for(t.flags|=128,ai(n,!1),e=r.updateQueue,t.updateQueue=e,dr(t,e),t.subtreeFlags=0,e=a,a=t.child;a!==null;)mc(a,e),a=a.sibling;return D(he,he.current&1|2),K&&Nt(t,n.treeForkCount),t.child}e=e.sibling}n.tail!==null&&Xe()>yr&&(t.flags|=128,i=!0,ai(n,!1),t.lanes=4194304)}else{if(!i)if(e=Ji(r),e!==null){if(t.flags|=128,i=!0,e=e.updateQueue,t.updateQueue=e,dr(t,e),ai(n,!0),n.tail===null&&n.tailMode==="hidden"&&!r.alternate&&!K)return pe(t),null}else 2*Xe()-n.renderingStartTime>yr&&a!==536870912&&(t.flags|=128,i=!0,ai(n,!1),t.lanes=4194304);n.isBackwards?(r.sibling=t.child,t.child=r):(e=n.last,e!==null?e.sibling=r:t.child=r,n.last=r)}return n.tail!==null?(e=n.tail,n.rendering=e,n.tail=e.sibling,n.renderingStartTime=Xe(),e.sibling=null,a=he.current,D(he,i?a&1|2:a&1),K&&Nt(t,n.treeForkCount),e):(pe(t),null);case 22:case 23:return at(t),Bo(),n=t.memoizedState!==null,e!==null?e.memoizedState!==null!==n&&(t.flags|=8192):n&&(t.flags|=8192),n?(a&536870912)!==0&&(t.flags&128)===0&&(pe(t),t.subtreeFlags&6&&(t.flags|=8192)):pe(t),a=t.updateQueue,a!==null&&dr(t,a.retryQueue),a=null,e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(a=e.memoizedState.cachePool.pool),n=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(n=t.memoizedState.cachePool.pool),n!==a&&(t.flags|=2048),e!==null&&w(ka),null;case 24:return a=null,e!==null&&(a=e.memoizedState.cache),t.memoizedState.cache!==a&&(t.flags|=2048),Ut(Ce),pe(t),null;case 25:return null;case 30:return null}throw Error(m(156,t.tag))}function Ym(e,t){switch(To(t),t.tag){case 1:return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 3:return Ut(Ce),ve(),e=t.flags,(e&65536)!==0&&(e&128)===0?(t.flags=e&-65537|128,t):null;case 26:case 27:case 5:return wi(t),null;case 31:if(t.memoizedState!==null){if(at(t),t.alternate===null)throw Error(m(340));Oa()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 13:if(at(t),e=t.memoizedState,e!==null&&e.dehydrated!==null){if(t.alternate===null)throw Error(m(340));Oa()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 19:return w(he),null;case 4:return ve(),null;case 10:return Ut(t.type),null;case 22:case 23:return at(t),Bo(),e!==null&&w(ka),e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 24:return Ut(Ce),null;case 25:return null;default:return null}}function Bu(e,t){switch(To(t),t.tag){case 3:Ut(Ce),ve();break;case 26:case 27:case 5:wi(t);break;case 4:ve();break;case 31:t.memoizedState!==null&&at(t);break;case 13:at(t);break;case 19:w(he);break;case 10:Ut(t.type);break;case 22:case 23:at(t),Bo(),e!==null&&w(ka);break;case 24:Ut(Ce)}}function ni(e,t){try{var a=t.updateQueue,n=a!==null?a.lastEffect:null;if(n!==null){var i=n.next;a=i;do{if((a.tag&e)===e){n=void 0;var r=a.create,o=a.inst;n=r(),o.destroy=n}a=a.next}while(a!==i)}}catch(s){ne(t,t.return,s)}}function la(e,t,a){try{var n=t.updateQueue,i=n!==null?n.lastEffect:null;if(i!==null){var r=i.next;n=r;do{if((n.tag&e)===e){var o=n.inst,s=o.destroy;if(s!==void 0){o.destroy=void 0,i=t;var l=a,f=s;try{f()}catch(v){ne(i,l,v)}}}n=n.next}while(n!==r)}}catch(v){ne(t,t.return,v)}}function zu(e){var t=e.updateQueue;if(t!==null){var a=e.stateNode;try{Ic(t,a)}catch(n){ne(e,e.return,n)}}}function ju(e,t,a){a.props=Ga(e.type,e.memoizedProps),a.state=e.memoizedState;try{a.componentWillUnmount()}catch(n){ne(e,t,n)}}function ii(e,t){try{var a=e.ref;if(a!==null){switch(e.tag){case 26:case 27:case 5:var n=e.stateNode;break;case 30:n=e.stateNode;break;default:n=e.stateNode}typeof a=="function"?e.refCleanup=a(n):a.current=n}}catch(i){ne(e,t,i)}}function Et(e,t){var a=e.ref,n=e.refCleanup;if(a!==null)if(typeof n=="function")try{n()}catch(i){ne(e,t,i)}finally{e.refCleanup=null,e=e.alternate,e!=null&&(e.refCleanup=null)}else if(typeof a=="function")try{a(null)}catch(i){ne(e,t,i)}else a.current=null}function Hu(e){var t=e.type,a=e.memoizedProps,n=e.stateNode;try{e:switch(t){case"button":case"input":case"select":case"textarea":a.autoFocus&&n.focus();break e;case"img":a.src?n.src=a.src:a.srcSet&&(n.srcset=a.srcSet)}}catch(i){ne(e,e.return,i)}}function hs(e,t,a){try{var n=e.stateNode;vf(n,e.type,a,t),n[ze]=t}catch(i){ne(e,e.return,i)}}function _u(e){return e.tag===5||e.tag===3||e.tag===26||e.tag===27&&ga(e.type)||e.tag===4}function bs(e){e:for(;;){for(;e.sibling===null;){if(e.return===null||_u(e.return))return null;e=e.return}for(e.sibling.return=e.return,e=e.sibling;e.tag!==5&&e.tag!==6&&e.tag!==18;){if(e.tag===27&&ga(e.type)||e.flags&2||e.child===null||e.tag===4)continue e;e.child.return=e,e=e.child}if(!(e.flags&2))return e.stateNode}}function Cs(e,t,a){var n=e.tag;if(n===5||n===6)e=e.stateNode,t?(a.nodeType===9?a.body:a.nodeName==="HTML"?a.ownerDocument.body:a).insertBefore(e,t):(t=a.nodeType===9?a.body:a.nodeName==="HTML"?a.ownerDocument.body:a,t.appendChild(e),a=a._reactRootContainer,a!=null||t.onclick!==null||(t.onclick=It));else if(n!==4&&(n===27&&ga(e.type)&&(a=e.stateNode,t=null),e=e.child,e!==null))for(Cs(e,t,a),e=e.sibling;e!==null;)Cs(e,t,a),e=e.sibling}function pr(e,t,a){var n=e.tag;if(n===5||n===6)e=e.stateNode,t?a.insertBefore(e,t):a.appendChild(e);else if(n!==4&&(n===27&&ga(e.type)&&(a=e.stateNode),e=e.child,e!==null))for(pr(e,t,a),e=e.sibling;e!==null;)pr(e,t,a),e=e.sibling}function Fu(e){var t=e.stateNode,a=e.memoizedProps;try{for(var n=e.type,i=t.attributes;i.length;)t.removeAttributeNode(i[0]);Ie(t,n,a),t[De]=e,t[ze]=a}catch(r){ne(e,e.return,r)}}var zt=!1,Ae=!1,Ss=!1,Qu=typeof WeakSet=="function"?WeakSet:Set,Ee=null;function Km(e,t){if(e=e.containerInfo,js=kr,e=ic(e),fo(e)){if("selectionStart"in e)var a={start:e.selectionStart,end:e.selectionEnd};else e:{a=(a=e.ownerDocument)&&a.defaultView||window;var n=a.getSelection&&a.getSelection();if(n&&n.rangeCount!==0){a=n.anchorNode;var i=n.anchorOffset,r=n.focusNode;n=n.focusOffset;try{a.nodeType,r.nodeType}catch{a=null;break e}var o=0,s=-1,l=-1,f=0,v=0,C=e,g=null;t:for(;;){for(var y;C!==a||i!==0&&C.nodeType!==3||(s=o+i),C!==r||n!==0&&C.nodeType!==3||(l=o+n),C.nodeType===3&&(o+=C.nodeValue.length),(y=C.firstChild)!==null;)g=C,C=y;for(;;){if(C===e)break t;if(g===a&&++f===i&&(s=o),g===r&&++v===n&&(l=o),(y=C.nextSibling)!==null)break;C=g,g=C.parentNode}C=y}a=s===-1||l===-1?null:{start:s,end:l}}else a=null}a=a||{start:0,end:0}}else a=null;for(Hs={focusedElem:e,selectionRange:a},kr=!1,Ee=t;Ee!==null;)if(t=Ee,e=t.child,(t.subtreeFlags&1028)!==0&&e!==null)e.return=t,Ee=e;else for(;Ee!==null;){switch(t=Ee,r=t.alternate,e=t.flags,t.tag){case 0:if((e&4)!==0&&(e=t.updateQueue,e=e!==null?e.events:null,e!==null))for(a=0;a<e.length;a++)i=e[a],i.ref.impl=i.nextImpl;break;case 11:case 15:break;case 1:if((e&1024)!==0&&r!==null){e=void 0,a=t,i=r.memoizedProps,r=r.memoizedState,n=a.stateNode;try{var R=Ga(a.type,i);e=n.getSnapshotBeforeUpdate(R,r),n.__reactInternalSnapshotBeforeUpdate=e}catch(k){ne(a,a.return,k)}}break;case 3:if((e&1024)!==0){if(e=t.stateNode.containerInfo,a=e.nodeType,a===9)Qs(e);else if(a===1)switch(e.nodeName){case"HEAD":case"HTML":case"BODY":Qs(e);break;default:e.textContent=""}}break;case 5:case 26:case 27:case 6:case 4:case 17:break;default:if((e&1024)!==0)throw Error(m(163))}if(e=t.sibling,e!==null){e.return=t.return,Ee=e;break}Ee=t.return}}function Vu(e,t,a){var n=a.flags;switch(a.tag){case 0:case 11:case 15:Ht(e,a),n&4&&ni(5,a);break;case 1:if(Ht(e,a),n&4)if(e=a.stateNode,t===null)try{e.componentDidMount()}catch(o){ne(a,a.return,o)}else{var i=Ga(a.type,t.memoizedProps);t=t.memoizedState;try{e.componentDidUpdate(i,t,e.__reactInternalSnapshotBeforeUpdate)}catch(o){ne(a,a.return,o)}}n&64&&zu(a),n&512&&ii(a,a.return);break;case 3:if(Ht(e,a),n&64&&(e=a.updateQueue,e!==null)){if(t=null,a.child!==null)switch(a.child.tag){case 27:case 5:t=a.child.stateNode;break;case 1:t=a.child.stateNode}try{Ic(e,t)}catch(o){ne(a,a.return,o)}}break;case 27:t===null&&n&4&&Fu(a);case 26:case 5:Ht(e,a),t===null&&n&4&&Hu(a),n&512&&ii(a,a.return);break;case 12:Ht(e,a);break;case 31:Ht(e,a),n&4&&Xu(e,a);break;case 13:Ht(e,a),n&4&&Zu(e,a),n&64&&(e=a.memoizedState,e!==null&&(e=e.dehydrated,e!==null&&(a=rf.bind(null,a),Tf(e,a))));break;case 22:if(n=a.memoizedState!==null||zt,!n){t=t!==null&&t.memoizedState!==null||Ae,i=zt;var r=Ae;zt=n,(Ae=t)&&!r?_t(e,a,(a.subtreeFlags&8772)!==0):Ht(e,a),zt=i,Ae=r}break;case 30:break;default:Ht(e,a)}}function Yu(e){var t=e.alternate;t!==null&&(e.alternate=null,Yu(t)),e.child=null,e.deletions=null,e.sibling=null,e.tag===5&&(t=e.stateNode,t!==null&&Xr(t)),e.stateNode=null,e.return=null,e.dependencies=null,e.memoizedProps=null,e.memoizedState=null,e.pendingProps=null,e.stateNode=null,e.updateQueue=null}var fe=null,He=!1;function jt(e,t,a){for(a=a.child;a!==null;)Ku(e,t,a),a=a.sibling}function Ku(e,t,a){if(Ze&&typeof Ze.onCommitFiberUnmount=="function")try{Ze.onCommitFiberUnmount(Rn,a)}catch{}switch(a.tag){case 26:Ae||Et(a,t),jt(e,t,a),a.memoizedState?a.memoizedState.count--:a.stateNode&&(a=a.stateNode,a.parentNode.removeChild(a));break;case 27:Ae||Et(a,t);var n=fe,i=He;ga(a.type)&&(fe=a.stateNode,He=!1),jt(e,t,a),mi(a.stateNode),fe=n,He=i;break;case 5:Ae||Et(a,t);case 6:if(n=fe,i=He,fe=null,jt(e,t,a),fe=n,He=i,fe!==null)if(He)try{(fe.nodeType===9?fe.body:fe.nodeName==="HTML"?fe.ownerDocument.body:fe).removeChild(a.stateNode)}catch(r){ne(a,t,r)}else try{fe.removeChild(a.stateNode)}catch(r){ne(a,t,r)}break;case 18:fe!==null&&(He?(e=fe,zd(e.nodeType===9?e.body:e.nodeName==="HTML"?e.ownerDocument.body:e,a.stateNode),En(e)):zd(fe,a.stateNode));break;case 4:n=fe,i=He,fe=a.stateNode.containerInfo,He=!0,jt(e,t,a),fe=n,He=i;break;case 0:case 11:case 14:case 15:la(2,a,t),Ae||la(4,a,t),jt(e,t,a);break;case 1:Ae||(Et(a,t),n=a.stateNode,typeof n.componentWillUnmount=="function"&&ju(a,t,n)),jt(e,t,a);break;case 21:jt(e,t,a);break;case 22:Ae=(n=Ae)||a.memoizedState!==null,jt(e,t,a),Ae=n;break;default:jt(e,t,a)}}function Xu(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null))){e=e.dehydrated;try{En(e)}catch(a){ne(t,t.return,a)}}}function Zu(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null&&(e=e.dehydrated,e!==null))))try{En(e)}catch(a){ne(t,t.return,a)}}function Xm(e){switch(e.tag){case 31:case 13:case 19:var t=e.stateNode;return t===null&&(t=e.stateNode=new Qu),t;case 22:return e=e.stateNode,t=e._retryCache,t===null&&(t=e._retryCache=new Qu),t;default:throw Error(m(435,e.tag))}}function mr(e,t){var a=Xm(e);t.forEach(function(n){if(!a.has(n)){a.add(n);var i=of.bind(null,e,n);n.then(i,i)}})}function _e(e,t){var a=t.deletions;if(a!==null)for(var n=0;n<a.length;n++){var i=a[n],r=e,o=t,s=o;e:for(;s!==null;){switch(s.tag){case 27:if(ga(s.type)){fe=s.stateNode,He=!1;break e}break;case 5:fe=s.stateNode,He=!1;break e;case 3:case 4:fe=s.stateNode.containerInfo,He=!0;break e}s=s.return}if(fe===null)throw Error(m(160));Ku(r,o,i),fe=null,He=!1,r=i.alternate,r!==null&&(r.return=null),i.return=null}if(t.subtreeFlags&13886)for(t=t.child;t!==null;)Ju(t,e),t=t.sibling}var bt=null;function Ju(e,t){var a=e.alternate,n=e.flags;switch(e.tag){case 0:case 11:case 14:case 15:_e(t,e),Fe(e),n&4&&(la(3,e,e.return),ni(3,e),la(5,e,e.return));break;case 1:_e(t,e),Fe(e),n&512&&(Ae||a===null||Et(a,a.return)),n&64&&zt&&(e=e.updateQueue,e!==null&&(n=e.callbacks,n!==null&&(a=e.shared.hiddenCallbacks,e.shared.hiddenCallbacks=a===null?n:a.concat(n))));break;case 26:var i=bt;if(_e(t,e),Fe(e),n&512&&(Ae||a===null||Et(a,a.return)),n&4){var r=a!==null?a.memoizedState:null;if(n=e.memoizedState,a===null)if(n===null)if(e.stateNode===null){e:{n=e.type,a=e.memoizedProps,i=i.ownerDocument||i;t:switch(n){case"title":r=i.getElementsByTagName("title")[0],(!r||r[In]||r[De]||r.namespaceURI==="http://www.w3.org/2000/svg"||r.hasAttribute("itemprop"))&&(r=i.createElement(n),i.head.insertBefore(r,i.querySelector("head > title"))),Ie(r,n,a),r[De]=e,Te(r),n=r;break e;case"link":var o=Jd("link","href",i).get(n+(a.href||""));if(o){for(var s=0;s<o.length;s++)if(r=o[s],r.getAttribute("href")===(a.href==null||a.href===""?null:a.href)&&r.getAttribute("rel")===(a.rel==null?null:a.rel)&&r.getAttribute("title")===(a.title==null?null:a.title)&&r.getAttribute("crossorigin")===(a.crossOrigin==null?null:a.crossOrigin)){o.splice(s,1);break t}}r=i.createElement(n),Ie(r,n,a),i.head.appendChild(r);break;case"meta":if(o=Jd("meta","content",i).get(n+(a.content||""))){for(s=0;s<o.length;s++)if(r=o[s],r.getAttribute("content")===(a.content==null?null:""+a.content)&&r.getAttribute("name")===(a.name==null?null:a.name)&&r.getAttribute("property")===(a.property==null?null:a.property)&&r.getAttribute("http-equiv")===(a.httpEquiv==null?null:a.httpEquiv)&&r.getAttribute("charset")===(a.charSet==null?null:a.charSet)){o.splice(s,1);break t}}r=i.createElement(n),Ie(r,n,a),i.head.appendChild(r);break;default:throw Error(m(468,n))}r[De]=e,Te(r),n=r}e.stateNode=n}else $d(i,e.type,e.stateNode);else e.stateNode=Zd(i,n,e.memoizedProps);else r!==n?(r===null?a.stateNode!==null&&(a=a.stateNode,a.parentNode.removeChild(a)):r.count--,n===null?$d(i,e.type,e.stateNode):Zd(i,n,e.memoizedProps)):n===null&&e.stateNode!==null&&hs(e,e.memoizedProps,a.memoizedProps)}break;case 27:_e(t,e),Fe(e),n&512&&(Ae||a===null||Et(a,a.return)),a!==null&&n&4&&hs(e,e.memoizedProps,a.memoizedProps);break;case 5:if(_e(t,e),Fe(e),n&512&&(Ae||a===null||Et(a,a.return)),e.flags&32){i=e.stateNode;try{Ya(i,"")}catch(R){ne(e,e.return,R)}}n&4&&e.stateNode!=null&&(i=e.memoizedProps,hs(e,i,a!==null?a.memoizedProps:i)),n&1024&&(Ss=!0);break;case 6:if(_e(t,e),Fe(e),n&4){if(e.stateNode===null)throw Error(m(162));n=e.memoizedProps,a=e.stateNode;try{a.nodeValue=n}catch(R){ne(e,e.return,R)}}break;case 3:if(Wr=null,i=bt,bt=Dr(t.containerInfo),_e(t,e),bt=i,Fe(e),n&4&&a!==null&&a.memoizedState.isDehydrated)try{En(t.containerInfo)}catch(R){ne(e,e.return,R)}Ss&&(Ss=!1,$u(e));break;case 4:n=bt,bt=Dr(e.stateNode.containerInfo),_e(t,e),Fe(e),bt=n;break;case 12:_e(t,e),Fe(e);break;case 31:_e(t,e),Fe(e),n&4&&(n=e.updateQueue,n!==null&&(e.updateQueue=null,mr(e,n)));break;case 13:_e(t,e),Fe(e),e.child.flags&8192&&e.memoizedState!==null!=(a!==null&&a.memoizedState!==null)&&(gr=Xe()),n&4&&(n=e.updateQueue,n!==null&&(e.updateQueue=null,mr(e,n)));break;case 22:i=e.memoizedState!==null;var l=a!==null&&a.memoizedState!==null,f=zt,v=Ae;if(zt=f||i,Ae=v||l,_e(t,e),Ae=v,zt=f,Fe(e),n&8192)e:for(t=e.stateNode,t._visibility=i?t._visibility&-2:t._visibility|1,i&&(a===null||l||zt||Ae||Pa(e)),a=null,t=e;;){if(t.tag===5||t.tag===26){if(a===null){l=a=t;try{if(r=l.stateNode,i)o=r.style,typeof o.setProperty=="function"?o.setProperty("display","none","important"):o.display="none";else{s=l.stateNode;var C=l.memoizedProps.style,g=C!=null&&C.hasOwnProperty("display")?C.display:null;s.style.display=g==null||typeof g=="boolean"?"":(""+g).trim()}}catch(R){ne(l,l.return,R)}}}else if(t.tag===6){if(a===null){l=t;try{l.stateNode.nodeValue=i?"":l.memoizedProps}catch(R){ne(l,l.return,R)}}}else if(t.tag===18){if(a===null){l=t;try{var y=l.stateNode;i?jd(y,!0):jd(l.stateNode,!1)}catch(R){ne(l,l.return,R)}}}else if((t.tag!==22&&t.tag!==23||t.memoizedState===null||t===e)&&t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break e;for(;t.sibling===null;){if(t.return===null||t.return===e)break e;a===t&&(a=null),t=t.return}a===t&&(a=null),t.sibling.return=t.return,t=t.sibling}n&4&&(n=e.updateQueue,n!==null&&(a=n.retryQueue,a!==null&&(n.retryQueue=null,mr(e,a))));break;case 19:_e(t,e),Fe(e),n&4&&(n=e.updateQueue,n!==null&&(e.updateQueue=null,mr(e,n)));break;case 30:break;case 21:break;default:_e(t,e),Fe(e)}}function Fe(e){var t=e.flags;if(t&2){try{for(var a,n=e.return;n!==null;){if(_u(n)){a=n;break}n=n.return}if(a==null)throw Error(m(160));switch(a.tag){case 27:var i=a.stateNode,r=bs(e);pr(e,r,i);break;case 5:var o=a.stateNode;a.flags&32&&(Ya(o,""),a.flags&=-33);var s=bs(e);pr(e,s,o);break;case 3:case 4:var l=a.stateNode.containerInfo,f=bs(e);Cs(e,f,l);break;default:throw Error(m(161))}}catch(v){ne(e,e.return,v)}e.flags&=-3}t&4096&&(e.flags&=-4097)}function $u(e){if(e.subtreeFlags&1024)for(e=e.child;e!==null;){var t=e;$u(t),t.tag===5&&t.flags&1024&&t.stateNode.reset(),e=e.sibling}}function Ht(e,t){if(t.subtreeFlags&8772)for(t=t.child;t!==null;)Vu(e,t.alternate,t),t=t.sibling}function Pa(e){for(e=e.child;e!==null;){var t=e;switch(t.tag){case 0:case 11:case 14:case 15:la(4,t,t.return),Pa(t);break;case 1:Et(t,t.return);var a=t.stateNode;typeof a.componentWillUnmount=="function"&&ju(t,t.return,a),Pa(t);break;case 27:mi(t.stateNode);case 26:case 5:Et(t,t.return),Pa(t);break;case 22:t.memoizedState===null&&Pa(t);break;case 30:Pa(t);break;default:Pa(t)}e=e.sibling}}function _t(e,t,a){for(a=a&&(t.subtreeFlags&8772)!==0,t=t.child;t!==null;){var n=t.alternate,i=e,r=t,o=r.flags;switch(r.tag){case 0:case 11:case 15:_t(i,r,a),ni(4,r);break;case 1:if(_t(i,r,a),n=r,i=n.stateNode,typeof i.componentDidMount=="function")try{i.componentDidMount()}catch(f){ne(n,n.return,f)}if(n=r,i=n.updateQueue,i!==null){var s=n.stateNode;try{var l=i.shared.hiddenCallbacks;if(l!==null)for(i.shared.hiddenCallbacks=null,i=0;i<l.length;i++)Oc(l[i],s)}catch(f){ne(n,n.return,f)}}a&&o&64&&zu(r),ii(r,r.return);break;case 27:Fu(r);case 26:case 5:_t(i,r,a),a&&n===null&&o&4&&Hu(r),ii(r,r.return);break;case 12:_t(i,r,a);break;case 31:_t(i,r,a),a&&o&4&&Xu(i,r);break;case 13:_t(i,r,a),a&&o&4&&Zu(i,r);break;case 22:r.memoizedState===null&&_t(i,r,a),ii(r,r.return);break;case 30:break;default:_t(i,r,a)}t=t.sibling}}function ws(e,t){var a=null;e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(a=e.memoizedState.cachePool.pool),e=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(e=t.memoizedState.cachePool.pool),e!==a&&(e!=null&&e.refCount++,a!=null&&_n(a))}function As(e,t){e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&_n(e))}function Ct(e,t,a,n){if(t.subtreeFlags&10256)for(t=t.child;t!==null;)ed(e,t,a,n),t=t.sibling}function ed(e,t,a,n){var i=t.flags;switch(t.tag){case 0:case 11:case 15:Ct(e,t,a,n),i&2048&&ni(9,t);break;case 1:Ct(e,t,a,n);break;case 3:Ct(e,t,a,n),i&2048&&(e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&_n(e)));break;case 12:if(i&2048){Ct(e,t,a,n),e=t.stateNode;try{var r=t.memoizedProps,o=r.id,s=r.onPostCommit;typeof s=="function"&&s(o,t.alternate===null?"mount":"update",e.passiveEffectDuration,-0)}catch(l){ne(t,t.return,l)}}else Ct(e,t,a,n);break;case 31:Ct(e,t,a,n);break;case 13:Ct(e,t,a,n);break;case 23:break;case 22:r=t.stateNode,o=t.alternate,t.memoizedState!==null?r._visibility&2?Ct(e,t,a,n):ri(e,t):r._visibility&2?Ct(e,t,a,n):(r._visibility|=2,gn(e,t,a,n,(t.subtreeFlags&10256)!==0||!1)),i&2048&&ws(o,t);break;case 24:Ct(e,t,a,n),i&2048&&As(t.alternate,t);break;default:Ct(e,t,a,n)}}function gn(e,t,a,n,i){for(i=i&&((t.subtreeFlags&10256)!==0||!1),t=t.child;t!==null;){var r=e,o=t,s=a,l=n,f=o.flags;switch(o.tag){case 0:case 11:case 15:gn(r,o,s,l,i),ni(8,o);break;case 23:break;case 22:var v=o.stateNode;o.memoizedState!==null?v._visibility&2?gn(r,o,s,l,i):ri(r,o):(v._visibility|=2,gn(r,o,s,l,i)),i&&f&2048&&ws(o.alternate,o);break;case 24:gn(r,o,s,l,i),i&&f&2048&&As(o.alternate,o);break;default:gn(r,o,s,l,i)}t=t.sibling}}function ri(e,t){if(t.subtreeFlags&10256)for(t=t.child;t!==null;){var a=e,n=t,i=n.flags;switch(n.tag){case 22:ri(a,n),i&2048&&ws(n.alternate,n);break;case 24:ri(a,n),i&2048&&As(n.alternate,n);break;default:ri(a,n)}t=t.sibling}}var oi=8192;function yn(e,t,a){if(e.subtreeFlags&oi)for(e=e.child;e!==null;)td(e,t,a),e=e.sibling}function td(e,t,a){switch(e.tag){case 26:yn(e,t,a),e.flags&oi&&e.memoizedState!==null&&qf(a,bt,e.memoizedState,e.memoizedProps);break;case 5:yn(e,t,a);break;case 3:case 4:var n=bt;bt=Dr(e.stateNode.containerInfo),yn(e,t,a),bt=n;break;case 22:e.memoizedState===null&&(n=e.alternate,n!==null&&n.memoizedState!==null?(n=oi,oi=16777216,yn(e,t,a),oi=n):yn(e,t,a));break;default:yn(e,t,a)}}function ad(e){var t=e.alternate;if(t!==null&&(e=t.child,e!==null)){t.child=null;do t=e.sibling,e.sibling=null,e=t;while(e!==null)}}function si(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var a=0;a<t.length;a++){var n=t[a];Ee=n,id(n,e)}ad(e)}if(e.subtreeFlags&10256)for(e=e.child;e!==null;)nd(e),e=e.sibling}function nd(e){switch(e.tag){case 0:case 11:case 15:si(e),e.flags&2048&&la(9,e,e.return);break;case 3:si(e);break;case 12:si(e);break;case 22:var t=e.stateNode;e.memoizedState!==null&&t._visibility&2&&(e.return===null||e.return.tag!==13)?(t._visibility&=-3,fr(e)):si(e);break;default:si(e)}}function fr(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var a=0;a<t.length;a++){var n=t[a];Ee=n,id(n,e)}ad(e)}for(e=e.child;e!==null;){switch(t=e,t.tag){case 0:case 11:case 15:la(8,t,t.return),fr(t);break;case 22:a=t.stateNode,a._visibility&2&&(a._visibility&=-3,fr(t));break;default:fr(t)}e=e.sibling}}function id(e,t){for(;Ee!==null;){var a=Ee;switch(a.tag){case 0:case 11:case 15:la(8,a,t);break;case 23:case 22:if(a.memoizedState!==null&&a.memoizedState.cachePool!==null){var n=a.memoizedState.cachePool.pool;n!=null&&n.refCount++}break;case 24:_n(a.memoizedState.cache)}if(n=a.child,n!==null)n.return=a,Ee=n;else e:for(a=e;Ee!==null;){n=Ee;var i=n.sibling,r=n.return;if(Yu(n),n===a){Ee=null;break e}if(i!==null){i.return=r,Ee=i;break e}Ee=r}}}var Zm={getCacheForType:function(e){var t=We(Ce),a=t.data.get(e);return a===void 0&&(a=e(),t.data.set(e,a)),a},cacheSignal:function(){return We(Ce).controller.signal}},Jm=typeof WeakMap=="function"?WeakMap:Map,$=0,ce=null,H=null,Q=0,ae=0,nt=null,ca=!1,vn=!1,Ls=!1,Ft=0,ye=0,ua=0,Ba=0,Ts=0,it=0,hn=0,li=null,Qe=null,Es=!1,gr=0,rd=0,yr=1/0,vr=null,da=null,Le=0,pa=null,bn=null,Qt=0,Ds=0,Rs=null,od=null,ci=0,Ws=null;function rt(){return($&2)!==0&&Q!==0?Q&-Q:h.T!==null?Ms():wl()}function sd(){if(it===0)if((Q&536870912)===0||K){var e=Ti;Ti<<=1,(Ti&3932160)===0&&(Ti=262144),it=e}else it=536870912;return e=tt.current,e!==null&&(e.flags|=32),it}function Ve(e,t,a){(e===ce&&(ae===2||ae===9)||e.cancelPendingCommit!==null)&&(Cn(e,0),ma(e,Q,it,!1)),On(e,a),(($&2)===0||e!==ce)&&(e===ce&&(($&2)===0&&(Ba|=a),ye===4&&ma(e,Q,it,!1)),Dt(e))}function ld(e,t,a){if(($&6)!==0)throw Error(m(327));var n=!a&&(t&127)===0&&(t&e.expiredLanes)===0||Wn(e,t),i=n?tf(e,t):Is(e,t,!0),r=n;do{if(i===0){vn&&!n&&ma(e,t,0,!1);break}else{if(a=e.current.alternate,r&&!$m(a)){i=Is(e,t,!1),r=!1;continue}if(i===2){if(r=t,e.errorRecoveryDisabledLanes&r)var o=0;else o=e.pendingLanes&-536870913,o=o!==0?o:o&536870912?536870912:0;if(o!==0){t=o;e:{var s=e;i=li;var l=s.current.memoizedState.isDehydrated;if(l&&(Cn(s,o).flags|=256),o=Is(s,o,!1),o!==2){if(Ls&&!l){s.errorRecoveryDisabledLanes|=r,Ba|=r,i=4;break e}r=Qe,Qe=i,r!==null&&(Qe===null?Qe=r:Qe.push.apply(Qe,r))}i=o}if(r=!1,i!==2)continue}}if(i===1){Cn(e,0),ma(e,t,0,!0);break}e:{switch(n=e,r=i,r){case 0:case 1:throw Error(m(345));case 4:if((t&4194048)!==t)break;case 6:ma(n,t,it,!ca);break e;case 2:Qe=null;break;case 3:case 5:break;default:throw Error(m(329))}if((t&62914560)===t&&(i=gr+300-Xe(),10<i)){if(ma(n,t,it,!ca),Di(n,0,!0)!==0)break e;Qt=t,n.timeoutHandle=Pd(cd.bind(null,n,a,Qe,vr,Es,t,it,Ba,hn,ca,r,"Throttled",-0,0),i);break e}cd(n,a,Qe,vr,Es,t,it,Ba,hn,ca,r,null,-0,0)}}break}while(!0);Dt(e)}function cd(e,t,a,n,i,r,o,s,l,f,v,C,g,y){if(e.timeoutHandle=-1,C=t.subtreeFlags,C&8192||(C&16785408)===16785408){C={stylesheets:null,count:0,imgCount:0,imgBytes:0,suspenseyImages:[],waitingForImages:!0,waitingForViewTransition:!1,unsuspend:It},td(t,r,C);var R=(r&62914560)===r?gr-Xe():(r&4194048)===r?rd-Xe():0;if(R=Gf(C,R),R!==null){Qt=r,e.cancelPendingCommit=R(vd.bind(null,e,t,r,a,n,i,o,s,l,v,C,null,g,y)),ma(e,r,o,!f);return}}vd(e,t,r,a,n,i,o,s,l)}function $m(e){for(var t=e;;){var a=t.tag;if((a===0||a===11||a===15)&&t.flags&16384&&(a=t.updateQueue,a!==null&&(a=a.stores,a!==null)))for(var n=0;n<a.length;n++){var i=a[n],r=i.getSnapshot;i=i.value;try{if(!$e(r(),i))return!1}catch{return!1}}if(a=t.child,t.subtreeFlags&16384&&a!==null)a.return=t,t=a;else{if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return!0;t=t.return}t.sibling.return=t.return,t=t.sibling}}return!0}function ma(e,t,a,n){t&=~Ts,t&=~Ba,e.suspendedLanes|=t,e.pingedLanes&=~t,n&&(e.warmLanes|=t),n=e.expirationTimes;for(var i=t;0<i;){var r=31-Je(i),o=1<<r;n[r]=-1,i&=~o}a!==0&&bl(e,a,t)}function hr(){return($&6)===0?(ui(0),!1):!0}function Os(){if(H!==null){if(ae===0)var e=H.return;else e=H,Mt=Ia=null,Qo(e),un=null,Qn=0,e=H;for(;e!==null;)Bu(e.alternate,e),e=e.return;H=null}}function Cn(e,t){var a=e.timeoutHandle;a!==-1&&(e.timeoutHandle=-1,Cf(a)),a=e.cancelPendingCommit,a!==null&&(e.cancelPendingCommit=null,a()),Qt=0,Os(),ce=e,H=a=kt(e.current,null),Q=t,ae=0,nt=null,ca=!1,vn=Wn(e,t),Ls=!1,hn=it=Ts=Ba=ua=ye=0,Qe=li=null,Es=!1,(t&8)!==0&&(t|=t&32);var n=e.entangledLanes;if(n!==0)for(e=e.entanglements,n&=t;0<n;){var i=31-Je(n),r=1<<i;t|=e[i],n&=~r}return Ft=t,Pi(),a}function ud(e,t){B=null,h.H=ei,t===cn||t===Vi?(t=Ec(),ae=3):t===No?(t=Ec(),ae=4):ae=t===ls?8:t!==null&&typeof t=="object"&&typeof t.then=="function"?6:1,nt=t,H===null&&(ye=1,sr(e,ut(t,e.current)))}function dd(){var e=tt.current;return e===null?!0:(Q&4194048)===Q?ft===null:(Q&62914560)===Q||(Q&536870912)!==0?e===ft:!1}function pd(){var e=h.H;return h.H=ei,e===null?ei:e}function md(){var e=h.A;return h.A=Zm,e}function br(){ye=4,ca||(Q&4194048)!==Q&&tt.current!==null||(vn=!0),(ua&134217727)===0&&(Ba&134217727)===0||ce===null||ma(ce,Q,it,!1)}function Is(e,t,a){var n=$;$|=2;var i=pd(),r=md();(ce!==e||Q!==t)&&(vr=null,Cn(e,t)),t=!1;var o=ye;e:do try{if(ae!==0&&H!==null){var s=H,l=nt;switch(ae){case 8:Os(),o=6;break e;case 3:case 2:case 9:case 6:tt.current===null&&(t=!0);var f=ae;if(ae=0,nt=null,Sn(e,s,l,f),a&&vn){o=0;break e}break;default:f=ae,ae=0,nt=null,Sn(e,s,l,f)}}ef(),o=ye;break}catch(v){ud(e,v)}while(!0);return t&&e.shellSuspendCounter++,Mt=Ia=null,$=n,h.H=i,h.A=r,H===null&&(ce=null,Q=0,Pi()),o}function ef(){for(;H!==null;)fd(H)}function tf(e,t){var a=$;$|=2;var n=pd(),i=md();ce!==e||Q!==t?(vr=null,yr=Xe()+500,Cn(e,t)):vn=Wn(e,t);e:do try{if(ae!==0&&H!==null){t=H;var r=nt;t:switch(ae){case 1:ae=0,nt=null,Sn(e,t,r,1);break;case 2:case 9:if(Lc(r)){ae=0,nt=null,gd(t);break}t=function(){ae!==2&&ae!==9||ce!==e||(ae=7),Dt(e)},r.then(t,t);break e;case 3:ae=7;break e;case 4:ae=5;break e;case 7:Lc(r)?(ae=0,nt=null,gd(t)):(ae=0,nt=null,Sn(e,t,r,7));break;case 5:var o=null;switch(H.tag){case 26:o=H.memoizedState;case 5:case 27:var s=H;if(o?ep(o):s.stateNode.complete){ae=0,nt=null;var l=s.sibling;if(l!==null)H=l;else{var f=s.return;f!==null?(H=f,Cr(f)):H=null}break t}}ae=0,nt=null,Sn(e,t,r,5);break;case 6:ae=0,nt=null,Sn(e,t,r,6);break;case 8:Os(),ye=6;break e;default:throw Error(m(462))}}af();break}catch(v){ud(e,v)}while(!0);return Mt=Ia=null,h.H=n,h.A=i,$=a,H!==null?0:(ce=null,Q=0,Pi(),ye)}function af(){for(;H!==null&&!Tp();)fd(H)}function fd(e){var t=Gu(e.alternate,e,Ft);e.memoizedProps=e.pendingProps,t===null?Cr(e):H=t}function gd(e){var t=e,a=t.alternate;switch(t.tag){case 15:case 0:t=xu(a,t,t.pendingProps,t.type,void 0,Q);break;case 11:t=xu(a,t,t.pendingProps,t.type.render,t.ref,Q);break;case 5:Qo(t);default:Bu(a,t),t=H=mc(t,Ft),t=Gu(a,t,Ft)}e.memoizedProps=e.pendingProps,t===null?Cr(e):H=t}function Sn(e,t,a,n){Mt=Ia=null,Qo(t),un=null,Qn=0;var i=t.return;try{if(_m(e,i,t,a,Q)){ye=1,sr(e,ut(a,e.current)),H=null;return}}catch(r){if(i!==null)throw H=i,r;ye=1,sr(e,ut(a,e.current)),H=null;return}t.flags&32768?(K||n===1?e=!0:vn||(Q&536870912)!==0?e=!1:(ca=e=!0,(n===2||n===9||n===3||n===6)&&(n=tt.current,n!==null&&n.tag===13&&(n.flags|=16384))),yd(t,e)):Cr(t)}function Cr(e){var t=e;do{if((t.flags&32768)!==0){yd(t,ca);return}e=t.return;var a=Vm(t.alternate,t,Ft);if(a!==null){H=a;return}if(t=t.sibling,t!==null){H=t;return}H=t=e}while(t!==null);ye===0&&(ye=5)}function yd(e,t){do{var a=Ym(e.alternate,e);if(a!==null){a.flags&=32767,H=a;return}if(a=e.return,a!==null&&(a.flags|=32768,a.subtreeFlags=0,a.deletions=null),!t&&(e=e.sibling,e!==null)){H=e;return}H=e=a}while(e!==null);ye=6,H=null}function vd(e,t,a,n,i,r,o,s,l){e.cancelPendingCommit=null;do Sr();while(Le!==0);if(($&6)!==0)throw Error(m(327));if(t!==null){if(t===e.current)throw Error(m(177));if(r=t.lanes|t.childLanes,r|=bo,Mp(e,a,r,o,s,l),e===ce&&(H=ce=null,Q=0),bn=t,pa=e,Qt=a,Ds=r,Rs=i,od=n,(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?(e.callbackNode=null,e.callbackPriority=0,sf(Ai,function(){return wd(),null})):(e.callbackNode=null,e.callbackPriority=0),n=(t.flags&13878)!==0,(t.subtreeFlags&13878)!==0||n){n=h.T,h.T=null,i=T.p,T.p=2,o=$,$|=4;try{Km(e,t,a)}finally{$=o,T.p=i,h.T=n}}Le=1,hd(),bd(),Cd()}}function hd(){if(Le===1){Le=0;var e=pa,t=bn,a=(t.flags&13878)!==0;if((t.subtreeFlags&13878)!==0||a){a=h.T,h.T=null;var n=T.p;T.p=2;var i=$;$|=4;try{Ju(t,e);var r=Hs,o=ic(e.containerInfo),s=r.focusedElem,l=r.selectionRange;if(o!==s&&s&&s.ownerDocument&&nc(s.ownerDocument.documentElement,s)){if(l!==null&&fo(s)){var f=l.start,v=l.end;if(v===void 0&&(v=f),"selectionStart"in s)s.selectionStart=f,s.selectionEnd=Math.min(v,s.value.length);else{var C=s.ownerDocument||document,g=C&&C.defaultView||window;if(g.getSelection){var y=g.getSelection(),R=s.textContent.length,k=Math.min(l.start,R),se=l.end===void 0?k:Math.min(l.end,R);!y.extend&&k>se&&(o=se,se=k,k=o);var d=ac(s,k),c=ac(s,se);if(d&&c&&(y.rangeCount!==1||y.anchorNode!==d.node||y.anchorOffset!==d.offset||y.focusNode!==c.node||y.focusOffset!==c.offset)){var p=C.createRange();p.setStart(d.node,d.offset),y.removeAllRanges(),k>se?(y.addRange(p),y.extend(c.node,c.offset)):(p.setEnd(c.node,c.offset),y.addRange(p))}}}}for(C=[],y=s;y=y.parentNode;)y.nodeType===1&&C.push({element:y,left:y.scrollLeft,top:y.scrollTop});for(typeof s.focus=="function"&&s.focus(),s=0;s<C.length;s++){var b=C[s];b.element.scrollLeft=b.left,b.element.scrollTop=b.top}}kr=!!js,Hs=js=null}finally{$=i,T.p=n,h.T=a}}e.current=t,Le=2}}function bd(){if(Le===2){Le=0;var e=pa,t=bn,a=(t.flags&8772)!==0;if((t.subtreeFlags&8772)!==0||a){a=h.T,h.T=null;var n=T.p;T.p=2;var i=$;$|=4;try{Vu(e,t.alternate,t)}finally{$=i,T.p=n,h.T=a}}Le=3}}function Cd(){if(Le===4||Le===3){Le=0,Ep();var e=pa,t=bn,a=Qt,n=od;(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?Le=5:(Le=0,bn=pa=null,Sd(e,e.pendingLanes));var i=e.pendingLanes;if(i===0&&(da=null),Yr(a),t=t.stateNode,Ze&&typeof Ze.onCommitFiberRoot=="function")try{Ze.onCommitFiberRoot(Rn,t,void 0,(t.current.flags&128)===128)}catch{}if(n!==null){t=h.T,i=T.p,T.p=2,h.T=null;try{for(var r=e.onRecoverableError,o=0;o<n.length;o++){var s=n[o];r(s.value,{componentStack:s.stack})}}finally{h.T=t,T.p=i}}(Qt&3)!==0&&Sr(),Dt(e),i=e.pendingLanes,(a&261930)!==0&&(i&42)!==0?e===Ws?ci++:(ci=0,Ws=e):ci=0,ui(0)}}function Sd(e,t){(e.pooledCacheLanes&=t)===0&&(t=e.pooledCache,t!=null&&(e.pooledCache=null,_n(t)))}function Sr(){return hd(),bd(),Cd(),wd()}function wd(){if(Le!==5)return!1;var e=pa,t=Ds;Ds=0;var a=Yr(Qt),n=h.T,i=T.p;try{T.p=32>a?32:a,h.T=null,a=Rs,Rs=null;var r=pa,o=Qt;if(Le=0,bn=pa=null,Qt=0,($&6)!==0)throw Error(m(331));var s=$;if($|=4,nd(r.current),ed(r,r.current,o,a),$=s,ui(0,!1),Ze&&typeof Ze.onPostCommitFiberRoot=="function")try{Ze.onPostCommitFiberRoot(Rn,r)}catch{}return!0}finally{T.p=i,h.T=n,Sd(e,t)}}function Ad(e,t,a){t=ut(a,t),t=ss(e.stateNode,t,2),e=ra(e,t,2),e!==null&&(On(e,2),Dt(e))}function ne(e,t,a){if(e.tag===3)Ad(e,e,a);else for(;t!==null;){if(t.tag===3){Ad(t,e,a);break}else if(t.tag===1){var n=t.stateNode;if(typeof t.type.getDerivedStateFromError=="function"||typeof n.componentDidCatch=="function"&&(da===null||!da.has(n))){e=ut(a,e),a=Lu(2),n=ra(t,a,2),n!==null&&(Tu(a,n,t,e),On(n,2),Dt(n));break}}t=t.return}}function xs(e,t,a){var n=e.pingCache;if(n===null){n=e.pingCache=new Jm;var i=new Set;n.set(t,i)}else i=n.get(t),i===void 0&&(i=new Set,n.set(t,i));i.has(a)||(Ls=!0,i.add(a),e=nf.bind(null,e,t,a),t.then(e,e))}function nf(e,t,a){var n=e.pingCache;n!==null&&n.delete(t),e.pingedLanes|=e.suspendedLanes&a,e.warmLanes&=~a,ce===e&&(Q&a)===a&&(ye===4||ye===3&&(Q&62914560)===Q&&300>Xe()-gr?($&2)===0&&Cn(e,0):Ts|=a,hn===Q&&(hn=0)),Dt(e)}function Ld(e,t){t===0&&(t=hl()),e=Ra(e,t),e!==null&&(On(e,t),Dt(e))}function rf(e){var t=e.memoizedState,a=0;t!==null&&(a=t.retryLane),Ld(e,a)}function of(e,t){var a=0;switch(e.tag){case 31:case 13:var n=e.stateNode,i=e.memoizedState;i!==null&&(a=i.retryLane);break;case 19:n=e.stateNode;break;case 22:n=e.stateNode._retryCache;break;default:throw Error(m(314))}n!==null&&n.delete(t),Ld(e,a)}function sf(e,t){return _r(e,t)}var wr=null,wn=null,ks=!1,Ar=!1,Ns=!1,fa=0;function Dt(e){e!==wn&&e.next===null&&(wn===null?wr=wn=e:wn=wn.next=e),Ar=!0,ks||(ks=!0,cf())}function ui(e,t){if(!Ns&&Ar){Ns=!0;do for(var a=!1,n=wr;n!==null;){if(e!==0){var i=n.pendingLanes;if(i===0)var r=0;else{var o=n.suspendedLanes,s=n.pingedLanes;r=(1<<31-Je(42|e)+1)-1,r&=i&~(o&~s),r=r&201326741?r&201326741|1:r?r|2:0}r!==0&&(a=!0,Rd(n,r))}else r=Q,r=Di(n,n===ce?r:0,n.cancelPendingCommit!==null||n.timeoutHandle!==-1),(r&3)===0||Wn(n,r)||(a=!0,Rd(n,r));n=n.next}while(a);Ns=!1}}function lf(){Td()}function Td(){Ar=ks=!1;var e=0;fa!==0&&bf()&&(e=fa);for(var t=Xe(),a=null,n=wr;n!==null;){var i=n.next,r=Ed(n,t);r===0?(n.next=null,a===null?wr=i:a.next=i,i===null&&(wn=a)):(a=n,(e!==0||(r&3)!==0)&&(Ar=!0)),n=i}Le!==0&&Le!==5||ui(e),fa!==0&&(fa=0)}function Ed(e,t){for(var a=e.suspendedLanes,n=e.pingedLanes,i=e.expirationTimes,r=e.pendingLanes&-62914561;0<r;){var o=31-Je(r),s=1<<o,l=i[o];l===-1?((s&a)===0||(s&n)!==0)&&(i[o]=Np(s,t)):l<=t&&(e.expiredLanes|=s),r&=~s}if(t=ce,a=Q,a=Di(e,e===t?a:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),n=e.callbackNode,a===0||e===t&&(ae===2||ae===9)||e.cancelPendingCommit!==null)return n!==null&&n!==null&&Fr(n),e.callbackNode=null,e.callbackPriority=0;if((a&3)===0||Wn(e,a)){if(t=a&-a,t===e.callbackPriority)return t;switch(n!==null&&Fr(n),Yr(a)){case 2:case 8:a=yl;break;case 32:a=Ai;break;case 268435456:a=vl;break;default:a=Ai}return n=Dd.bind(null,e),a=_r(a,n),e.callbackPriority=t,e.callbackNode=a,t}return n!==null&&n!==null&&Fr(n),e.callbackPriority=2,e.callbackNode=null,2}function Dd(e,t){if(Le!==0&&Le!==5)return e.callbackNode=null,e.callbackPriority=0,null;var a=e.callbackNode;if(Sr()&&e.callbackNode!==a)return null;var n=Q;return n=Di(e,e===ce?n:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),n===0?null:(ld(e,n,t),Ed(e,Xe()),e.callbackNode!=null&&e.callbackNode===a?Dd.bind(null,e):null)}function Rd(e,t){if(Sr())return null;ld(e,t,!0)}function cf(){Sf(function(){($&6)!==0?_r(gl,lf):Td()})}function Ms(){if(fa===0){var e=sn;e===0&&(e=Li,Li<<=1,(Li&261888)===0&&(Li=256)),fa=e}return fa}function Wd(e){return e==null||typeof e=="symbol"||typeof e=="boolean"?null:typeof e=="function"?e:Ii(""+e)}function Od(e,t){var a=t.ownerDocument.createElement("input");return a.name=t.name,a.value=t.value,e.id&&a.setAttribute("form",e.id),t.parentNode.insertBefore(a,t),e=new FormData(e),a.parentNode.removeChild(a),e}function uf(e,t,a,n,i){if(t==="submit"&&a&&a.stateNode===i){var r=Wd((i[ze]||null).action),o=n.submitter;o&&(t=(t=o[ze]||null)?Wd(t.formAction):o.getAttribute("formAction"),t!==null&&(r=t,o=null));var s=new Mi("action","action",null,n,i);e.push({event:s,listeners:[{instance:null,listener:function(){if(n.defaultPrevented){if(fa!==0){var l=o?Od(i,o):new FormData(i);ts(a,{pending:!0,data:l,method:i.method,action:r},null,l)}}else typeof r=="function"&&(s.preventDefault(),l=o?Od(i,o):new FormData(i),ts(a,{pending:!0,data:l,method:i.method,action:r},r,l))},currentTarget:i}]})}}for(var Us=0;Us<ho.length;Us++){var qs=ho[Us],df=qs.toLowerCase(),pf=qs[0].toUpperCase()+qs.slice(1);ht(df,"on"+pf)}ht(sc,"onAnimationEnd"),ht(lc,"onAnimationIteration"),ht(cc,"onAnimationStart"),ht("dblclick","onDoubleClick"),ht("focusin","onFocus"),ht("focusout","onBlur"),ht(Dm,"onTransitionRun"),ht(Rm,"onTransitionStart"),ht(Wm,"onTransitionCancel"),ht(uc,"onTransitionEnd"),Qa("onMouseEnter",["mouseout","mouseover"]),Qa("onMouseLeave",["mouseout","mouseover"]),Qa("onPointerEnter",["pointerout","pointerover"]),Qa("onPointerLeave",["pointerout","pointerover"]),La("onChange","change click focusin focusout input keydown keyup selectionchange".split(" ")),La("onSelect","focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")),La("onBeforeInput",["compositionend","keypress","textInput","paste"]),La("onCompositionEnd","compositionend focusout keydown keypress keyup mousedown".split(" ")),La("onCompositionStart","compositionstart focusout keydown keypress keyup mousedown".split(" ")),La("onCompositionUpdate","compositionupdate focusout keydown keypress keyup mousedown".split(" "));var di="abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),mf=new Set("beforetoggle cancel close invalid load scroll scrollend toggle".split(" ").concat(di));function Id(e,t){t=(t&4)!==0;for(var a=0;a<e.length;a++){var n=e[a],i=n.event;n=n.listeners;e:{var r=void 0;if(t)for(var o=n.length-1;0<=o;o--){var s=n[o],l=s.instance,f=s.currentTarget;if(s=s.listener,l!==r&&i.isPropagationStopped())break e;r=s,i.currentTarget=f;try{r(i)}catch(v){Gi(v)}i.currentTarget=null,r=l}else for(o=0;o<n.length;o++){if(s=n[o],l=s.instance,f=s.currentTarget,s=s.listener,l!==r&&i.isPropagationStopped())break e;r=s,i.currentTarget=f;try{r(i)}catch(v){Gi(v)}i.currentTarget=null,r=l}}}}function _(e,t){var a=t[Kr];a===void 0&&(a=t[Kr]=new Set);var n=e+"__bubble";a.has(n)||(xd(t,e,2,!1),a.add(n))}function Gs(e,t,a){var n=0;t&&(n|=4),xd(a,e,n,t)}var Lr="_reactListening"+Math.random().toString(36).slice(2);function Ps(e){if(!e[Lr]){e[Lr]=!0,Tl.forEach(function(a){a!=="selectionchange"&&(mf.has(a)||Gs(a,!1,e),Gs(a,!0,e))});var t=e.nodeType===9?e:e.ownerDocument;t===null||t[Lr]||(t[Lr]=!0,Gs("selectionchange",!1,t))}}function xd(e,t,a,n){switch(sp(t)){case 2:var i=zf;break;case 8:i=jf;break;default:i=el}a=i.bind(null,t,a,e),i=void 0,!io||t!=="touchstart"&&t!=="touchmove"&&t!=="wheel"||(i=!0),n?i!==void 0?e.addEventListener(t,a,{capture:!0,passive:i}):e.addEventListener(t,a,!0):i!==void 0?e.addEventListener(t,a,{passive:i}):e.addEventListener(t,a,!1)}function Bs(e,t,a,n,i){var r=n;if((t&1)===0&&(t&2)===0&&n!==null)e:for(;;){if(n===null)return;var o=n.tag;if(o===3||o===4){var s=n.stateNode.containerInfo;if(s===i)break;if(o===4)for(o=n.return;o!==null;){var l=o.tag;if((l===3||l===4)&&o.stateNode.containerInfo===i)return;o=o.return}for(;s!==null;){if(o=Ha(s),o===null)return;if(l=o.tag,l===5||l===6||l===26||l===27){n=r=o;continue e}s=s.parentNode}}n=n.return}ql(function(){var f=r,v=ao(a),C=[];e:{var g=dc.get(e);if(g!==void 0){var y=Mi,R=e;switch(e){case"keypress":if(ki(a)===0)break e;case"keydown":case"keyup":y=rm;break;case"focusin":R="focus",y=lo;break;case"focusout":R="blur",y=lo;break;case"beforeblur":case"afterblur":y=lo;break;case"click":if(a.button===2)break e;case"auxclick":case"dblclick":case"mousedown":case"mousemove":case"mouseup":case"mouseout":case"mouseover":case"contextmenu":y=Bl;break;case"drag":case"dragend":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"dragstart":case"drop":y=Vp;break;case"touchcancel":case"touchend":case"touchmove":case"touchstart":y=lm;break;case sc:case lc:case cc:y=Xp;break;case uc:y=um;break;case"scroll":case"scrollend":y=Fp;break;case"wheel":y=pm;break;case"copy":case"cut":case"paste":y=Jp;break;case"gotpointercapture":case"lostpointercapture":case"pointercancel":case"pointerdown":case"pointermove":case"pointerout":case"pointerover":case"pointerup":y=jl;break;case"toggle":case"beforetoggle":y=fm}var k=(t&4)!==0,se=!k&&(e==="scroll"||e==="scrollend"),d=k?g!==null?g+"Capture":null:g;k=[];for(var c=f,p;c!==null;){var b=c;if(p=b.stateNode,b=b.tag,b!==5&&b!==26&&b!==27||p===null||d===null||(b=kn(c,d),b!=null&&k.push(pi(c,b,p))),se)break;c=c.return}0<k.length&&(g=new y(g,R,null,a,v),C.push({event:g,listeners:k}))}}if((t&7)===0){e:{if(g=e==="mouseover"||e==="pointerover",y=e==="mouseout"||e==="pointerout",g&&a!==to&&(R=a.relatedTarget||a.fromElement)&&(Ha(R)||R[ja]))break e;if((y||g)&&(g=v.window===v?v:(g=v.ownerDocument)?g.defaultView||g.parentWindow:window,y?(R=a.relatedTarget||a.toElement,y=f,R=R?Ha(R):null,R!==null&&(se=U(R),k=R.tag,R!==se||k!==5&&k!==27&&k!==6)&&(R=null)):(y=null,R=f),y!==R)){if(k=Bl,b="onMouseLeave",d="onMouseEnter",c="mouse",(e==="pointerout"||e==="pointerover")&&(k=jl,b="onPointerLeave",d="onPointerEnter",c="pointer"),se=y==null?g:xn(y),p=R==null?g:xn(R),g=new k(b,c+"leave",y,a,v),g.target=se,g.relatedTarget=p,b=null,Ha(v)===f&&(k=new k(d,c+"enter",R,a,v),k.target=p,k.relatedTarget=se,b=k),se=b,y&&R)t:{for(k=ff,d=y,c=R,p=0,b=d;b;b=k(b))p++;b=0;for(var I=c;I;I=k(I))b++;for(;0<p-b;)d=k(d),p--;for(;0<b-p;)c=k(c),b--;for(;p--;){if(d===c||c!==null&&d===c.alternate){k=d;break t}d=k(d),c=k(c)}k=null}else k=null;y!==null&&kd(C,g,y,k,!1),R!==null&&se!==null&&kd(C,se,R,k,!0)}}e:{if(g=f?xn(f):window,y=g.nodeName&&g.nodeName.toLowerCase(),y==="select"||y==="input"&&g.type==="file")var Z=Xl;else if(Yl(g))if(Zl)Z=Lm;else{Z=wm;var O=Sm}else y=g.nodeName,!y||y.toLowerCase()!=="input"||g.type!=="checkbox"&&g.type!=="radio"?f&&eo(f.elementType)&&(Z=Xl):Z=Am;if(Z&&(Z=Z(e,f))){Kl(C,Z,a,v);break e}O&&O(e,g,f),e==="focusout"&&f&&g.type==="number"&&f.memoizedProps.value!=null&&$r(g,"number",g.value)}switch(O=f?xn(f):window,e){case"focusin":(Yl(O)||O.contentEditable==="true")&&(Ja=O,go=f,zn=null);break;case"focusout":zn=go=Ja=null;break;case"mousedown":yo=!0;break;case"contextmenu":case"mouseup":case"dragend":yo=!1,rc(C,a,v);break;case"selectionchange":if(Em)break;case"keydown":case"keyup":rc(C,a,v)}var z;if(uo)e:{switch(e){case"compositionstart":var V="onCompositionStart";break e;case"compositionend":V="onCompositionEnd";break e;case"compositionupdate":V="onCompositionUpdate";break e}V=void 0}else Za?Ql(e,a)&&(V="onCompositionEnd"):e==="keydown"&&a.keyCode===229&&(V="onCompositionStart");V&&(Hl&&a.locale!=="ko"&&(Za||V!=="onCompositionStart"?V==="onCompositionEnd"&&Za&&(z=Gl()):(Jt=v,ro="value"in Jt?Jt.value:Jt.textContent,Za=!0)),O=Tr(f,V),0<O.length&&(V=new zl(V,e,null,a,v),C.push({event:V,listeners:O}),z?V.data=z:(z=Vl(a),z!==null&&(V.data=z)))),(z=ym?vm(e,a):hm(e,a))&&(V=Tr(f,"onBeforeInput"),0<V.length&&(O=new zl("onBeforeInput","beforeinput",null,a,v),C.push({event:O,listeners:V}),O.data=z)),uf(C,e,f,a,v)}Id(C,t)})}function pi(e,t,a){return{instance:e,listener:t,currentTarget:a}}function Tr(e,t){for(var a=t+"Capture",n=[];e!==null;){var i=e,r=i.stateNode;if(i=i.tag,i!==5&&i!==26&&i!==27||r===null||(i=kn(e,a),i!=null&&n.unshift(pi(e,i,r)),i=kn(e,t),i!=null&&n.push(pi(e,i,r))),e.tag===3)return n;e=e.return}return[]}function ff(e){if(e===null)return null;do e=e.return;while(e&&e.tag!==5&&e.tag!==27);return e||null}function kd(e,t,a,n,i){for(var r=t._reactName,o=[];a!==null&&a!==n;){var s=a,l=s.alternate,f=s.stateNode;if(s=s.tag,l!==null&&l===n)break;s!==5&&s!==26&&s!==27||f===null||(l=f,i?(f=kn(a,r),f!=null&&o.unshift(pi(a,f,l))):i||(f=kn(a,r),f!=null&&o.push(pi(a,f,l)))),a=a.return}o.length!==0&&e.push({event:t,listeners:o})}var gf=/\r\n?/g,yf=/\u0000|\uFFFD/g;function Nd(e){return(typeof e=="string"?e:""+e).replace(gf,`
-`).replace(yf,"")}function Md(e,t){return t=Nd(t),Nd(e)===t}function oe(e,t,a,n,i,r){switch(a){case"children":typeof n=="string"?t==="body"||t==="textarea"&&n===""||Ya(e,n):(typeof n=="number"||typeof n=="bigint")&&t!=="body"&&Ya(e,""+n);break;case"className":Wi(e,"class",n);break;case"tabIndex":Wi(e,"tabindex",n);break;case"dir":case"role":case"viewBox":case"width":case"height":Wi(e,a,n);break;case"style":Ml(e,n,r);break;case"data":if(t!=="object"){Wi(e,"data",n);break}case"src":case"href":if(n===""&&(t!=="a"||a!=="href")){e.removeAttribute(a);break}if(n==null||typeof n=="function"||typeof n=="symbol"||typeof n=="boolean"){e.removeAttribute(a);break}n=Ii(""+n),e.setAttribute(a,n);break;case"action":case"formAction":if(typeof n=="function"){e.setAttribute(a,"javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')");break}else typeof r=="function"&&(a==="formAction"?(t!=="input"&&oe(e,t,"name",i.name,i,null),oe(e,t,"formEncType",i.formEncType,i,null),oe(e,t,"formMethod",i.formMethod,i,null),oe(e,t,"formTarget",i.formTarget,i,null)):(oe(e,t,"encType",i.encType,i,null),oe(e,t,"method",i.method,i,null),oe(e,t,"target",i.target,i,null)));if(n==null||typeof n=="symbol"||typeof n=="boolean"){e.removeAttribute(a);break}n=Ii(""+n),e.setAttribute(a,n);break;case"onClick":n!=null&&(e.onclick=It);break;case"onScroll":n!=null&&_("scroll",e);break;case"onScrollEnd":n!=null&&_("scrollend",e);break;case"dangerouslySetInnerHTML":if(n!=null){if(typeof n!="object"||!("__html"in n))throw Error(m(61));if(a=n.__html,a!=null){if(i.children!=null)throw Error(m(60));e.innerHTML=a}}break;case"multiple":e.multiple=n&&typeof n!="function"&&typeof n!="symbol";break;case"muted":e.muted=n&&typeof n!="function"&&typeof n!="symbol";break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"defaultValue":case"defaultChecked":case"innerHTML":case"ref":break;case"autoFocus":break;case"xlinkHref":if(n==null||typeof n=="function"||typeof n=="boolean"||typeof n=="symbol"){e.removeAttribute("xlink:href");break}a=Ii(""+n),e.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",a);break;case"contentEditable":case"spellCheck":case"draggable":case"value":case"autoReverse":case"externalResourcesRequired":case"focusable":case"preserveAlpha":n!=null&&typeof n!="function"&&typeof n!="symbol"?e.setAttribute(a,""+n):e.removeAttribute(a);break;case"inert":case"allowFullScreen":case"async":case"autoPlay":case"controls":case"default":case"defer":case"disabled":case"disablePictureInPicture":case"disableRemotePlayback":case"formNoValidate":case"hidden":case"loop":case"noModule":case"noValidate":case"open":case"playsInline":case"readOnly":case"required":case"reversed":case"scoped":case"seamless":case"itemScope":n&&typeof n!="function"&&typeof n!="symbol"?e.setAttribute(a,""):e.removeAttribute(a);break;case"capture":case"download":n===!0?e.setAttribute(a,""):n!==!1&&n!=null&&typeof n!="function"&&typeof n!="symbol"?e.setAttribute(a,n):e.removeAttribute(a);break;case"cols":case"rows":case"size":case"span":n!=null&&typeof n!="function"&&typeof n!="symbol"&&!isNaN(n)&&1<=n?e.setAttribute(a,n):e.removeAttribute(a);break;case"rowSpan":case"start":n==null||typeof n=="function"||typeof n=="symbol"||isNaN(n)?e.removeAttribute(a):e.setAttribute(a,n);break;case"popover":_("beforetoggle",e),_("toggle",e),Ri(e,"popover",n);break;case"xlinkActuate":Ot(e,"http://www.w3.org/1999/xlink","xlink:actuate",n);break;case"xlinkArcrole":Ot(e,"http://www.w3.org/1999/xlink","xlink:arcrole",n);break;case"xlinkRole":Ot(e,"http://www.w3.org/1999/xlink","xlink:role",n);break;case"xlinkShow":Ot(e,"http://www.w3.org/1999/xlink","xlink:show",n);break;case"xlinkTitle":Ot(e,"http://www.w3.org/1999/xlink","xlink:title",n);break;case"xlinkType":Ot(e,"http://www.w3.org/1999/xlink","xlink:type",n);break;case"xmlBase":Ot(e,"http://www.w3.org/XML/1998/namespace","xml:base",n);break;case"xmlLang":Ot(e,"http://www.w3.org/XML/1998/namespace","xml:lang",n);break;case"xmlSpace":Ot(e,"http://www.w3.org/XML/1998/namespace","xml:space",n);break;case"is":Ri(e,"is",n);break;case"innerText":case"textContent":break;default:(!(2<a.length)||a[0]!=="o"&&a[0]!=="O"||a[1]!=="n"&&a[1]!=="N")&&(a=Hp.get(a)||a,Ri(e,a,n))}}function zs(e,t,a,n,i,r){switch(a){case"style":Ml(e,n,r);break;case"dangerouslySetInnerHTML":if(n!=null){if(typeof n!="object"||!("__html"in n))throw Error(m(61));if(a=n.__html,a!=null){if(i.children!=null)throw Error(m(60));e.innerHTML=a}}break;case"children":typeof n=="string"?Ya(e,n):(typeof n=="number"||typeof n=="bigint")&&Ya(e,""+n);break;case"onScroll":n!=null&&_("scroll",e);break;case"onScrollEnd":n!=null&&_("scrollend",e);break;case"onClick":n!=null&&(e.onclick=It);break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"innerHTML":case"ref":break;case"innerText":case"textContent":break;default:if(!El.hasOwnProperty(a))e:{if(a[0]==="o"&&a[1]==="n"&&(i=a.endsWith("Capture"),t=a.slice(2,i?a.length-7:void 0),r=e[ze]||null,r=r!=null?r[a]:null,typeof r=="function"&&e.removeEventListener(t,r,i),typeof n=="function")){typeof r!="function"&&r!==null&&(a in e?e[a]=null:e.hasAttribute(a)&&e.removeAttribute(a)),e.addEventListener(t,n,i);break e}a in e?e[a]=n:n===!0?e.setAttribute(a,""):Ri(e,a,n)}}}function Ie(e,t,a){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"img":_("error",e),_("load",e);var n=!1,i=!1,r;for(r in a)if(a.hasOwnProperty(r)){var o=a[r];if(o!=null)switch(r){case"src":n=!0;break;case"srcSet":i=!0;break;case"children":case"dangerouslySetInnerHTML":throw Error(m(137,t));default:oe(e,t,r,o,a,null)}}i&&oe(e,t,"srcSet",a.srcSet,a,null),n&&oe(e,t,"src",a.src,a,null);return;case"input":_("invalid",e);var s=r=o=i=null,l=null,f=null;for(n in a)if(a.hasOwnProperty(n)){var v=a[n];if(v!=null)switch(n){case"name":i=v;break;case"type":o=v;break;case"checked":l=v;break;case"defaultChecked":f=v;break;case"value":r=v;break;case"defaultValue":s=v;break;case"children":case"dangerouslySetInnerHTML":if(v!=null)throw Error(m(137,t));break;default:oe(e,t,n,v,a,null)}}Il(e,r,s,l,f,o,i,!1);return;case"select":_("invalid",e),n=o=r=null;for(i in a)if(a.hasOwnProperty(i)&&(s=a[i],s!=null))switch(i){case"value":r=s;break;case"defaultValue":o=s;break;case"multiple":n=s;default:oe(e,t,i,s,a,null)}t=r,a=o,e.multiple=!!n,t!=null?Va(e,!!n,t,!1):a!=null&&Va(e,!!n,a,!0);return;case"textarea":_("invalid",e),r=i=n=null;for(o in a)if(a.hasOwnProperty(o)&&(s=a[o],s!=null))switch(o){case"value":n=s;break;case"defaultValue":i=s;break;case"children":r=s;break;case"dangerouslySetInnerHTML":if(s!=null)throw Error(m(91));break;default:oe(e,t,o,s,a,null)}kl(e,n,i,r);return;case"option":for(l in a)a.hasOwnProperty(l)&&(n=a[l],n!=null)&&(l==="selected"?e.selected=n&&typeof n!="function"&&typeof n!="symbol":oe(e,t,l,n,a,null));return;case"dialog":_("beforetoggle",e),_("toggle",e),_("cancel",e),_("close",e);break;case"iframe":case"object":_("load",e);break;case"video":case"audio":for(n=0;n<di.length;n++)_(di[n],e);break;case"image":_("error",e),_("load",e);break;case"details":_("toggle",e);break;case"embed":case"source":case"link":_("error",e),_("load",e);case"area":case"base":case"br":case"col":case"hr":case"keygen":case"meta":case"param":case"track":case"wbr":case"menuitem":for(f in a)if(a.hasOwnProperty(f)&&(n=a[f],n!=null))switch(f){case"children":case"dangerouslySetInnerHTML":throw Error(m(137,t));default:oe(e,t,f,n,a,null)}return;default:if(eo(t)){for(v in a)a.hasOwnProperty(v)&&(n=a[v],n!==void 0&&zs(e,t,v,n,a,void 0));return}}for(s in a)a.hasOwnProperty(s)&&(n=a[s],n!=null&&oe(e,t,s,n,a,null))}function vf(e,t,a,n){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"input":var i=null,r=null,o=null,s=null,l=null,f=null,v=null;for(y in a){var C=a[y];if(a.hasOwnProperty(y)&&C!=null)switch(y){case"checked":break;case"value":break;case"defaultValue":l=C;default:n.hasOwnProperty(y)||oe(e,t,y,null,n,C)}}for(var g in n){var y=n[g];if(C=a[g],n.hasOwnProperty(g)&&(y!=null||C!=null))switch(g){case"type":r=y;break;case"name":i=y;break;case"checked":f=y;break;case"defaultChecked":v=y;break;case"value":o=y;break;case"defaultValue":s=y;break;case"children":case"dangerouslySetInnerHTML":if(y!=null)throw Error(m(137,t));break;default:y!==C&&oe(e,t,g,y,n,C)}}Jr(e,o,s,l,f,v,r,i);return;case"select":y=o=s=g=null;for(r in a)if(l=a[r],a.hasOwnProperty(r)&&l!=null)switch(r){case"value":break;case"multiple":y=l;default:n.hasOwnProperty(r)||oe(e,t,r,null,n,l)}for(i in n)if(r=n[i],l=a[i],n.hasOwnProperty(i)&&(r!=null||l!=null))switch(i){case"value":g=r;break;case"defaultValue":s=r;break;case"multiple":o=r;default:r!==l&&oe(e,t,i,r,n,l)}t=s,a=o,n=y,g!=null?Va(e,!!a,g,!1):!!n!=!!a&&(t!=null?Va(e,!!a,t,!0):Va(e,!!a,a?[]:"",!1));return;case"textarea":y=g=null;for(s in a)if(i=a[s],a.hasOwnProperty(s)&&i!=null&&!n.hasOwnProperty(s))switch(s){case"value":break;case"children":break;default:oe(e,t,s,null,n,i)}for(o in n)if(i=n[o],r=a[o],n.hasOwnProperty(o)&&(i!=null||r!=null))switch(o){case"value":g=i;break;case"defaultValue":y=i;break;case"children":break;case"dangerouslySetInnerHTML":if(i!=null)throw Error(m(91));break;default:i!==r&&oe(e,t,o,i,n,r)}xl(e,g,y);return;case"option":for(var R in a)g=a[R],a.hasOwnProperty(R)&&g!=null&&!n.hasOwnProperty(R)&&(R==="selected"?e.selected=!1:oe(e,t,R,null,n,g));for(l in n)g=n[l],y=a[l],n.hasOwnProperty(l)&&g!==y&&(g!=null||y!=null)&&(l==="selected"?e.selected=g&&typeof g!="function"&&typeof g!="symbol":oe(e,t,l,g,n,y));return;case"img":case"link":case"area":case"base":case"br":case"col":case"embed":case"hr":case"keygen":case"meta":case"param":case"source":case"track":case"wbr":case"menuitem":for(var k in a)g=a[k],a.hasOwnProperty(k)&&g!=null&&!n.hasOwnProperty(k)&&oe(e,t,k,null,n,g);for(f in n)if(g=n[f],y=a[f],n.hasOwnProperty(f)&&g!==y&&(g!=null||y!=null))switch(f){case"children":case"dangerouslySetInnerHTML":if(g!=null)throw Error(m(137,t));break;default:oe(e,t,f,g,n,y)}return;default:if(eo(t)){for(var se in a)g=a[se],a.hasOwnProperty(se)&&g!==void 0&&!n.hasOwnProperty(se)&&zs(e,t,se,void 0,n,g);for(v in n)g=n[v],y=a[v],!n.hasOwnProperty(v)||g===y||g===void 0&&y===void 0||zs(e,t,v,g,n,y);return}}for(var d in a)g=a[d],a.hasOwnProperty(d)&&g!=null&&!n.hasOwnProperty(d)&&oe(e,t,d,null,n,g);for(C in n)g=n[C],y=a[C],!n.hasOwnProperty(C)||g===y||g==null&&y==null||oe(e,t,C,g,n,y)}function Ud(e){switch(e){case"css":case"script":case"font":case"img":case"image":case"input":case"link":return!0;default:return!1}}function hf(){if(typeof performance.getEntriesByType=="function"){for(var e=0,t=0,a=performance.getEntriesByType("resource"),n=0;n<a.length;n++){var i=a[n],r=i.transferSize,o=i.initiatorType,s=i.duration;if(r&&s&&Ud(o)){for(o=0,s=i.responseEnd,n+=1;n<a.length;n++){var l=a[n],f=l.startTime;if(f>s)break;var v=l.transferSize,C=l.initiatorType;v&&Ud(C)&&(l=l.responseEnd,o+=v*(l<s?1:(s-f)/(l-f)))}if(--n,t+=8*(r+o)/(i.duration/1e3),e++,10<e)break}}if(0<e)return t/e/1e6}return navigator.connection&&(e=navigator.connection.downlink,typeof e=="number")?e:5}var js=null,Hs=null;function Er(e){return e.nodeType===9?e:e.ownerDocument}function qd(e){switch(e){case"http://www.w3.org/2000/svg":return 1;case"http://www.w3.org/1998/Math/MathML":return 2;default:return 0}}function Gd(e,t){if(e===0)switch(t){case"svg":return 1;case"math":return 2;default:return 0}return e===1&&t==="foreignObject"?0:e}function _s(e,t){return e==="textarea"||e==="noscript"||typeof t.children=="string"||typeof t.children=="number"||typeof t.children=="bigint"||typeof t.dangerouslySetInnerHTML=="object"&&t.dangerouslySetInnerHTML!==null&&t.dangerouslySetInnerHTML.__html!=null}var Fs=null;function bf(){var e=window.event;return e&&e.type==="popstate"?e===Fs?!1:(Fs=e,!0):(Fs=null,!1)}var Pd=typeof setTimeout=="function"?setTimeout:void 0,Cf=typeof clearTimeout=="function"?clearTimeout:void 0,Bd=typeof Promise=="function"?Promise:void 0,Sf=typeof queueMicrotask=="function"?queueMicrotask:typeof Bd<"u"?function(e){return Bd.resolve(null).then(e).catch(wf)}:Pd;function wf(e){setTimeout(function(){throw e})}function ga(e){return e==="head"}function zd(e,t){var a=t,n=0;do{var i=a.nextSibling;if(e.removeChild(a),i&&i.nodeType===8)if(a=i.data,a==="/$"||a==="/&"){if(n===0){e.removeChild(i),En(t);return}n--}else if(a==="$"||a==="$?"||a==="$~"||a==="$!"||a==="&")n++;else if(a==="html")mi(e.ownerDocument.documentElement);else if(a==="head"){a=e.ownerDocument.head,mi(a);for(var r=a.firstChild;r;){var o=r.nextSibling,s=r.nodeName;r[In]||s==="SCRIPT"||s==="STYLE"||s==="LINK"&&r.rel.toLowerCase()==="stylesheet"||a.removeChild(r),r=o}}else a==="body"&&mi(e.ownerDocument.body);a=i}while(a);En(t)}function jd(e,t){var a=e;e=0;do{var n=a.nextSibling;if(a.nodeType===1?t?(a._stashedDisplay=a.style.display,a.style.display="none"):(a.style.display=a._stashedDisplay||"",a.getAttribute("style")===""&&a.removeAttribute("style")):a.nodeType===3&&(t?(a._stashedText=a.nodeValue,a.nodeValue=""):a.nodeValue=a._stashedText||""),n&&n.nodeType===8)if(a=n.data,a==="/$"){if(e===0)break;e--}else a!=="$"&&a!=="$?"&&a!=="$~"&&a!=="$!"||e++;a=n}while(a)}function Qs(e){var t=e.firstChild;for(t&&t.nodeType===10&&(t=t.nextSibling);t;){var a=t;switch(t=t.nextSibling,a.nodeName){case"HTML":case"HEAD":case"BODY":Qs(a),Xr(a);continue;case"SCRIPT":case"STYLE":continue;case"LINK":if(a.rel.toLowerCase()==="stylesheet")continue}e.removeChild(a)}}function Af(e,t,a,n){for(;e.nodeType===1;){var i=a;if(e.nodeName.toLowerCase()!==t.toLowerCase()){if(!n&&(e.nodeName!=="INPUT"||e.type!=="hidden"))break}else if(n){if(!e[In])switch(t){case"meta":if(!e.hasAttribute("itemprop"))break;return e;case"link":if(r=e.getAttribute("rel"),r==="stylesheet"&&e.hasAttribute("data-precedence"))break;if(r!==i.rel||e.getAttribute("href")!==(i.href==null||i.href===""?null:i.href)||e.getAttribute("crossorigin")!==(i.crossOrigin==null?null:i.crossOrigin)||e.getAttribute("title")!==(i.title==null?null:i.title))break;return e;case"style":if(e.hasAttribute("data-precedence"))break;return e;case"script":if(r=e.getAttribute("src"),(r!==(i.src==null?null:i.src)||e.getAttribute("type")!==(i.type==null?null:i.type)||e.getAttribute("crossorigin")!==(i.crossOrigin==null?null:i.crossOrigin))&&r&&e.hasAttribute("async")&&!e.hasAttribute("itemprop"))break;return e;default:return e}}else if(t==="input"&&e.type==="hidden"){var r=i.name==null?null:""+i.name;if(i.type==="hidden"&&e.getAttribute("name")===r)return e}else return e;if(e=gt(e.nextSibling),e===null)break}return null}function Lf(e,t,a){if(t==="")return null;for(;e.nodeType!==3;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!a||(e=gt(e.nextSibling),e===null))return null;return e}function Hd(e,t){for(;e.nodeType!==8;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!t||(e=gt(e.nextSibling),e===null))return null;return e}function Vs(e){return e.data==="$?"||e.data==="$~"}function Ys(e){return e.data==="$!"||e.data==="$?"&&e.ownerDocument.readyState!=="loading"}function Tf(e,t){var a=e.ownerDocument;if(e.data==="$~")e._reactRetry=t;else if(e.data!=="$?"||a.readyState!=="loading")t();else{var n=function(){t(),a.removeEventListener("DOMContentLoaded",n)};a.addEventListener("DOMContentLoaded",n),e._reactRetry=n}}function gt(e){for(;e!=null;e=e.nextSibling){var t=e.nodeType;if(t===1||t===3)break;if(t===8){if(t=e.data,t==="$"||t==="$!"||t==="$?"||t==="$~"||t==="&"||t==="F!"||t==="F")break;if(t==="/$"||t==="/&")return null}}return e}var Ks=null;function _d(e){e=e.nextSibling;for(var t=0;e;){if(e.nodeType===8){var a=e.data;if(a==="/$"||a==="/&"){if(t===0)return gt(e.nextSibling);t--}else a!=="$"&&a!=="$!"&&a!=="$?"&&a!=="$~"&&a!=="&"||t++}e=e.nextSibling}return null}function Fd(e){e=e.previousSibling;for(var t=0;e;){if(e.nodeType===8){var a=e.data;if(a==="$"||a==="$!"||a==="$?"||a==="$~"||a==="&"){if(t===0)return e;t--}else a!=="/$"&&a!=="/&"||t++}e=e.previousSibling}return null}function Qd(e,t,a){switch(t=Er(a),e){case"html":if(e=t.documentElement,!e)throw Error(m(452));return e;case"head":if(e=t.head,!e)throw Error(m(453));return e;case"body":if(e=t.body,!e)throw Error(m(454));return e;default:throw Error(m(451))}}function mi(e){for(var t=e.attributes;t.length;)e.removeAttributeNode(t[0]);Xr(e)}var yt=new Map,Vd=new Set;function Dr(e){return typeof e.getRootNode=="function"?e.getRootNode():e.nodeType===9?e:e.ownerDocument}var Vt=T.d;T.d={f:Ef,r:Df,D:Rf,C:Wf,L:Of,m:If,X:kf,S:xf,M:Nf};function Ef(){var e=Vt.f(),t=hr();return e||t}function Df(e){var t=_a(e);t!==null&&t.tag===5&&t.type==="form"?uu(t):Vt.r(e)}var An=typeof document>"u"?null:document;function Yd(e,t,a){var n=An;if(n&&typeof t=="string"&&t){var i=lt(t);i='link[rel="'+e+'"][href="'+i+'"]',typeof a=="string"&&(i+='[crossorigin="'+a+'"]'),Vd.has(i)||(Vd.add(i),e={rel:e,crossOrigin:a,href:t},n.querySelector(i)===null&&(t=n.createElement("link"),Ie(t,"link",e),Te(t),n.head.appendChild(t)))}}function Rf(e){Vt.D(e),Yd("dns-prefetch",e,null)}function Wf(e,t){Vt.C(e,t),Yd("preconnect",e,t)}function Of(e,t,a){Vt.L(e,t,a);var n=An;if(n&&e&&t){var i='link[rel="preload"][as="'+lt(t)+'"]';t==="image"&&a&&a.imageSrcSet?(i+='[imagesrcset="'+lt(a.imageSrcSet)+'"]',typeof a.imageSizes=="string"&&(i+='[imagesizes="'+lt(a.imageSizes)+'"]')):i+='[href="'+lt(e)+'"]';var r=i;switch(t){case"style":r=Ln(e);break;case"script":r=Tn(e)}yt.has(r)||(e=N({rel:"preload",href:t==="image"&&a&&a.imageSrcSet?void 0:e,as:t},a),yt.set(r,e),n.querySelector(i)!==null||t==="style"&&n.querySelector(fi(r))||t==="script"&&n.querySelector(gi(r))||(t=n.createElement("link"),Ie(t,"link",e),Te(t),n.head.appendChild(t)))}}function If(e,t){Vt.m(e,t);var a=An;if(a&&e){var n=t&&typeof t.as=="string"?t.as:"script",i='link[rel="modulepreload"][as="'+lt(n)+'"][href="'+lt(e)+'"]',r=i;switch(n){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":r=Tn(e)}if(!yt.has(r)&&(e=N({rel:"modulepreload",href:e},t),yt.set(r,e),a.querySelector(i)===null)){switch(n){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":if(a.querySelector(gi(r)))return}n=a.createElement("link"),Ie(n,"link",e),Te(n),a.head.appendChild(n)}}}function xf(e,t,a){Vt.S(e,t,a);var n=An;if(n&&e){var i=Fa(n).hoistableStyles,r=Ln(e);t=t||"default";var o=i.get(r);if(!o){var s={loading:0,preload:null};if(o=n.querySelector(fi(r)))s.loading=5;else{e=N({rel:"stylesheet",href:e,"data-precedence":t},a),(a=yt.get(r))&&Xs(e,a);var l=o=n.createElement("link");Te(l),Ie(l,"link",e),l._p=new Promise(function(f,v){l.onload=f,l.onerror=v}),l.addEventListener("load",function(){s.loading|=1}),l.addEventListener("error",function(){s.loading|=2}),s.loading|=4,Rr(o,t,n)}o={type:"stylesheet",instance:o,count:1,state:s},i.set(r,o)}}}function kf(e,t){Vt.X(e,t);var a=An;if(a&&e){var n=Fa(a).hoistableScripts,i=Tn(e),r=n.get(i);r||(r=a.querySelector(gi(i)),r||(e=N({src:e,async:!0},t),(t=yt.get(i))&&Zs(e,t),r=a.createElement("script"),Te(r),Ie(r,"link",e),a.head.appendChild(r)),r={type:"script",instance:r,count:1,state:null},n.set(i,r))}}function Nf(e,t){Vt.M(e,t);var a=An;if(a&&e){var n=Fa(a).hoistableScripts,i=Tn(e),r=n.get(i);r||(r=a.querySelector(gi(i)),r||(e=N({src:e,async:!0,type:"module"},t),(t=yt.get(i))&&Zs(e,t),r=a.createElement("script"),Te(r),Ie(r,"link",e),a.head.appendChild(r)),r={type:"script",instance:r,count:1,state:null},n.set(i,r))}}function Kd(e,t,a,n){var i=(i=j.current)?Dr(i):null;if(!i)throw Error(m(446));switch(e){case"meta":case"title":return null;case"style":return typeof a.precedence=="string"&&typeof a.href=="string"?(t=Ln(a.href),a=Fa(i).hoistableStyles,n=a.get(t),n||(n={type:"style",instance:null,count:0,state:null},a.set(t,n)),n):{type:"void",instance:null,count:0,state:null};case"link":if(a.rel==="stylesheet"&&typeof a.href=="string"&&typeof a.precedence=="string"){e=Ln(a.href);var r=Fa(i).hoistableStyles,o=r.get(e);if(o||(i=i.ownerDocument||i,o={type:"stylesheet",instance:null,count:0,state:{loading:0,preload:null}},r.set(e,o),(r=i.querySelector(fi(e)))&&!r._p&&(o.instance=r,o.state.loading=5),yt.has(e)||(a={rel:"preload",as:"style",href:a.href,crossOrigin:a.crossOrigin,integrity:a.integrity,media:a.media,hrefLang:a.hrefLang,referrerPolicy:a.referrerPolicy},yt.set(e,a),r||Mf(i,e,a,o.state))),t&&n===null)throw Error(m(528,""));return o}if(t&&n!==null)throw Error(m(529,""));return null;case"script":return t=a.async,a=a.src,typeof a=="string"&&t&&typeof t!="function"&&typeof t!="symbol"?(t=Tn(a),a=Fa(i).hoistableScripts,n=a.get(t),n||(n={type:"script",instance:null,count:0,state:null},a.set(t,n)),n):{type:"void",instance:null,count:0,state:null};default:throw Error(m(444,e))}}function Ln(e){return'href="'+lt(e)+'"'}function fi(e){return'link[rel="stylesheet"]['+e+"]"}function Xd(e){return N({},e,{"data-precedence":e.precedence,precedence:null})}function Mf(e,t,a,n){e.querySelector('link[rel="preload"][as="style"]['+t+"]")?n.loading=1:(t=e.createElement("link"),n.preload=t,t.addEventListener("load",function(){return n.loading|=1}),t.addEventListener("error",function(){return n.loading|=2}),Ie(t,"link",a),Te(t),e.head.appendChild(t))}function Tn(e){return'[src="'+lt(e)+'"]'}function gi(e){return"script[async]"+e}function Zd(e,t,a){if(t.count++,t.instance===null)switch(t.type){case"style":var n=e.querySelector('style[data-href~="'+lt(a.href)+'"]');if(n)return t.instance=n,Te(n),n;var i=N({},a,{"data-href":a.href,"data-precedence":a.precedence,href:null,precedence:null});return n=(e.ownerDocument||e).createElement("style"),Te(n),Ie(n,"style",i),Rr(n,a.precedence,e),t.instance=n;case"stylesheet":i=Ln(a.href);var r=e.querySelector(fi(i));if(r)return t.state.loading|=4,t.instance=r,Te(r),r;n=Xd(a),(i=yt.get(i))&&Xs(n,i),r=(e.ownerDocument||e).createElement("link"),Te(r);var o=r;return o._p=new Promise(function(s,l){o.onload=s,o.onerror=l}),Ie(r,"link",n),t.state.loading|=4,Rr(r,a.precedence,e),t.instance=r;case"script":return r=Tn(a.src),(i=e.querySelector(gi(r)))?(t.instance=i,Te(i),i):(n=a,(i=yt.get(r))&&(n=N({},a),Zs(n,i)),e=e.ownerDocument||e,i=e.createElement("script"),Te(i),Ie(i,"link",n),e.head.appendChild(i),t.instance=i);case"void":return null;default:throw Error(m(443,t.type))}else t.type==="stylesheet"&&(t.state.loading&4)===0&&(n=t.instance,t.state.loading|=4,Rr(n,a.precedence,e));return t.instance}function Rr(e,t,a){for(var n=a.querySelectorAll('link[rel="stylesheet"][data-precedence],style[data-precedence]'),i=n.length?n[n.length-1]:null,r=i,o=0;o<n.length;o++){var s=n[o];if(s.dataset.precedence===t)r=s;else if(r!==i)break}r?r.parentNode.insertBefore(e,r.nextSibling):(t=a.nodeType===9?a.head:a,t.insertBefore(e,t.firstChild))}function Xs(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.title==null&&(e.title=t.title)}function Zs(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.integrity==null&&(e.integrity=t.integrity)}var Wr=null;function Jd(e,t,a){if(Wr===null){var n=new Map,i=Wr=new Map;i.set(a,n)}else i=Wr,n=i.get(a),n||(n=new Map,i.set(a,n));if(n.has(e))return n;for(n.set(e,null),a=a.getElementsByTagName(e),i=0;i<a.length;i++){var r=a[i];if(!(r[In]||r[De]||e==="link"&&r.getAttribute("rel")==="stylesheet")&&r.namespaceURI!=="http://www.w3.org/2000/svg"){var o=r.getAttribute(t)||"";o=e+o;var s=n.get(o);s?s.push(r):n.set(o,[r])}}return n}function $d(e,t,a){e=e.ownerDocument||e,e.head.insertBefore(a,t==="title"?e.querySelector("head > title"):null)}function Uf(e,t,a){if(a===1||t.itemProp!=null)return!1;switch(e){case"meta":case"title":return!0;case"style":if(typeof t.precedence!="string"||typeof t.href!="string"||t.href==="")break;return!0;case"link":if(typeof t.rel!="string"||typeof t.href!="string"||t.href===""||t.onLoad||t.onError)break;return t.rel==="stylesheet"?(e=t.disabled,typeof t.precedence=="string"&&e==null):!0;case"script":if(t.async&&typeof t.async!="function"&&typeof t.async!="symbol"&&!t.onLoad&&!t.onError&&t.src&&typeof t.src=="string")return!0}return!1}function ep(e){return!(e.type==="stylesheet"&&(e.state.loading&3)===0)}function qf(e,t,a,n){if(a.type==="stylesheet"&&(typeof n.media!="string"||matchMedia(n.media).matches!==!1)&&(a.state.loading&4)===0){if(a.instance===null){var i=Ln(n.href),r=t.querySelector(fi(i));if(r){t=r._p,t!==null&&typeof t=="object"&&typeof t.then=="function"&&(e.count++,e=Or.bind(e),t.then(e,e)),a.state.loading|=4,a.instance=r,Te(r);return}r=t.ownerDocument||t,n=Xd(n),(i=yt.get(i))&&Xs(n,i),r=r.createElement("link"),Te(r);var o=r;o._p=new Promise(function(s,l){o.onload=s,o.onerror=l}),Ie(r,"link",n),a.instance=r}e.stylesheets===null&&(e.stylesheets=new Map),e.stylesheets.set(a,t),(t=a.state.preload)&&(a.state.loading&3)===0&&(e.count++,a=Or.bind(e),t.addEventListener("load",a),t.addEventListener("error",a))}}var Js=0;function Gf(e,t){return e.stylesheets&&e.count===0&&xr(e,e.stylesheets),0<e.count||0<e.imgCount?function(a){var n=setTimeout(function(){if(e.stylesheets&&xr(e,e.stylesheets),e.unsuspend){var r=e.unsuspend;e.unsuspend=null,r()}},6e4+t);0<e.imgBytes&&Js===0&&(Js=62500*hf());var i=setTimeout(function(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&xr(e,e.stylesheets),e.unsuspend)){var r=e.unsuspend;e.unsuspend=null,r()}},(e.imgBytes>Js?50:800)+t);return e.unsuspend=a,function(){e.unsuspend=null,clearTimeout(n),clearTimeout(i)}}:null}function Or(){if(this.count--,this.count===0&&(this.imgCount===0||!this.waitingForImages)){if(this.stylesheets)xr(this,this.stylesheets);else if(this.unsuspend){var e=this.unsuspend;this.unsuspend=null,e()}}}var Ir=null;function xr(e,t){e.stylesheets=null,e.unsuspend!==null&&(e.count++,Ir=new Map,t.forEach(Pf,e),Ir=null,Or.call(e))}function Pf(e,t){if(!(t.state.loading&4)){var a=Ir.get(e);if(a)var n=a.get(null);else{a=new Map,Ir.set(e,a);for(var i=e.querySelectorAll("link[data-precedence],style[data-precedence]"),r=0;r<i.length;r++){var o=i[r];(o.nodeName==="LINK"||o.getAttribute("media")!=="not all")&&(a.set(o.dataset.precedence,o),n=o)}n&&a.set(null,n)}i=t.instance,o=i.getAttribute("data-precedence"),r=a.get(o)||n,r===n&&a.set(null,i),a.set(o,i),this.count++,n=Or.bind(this),i.addEventListener("load",n),i.addEventListener("error",n),r?r.parentNode.insertBefore(i,r.nextSibling):(e=e.nodeType===9?e.head:e,e.insertBefore(i,e.firstChild)),t.state.loading|=4}}var yi={$$typeof:xe,Provider:null,Consumer:null,_currentValue:M,_currentValue2:M,_threadCount:0};function Bf(e,t,a,n,i,r,o,s,l){this.tag=1,this.containerInfo=e,this.pingCache=this.current=this.pendingChildren=null,this.timeoutHandle=-1,this.callbackNode=this.next=this.pendingContext=this.context=this.cancelPendingCommit=null,this.callbackPriority=0,this.expirationTimes=Qr(-1),this.entangledLanes=this.shellSuspendCounter=this.errorRecoveryDisabledLanes=this.expiredLanes=this.warmLanes=this.pingedLanes=this.suspendedLanes=this.pendingLanes=0,this.entanglements=Qr(0),this.hiddenUpdates=Qr(null),this.identifierPrefix=n,this.onUncaughtError=i,this.onCaughtError=r,this.onRecoverableError=o,this.pooledCache=null,this.pooledCacheLanes=0,this.formState=l,this.incompleteTransitions=new Map}function tp(e,t,a,n,i,r,o,s,l,f,v,C){return e=new Bf(e,t,a,o,l,f,v,C,s),t=1,r===!0&&(t|=24),r=et(3,null,null,t),e.current=r,r.stateNode=e,t=Io(),t.refCount++,e.pooledCache=t,t.refCount++,r.memoizedState={element:n,isDehydrated:a,cache:t},Mo(r),e}function ap(e){return e?(e=tn,e):tn}function np(e,t,a,n,i,r){i=ap(i),n.context===null?n.context=i:n.pendingContext=i,n=ia(t),n.payload={element:a},r=r===void 0?null:r,r!==null&&(n.callback=r),a=ra(e,n,t),a!==null&&(Ve(a,e,t),Yn(a,e,t))}function ip(e,t){if(e=e.memoizedState,e!==null&&e.dehydrated!==null){var a=e.retryLane;e.retryLane=a!==0&&a<t?a:t}}function $s(e,t){ip(e,t),(e=e.alternate)&&ip(e,t)}function rp(e){if(e.tag===13||e.tag===31){var t=Ra(e,67108864);t!==null&&Ve(t,e,67108864),$s(e,67108864)}}function op(e){if(e.tag===13||e.tag===31){var t=rt();t=Vr(t);var a=Ra(e,t);a!==null&&Ve(a,e,t),$s(e,t)}}var kr=!0;function zf(e,t,a,n){var i=h.T;h.T=null;var r=T.p;try{T.p=2,el(e,t,a,n)}finally{T.p=r,h.T=i}}function jf(e,t,a,n){var i=h.T;h.T=null;var r=T.p;try{T.p=8,el(e,t,a,n)}finally{T.p=r,h.T=i}}function el(e,t,a,n){if(kr){var i=tl(n);if(i===null)Bs(e,t,n,Nr,a),lp(e,n);else if(_f(i,e,t,a,n))n.stopPropagation();else if(lp(e,n),t&4&&-1<Hf.indexOf(e)){for(;i!==null;){var r=_a(i);if(r!==null)switch(r.tag){case 3:if(r=r.stateNode,r.current.memoizedState.isDehydrated){var o=Aa(r.pendingLanes);if(o!==0){var s=r;for(s.pendingLanes|=2,s.entangledLanes|=2;o;){var l=1<<31-Je(o);s.entanglements[1]|=l,o&=~l}Dt(r),($&6)===0&&(yr=Xe()+500,ui(0))}}break;case 31:case 13:s=Ra(r,2),s!==null&&Ve(s,r,2),hr(),$s(r,2)}if(r=tl(n),r===null&&Bs(e,t,n,Nr,a),r===i)break;i=r}i!==null&&n.stopPropagation()}else Bs(e,t,n,null,a)}}function tl(e){return e=ao(e),al(e)}var Nr=null;function al(e){if(Nr=null,e=Ha(e),e!==null){var t=U(e);if(t===null)e=null;else{var a=t.tag;if(a===13){if(e=X(t),e!==null)return e;e=null}else if(a===31){if(e=ue(t),e!==null)return e;e=null}else if(a===3){if(t.stateNode.current.memoizedState.isDehydrated)return t.tag===3?t.stateNode.containerInfo:null;e=null}else t!==e&&(e=null)}}return Nr=e,null}function sp(e){switch(e){case"beforetoggle":case"cancel":case"click":case"close":case"contextmenu":case"copy":case"cut":case"auxclick":case"dblclick":case"dragend":case"dragstart":case"drop":case"focusin":case"focusout":case"input":case"invalid":case"keydown":case"keypress":case"keyup":case"mousedown":case"mouseup":case"paste":case"pause":case"play":case"pointercancel":case"pointerdown":case"pointerup":case"ratechange":case"reset":case"resize":case"seeked":case"submit":case"toggle":case"touchcancel":case"touchend":case"touchstart":case"volumechange":case"change":case"selectionchange":case"textInput":case"compositionstart":case"compositionend":case"compositionupdate":case"beforeblur":case"afterblur":case"beforeinput":case"blur":case"fullscreenchange":case"focus":case"hashchange":case"popstate":case"select":case"selectstart":return 2;case"drag":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"mousemove":case"mouseout":case"mouseover":case"pointermove":case"pointerout":case"pointerover":case"scroll":case"touchmove":case"wheel":case"mouseenter":case"mouseleave":case"pointerenter":case"pointerleave":return 8;case"message":switch(Dp()){case gl:return 2;case yl:return 8;case Ai:case Rp:return 32;case vl:return 268435456;default:return 32}default:return 32}}var nl=!1,ya=null,va=null,ha=null,vi=new Map,hi=new Map,ba=[],Hf="mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset".split(" ");function lp(e,t){switch(e){case"focusin":case"focusout":ya=null;break;case"dragenter":case"dragleave":va=null;break;case"mouseover":case"mouseout":ha=null;break;case"pointerover":case"pointerout":vi.delete(t.pointerId);break;case"gotpointercapture":case"lostpointercapture":hi.delete(t.pointerId)}}function bi(e,t,a,n,i,r){return e===null||e.nativeEvent!==r?(e={blockedOn:t,domEventName:a,eventSystemFlags:n,nativeEvent:r,targetContainers:[i]},t!==null&&(t=_a(t),t!==null&&rp(t)),e):(e.eventSystemFlags|=n,t=e.targetContainers,i!==null&&t.indexOf(i)===-1&&t.push(i),e)}function _f(e,t,a,n,i){switch(t){case"focusin":return ya=bi(ya,e,t,a,n,i),!0;case"dragenter":return va=bi(va,e,t,a,n,i),!0;case"mouseover":return ha=bi(ha,e,t,a,n,i),!0;case"pointerover":var r=i.pointerId;return vi.set(r,bi(vi.get(r)||null,e,t,a,n,i)),!0;case"gotpointercapture":return r=i.pointerId,hi.set(r,bi(hi.get(r)||null,e,t,a,n,i)),!0}return!1}function cp(e){var t=Ha(e.target);if(t!==null){var a=U(t);if(a!==null){if(t=a.tag,t===13){if(t=X(a),t!==null){e.blockedOn=t,Al(e.priority,function(){op(a)});return}}else if(t===31){if(t=ue(a),t!==null){e.blockedOn=t,Al(e.priority,function(){op(a)});return}}else if(t===3&&a.stateNode.current.memoizedState.isDehydrated){e.blockedOn=a.tag===3?a.stateNode.containerInfo:null;return}}}e.blockedOn=null}function Mr(e){if(e.blockedOn!==null)return!1;for(var t=e.targetContainers;0<t.length;){var a=tl(e.nativeEvent);if(a===null){a=e.nativeEvent;var n=new a.constructor(a.type,a);to=n,a.target.dispatchEvent(n),to=null}else return t=_a(a),t!==null&&rp(t),e.blockedOn=a,!1;t.shift()}return!0}function up(e,t,a){Mr(e)&&a.delete(t)}function Ff(){nl=!1,ya!==null&&Mr(ya)&&(ya=null),va!==null&&Mr(va)&&(va=null),ha!==null&&Mr(ha)&&(ha=null),vi.forEach(up),hi.forEach(up)}function Ur(e,t){e.blockedOn===t&&(e.blockedOn=null,nl||(nl=!0,L.unstable_scheduleCallback(L.unstable_NormalPriority,Ff)))}var qr=null;function dp(e){qr!==e&&(qr=e,L.unstable_scheduleCallback(L.unstable_NormalPriority,function(){qr===e&&(qr=null);for(var t=0;t<e.length;t+=3){var a=e[t],n=e[t+1],i=e[t+2];if(typeof n!="function"){if(al(n||a)===null)continue;break}var r=_a(a);r!==null&&(e.splice(t,3),t-=3,ts(r,{pending:!0,data:i,method:a.method,action:n},n,i))}}))}function En(e){function t(l){return Ur(l,e)}ya!==null&&Ur(ya,e),va!==null&&Ur(va,e),ha!==null&&Ur(ha,e),vi.forEach(t),hi.forEach(t);for(var a=0;a<ba.length;a++){var n=ba[a];n.blockedOn===e&&(n.blockedOn=null)}for(;0<ba.length&&(a=ba[0],a.blockedOn===null);)cp(a),a.blockedOn===null&&ba.shift();if(a=(e.ownerDocument||e).$$reactFormReplay,a!=null)for(n=0;n<a.length;n+=3){var i=a[n],r=a[n+1],o=i[ze]||null;if(typeof r=="function")o||dp(a);else if(o){var s=null;if(r&&r.hasAttribute("formAction")){if(i=r,o=r[ze]||null)s=o.formAction;else if(al(i)!==null)continue}else s=o.action;typeof s=="function"?a[n+1]=s:(a.splice(n,3),n-=3),dp(a)}}}function pp(){function e(r){r.canIntercept&&r.info==="react-transition"&&r.intercept({handler:function(){return new Promise(function(o){return i=o})},focusReset:"manual",scroll:"manual"})}function t(){i!==null&&(i(),i=null),n||setTimeout(a,20)}function a(){if(!n&&!navigation.transition){var r=navigation.currentEntry;r&&r.url!=null&&navigation.navigate(r.url,{state:r.getState(),info:"react-transition",history:"replace"})}}if(typeof navigation=="object"){var n=!1,i=null;return navigation.addEventListener("navigate",e),navigation.addEventListener("navigatesuccess",t),navigation.addEventListener("navigateerror",t),setTimeout(a,100),function(){n=!0,navigation.removeEventListener("navigate",e),navigation.removeEventListener("navigatesuccess",t),navigation.removeEventListener("navigateerror",t),i!==null&&(i(),i=null)}}}function il(e){this._internalRoot=e}Gr.prototype.render=il.prototype.render=function(e){var t=this._internalRoot;if(t===null)throw Error(m(409));var a=t.current,n=rt();np(a,n,e,t,null,null)},Gr.prototype.unmount=il.prototype.unmount=function(){var e=this._internalRoot;if(e!==null){this._internalRoot=null;var t=e.containerInfo;np(e.current,2,null,e,null,null),hr(),t[ja]=null}};function Gr(e){this._internalRoot=e}Gr.prototype.unstable_scheduleHydration=function(e){if(e){var t=wl();e={blockedOn:null,target:e,priority:t};for(var a=0;a<ba.length&&t!==0&&t<ba[a].priority;a++);ba.splice(a,0,e),a===0&&cp(e)}};var mp=F.version;if(mp!=="19.2.4")throw Error(m(527,mp,"19.2.4"));T.findDOMNode=function(e){var t=e._reactInternals;if(t===void 0)throw typeof e.render=="function"?Error(m(188)):(e=Object.keys(e).join(","),Error(m(268,e)));return e=A(t),e=e!==null?ee(e):null,e=e===null?null:e.stateNode,e};var Qf={bundleType:0,version:"19.2.4",rendererPackageName:"react-dom",currentDispatcherRef:h,reconcilerVersion:"19.2.4"};if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<"u"){var Pr=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!Pr.isDisabled&&Pr.supportsFiber)try{Rn=Pr.inject(Qf),Ze=Pr}catch{}}return Si.createRoot=function(e,t){if(!x(e))throw Error(m(299));var a=!1,n="",i=Cu,r=Su,o=wu;return t!=null&&(t.unstable_strictMode===!0&&(a=!0),t.identifierPrefix!==void 0&&(n=t.identifierPrefix),t.onUncaughtError!==void 0&&(i=t.onUncaughtError),t.onCaughtError!==void 0&&(r=t.onCaughtError),t.onRecoverableError!==void 0&&(o=t.onRecoverableError)),t=tp(e,1,!1,null,null,a,n,null,i,r,o,pp),e[ja]=t.current,Ps(e),new il(t)},Si.hydrateRoot=function(e,t,a){if(!x(e))throw Error(m(299));var n=!1,i="",r=Cu,o=Su,s=wu,l=null;return a!=null&&(a.unstable_strictMode===!0&&(n=!0),a.identifierPrefix!==void 0&&(i=a.identifierPrefix),a.onUncaughtError!==void 0&&(r=a.onUncaughtError),a.onCaughtError!==void 0&&(o=a.onCaughtError),a.onRecoverableError!==void 0&&(s=a.onRecoverableError),a.formState!==void 0&&(l=a.formState)),t=tp(e,1,!0,t,a??null,n,i,l,r,o,s,pp),t.context=ap(null),a=t.current,n=rt(),n=Vr(n),i=ia(n),i.callback=null,ra(a,i,n),a=n,t.current.lanes=a,On(t,a),Dt(t),e[ja]=t.current,Ps(e),new Gr(t)},Si.version="19.2.4",Si}var Ap;function ag(){if(Ap)return sl.exports;Ap=1;function L(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(L)}catch(F){console.error(F)}}return L(),sl.exports=tg(),sl.exports}var ng=ag();function ig({subjects:L,selectedSubject:F,selectedTopic:q,onSubjectSelect:m,onTopicSelect:x,isOpen:U,onToggle:X}){const ue=L.find(E=>E.id===F);return S.jsx(S.Fragment,{children:S.jsxs("nav",{className:`flex flex-col h-screen bg-white shadow-2xl flex-shrink-0 border-r-2 border-indigo-100 transition-all duration-300 ease-in-out ${U?"w-80":"w-24"}`,children:[S.jsx("div",{className:"px-6 py-8 border-b-2 border-indigo-100 bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex-shrink-0",children:S.jsxs("div",{className:"flex items-center justify-between",children:[U&&S.jsxs("div",{children:[S.jsx("h1",{className:"text-4xl font-bold tracking-tight",children:"📚"}),S.jsx("p",{className:"text-base font-semibold mt-3 opacity-90",children:"Interview Prep Guide"})]}),!U&&S.jsx("h1",{className:"text-3xl font-bold",children:"📚"}),S.jsx("button",{onClick:X,className:"p-2 hover:bg-white/20 rounded-lg transition-colors",title:U?"Collapse":"Expand",children:U?S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M15.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L10 12.586l3.293-3.293a1 1 0 011.414 0z"})}):S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M4.293 10.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L10 7.414l-3.293 3.293a1 1 0 01-1.414 0z"})})})]})}),S.jsxs("div",{className:"flex flex-1 overflow-hidden gap-0",children:[S.jsxs("div",{className:"flex-1 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white",children:[S.jsxs("div",{className:"px-5 py-4 text-xs font-bold uppercase tracking-widest text-indigo-600 bg-white border-b border-gray-200 sticky top-0",children:[U&&"Subjects",!U&&"📋"]}),S.jsx("ul",{className:"space-y-3 p-4",children:L.map(E=>S.jsx("li",{children:S.jsx("button",{className:`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${F===E.id?"bg-indigo-600 text-white shadow-lg scale-105":"text-gray-700 hover:bg-indigo-100 hover:text-indigo-700"}`,onClick:()=>m(E.id),title:E.name,children:U?E.name:E.name.charAt(0).toUpperCase()})},E.id))})]}),ue&&U&&S.jsxs("div",{className:"w-40 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white",children:[S.jsx("div",{className:"px-5 py-4 text-xs font-bold uppercase tracking-widest text-purple-600 bg-white border-b border-gray-200 sticky top-0",children:"Topics"}),S.jsx("ul",{className:"space-y-3 p-4",children:ue.topics.map(E=>S.jsx("li",{children:S.jsxs("button",{className:`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 flex items-center justify-between ${q===E.id?"bg-purple-600 text-white shadow-lg scale-105":"text-gray-700 hover:bg-purple-100 hover:text-purple-700"}`,onClick:()=>x(E.id),children:[S.jsx("span",{children:E.name}),S.jsx("span",{className:`text-xs font-bold px-3 py-1 rounded-full ml-2 ${q===E.id?"bg-white/30 text-white":"bg-indigo-100 text-indigo-700"}`,children:E.questions.length})]})},E.id))})]})]})]})})}function rg({snippet:L}){const[F,q]=Yt.useState(!1),m=()=>{navigator.clipboard.writeText(L.code),q(!0),setTimeout(()=>q(!1),2e3)};return S.jsxs("div",{className:"bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-2xl overflow-hidden hover:shadow-lg transition-all",children:[S.jsxs("div",{className:"flex justify-between items-center px-5 py-4 bg-gradient-to-r from-gray-800 to-gray-900 border-b-2 border-gray-700",children:[S.jsxs("div",{className:"flex items-center gap-2",children:[S.jsx("div",{className:"w-3 h-3 bg-red-500 rounded-full"}),S.jsx("div",{className:"w-3 h-3 bg-yellow-500 rounded-full"}),S.jsx("div",{className:"w-3 h-3 bg-green-500 rounded-full"}),S.jsx("span",{className:"ml-3 text-indigo-400 text-xs font-bold uppercase tracking-widest",children:L.language})]}),S.jsx("button",{onClick:m,className:`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${F?"bg-green-600 text-white":"bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:scale-105"}`,title:"Copy code",children:F?S.jsxs(S.Fragment,{children:[S.jsx("svg",{className:"w-4 h-4",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"})}),"Copied!"]}):S.jsxs(S.Fragment,{children:[S.jsx("svg",{className:"w-4 h-4",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:S.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"})}),"Copy"]})})]}),S.jsx("pre",{className:"p-5 text-gray-300 text-sm overflow-x-auto font-mono leading-relaxed bg-gray-900",children:S.jsx("code",{className:"text-gray-100",children:L.code})})]})}function og({diagram:L}){return S.jsxs("div",{className:"bg-white border border-gray-200 rounded-lg overflow-hidden my-4",children:[S.jsx("div",{className:"px-4 py-3 bg-gray-100 border-b border-gray-200",children:S.jsx("h4",{className:"text-sm font-semibold text-purple-600 uppercase tracking-wide",children:L.title})}),S.jsx("div",{className:"p-6 bg-gray-50 flex justify-center",children:S.jsx("img",{src:L.imageUrl,alt:L.title,className:"max-w-full h-auto rounded-lg max-h-96 object-contain"})}),L.description&&S.jsx("div",{className:"px-4 py-3 bg-white border-t border-gray-200",children:S.jsx("p",{className:"text-sm text-gray-700 leading-relaxed",children:L.description})})]})}function sg({question:L}){const[F,q]=Yt.useState(!1);return S.jsxs("div",{className:"bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all duration-300",children:[S.jsxs("div",{className:"flex items-center justify-between gap-4 cursor-pointer px-6 py-4",onClick:()=>q(!F),children:[S.jsx("p",{className:"text-lg font-bold text-gray-900 leading-relaxed flex-1",children:L.question}),S.jsx("div",{className:"flex-shrink-0 text-gray-400 hover:text-indigo-600 transition-colors",children:F?S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"})}):S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"})})})]}),F&&S.jsxs("div",{className:"mt-8 pt-8 px-6 pb-6 border-t-2 border-gray-100 space-y-6 animate-in fade-in duration-300",children:[S.jsxs("div",{children:[S.jsx("h3",{className:"inline-block px-3 py-1 bg-green-100 rounded-full text-xs font-bold text-green-700 mb-3",children:"ANSWER"}),S.jsx("p",{className:"text-gray-800 leading-relaxed text-base",children:L.answer})]}),L.diagrams&&L.diagrams.length>0&&S.jsxs("div",{className:"space-y-4 pt-4 border-t border-gray-100",children:[S.jsxs("h4",{className:"font-bold text-gray-900 text-sm uppercase tracking-wide flex items-center gap-2",children:[S.jsx("div",{className:"w-2 h-2 bg-purple-600 rounded-full"}),"Diagrams"]}),S.jsx("div",{className:"space-y-4",children:L.diagrams.map((m,x)=>S.jsx(og,{diagram:m},x))})]}),L.codeSnippets&&L.codeSnippets.length>0&&S.jsxs("div",{className:"space-y-4 pt-4 border-t border-gray-100",children:[S.jsxs("h4",{className:"font-bold text-gray-900 text-sm uppercase tracking-wide flex items-center gap-2",children:[S.jsx("div",{className:"w-2 h-2 bg-indigo-600 rounded-full"}),"Code Examples"]}),S.jsx("div",{className:"space-y-3",children:L.codeSnippets.map((m,x)=>S.jsx(rg,{snippet:m},x))})]})]})]})}function lg({subjects:L,selectedSubject:F,selectedTopic:q}){const m=L.find(X=>X.id===F),x=m?.topics.find(X=>X.id===q),U=Yt.useRef(null);return Yt.useEffect(()=>{U.current?.scrollTo(0,0)},[q]),F?q?x?S.jsx("div",{ref:U,className:"content-area flex-1 overflow-y-auto bg-gradient-to-br from-gray-50 to-gray-100 p-12 md:p-16",children:S.jsxs("div",{className:"max-w-5xl mx-auto",children:[S.jsxs("nav",{className:"flex items-center gap-3 mb-8 text-sm",children:[S.jsx("span",{className:"px-4 py-2 bg-white rounded-full font-semibold text-indigo-600 shadow-sm border-2 border-indigo-100",children:m?.name}),S.jsx("svg",{className:"w-5 h-5 text-gray-400",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:S.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M9 5l7 7-7 7"})}),S.jsx("span",{className:"px-4 py-2 bg-white rounded-full font-semibold text-purple-600 shadow-sm border-2 border-purple-100",children:x.name})]}),S.jsxs("div",{className:"mb-10 space-y-4",children:[S.jsx("h1",{className:"text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent",children:x.name}),S.jsx("div",{className:"flex items-center gap-4",children:S.jsxs("div",{className:"flex items-center gap-2",children:[S.jsx("div",{className:"w-8 h-8 bg-indigo-600 rounded-full text-white flex items-center justify-center font-bold text-sm",children:x.questions.length}),S.jsxs("span",{className:"text-gray-700 font-semibold",children:["question",x.questions.length!==1?"s":""]})]})})]}),S.jsxs("div",{className:"mb-10 space-y-2",children:[S.jsx("div",{className:"h-2 bg-gray-200 rounded-full overflow-hidden shadow-inner",children:S.jsx("div",{className:"h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500",style:{width:`${Math.min(x.questions.length/15*100,100)}%`}})}),S.jsx("p",{className:"text-sm text-gray-500",children:"Learning path progress"})]}),S.jsx("div",{className:"grid gap-8",children:x.questions.map((X,ue)=>S.jsx("div",{className:"transform transition-all duration-300 hover:scale-[1.01]",children:S.jsxs("div",{className:"flex gap-4",children:[S.jsx("div",{className:"flex-shrink-0",children:S.jsx("div",{className:"w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold shadow-lg",children:ue+1})}),S.jsx("div",{className:"flex-1",children:S.jsx(sg,{question:X})})]})},X.id))})]})}):S.jsx("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:S.jsx("h2",{className:"text-3xl font-bold text-gray-800",children:"Topic Not Found"})}):S.jsxs("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:[S.jsx("div",{className:"text-6xl mb-4",children:"👉"}),S.jsx("h2",{className:"text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3",children:"Select a Topic"}),S.jsx("p",{className:"text-gray-600 text-lg",children:"Choose a topic to view questions and answers."})]}):S.jsxs("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:[S.jsx("div",{className:"text-6xl mb-4",children:"📚"}),S.jsx("h2",{className:"text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3",children:"Welcome to Interview Prep"}),S.jsx("p",{className:"text-gray-600 text-lg",children:"Choose a subject from the sidebar to get started."})]})}const cg={id:"js-basics",name:"Basics",questions:[{id:"q1",question:"What are the different data types in JavaScript?",answer:"JavaScript has 8 data types: Number, String, Boolean, Null, Undefined, Symbol, BigInt, and Object. Primitive types are immutable, while objects are mutable reference types.",codeSnippets:[{language:"javascript",code:`// Primitive types
+(function(){const F=document.createElement("link").relList;if(F&&F.supports&&F.supports("modulepreload"))return;for(const x of document.querySelectorAll('link[rel="modulepreload"]'))m(x);new MutationObserver(x=>{for(const M of x)if(M.type==="childList")for(const X of M.addedNodes)X.tagName==="LINK"&&X.rel==="modulepreload"&&m(X)}).observe(document,{childList:!0,subtree:!0});function U(x){const M={};return x.integrity&&(M.integrity=x.integrity),x.referrerPolicy&&(M.referrerPolicy=x.referrerPolicy),x.crossOrigin==="use-credentials"?M.credentials="include":x.crossOrigin==="anonymous"?M.credentials="omit":M.credentials="same-origin",M}function m(x){if(x.ep)return;x.ep=!0;const M=U(x);fetch(x.href,M)}})();var rl={exports:{}},Ca={};var gp;function Qg(){if(gp)return Ca;gp=1;var w=Symbol.for("react.transitional.element"),F=Symbol.for("react.fragment");function U(m,x,M){var X=null;if(M!==void 0&&(X=""+M),x.key!==void 0&&(X=""+x.key),"key"in x){M={};for(var ue in x)ue!=="key"&&(M[ue]=x[ue])}else M=x;return x=M.ref,{$$typeof:w,type:m,key:X,ref:x!==void 0?x:null,props:M}}return Ca.Fragment=F,Ca.jsx=U,Ca.jsxs=U,Ca}var vp;function Yg(){return vp||(vp=1,rl.exports=Qg()),rl.exports}var S=Yg(),ol={exports:{}},G={};var fp;function Kg(){if(fp)return G;fp=1;var w=Symbol.for("react.transitional.element"),F=Symbol.for("react.portal"),U=Symbol.for("react.fragment"),m=Symbol.for("react.strict_mode"),x=Symbol.for("react.profiler"),M=Symbol.for("react.consumer"),X=Symbol.for("react.context"),ue=Symbol.for("react.forward_ref"),E=Symbol.for("react.suspense"),T=Symbol.for("react.memo"),ee=Symbol.for("react.lazy"),N=Symbol.for("react.activity"),me=Symbol.iterator;function Ye(u){return u===null||typeof u!="object"?null:(u=me&&u[me]||u["@@iterator"],typeof u=="function"?u:null)}var Ue={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},Ne=Object.assign,Dt={};function Ke(u,A,W){this.props=u,this.context=A,this.refs=Dt,this.updater=W||Ue}Ke.prototype.isReactComponent={},Ke.prototype.setState=function(u,A){if(typeof u!="object"&&typeof u!="function"&&u!=null)throw Error("takes an object of state variables to update or a function which returns an object of state variables.");this.updater.enqueueSetState(this,u,A,"setState")},Ke.prototype.forceUpdate=function(u){this.updater.enqueueForceUpdate(this,u,"forceUpdate")};function Kt(){}Kt.prototype=Ke.prototype;function xe(u,A,W){this.props=u,this.context=A,this.refs=Dt,this.updater=W||Ue}var ot=xe.prototype=new Kt;ot.constructor=xe,Ne(ot,Ke.prototype),ot.isPureReactComponent=!0;var St=Array.isArray;function Ge(){}var Y={H:null,A:null,T:null,S:null},qe=Object.prototype.hasOwnProperty;function At(u,A,W){var I=W.ref;return{$$typeof:w,type:u,key:A,ref:I!==void 0?I:null,props:W}}function zn(u,A){return At(u.type,A,u.props)}function Tt(u){return typeof u=="object"&&u!==null&&u.$$typeof===w}function Be(u){var A={"=":"=0",":":"=2"};return"$"+u.replace(/[=:]/g,function(W){return A[W]})}var An=/\/+/g;function It(u,A){return typeof u=="object"&&u!==null&&u.key!=null?Be(""+u.key):A.toString(36)}function yt(u){switch(u.status){case"fulfilled":return u.value;case"rejected":throw u.reason;default:switch(typeof u.status=="string"?u.then(Ge,Ge):(u.status="pending",u.then(function(A){u.status==="pending"&&(u.status="fulfilled",u.value=A)},function(A){u.status==="pending"&&(u.status="rejected",u.reason=A)})),u.status){case"fulfilled":return u.value;case"rejected":throw u.reason}}throw u}function h(u,A,W,I,q){var z=typeof u;(z==="undefined"||z==="boolean")&&(u=null);var te=!1;if(u===null)te=!0;else switch(z){case"bigint":case"string":case"number":te=!0;break;case"object":switch(u.$$typeof){case w:case F:te=!0;break;case ee:return te=u._init,h(te(u._payload),A,W,I,q)}}if(te)return q=q(u),te=I===""?"."+It(u,0):I,St(q)?(W="",te!=null&&(W=te.replace(An,"$&/")+"/"),h(q,A,W,"",function(Wi){return Wi})):q!=null&&(Tt(q)&&(q=zn(q,W+(q.key==null||u&&u.key===q.key?"":(""+q.key).replace(An,"$&/")+"/")+te)),A.push(q)),1;te=0;var Pe=I===""?".":I+":";if(St(u))for(var ye=0;ye<u.length;ye++)I=u[ye],z=Pe+It(I,ye),te+=h(I,A,W,z,q);else if(ye=Ye(u),typeof ye=="function")for(u=ye.call(u),ye=0;!(I=u.next()).done;)I=I.value,z=Pe+It(I,ye++),te+=h(I,A,W,z,q);else if(z==="object"){if(typeof u.then=="function")return h(yt(u),A,W,I,q);throw A=String(u),Error("Objects are not valid as a React child (found: "+(A==="[object Object]"?"object with keys {"+Object.keys(u).join(", ")+"}":A)+"). If you meant to render a collection of children, use an array instead.")}return te}function L(u,A,W){if(u==null)return u;var I=[],q=0;return h(u,I,"","",function(z){return A.call(W,z,q++)}),I}function P(u){if(u._status===-1){var A=u._result;A=A(),A.then(function(W){(u._status===0||u._status===-1)&&(u._status=1,u._result=W)},function(W){(u._status===0||u._status===-1)&&(u._status=2,u._result=W)}),u._status===-1&&(u._status=0,u._result=A)}if(u._status===1)return u._result.default;throw u._result}var ae=typeof reportError=="function"?reportError:function(u){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var A=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof u=="object"&&u!==null&&typeof u.message=="string"?String(u.message):String(u),error:u});if(!window.dispatchEvent(A))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",u);return}console.error(u)},le={map:L,forEach:function(u,A,W){L(u,function(){A.apply(this,arguments)},W)},count:function(u){var A=0;return L(u,function(){A++}),A},toArray:function(u){return L(u,function(A){return A})||[]},only:function(u){if(!Tt(u))throw Error("React.Children.only expected to receive a single React element child.");return u}};return G.Activity=N,G.Children=le,G.Component=Ke,G.Fragment=U,G.Profiler=x,G.PureComponent=xe,G.StrictMode=m,G.Suspense=E,G.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=Y,G.__COMPILER_RUNTIME={__proto__:null,c:function(u){return Y.H.useMemoCache(u)}},G.cache=function(u){return function(){return u.apply(null,arguments)}},G.cacheSignal=function(){return null},G.cloneElement=function(u,A,W){if(u==null)throw Error("The argument must be a React element, but you passed "+u+".");var I=Ne({},u.props),q=u.key;if(A!=null)for(z in A.key!==void 0&&(q=""+A.key),A)!qe.call(A,z)||z==="key"||z==="__self"||z==="__source"||z==="ref"&&A.ref===void 0||(I[z]=A[z]);var z=arguments.length-2;if(z===1)I.children=W;else if(1<z){for(var te=Array(z),Pe=0;Pe<z;Pe++)te[Pe]=arguments[Pe+2];I.children=te}return At(u.type,q,I)},G.createContext=function(u){return u={$$typeof:X,_currentValue:u,_currentValue2:u,_threadCount:0,Provider:null,Consumer:null},u.Provider=u,u.Consumer={$$typeof:M,_context:u},u},G.createElement=function(u,A,W){var I,q={},z=null;if(A!=null)for(I in A.key!==void 0&&(z=""+A.key),A)qe.call(A,I)&&I!=="key"&&I!=="__self"&&I!=="__source"&&(q[I]=A[I]);var te=arguments.length-2;if(te===1)q.children=W;else if(1<te){for(var Pe=Array(te),ye=0;ye<te;ye++)Pe[ye]=arguments[ye+2];q.children=Pe}if(u&&u.defaultProps)for(I in te=u.defaultProps,te)q[I]===void 0&&(q[I]=te[I]);return At(u,z,q)},G.createRef=function(){return{current:null}},G.forwardRef=function(u){return{$$typeof:ue,render:u}},G.isValidElement=Tt,G.lazy=function(u){return{$$typeof:ee,_payload:{_status:-1,_result:u},_init:P}},G.memo=function(u,A){return{$$typeof:T,type:u,compare:A===void 0?null:A}},G.startTransition=function(u){var A=Y.T,W={};Y.T=W;try{var I=u(),q=Y.S;q!==null&&q(W,I),typeof I=="object"&&I!==null&&typeof I.then=="function"&&I.then(Ge,ae)}catch(z){ae(z)}finally{A!==null&&W.types!==null&&(A.types=W.types),Y.T=A}},G.unstable_useCacheRefresh=function(){return Y.H.useCacheRefresh()},G.use=function(u){return Y.H.use(u)},G.useActionState=function(u,A,W){return Y.H.useActionState(u,A,W)},G.useCallback=function(u,A){return Y.H.useCallback(u,A)},G.useContext=function(u){return Y.H.useContext(u)},G.useDebugValue=function(){},G.useDeferredValue=function(u,A){return Y.H.useDeferredValue(u,A)},G.useEffect=function(u,A){return Y.H.useEffect(u,A)},G.useEffectEvent=function(u){return Y.H.useEffectEvent(u)},G.useId=function(){return Y.H.useId()},G.useImperativeHandle=function(u,A,W){return Y.H.useImperativeHandle(u,A,W)},G.useInsertionEffect=function(u,A){return Y.H.useInsertionEffect(u,A)},G.useLayoutEffect=function(u,A){return Y.H.useLayoutEffect(u,A)},G.useMemo=function(u,A){return Y.H.useMemo(u,A)},G.useOptimistic=function(u,A){return Y.H.useOptimistic(u,A)},G.useReducer=function(u,A,W){return Y.H.useReducer(u,A,W)},G.useRef=function(u){return Y.H.useRef(u)},G.useState=function(u){return Y.H.useState(u)},G.useSyncExternalStore=function(u,A,W){return Y.H.useSyncExternalStore(u,A,W)},G.useTransition=function(){return Y.H.useTransition()},G.version="19.2.4",G}var yp;function pl(){return yp||(yp=1,ol.exports=Kg()),ol.exports}var Yt=pl(),sl={exports:{}},Sa={},ll={exports:{}},cl={};var hp;function Xg(){return hp||(hp=1,(function(w){function F(h,L){var P=h.length;h.push(L);e:for(;0<P;){var ae=P-1>>>1,le=h[ae];if(0<x(le,L))h[ae]=L,h[P]=le,P=ae;else break e}}function U(h){return h.length===0?null:h[0]}function m(h){if(h.length===0)return null;var L=h[0],P=h.pop();if(P!==L){h[0]=P;e:for(var ae=0,le=h.length,u=le>>>1;ae<u;){var A=2*(ae+1)-1,W=h[A],I=A+1,q=h[I];if(0>x(W,P))I<le&&0>x(q,W)?(h[ae]=q,h[I]=P,ae=I):(h[ae]=W,h[A]=P,ae=A);else if(I<le&&0>x(q,P))h[ae]=q,h[I]=P,ae=I;else break e}}return L}function x(h,L){var P=h.sortIndex-L.sortIndex;return P!==0?P:h.id-L.id}if(w.unstable_now=void 0,typeof performance=="object"&&typeof performance.now=="function"){var M=performance;w.unstable_now=function(){return M.now()}}else{var X=Date,ue=X.now();w.unstable_now=function(){return X.now()-ue}}var E=[],T=[],ee=1,N=null,me=3,Ye=!1,Ue=!1,Ne=!1,Dt=!1,Ke=typeof setTimeout=="function"?setTimeout:null,Kt=typeof clearTimeout=="function"?clearTimeout:null,xe=typeof setImmediate<"u"?setImmediate:null;function ot(h){for(var L=U(T);L!==null;){if(L.callback===null)m(T);else if(L.startTime<=h)m(T),L.sortIndex=L.expirationTime,F(E,L);else break;L=U(T)}}function St(h){if(Ne=!1,ot(h),!Ue)if(U(E)!==null)Ue=!0,Ge||(Ge=!0,Be());else{var L=U(T);L!==null&&yt(St,L.startTime-h)}}var Ge=!1,Y=-1,qe=5,At=-1;function zn(){return Dt?!0:!(w.unstable_now()-At<qe)}function Tt(){if(Dt=!1,Ge){var h=w.unstable_now();At=h;var L=!0;try{e:{Ue=!1,Ne&&(Ne=!1,Kt(Y),Y=-1),Ye=!0;var P=me;try{t:{for(ot(h),N=U(E);N!==null&&!(N.expirationTime>h&&zn());){var ae=N.callback;if(typeof ae=="function"){N.callback=null,me=N.priorityLevel;var le=ae(N.expirationTime<=h);if(h=w.unstable_now(),typeof le=="function"){N.callback=le,ot(h),L=!0;break t}N===U(E)&&m(E),ot(h)}else m(E);N=U(E)}if(N!==null)L=!0;else{var u=U(T);u!==null&&yt(St,u.startTime-h),L=!1}}break e}finally{N=null,me=P,Ye=!1}L=void 0}}finally{L?Be():Ge=!1}}}var Be;if(typeof xe=="function")Be=function(){xe(Tt)};else if(typeof MessageChannel<"u"){var An=new MessageChannel,It=An.port2;An.port1.onmessage=Tt,Be=function(){It.postMessage(null)}}else Be=function(){Ke(Tt,0)};function yt(h,L){Y=Ke(function(){h(w.unstable_now())},L)}w.unstable_IdlePriority=5,w.unstable_ImmediatePriority=1,w.unstable_LowPriority=4,w.unstable_NormalPriority=3,w.unstable_Profiling=null,w.unstable_UserBlockingPriority=2,w.unstable_cancelCallback=function(h){h.callback=null},w.unstable_forceFrameRate=function(h){0>h||125<h?console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"):qe=0<h?Math.floor(1e3/h):5},w.unstable_getCurrentPriorityLevel=function(){return me},w.unstable_next=function(h){switch(me){case 1:case 2:case 3:var L=3;break;default:L=me}var P=me;me=L;try{return h()}finally{me=P}},w.unstable_requestPaint=function(){Dt=!0},w.unstable_runWithPriority=function(h,L){switch(h){case 1:case 2:case 3:case 4:case 5:break;default:h=3}var P=me;me=h;try{return L()}finally{me=P}},w.unstable_scheduleCallback=function(h,L,P){var ae=w.unstable_now();switch(typeof P=="object"&&P!==null?(P=P.delay,P=typeof P=="number"&&0<P?ae+P:ae):P=ae,h){case 1:var le=-1;break;case 2:le=250;break;case 5:le=1073741823;break;case 4:le=1e4;break;default:le=5e3}return le=P+le,h={id:ee++,callback:L,priorityLevel:h,startTime:P,expirationTime:le,sortIndex:-1},P>ae?(h.sortIndex=P,F(T,h),U(E)===null&&h===U(T)&&(Ne?(Kt(Y),Y=-1):Ne=!0,yt(St,P-ae))):(h.sortIndex=le,F(E,h),Ue||Ye||(Ue=!0,Ge||(Ge=!0,Be()))),h},w.unstable_shouldYield=zn,w.unstable_wrapCallback=function(h){var L=me;return function(){var P=me;me=L;try{return h.apply(this,arguments)}finally{me=P}}}})(cl)),cl}var bp;function Jg(){return bp||(bp=1,ll.exports=Xg()),ll.exports}var ul={exports:{}},ke={};var Cp;function $g(){if(Cp)return ke;Cp=1;var w=pl();function F(E){var T="https://react.dev/errors/"+E;if(1<arguments.length){T+="?args[]="+encodeURIComponent(arguments[1]);for(var ee=2;ee<arguments.length;ee++)T+="&args[]="+encodeURIComponent(arguments[ee])}return"Minified React error #"+E+"; visit "+T+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function U(){}var m={d:{f:U,r:function(){throw Error(F(522))},D:U,C:U,L:U,m:U,X:U,S:U,M:U},p:0,findDOMNode:null},x=Symbol.for("react.portal");function M(E,T,ee){var N=3<arguments.length&&arguments[3]!==void 0?arguments[3]:null;return{$$typeof:x,key:N==null?null:""+N,children:E,containerInfo:T,implementation:ee}}var X=w.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;function ue(E,T){if(E==="font")return"";if(typeof T=="string")return T==="use-credentials"?T:""}return ke.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=m,ke.createPortal=function(E,T){var ee=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;if(!T||T.nodeType!==1&&T.nodeType!==9&&T.nodeType!==11)throw Error(F(299));return M(E,T,null,ee)},ke.flushSync=function(E){var T=X.T,ee=m.p;try{if(X.T=null,m.p=2,E)return E()}finally{X.T=T,m.p=ee,m.d.f()}},ke.preconnect=function(E,T){typeof E=="string"&&(T?(T=T.crossOrigin,T=typeof T=="string"?T==="use-credentials"?T:"":void 0):T=null,m.d.C(E,T))},ke.prefetchDNS=function(E){typeof E=="string"&&m.d.D(E)},ke.preinit=function(E,T){if(typeof E=="string"&&T&&typeof T.as=="string"){var ee=T.as,N=ue(ee,T.crossOrigin),me=typeof T.integrity=="string"?T.integrity:void 0,Ye=typeof T.fetchPriority=="string"?T.fetchPriority:void 0;ee==="style"?m.d.S(E,typeof T.precedence=="string"?T.precedence:void 0,{crossOrigin:N,integrity:me,fetchPriority:Ye}):ee==="script"&&m.d.X(E,{crossOrigin:N,integrity:me,fetchPriority:Ye,nonce:typeof T.nonce=="string"?T.nonce:void 0})}},ke.preinitModule=function(E,T){if(typeof E=="string")if(typeof T=="object"&&T!==null){if(T.as==null||T.as==="script"){var ee=ue(T.as,T.crossOrigin);m.d.M(E,{crossOrigin:ee,integrity:typeof T.integrity=="string"?T.integrity:void 0,nonce:typeof T.nonce=="string"?T.nonce:void 0})}}else T==null&&m.d.M(E)},ke.preload=function(E,T){if(typeof E=="string"&&typeof T=="object"&&T!==null&&typeof T.as=="string"){var ee=T.as,N=ue(ee,T.crossOrigin);m.d.L(E,ee,{crossOrigin:N,integrity:typeof T.integrity=="string"?T.integrity:void 0,nonce:typeof T.nonce=="string"?T.nonce:void 0,type:typeof T.type=="string"?T.type:void 0,fetchPriority:typeof T.fetchPriority=="string"?T.fetchPriority:void 0,referrerPolicy:typeof T.referrerPolicy=="string"?T.referrerPolicy:void 0,imageSrcSet:typeof T.imageSrcSet=="string"?T.imageSrcSet:void 0,imageSizes:typeof T.imageSizes=="string"?T.imageSizes:void 0,media:typeof T.media=="string"?T.media:void 0})}},ke.preloadModule=function(E,T){if(typeof E=="string")if(T){var ee=ue(T.as,T.crossOrigin);m.d.m(E,{as:typeof T.as=="string"&&T.as!=="script"?T.as:void 0,crossOrigin:ee,integrity:typeof T.integrity=="string"?T.integrity:void 0})}else m.d.m(E)},ke.requestFormReset=function(E){m.d.r(E)},ke.unstable_batchedUpdates=function(E,T){return E(T)},ke.useFormState=function(E,T,ee){return X.H.useFormState(E,T,ee)},ke.useFormStatus=function(){return X.H.useHostTransitionStatus()},ke.version="19.2.4",ke}var Sp;function Zg(){if(Sp)return ul.exports;Sp=1;function w(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(w)}catch(F){console.error(F)}}return w(),ul.exports=$g(),ul.exports}var Ap;function ev(){if(Ap)return Sa;Ap=1;var w=Jg(),F=pl(),U=Zg();function m(e){var t="https://react.dev/errors/"+e;if(1<arguments.length){t+="?args[]="+encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)t+="&args[]="+encodeURIComponent(arguments[n])}return"Minified React error #"+e+"; visit "+t+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings."}function x(e){return!(!e||e.nodeType!==1&&e.nodeType!==9&&e.nodeType!==11)}function M(e){var t=e,n=e;if(e.alternate)for(;t.return;)t=t.return;else{e=t;do t=e,(t.flags&4098)!==0&&(n=t.return),e=t.return;while(e)}return t.tag===3?n:null}function X(e){if(e.tag===13){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function ue(e){if(e.tag===31){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function E(e){if(M(e)!==e)throw Error(m(188))}function T(e){var t=e.alternate;if(!t){if(t=M(e),t===null)throw Error(m(188));return t!==e?null:e}for(var n=e,i=t;;){var a=n.return;if(a===null)break;var r=a.alternate;if(r===null){if(i=a.return,i!==null){n=i;continue}break}if(a.child===r.child){for(r=a.child;r;){if(r===n)return E(a),e;if(r===i)return E(a),t;r=r.sibling}throw Error(m(188))}if(n.return!==i.return)n=a,i=r;else{for(var o=!1,s=a.child;s;){if(s===n){o=!0,n=a,i=r;break}if(s===i){o=!0,i=a,n=r;break}s=s.sibling}if(!o){for(s=r.child;s;){if(s===n){o=!0,n=r,i=a;break}if(s===i){o=!0,i=r,n=a;break}s=s.sibling}if(!o)throw Error(m(189))}}if(n.alternate!==i)throw Error(m(190))}if(n.tag!==3)throw Error(m(188));return n.stateNode.current===n?e:t}function ee(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e;for(e=e.child;e!==null;){if(t=ee(e),t!==null)return t;e=e.sibling}return null}var N=Object.assign,me=Symbol.for("react.element"),Ye=Symbol.for("react.transitional.element"),Ue=Symbol.for("react.portal"),Ne=Symbol.for("react.fragment"),Dt=Symbol.for("react.strict_mode"),Ke=Symbol.for("react.profiler"),Kt=Symbol.for("react.consumer"),xe=Symbol.for("react.context"),ot=Symbol.for("react.forward_ref"),St=Symbol.for("react.suspense"),Ge=Symbol.for("react.suspense_list"),Y=Symbol.for("react.memo"),qe=Symbol.for("react.lazy"),At=Symbol.for("react.activity"),zn=Symbol.for("react.memo_cache_sentinel"),Tt=Symbol.iterator;function Be(e){return e===null||typeof e!="object"?null:(e=Tt&&e[Tt]||e["@@iterator"],typeof e=="function"?e:null)}var An=Symbol.for("react.client.reference");function It(e){if(e==null)return null;if(typeof e=="function")return e.$$typeof===An?null:e.displayName||e.name||null;if(typeof e=="string")return e;switch(e){case Ne:return"Fragment";case Ke:return"Profiler";case Dt:return"StrictMode";case St:return"Suspense";case Ge:return"SuspenseList";case At:return"Activity"}if(typeof e=="object")switch(e.$$typeof){case Ue:return"Portal";case xe:return e.displayName||"Context";case Kt:return(e._context.displayName||"Context")+".Consumer";case ot:var t=e.render;return e=e.displayName,e||(e=t.displayName||t.name||"",e=e!==""?"ForwardRef("+e+")":"ForwardRef"),e;case Y:return t=e.displayName||null,t!==null?t:It(e.type)||"Memo";case qe:t=e._payload,e=e._init;try{return It(e(t))}catch{}}return null}var yt=Array.isArray,h=F.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,L=U.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,P={pending:!1,data:null,method:null,action:null},ae=[],le=-1;function u(e){return{current:e}}function A(e){0>le||(e.current=ae[le],ae[le]=null,le--)}function W(e,t){le++,ae[le]=e.current,e.current=t}var I=u(null),q=u(null),z=u(null),te=u(null);function Pe(e,t){switch(W(z,t),W(q,e),W(I,null),t.nodeType){case 9:case 11:e=(e=t.documentElement)&&(e=e.namespaceURI)?Ud(e):0;break;default:if(e=t.tagName,t=t.namespaceURI)t=Ud(t),e=Gd(t,e);else switch(e){case"svg":e=1;break;case"math":e=2;break;default:e=0}}A(I),W(I,e)}function ye(){A(I),A(q),A(z)}function Wi(e){e.memoizedState!==null&&W(te,e);var t=I.current,n=Gd(t,e.type);t!==n&&(W(q,e),W(I,n))}function Aa(e){q.current===e&&(A(I),A(q)),te.current===e&&(A(te),fa._currentValue=P)}var Br,ml;function Tn(e){if(Br===void 0)try{throw Error()}catch(n){var t=n.stack.trim().match(/\n( *(at )?)/);Br=t&&t[1]||"",ml=-1<n.stack.indexOf(`
+    at`)?" (<anonymous>)":-1<n.stack.indexOf("@")?"@unknown:0:0":""}return`
+`+Br+e+ml}var Hr=!1;function zr(e,t){if(!e||Hr)return"";Hr=!0;var n=Error.prepareStackTrace;Error.prepareStackTrace=void 0;try{var i={DetermineComponentFrameRoot:function(){try{if(t){var C=function(){throw Error()};if(Object.defineProperty(C.prototype,"props",{set:function(){throw Error()}}),typeof Reflect=="object"&&Reflect.construct){try{Reflect.construct(C,[])}catch(f){var v=f}Reflect.construct(e,[],C)}else{try{C.call()}catch(f){v=f}e.call(C.prototype)}}else{try{throw Error()}catch(f){v=f}(C=e())&&typeof C.catch=="function"&&C.catch(function(){})}}catch(f){if(f&&v&&typeof f.stack=="string")return[f.stack,v.stack]}return[null,null]}};i.DetermineComponentFrameRoot.displayName="DetermineComponentFrameRoot";var a=Object.getOwnPropertyDescriptor(i.DetermineComponentFrameRoot,"name");a&&a.configurable&&Object.defineProperty(i.DetermineComponentFrameRoot,"name",{value:"DetermineComponentFrameRoot"});var r=i.DetermineComponentFrameRoot(),o=r[0],s=r[1];if(o&&s){var l=o.split(`
+`),g=s.split(`
+`);for(a=i=0;i<l.length&&!l[i].includes("DetermineComponentFrameRoot");)i++;for(;a<g.length&&!g[a].includes("DetermineComponentFrameRoot");)a++;if(i===l.length||a===g.length)for(i=l.length-1,a=g.length-1;1<=i&&0<=a&&l[i]!==g[a];)a--;for(;1<=i&&0<=a;i--,a--)if(l[i]!==g[a]){if(i!==1||a!==1)do if(i--,a--,0>a||l[i]!==g[a]){var y=`
+`+l[i].replace(" at new "," at ");return e.displayName&&y.includes("<anonymous>")&&(y=y.replace("<anonymous>",e.displayName)),y}while(1<=i&&0<=a);break}}}finally{Hr=!1,Error.prepareStackTrace=n}return(n=e?e.displayName||e.name:"")?Tn(n):""}function wp(e,t){switch(e.tag){case 26:case 27:case 5:return Tn(e.type);case 16:return Tn("Lazy");case 13:return e.child!==t&&t!==null?Tn("Suspense Fallback"):Tn("Suspense");case 19:return Tn("SuspenseList");case 0:case 15:return zr(e.type,!1);case 11:return zr(e.type.render,!1);case 1:return zr(e.type,!0);case 31:return Tn("Activity");default:return""}}function gl(e){try{var t="",n=null;do t+=wp(e,n),n=e,e=e.return;while(e);return t}catch(i){return`
+Error generating stack: `+i.message+`
+`+i.stack}}var jr=Object.prototype.hasOwnProperty,_r=w.unstable_scheduleCallback,Fr=w.unstable_cancelCallback,Lp=w.unstable_shouldYield,Ep=w.unstable_requestPaint,Xe=w.unstable_now,Wp=w.unstable_getCurrentPriorityLevel,vl=w.unstable_ImmediatePriority,fl=w.unstable_UserBlockingPriority,Ta=w.unstable_NormalPriority,Dp=w.unstable_LowPriority,yl=w.unstable_IdlePriority,Ip=w.log,Rp=w.unstable_setDisableYieldValue,Di=null,Je=null;function Xt(e){if(typeof Ip=="function"&&Rp(e),Je&&typeof Je.setStrictMode=="function")try{Je.setStrictMode(Di,e)}catch{}}var $e=Math.clz32?Math.clz32:kp,Op=Math.log,xp=Math.LN2;function kp(e){return e>>>=0,e===0?32:31-(Op(e)/xp|0)|0}var wa=256,La=262144,Ea=4194304;function wn(e){var t=e&42;if(t!==0)return t;switch(e&-e){case 1:return 1;case 2:return 2;case 4:return 4;case 8:return 8;case 16:return 16;case 32:return 32;case 64:return 64;case 128:return 128;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:return e&261888;case 262144:case 524288:case 1048576:case 2097152:return e&3932160;case 4194304:case 8388608:case 16777216:case 33554432:return e&62914560;case 67108864:return 67108864;case 134217728:return 134217728;case 268435456:return 268435456;case 536870912:return 536870912;case 1073741824:return 0;default:return e}}function Wa(e,t,n){var i=e.pendingLanes;if(i===0)return 0;var a=0,r=e.suspendedLanes,o=e.pingedLanes;e=e.warmLanes;var s=i&134217727;return s!==0?(i=s&~r,i!==0?a=wn(i):(o&=s,o!==0?a=wn(o):n||(n=s&~e,n!==0&&(a=wn(n))))):(s=i&~r,s!==0?a=wn(s):o!==0?a=wn(o):n||(n=i&~e,n!==0&&(a=wn(n)))),a===0?0:t!==0&&t!==a&&(t&r)===0&&(r=a&-a,n=t&-t,r>=n||r===32&&(n&4194048)!==0)?t:a}function Ii(e,t){return(e.pendingLanes&~(e.suspendedLanes&~e.pingedLanes)&t)===0}function Np(e,t){switch(e){case 1:case 2:case 4:case 8:case 64:return t+250;case 16:case 32:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5e3;case 4194304:case 8388608:case 16777216:case 33554432:return-1;case 67108864:case 134217728:case 268435456:case 536870912:case 1073741824:return-1;default:return-1}}function hl(){var e=Ea;return Ea<<=1,(Ea&62914560)===0&&(Ea=4194304),e}function Vr(e){for(var t=[],n=0;31>n;n++)t.push(e);return t}function Ri(e,t){e.pendingLanes|=t,t!==268435456&&(e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0)}function Pp(e,t,n,i,a,r){var o=e.pendingLanes;e.pendingLanes=n,e.suspendedLanes=0,e.pingedLanes=0,e.warmLanes=0,e.expiredLanes&=n,e.entangledLanes&=n,e.errorRecoveryDisabledLanes&=n,e.shellSuspendCounter=0;var s=e.entanglements,l=e.expirationTimes,g=e.hiddenUpdates;for(n=o&~n;0<n;){var y=31-$e(n),C=1<<y;s[y]=0,l[y]=-1;var v=g[y];if(v!==null)for(g[y]=null,y=0;y<v.length;y++){var f=v[y];f!==null&&(f.lane&=-536870913)}n&=~C}i!==0&&bl(e,i,0),r!==0&&a===0&&e.tag!==0&&(e.suspendedLanes|=r&~(o&~t))}function bl(e,t,n){e.pendingLanes|=t,e.suspendedLanes&=~t;var i=31-$e(t);e.entangledLanes|=t,e.entanglements[i]=e.entanglements[i]|1073741824|n&261930}function Cl(e,t){var n=e.entangledLanes|=t;for(e=e.entanglements;n;){var i=31-$e(n),a=1<<i;a&t|e[i]&t&&(e[i]|=t),n&=~a}}function Sl(e,t){var n=t&-t;return n=(n&42)!==0?1:Qr(n),(n&(e.suspendedLanes|t))!==0?0:n}function Qr(e){switch(e){case 2:e=1;break;case 8:e=4;break;case 32:e=16;break;case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:case 4194304:case 8388608:case 16777216:case 33554432:e=128;break;case 268435456:e=134217728;break;default:e=0}return e}function Yr(e){return e&=-e,2<e?8<e?(e&134217727)!==0?32:268435456:8:2}function Al(){var e=L.p;return e!==0?e:(e=window.event,e===void 0?32:sp(e.type))}function Tl(e,t){var n=L.p;try{return L.p=e,t()}finally{L.p=n}}var Jt=Math.random().toString(36).slice(2),We="__reactFiber$"+Jt,He="__reactProps$"+Jt,jn="__reactContainer$"+Jt,Kr="__reactEvents$"+Jt,Mp="__reactListeners$"+Jt,Up="__reactHandles$"+Jt,wl="__reactResources$"+Jt,Oi="__reactMarker$"+Jt;function Xr(e){delete e[We],delete e[He],delete e[Kr],delete e[Mp],delete e[Up]}function _n(e){var t=e[We];if(t)return t;for(var n=e.parentNode;n;){if(t=n[jn]||n[We]){if(n=t.alternate,t.child!==null||n!==null&&n.child!==null)for(e=Fd(e);e!==null;){if(n=e[We])return n;e=Fd(e)}return t}e=n,n=e.parentNode}return null}function Fn(e){if(e=e[We]||e[jn]){var t=e.tag;if(t===5||t===6||t===13||t===31||t===26||t===27||t===3)return e}return null}function xi(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e.stateNode;throw Error(m(33))}function Vn(e){var t=e[wl];return t||(t=e[wl]={hoistableStyles:new Map,hoistableScripts:new Map}),t}function Le(e){e[Oi]=!0}var Ll=new Set,El={};function Ln(e,t){Qn(e,t),Qn(e+"Capture",t)}function Qn(e,t){for(El[e]=t,e=0;e<t.length;e++)Ll.add(t[e])}var Gp=RegExp("^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$"),Wl={},Dl={};function qp(e){return jr.call(Dl,e)?!0:jr.call(Wl,e)?!1:Gp.test(e)?Dl[e]=!0:(Wl[e]=!0,!1)}function Da(e,t,n){if(qp(t))if(n===null)e.removeAttribute(t);else{switch(typeof n){case"undefined":case"function":case"symbol":e.removeAttribute(t);return;case"boolean":var i=t.toLowerCase().slice(0,5);if(i!=="data-"&&i!=="aria-"){e.removeAttribute(t);return}}e.setAttribute(t,""+n)}}function Ia(e,t,n){if(n===null)e.removeAttribute(t);else{switch(typeof n){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(t);return}e.setAttribute(t,""+n)}}function Rt(e,t,n,i){if(i===null)e.removeAttribute(n);else{switch(typeof i){case"undefined":case"function":case"symbol":case"boolean":e.removeAttribute(n);return}e.setAttributeNS(t,n,""+i)}}function st(e){switch(typeof e){case"bigint":case"boolean":case"number":case"string":case"undefined":return e;case"object":return e;default:return""}}function Il(e){var t=e.type;return(e=e.nodeName)&&e.toLowerCase()==="input"&&(t==="checkbox"||t==="radio")}function Bp(e,t,n){var i=Object.getOwnPropertyDescriptor(e.constructor.prototype,t);if(!e.hasOwnProperty(t)&&typeof i<"u"&&typeof i.get=="function"&&typeof i.set=="function"){var a=i.get,r=i.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return a.call(this)},set:function(o){n=""+o,r.call(this,o)}}),Object.defineProperty(e,t,{enumerable:i.enumerable}),{getValue:function(){return n},setValue:function(o){n=""+o},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}function Jr(e){if(!e._valueTracker){var t=Il(e)?"checked":"value";e._valueTracker=Bp(e,t,""+e[t])}}function Rl(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var n=t.getValue(),i="";return e&&(i=Il(e)?e.checked?"true":"false":e.value),e=i,e!==n?(t.setValue(e),!0):!1}function Ra(e){if(e=e||(typeof document<"u"?document:void 0),typeof e>"u")return null;try{return e.activeElement||e.body}catch{return e.body}}var Hp=/[\n"\\]/g;function lt(e){return e.replace(Hp,function(t){return"\\"+t.charCodeAt(0).toString(16)+" "})}function $r(e,t,n,i,a,r,o,s){e.name="",o!=null&&typeof o!="function"&&typeof o!="symbol"&&typeof o!="boolean"?e.type=o:e.removeAttribute("type"),t!=null?o==="number"?(t===0&&e.value===""||e.value!=t)&&(e.value=""+st(t)):e.value!==""+st(t)&&(e.value=""+st(t)):o!=="submit"&&o!=="reset"||e.removeAttribute("value"),t!=null?Zr(e,o,st(t)):n!=null?Zr(e,o,st(n)):i!=null&&e.removeAttribute("value"),a==null&&r!=null&&(e.defaultChecked=!!r),a!=null&&(e.checked=a&&typeof a!="function"&&typeof a!="symbol"),s!=null&&typeof s!="function"&&typeof s!="symbol"&&typeof s!="boolean"?e.name=""+st(s):e.removeAttribute("name")}function Ol(e,t,n,i,a,r,o,s){if(r!=null&&typeof r!="function"&&typeof r!="symbol"&&typeof r!="boolean"&&(e.type=r),t!=null||n!=null){if(!(r!=="submit"&&r!=="reset"||t!=null)){Jr(e);return}n=n!=null?""+st(n):"",t=t!=null?""+st(t):n,s||t===e.value||(e.value=t),e.defaultValue=t}i=i??a,i=typeof i!="function"&&typeof i!="symbol"&&!!i,e.checked=s?e.checked:!!i,e.defaultChecked=!!i,o!=null&&typeof o!="function"&&typeof o!="symbol"&&typeof o!="boolean"&&(e.name=o),Jr(e)}function Zr(e,t,n){t==="number"&&Ra(e.ownerDocument)===e||e.defaultValue===""+n||(e.defaultValue=""+n)}function Yn(e,t,n,i){if(e=e.options,t){t={};for(var a=0;a<n.length;a++)t["$"+n[a]]=!0;for(n=0;n<e.length;n++)a=t.hasOwnProperty("$"+e[n].value),e[n].selected!==a&&(e[n].selected=a),a&&i&&(e[n].defaultSelected=!0)}else{for(n=""+st(n),t=null,a=0;a<e.length;a++){if(e[a].value===n){e[a].selected=!0,i&&(e[a].defaultSelected=!0);return}t!==null||e[a].disabled||(t=e[a])}t!==null&&(t.selected=!0)}}function xl(e,t,n){if(t!=null&&(t=""+st(t),t!==e.value&&(e.value=t),n==null)){e.defaultValue!==t&&(e.defaultValue=t);return}e.defaultValue=n!=null?""+st(n):""}function kl(e,t,n,i){if(t==null){if(i!=null){if(n!=null)throw Error(m(92));if(yt(i)){if(1<i.length)throw Error(m(93));i=i[0]}n=i}n==null&&(n=""),t=n}n=st(t),e.defaultValue=n,i=e.textContent,i===n&&i!==""&&i!==null&&(e.value=i),Jr(e)}function Kn(e,t){if(t){var n=e.firstChild;if(n&&n===e.lastChild&&n.nodeType===3){n.nodeValue=t;return}}e.textContent=t}var zp=new Set("animationIterationCount aspectRatio borderImageOutset borderImageSlice borderImageWidth boxFlex boxFlexGroup boxOrdinalGroup columnCount columns flex flexGrow flexPositive flexShrink flexNegative flexOrder gridArea gridRow gridRowEnd gridRowSpan gridRowStart gridColumn gridColumnEnd gridColumnSpan gridColumnStart fontWeight lineClamp lineHeight opacity order orphans scale tabSize widows zIndex zoom fillOpacity floodOpacity stopOpacity strokeDasharray strokeDashoffset strokeMiterlimit strokeOpacity strokeWidth MozAnimationIterationCount MozBoxFlex MozBoxFlexGroup MozLineClamp msAnimationIterationCount msFlex msZoom msFlexGrow msFlexNegative msFlexOrder msFlexPositive msFlexShrink msGridColumn msGridColumnSpan msGridRow msGridRowSpan WebkitAnimationIterationCount WebkitBoxFlex WebKitBoxFlexGroup WebkitBoxOrdinalGroup WebkitColumnCount WebkitColumns WebkitFlex WebkitFlexGrow WebkitFlexPositive WebkitFlexShrink WebkitLineClamp".split(" "));function Nl(e,t,n){var i=t.indexOf("--")===0;n==null||typeof n=="boolean"||n===""?i?e.setProperty(t,""):t==="float"?e.cssFloat="":e[t]="":i?e.setProperty(t,n):typeof n!="number"||n===0||zp.has(t)?t==="float"?e.cssFloat=n:e[t]=(""+n).trim():e[t]=n+"px"}function Pl(e,t,n){if(t!=null&&typeof t!="object")throw Error(m(62));if(e=e.style,n!=null){for(var i in n)!n.hasOwnProperty(i)||t!=null&&t.hasOwnProperty(i)||(i.indexOf("--")===0?e.setProperty(i,""):i==="float"?e.cssFloat="":e[i]="");for(var a in t)i=t[a],t.hasOwnProperty(a)&&n[a]!==i&&Nl(e,a,i)}else for(var r in t)t.hasOwnProperty(r)&&Nl(e,r,t[r])}function eo(e){if(e.indexOf("-")===-1)return!1;switch(e){case"annotation-xml":case"color-profile":case"font-face":case"font-face-src":case"font-face-uri":case"font-face-format":case"font-face-name":case"missing-glyph":return!1;default:return!0}}var jp=new Map([["acceptCharset","accept-charset"],["htmlFor","for"],["httpEquiv","http-equiv"],["crossOrigin","crossorigin"],["accentHeight","accent-height"],["alignmentBaseline","alignment-baseline"],["arabicForm","arabic-form"],["baselineShift","baseline-shift"],["capHeight","cap-height"],["clipPath","clip-path"],["clipRule","clip-rule"],["colorInterpolation","color-interpolation"],["colorInterpolationFilters","color-interpolation-filters"],["colorProfile","color-profile"],["colorRendering","color-rendering"],["dominantBaseline","dominant-baseline"],["enableBackground","enable-background"],["fillOpacity","fill-opacity"],["fillRule","fill-rule"],["floodColor","flood-color"],["floodOpacity","flood-opacity"],["fontFamily","font-family"],["fontSize","font-size"],["fontSizeAdjust","font-size-adjust"],["fontStretch","font-stretch"],["fontStyle","font-style"],["fontVariant","font-variant"],["fontWeight","font-weight"],["glyphName","glyph-name"],["glyphOrientationHorizontal","glyph-orientation-horizontal"],["glyphOrientationVertical","glyph-orientation-vertical"],["horizAdvX","horiz-adv-x"],["horizOriginX","horiz-origin-x"],["imageRendering","image-rendering"],["letterSpacing","letter-spacing"],["lightingColor","lighting-color"],["markerEnd","marker-end"],["markerMid","marker-mid"],["markerStart","marker-start"],["overlinePosition","overline-position"],["overlineThickness","overline-thickness"],["paintOrder","paint-order"],["panose-1","panose-1"],["pointerEvents","pointer-events"],["renderingIntent","rendering-intent"],["shapeRendering","shape-rendering"],["stopColor","stop-color"],["stopOpacity","stop-opacity"],["strikethroughPosition","strikethrough-position"],["strikethroughThickness","strikethrough-thickness"],["strokeDasharray","stroke-dasharray"],["strokeDashoffset","stroke-dashoffset"],["strokeLinecap","stroke-linecap"],["strokeLinejoin","stroke-linejoin"],["strokeMiterlimit","stroke-miterlimit"],["strokeOpacity","stroke-opacity"],["strokeWidth","stroke-width"],["textAnchor","text-anchor"],["textDecoration","text-decoration"],["textRendering","text-rendering"],["transformOrigin","transform-origin"],["underlinePosition","underline-position"],["underlineThickness","underline-thickness"],["unicodeBidi","unicode-bidi"],["unicodeRange","unicode-range"],["unitsPerEm","units-per-em"],["vAlphabetic","v-alphabetic"],["vHanging","v-hanging"],["vIdeographic","v-ideographic"],["vMathematical","v-mathematical"],["vectorEffect","vector-effect"],["vertAdvY","vert-adv-y"],["vertOriginX","vert-origin-x"],["vertOriginY","vert-origin-y"],["wordSpacing","word-spacing"],["writingMode","writing-mode"],["xmlnsXlink","xmlns:xlink"],["xHeight","x-height"]]),_p=/^[\u0000-\u001F ]*j[\r\n\t]*a[\r\n\t]*v[\r\n\t]*a[\r\n\t]*s[\r\n\t]*c[\r\n\t]*r[\r\n\t]*i[\r\n\t]*p[\r\n\t]*t[\r\n\t]*:/i;function Oa(e){return _p.test(""+e)?"javascript:throw new Error('React has blocked a javascript: URL as a security precaution.')":e}function Ot(){}var to=null;function no(e){return e=e.target||e.srcElement||window,e.correspondingUseElement&&(e=e.correspondingUseElement),e.nodeType===3?e.parentNode:e}var Xn=null,Jn=null;function Ml(e){var t=Fn(e);if(t&&(e=t.stateNode)){var n=e[He]||null;e:switch(e=t.stateNode,t.type){case"input":if($r(e,n.value,n.defaultValue,n.defaultValue,n.checked,n.defaultChecked,n.type,n.name),t=n.name,n.type==="radio"&&t!=null){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll('input[name="'+lt(""+t)+'"][type="radio"]'),t=0;t<n.length;t++){var i=n[t];if(i!==e&&i.form===e.form){var a=i[He]||null;if(!a)throw Error(m(90));$r(i,a.value,a.defaultValue,a.defaultValue,a.checked,a.defaultChecked,a.type,a.name)}}for(t=0;t<n.length;t++)i=n[t],i.form===e.form&&Rl(i)}break e;case"textarea":xl(e,n.value,n.defaultValue);break e;case"select":t=n.value,t!=null&&Yn(e,!!n.multiple,t,!1)}}}var io=!1;function Ul(e,t,n){if(io)return e(t,n);io=!0;try{var i=e(t);return i}finally{if(io=!1,(Xn!==null||Jn!==null)&&(hr(),Xn&&(t=Xn,e=Jn,Jn=Xn=null,Ml(t),e)))for(t=0;t<e.length;t++)Ml(e[t])}}function ki(e,t){var n=e.stateNode;if(n===null)return null;var i=n[He]||null;if(i===null)return null;n=i[t];e:switch(t){case"onClick":case"onClickCapture":case"onDoubleClick":case"onDoubleClickCapture":case"onMouseDown":case"onMouseDownCapture":case"onMouseMove":case"onMouseMoveCapture":case"onMouseUp":case"onMouseUpCapture":case"onMouseEnter":(i=!i.disabled)||(e=e.type,i=!(e==="button"||e==="input"||e==="select"||e==="textarea")),e=!i;break e;default:e=!1}if(e)return null;if(n&&typeof n!="function")throw Error(m(231,t,typeof n));return n}var xt=!(typeof window>"u"||typeof window.document>"u"||typeof window.document.createElement>"u"),ao=!1;if(xt)try{var Ni={};Object.defineProperty(Ni,"passive",{get:function(){ao=!0}}),window.addEventListener("test",Ni,Ni),window.removeEventListener("test",Ni,Ni)}catch{ao=!1}var $t=null,ro=null,xa=null;function Gl(){if(xa)return xa;var e,t=ro,n=t.length,i,a="value"in $t?$t.value:$t.textContent,r=a.length;for(e=0;e<n&&t[e]===a[e];e++);var o=n-e;for(i=1;i<=o&&t[n-i]===a[r-i];i++);return xa=a.slice(e,1<i?1-i:void 0)}function ka(e){var t=e.keyCode;return"charCode"in e?(e=e.charCode,e===0&&t===13&&(e=13)):e=t,e===10&&(e=13),32<=e||e===13?e:0}function Na(){return!0}function ql(){return!1}function ze(e){function t(n,i,a,r,o){this._reactName=n,this._targetInst=a,this.type=i,this.nativeEvent=r,this.target=o,this.currentTarget=null;for(var s in e)e.hasOwnProperty(s)&&(n=e[s],this[s]=n?n(r):r[s]);return this.isDefaultPrevented=(r.defaultPrevented!=null?r.defaultPrevented:r.returnValue===!1)?Na:ql,this.isPropagationStopped=ql,this}return N(t.prototype,{preventDefault:function(){this.defaultPrevented=!0;var n=this.nativeEvent;n&&(n.preventDefault?n.preventDefault():typeof n.returnValue!="unknown"&&(n.returnValue=!1),this.isDefaultPrevented=Na)},stopPropagation:function(){var n=this.nativeEvent;n&&(n.stopPropagation?n.stopPropagation():typeof n.cancelBubble!="unknown"&&(n.cancelBubble=!0),this.isPropagationStopped=Na)},persist:function(){},isPersistent:Na}),t}var En={eventPhase:0,bubbles:0,cancelable:0,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:0,isTrusted:0},Pa=ze(En),Pi=N({},En,{view:0,detail:0}),Fp=ze(Pi),oo,so,Mi,Ma=N({},Pi,{screenX:0,screenY:0,clientX:0,clientY:0,pageX:0,pageY:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,getModifierState:co,button:0,buttons:0,relatedTarget:function(e){return e.relatedTarget===void 0?e.fromElement===e.srcElement?e.toElement:e.fromElement:e.relatedTarget},movementX:function(e){return"movementX"in e?e.movementX:(e!==Mi&&(Mi&&e.type==="mousemove"?(oo=e.screenX-Mi.screenX,so=e.screenY-Mi.screenY):so=oo=0,Mi=e),oo)},movementY:function(e){return"movementY"in e?e.movementY:so}}),Bl=ze(Ma),Vp=N({},Ma,{dataTransfer:0}),Qp=ze(Vp),Yp=N({},Pi,{relatedTarget:0}),lo=ze(Yp),Kp=N({},En,{animationName:0,elapsedTime:0,pseudoElement:0}),Xp=ze(Kp),Jp=N({},En,{clipboardData:function(e){return"clipboardData"in e?e.clipboardData:window.clipboardData}}),$p=ze(Jp),Zp=N({},En,{data:0}),Hl=ze(Zp),em={Esc:"Escape",Spacebar:" ",Left:"ArrowLeft",Up:"ArrowUp",Right:"ArrowRight",Down:"ArrowDown",Del:"Delete",Win:"OS",Menu:"ContextMenu",Apps:"ContextMenu",Scroll:"ScrollLock",MozPrintableKey:"Unidentified"},tm={8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",45:"Insert",46:"Delete",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"NumLock",145:"ScrollLock",224:"Meta"},nm={Alt:"altKey",Control:"ctrlKey",Meta:"metaKey",Shift:"shiftKey"};function im(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):(e=nm[e])?!!t[e]:!1}function co(){return im}var am=N({},Pi,{key:function(e){if(e.key){var t=em[e.key]||e.key;if(t!=="Unidentified")return t}return e.type==="keypress"?(e=ka(e),e===13?"Enter":String.fromCharCode(e)):e.type==="keydown"||e.type==="keyup"?tm[e.keyCode]||"Unidentified":""},code:0,location:0,ctrlKey:0,shiftKey:0,altKey:0,metaKey:0,repeat:0,locale:0,getModifierState:co,charCode:function(e){return e.type==="keypress"?ka(e):0},keyCode:function(e){return e.type==="keydown"||e.type==="keyup"?e.keyCode:0},which:function(e){return e.type==="keypress"?ka(e):e.type==="keydown"||e.type==="keyup"?e.keyCode:0}}),rm=ze(am),om=N({},Ma,{pointerId:0,width:0,height:0,pressure:0,tangentialPressure:0,tiltX:0,tiltY:0,twist:0,pointerType:0,isPrimary:0}),zl=ze(om),sm=N({},Pi,{touches:0,targetTouches:0,changedTouches:0,altKey:0,metaKey:0,ctrlKey:0,shiftKey:0,getModifierState:co}),lm=ze(sm),cm=N({},En,{propertyName:0,elapsedTime:0,pseudoElement:0}),um=ze(cm),dm=N({},Ma,{deltaX:function(e){return"deltaX"in e?e.deltaX:"wheelDeltaX"in e?-e.wheelDeltaX:0},deltaY:function(e){return"deltaY"in e?e.deltaY:"wheelDeltaY"in e?-e.wheelDeltaY:"wheelDelta"in e?-e.wheelDelta:0},deltaZ:0,deltaMode:0}),pm=ze(dm),mm=N({},En,{newState:0,oldState:0}),gm=ze(mm),vm=[9,13,27,32],uo=xt&&"CompositionEvent"in window,Ui=null;xt&&"documentMode"in document&&(Ui=document.documentMode);var fm=xt&&"TextEvent"in window&&!Ui,jl=xt&&(!uo||Ui&&8<Ui&&11>=Ui),_l=" ",Fl=!1;function Vl(e,t){switch(e){case"keyup":return vm.indexOf(t.keyCode)!==-1;case"keydown":return t.keyCode!==229;case"keypress":case"mousedown":case"focusout":return!0;default:return!1}}function Ql(e){return e=e.detail,typeof e=="object"&&"data"in e?e.data:null}var $n=!1;function ym(e,t){switch(e){case"compositionend":return Ql(t);case"keypress":return t.which!==32?null:(Fl=!0,_l);case"textInput":return e=t.data,e===_l&&Fl?null:e;default:return null}}function hm(e,t){if($n)return e==="compositionend"||!uo&&Vl(e,t)?(e=Gl(),xa=ro=$t=null,$n=!1,e):null;switch(e){case"paste":return null;case"keypress":if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case"compositionend":return jl&&t.locale!=="ko"?null:t.data;default:return null}}var bm={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function Yl(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t==="input"?!!bm[e.type]:t==="textarea"}function Kl(e,t,n,i){Xn?Jn?Jn.push(i):Jn=[i]:Xn=i,t=Lr(t,"onChange"),0<t.length&&(n=new Pa("onChange","change",null,n,i),e.push({event:n,listeners:t}))}var Gi=null,qi=null;function Cm(e){Od(e,0)}function Ua(e){var t=xi(e);if(Rl(t))return e}function Xl(e,t){if(e==="change")return t}var Jl=!1;if(xt){var po;if(xt){var mo="oninput"in document;if(!mo){var $l=document.createElement("div");$l.setAttribute("oninput","return;"),mo=typeof $l.oninput=="function"}po=mo}else po=!1;Jl=po&&(!document.documentMode||9<document.documentMode)}function Zl(){Gi&&(Gi.detachEvent("onpropertychange",ec),qi=Gi=null)}function ec(e){if(e.propertyName==="value"&&Ua(qi)){var t=[];Kl(t,qi,e,no(e)),Ul(Cm,t)}}function Sm(e,t,n){e==="focusin"?(Zl(),Gi=t,qi=n,Gi.attachEvent("onpropertychange",ec)):e==="focusout"&&Zl()}function Am(e){if(e==="selectionchange"||e==="keyup"||e==="keydown")return Ua(qi)}function Tm(e,t){if(e==="click")return Ua(t)}function wm(e,t){if(e==="input"||e==="change")return Ua(t)}function Lm(e,t){return e===t&&(e!==0||1/e===1/t)||e!==e&&t!==t}var Ze=typeof Object.is=="function"?Object.is:Lm;function Bi(e,t){if(Ze(e,t))return!0;if(typeof e!="object"||e===null||typeof t!="object"||t===null)return!1;var n=Object.keys(e),i=Object.keys(t);if(n.length!==i.length)return!1;for(i=0;i<n.length;i++){var a=n[i];if(!jr.call(t,a)||!Ze(e[a],t[a]))return!1}return!0}function tc(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function nc(e,t){var n=tc(e);e=0;for(var i;n;){if(n.nodeType===3){if(i=e+n.textContent.length,e<=t&&i>=t)return{node:n,offset:t-e};e=i}e:{for(;n;){if(n.nextSibling){n=n.nextSibling;break e}n=n.parentNode}n=void 0}n=tc(n)}}function ic(e,t){return e&&t?e===t?!0:e&&e.nodeType===3?!1:t&&t.nodeType===3?ic(e,t.parentNode):"contains"in e?e.contains(t):e.compareDocumentPosition?!!(e.compareDocumentPosition(t)&16):!1:!1}function ac(e){e=e!=null&&e.ownerDocument!=null&&e.ownerDocument.defaultView!=null?e.ownerDocument.defaultView:window;for(var t=Ra(e.document);t instanceof e.HTMLIFrameElement;){try{var n=typeof t.contentWindow.location.href=="string"}catch{n=!1}if(n)e=t.contentWindow;else break;t=Ra(e.document)}return t}function go(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&(t==="input"&&(e.type==="text"||e.type==="search"||e.type==="tel"||e.type==="url"||e.type==="password")||t==="textarea"||e.contentEditable==="true")}var Em=xt&&"documentMode"in document&&11>=document.documentMode,Zn=null,vo=null,Hi=null,fo=!1;function rc(e,t,n){var i=n.window===n?n.document:n.nodeType===9?n:n.ownerDocument;fo||Zn==null||Zn!==Ra(i)||(i=Zn,"selectionStart"in i&&go(i)?i={start:i.selectionStart,end:i.selectionEnd}:(i=(i.ownerDocument&&i.ownerDocument.defaultView||window).getSelection(),i={anchorNode:i.anchorNode,anchorOffset:i.anchorOffset,focusNode:i.focusNode,focusOffset:i.focusOffset}),Hi&&Bi(Hi,i)||(Hi=i,i=Lr(vo,"onSelect"),0<i.length&&(t=new Pa("onSelect","select",null,t,n),e.push({event:t,listeners:i}),t.target=Zn)))}function Wn(e,t){var n={};return n[e.toLowerCase()]=t.toLowerCase(),n["Webkit"+e]="webkit"+t,n["Moz"+e]="moz"+t,n}var ei={animationend:Wn("Animation","AnimationEnd"),animationiteration:Wn("Animation","AnimationIteration"),animationstart:Wn("Animation","AnimationStart"),transitionrun:Wn("Transition","TransitionRun"),transitionstart:Wn("Transition","TransitionStart"),transitioncancel:Wn("Transition","TransitionCancel"),transitionend:Wn("Transition","TransitionEnd")},yo={},oc={};xt&&(oc=document.createElement("div").style,"AnimationEvent"in window||(delete ei.animationend.animation,delete ei.animationiteration.animation,delete ei.animationstart.animation),"TransitionEvent"in window||delete ei.transitionend.transition);function Dn(e){if(yo[e])return yo[e];if(!ei[e])return e;var t=ei[e],n;for(n in t)if(t.hasOwnProperty(n)&&n in oc)return yo[e]=t[n];return e}var sc=Dn("animationend"),lc=Dn("animationiteration"),cc=Dn("animationstart"),Wm=Dn("transitionrun"),Dm=Dn("transitionstart"),Im=Dn("transitioncancel"),uc=Dn("transitionend"),dc=new Map,ho="abort auxClick beforeToggle cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");ho.push("scrollEnd");function ht(e,t){dc.set(e,t),Ln(t,[e])}var Ga=typeof reportError=="function"?reportError:function(e){if(typeof window=="object"&&typeof window.ErrorEvent=="function"){var t=new window.ErrorEvent("error",{bubbles:!0,cancelable:!0,message:typeof e=="object"&&e!==null&&typeof e.message=="string"?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(typeof process=="object"&&typeof process.emit=="function"){process.emit("uncaughtException",e);return}console.error(e)},ct=[],ti=0,bo=0;function qa(){for(var e=ti,t=bo=ti=0;t<e;){var n=ct[t];ct[t++]=null;var i=ct[t];ct[t++]=null;var a=ct[t];ct[t++]=null;var r=ct[t];if(ct[t++]=null,i!==null&&a!==null){var o=i.pending;o===null?a.next=a:(a.next=o.next,o.next=a),i.pending=a}r!==0&&pc(n,a,r)}}function Ba(e,t,n,i){ct[ti++]=e,ct[ti++]=t,ct[ti++]=n,ct[ti++]=i,bo|=i,e.lanes|=i,e=e.alternate,e!==null&&(e.lanes|=i)}function Co(e,t,n,i){return Ba(e,t,n,i),Ha(e)}function In(e,t){return Ba(e,null,null,t),Ha(e)}function pc(e,t,n){e.lanes|=n;var i=e.alternate;i!==null&&(i.lanes|=n);for(var a=!1,r=e.return;r!==null;)r.childLanes|=n,i=r.alternate,i!==null&&(i.childLanes|=n),r.tag===22&&(e=r.stateNode,e===null||e._visibility&1||(a=!0)),e=r,r=r.return;return e.tag===3?(r=e.stateNode,a&&t!==null&&(a=31-$e(n),e=r.hiddenUpdates,i=e[a],i===null?e[a]=[t]:i.push(t),t.lane=n|536870912),r):null}function Ha(e){if(50<ca)throw ca=0,Is=null,Error(m(185));for(var t=e.return;t!==null;)e=t,t=e.return;return e.tag===3?e.stateNode:null}var ni={};function Rm(e,t,n,i){this.tag=e,this.key=n,this.sibling=this.child=this.return=this.stateNode=this.type=this.elementType=null,this.index=0,this.refCleanup=this.ref=null,this.pendingProps=t,this.dependencies=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=i,this.subtreeFlags=this.flags=0,this.deletions=null,this.childLanes=this.lanes=0,this.alternate=null}function et(e,t,n,i){return new Rm(e,t,n,i)}function So(e){return e=e.prototype,!(!e||!e.isReactComponent)}function kt(e,t){var n=e.alternate;return n===null?(n=et(e.tag,t,e.key,e.mode),n.elementType=e.elementType,n.type=e.type,n.stateNode=e.stateNode,n.alternate=e,e.alternate=n):(n.pendingProps=t,n.type=e.type,n.flags=0,n.subtreeFlags=0,n.deletions=null),n.flags=e.flags&65011712,n.childLanes=e.childLanes,n.lanes=e.lanes,n.child=e.child,n.memoizedProps=e.memoizedProps,n.memoizedState=e.memoizedState,n.updateQueue=e.updateQueue,t=e.dependencies,n.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext},n.sibling=e.sibling,n.index=e.index,n.ref=e.ref,n.refCleanup=e.refCleanup,n}function mc(e,t){e.flags&=65011714;var n=e.alternate;return n===null?(e.childLanes=0,e.lanes=t,e.child=null,e.subtreeFlags=0,e.memoizedProps=null,e.memoizedState=null,e.updateQueue=null,e.dependencies=null,e.stateNode=null):(e.childLanes=n.childLanes,e.lanes=n.lanes,e.child=n.child,e.subtreeFlags=0,e.deletions=null,e.memoizedProps=n.memoizedProps,e.memoizedState=n.memoizedState,e.updateQueue=n.updateQueue,e.type=n.type,t=n.dependencies,e.dependencies=t===null?null:{lanes:t.lanes,firstContext:t.firstContext}),e}function za(e,t,n,i,a,r){var o=0;if(i=e,typeof e=="function")So(e)&&(o=1);else if(typeof e=="string")o=Pg(e,n,I.current)?26:e==="html"||e==="head"||e==="body"?27:5;else e:switch(e){case At:return e=et(31,n,t,a),e.elementType=At,e.lanes=r,e;case Ne:return Rn(n.children,a,r,t);case Dt:o=8,a|=24;break;case Ke:return e=et(12,n,t,a|2),e.elementType=Ke,e.lanes=r,e;case St:return e=et(13,n,t,a),e.elementType=St,e.lanes=r,e;case Ge:return e=et(19,n,t,a),e.elementType=Ge,e.lanes=r,e;default:if(typeof e=="object"&&e!==null)switch(e.$$typeof){case xe:o=10;break e;case Kt:o=9;break e;case ot:o=11;break e;case Y:o=14;break e;case qe:o=16,i=null;break e}o=29,n=Error(m(130,e===null?"null":typeof e,"")),i=null}return t=et(o,n,t,a),t.elementType=e,t.type=i,t.lanes=r,t}function Rn(e,t,n,i){return e=et(7,e,i,t),e.lanes=n,e}function Ao(e,t,n){return e=et(6,e,null,t),e.lanes=n,e}function gc(e){var t=et(18,null,null,0);return t.stateNode=e,t}function To(e,t,n){return t=et(4,e.children!==null?e.children:[],e.key,t),t.lanes=n,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}var vc=new WeakMap;function ut(e,t){if(typeof e=="object"&&e!==null){var n=vc.get(e);return n!==void 0?n:(t={value:e,source:t,stack:gl(t)},vc.set(e,t),t)}return{value:e,source:t,stack:gl(t)}}var ii=[],ai=0,ja=null,zi=0,dt=[],pt=0,Zt=null,wt=1,Lt="";function Nt(e,t){ii[ai++]=zi,ii[ai++]=ja,ja=e,zi=t}function fc(e,t,n){dt[pt++]=wt,dt[pt++]=Lt,dt[pt++]=Zt,Zt=e;var i=wt;e=Lt;var a=32-$e(i)-1;i&=~(1<<a),n+=1;var r=32-$e(t)+a;if(30<r){var o=a-a%5;r=(i&(1<<o)-1).toString(32),i>>=o,a-=o,wt=1<<32-$e(t)+a|n<<a|i,Lt=r+e}else wt=1<<r|n<<a|i,Lt=e}function wo(e){e.return!==null&&(Nt(e,1),fc(e,1,0))}function Lo(e){for(;e===ja;)ja=ii[--ai],ii[ai]=null,zi=ii[--ai],ii[ai]=null;for(;e===Zt;)Zt=dt[--pt],dt[pt]=null,Lt=dt[--pt],dt[pt]=null,wt=dt[--pt],dt[pt]=null}function yc(e,t){dt[pt++]=wt,dt[pt++]=Lt,dt[pt++]=Zt,wt=t.id,Lt=t.overflow,Zt=e}var De=null,de=null,K=!1,en=null,mt=!1,Eo=Error(m(519));function tn(e){var t=Error(m(418,1<arguments.length&&arguments[1]!==void 0&&arguments[1]?"text":"HTML",""));throw ji(ut(t,e)),Eo}function hc(e){var t=e.stateNode,n=e.type,i=e.memoizedProps;switch(t[We]=e,t[He]=i,n){case"dialog":_("cancel",t),_("close",t);break;case"iframe":case"object":case"embed":_("load",t);break;case"video":case"audio":for(n=0;n<da.length;n++)_(da[n],t);break;case"source":_("error",t);break;case"img":case"image":case"link":_("error",t),_("load",t);break;case"details":_("toggle",t);break;case"input":_("invalid",t),Ol(t,i.value,i.defaultValue,i.checked,i.defaultChecked,i.type,i.name,!0);break;case"select":_("invalid",t);break;case"textarea":_("invalid",t),kl(t,i.value,i.defaultValue,i.children)}n=i.children,typeof n!="string"&&typeof n!="number"&&typeof n!="bigint"||t.textContent===""+n||i.suppressHydrationWarning===!0||Pd(t.textContent,n)?(i.popover!=null&&(_("beforetoggle",t),_("toggle",t)),i.onScroll!=null&&_("scroll",t),i.onScrollEnd!=null&&_("scrollend",t),i.onClick!=null&&(t.onclick=Ot),t=!0):t=!1,t||tn(e,!0)}function bc(e){for(De=e.return;De;)switch(De.tag){case 5:case 31:case 13:mt=!1;return;case 27:case 3:mt=!0;return;default:De=De.return}}function ri(e){if(e!==De)return!1;if(!K)return bc(e),K=!0,!1;var t=e.tag,n;if((n=t!==3&&t!==27)&&((n=t===5)&&(n=e.type,n=!(n!=="form"&&n!=="button")||_s(e.type,e.memoizedProps)),n=!n),n&&de&&tn(e),bc(e),t===13){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(317));de=_d(e)}else if(t===31){if(e=e.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(317));de=_d(e)}else t===27?(t=de,fn(e.type)?(e=Ks,Ks=null,de=e):de=t):de=De?vt(e.stateNode.nextSibling):null;return!0}function On(){de=De=null,K=!1}function Wo(){var e=en;return e!==null&&(Ve===null?Ve=e:Ve.push.apply(Ve,e),en=null),e}function ji(e){en===null?en=[e]:en.push(e)}var Do=u(null),xn=null,Pt=null;function nn(e,t,n){W(Do,t._currentValue),t._currentValue=n}function Mt(e){e._currentValue=Do.current,A(Do)}function Io(e,t,n){for(;e!==null;){var i=e.alternate;if((e.childLanes&t)!==t?(e.childLanes|=t,i!==null&&(i.childLanes|=t)):i!==null&&(i.childLanes&t)!==t&&(i.childLanes|=t),e===n)break;e=e.return}}function Ro(e,t,n,i){var a=e.child;for(a!==null&&(a.return=e);a!==null;){var r=a.dependencies;if(r!==null){var o=a.child;r=r.firstContext;e:for(;r!==null;){var s=r;r=a;for(var l=0;l<t.length;l++)if(s.context===t[l]){r.lanes|=n,s=r.alternate,s!==null&&(s.lanes|=n),Io(r.return,n,e),i||(o=null);break e}r=s.next}}else if(a.tag===18){if(o=a.return,o===null)throw Error(m(341));o.lanes|=n,r=o.alternate,r!==null&&(r.lanes|=n),Io(o,n,e),o=null}else o=a.child;if(o!==null)o.return=a;else for(o=a;o!==null;){if(o===e){o=null;break}if(a=o.sibling,a!==null){a.return=o.return,o=a;break}o=o.return}a=o}}function oi(e,t,n,i){e=null;for(var a=t,r=!1;a!==null;){if(!r){if((a.flags&524288)!==0)r=!0;else if((a.flags&262144)!==0)break}if(a.tag===10){var o=a.alternate;if(o===null)throw Error(m(387));if(o=o.memoizedProps,o!==null){var s=a.type;Ze(a.pendingProps.value,o.value)||(e!==null?e.push(s):e=[s])}}else if(a===te.current){if(o=a.alternate,o===null)throw Error(m(387));o.memoizedState.memoizedState!==a.memoizedState.memoizedState&&(e!==null?e.push(fa):e=[fa])}a=a.return}e!==null&&Ro(t,e,n,i),t.flags|=262144}function _a(e){for(e=e.firstContext;e!==null;){if(!Ze(e.context._currentValue,e.memoizedValue))return!0;e=e.next}return!1}function kn(e){xn=e,Pt=null,e=e.dependencies,e!==null&&(e.firstContext=null)}function Ie(e){return Cc(xn,e)}function Fa(e,t){return xn===null&&kn(e),Cc(e,t)}function Cc(e,t){var n=t._currentValue;if(t={context:t,memoizedValue:n,next:null},Pt===null){if(e===null)throw Error(m(308));Pt=t,e.dependencies={lanes:0,firstContext:t},e.flags|=524288}else Pt=Pt.next=t;return n}var Om=typeof AbortController<"u"?AbortController:function(){var e=[],t=this.signal={aborted:!1,addEventListener:function(n,i){e.push(i)}};this.abort=function(){t.aborted=!0,e.forEach(function(n){return n()})}},xm=w.unstable_scheduleCallback,km=w.unstable_NormalPriority,Ce={$$typeof:xe,Consumer:null,Provider:null,_currentValue:null,_currentValue2:null,_threadCount:0};function Oo(){return{controller:new Om,data:new Map,refCount:0}}function _i(e){e.refCount--,e.refCount===0&&xm(km,function(){e.controller.abort()})}var Fi=null,xo=0,si=0,li=null;function Nm(e,t){if(Fi===null){var n=Fi=[];xo=0,si=Ps(),li={status:"pending",value:void 0,then:function(i){n.push(i)}}}return xo++,t.then(Sc,Sc),t}function Sc(){if(--xo===0&&Fi!==null){li!==null&&(li.status="fulfilled");var e=Fi;Fi=null,si=0,li=null;for(var t=0;t<e.length;t++)(0,e[t])()}}function Pm(e,t){var n=[],i={status:"pending",value:null,reason:null,then:function(a){n.push(a)}};return e.then(function(){i.status="fulfilled",i.value=t;for(var a=0;a<n.length;a++)(0,n[a])(t)},function(a){for(i.status="rejected",i.reason=a,a=0;a<n.length;a++)(0,n[a])(void 0)}),i}var Ac=h.S;h.S=function(e,t){rd=Xe(),typeof t=="object"&&t!==null&&typeof t.then=="function"&&Nm(e,t),Ac!==null&&Ac(e,t)};var Nn=u(null);function ko(){var e=Nn.current;return e!==null?e:ce.pooledCache}function Va(e,t){t===null?W(Nn,Nn.current):W(Nn,t.pool)}function Tc(){var e=ko();return e===null?null:{parent:Ce._currentValue,pool:e}}var ci=Error(m(460)),No=Error(m(474)),Qa=Error(m(542)),Ya={then:function(){}};function wc(e){return e=e.status,e==="fulfilled"||e==="rejected"}function Lc(e,t,n){switch(n=e[n],n===void 0?e.push(t):n!==t&&(t.then(Ot,Ot),t=n),t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Wc(e),e;default:if(typeof t.status=="string")t.then(Ot,Ot);else{if(e=ce,e!==null&&100<e.shellSuspendCounter)throw Error(m(482));e=t,e.status="pending",e.then(function(i){if(t.status==="pending"){var a=t;a.status="fulfilled",a.value=i}},function(i){if(t.status==="pending"){var a=t;a.status="rejected",a.reason=i}})}switch(t.status){case"fulfilled":return t.value;case"rejected":throw e=t.reason,Wc(e),e}throw Mn=t,ci}}function Pn(e){try{var t=e._init;return t(e._payload)}catch(n){throw n!==null&&typeof n=="object"&&typeof n.then=="function"?(Mn=n,ci):n}}var Mn=null;function Ec(){if(Mn===null)throw Error(m(459));var e=Mn;return Mn=null,e}function Wc(e){if(e===ci||e===Qa)throw Error(m(483))}var ui=null,Vi=0;function Ka(e){var t=Vi;return Vi+=1,ui===null&&(ui=[]),Lc(ui,e,t)}function Qi(e,t){t=t.props.ref,e.ref=t!==void 0?t:null}function Xa(e,t){throw t.$$typeof===me?Error(m(525)):(e=Object.prototype.toString.call(t),Error(m(31,e==="[object Object]"?"object with keys {"+Object.keys(t).join(", ")+"}":e)))}function Dc(e){function t(d,c){if(e){var p=d.deletions;p===null?(d.deletions=[c],d.flags|=16):p.push(c)}}function n(d,c){if(!e)return null;for(;c!==null;)t(d,c),c=c.sibling;return null}function i(d){for(var c=new Map;d!==null;)d.key!==null?c.set(d.key,d):c.set(d.index,d),d=d.sibling;return c}function a(d,c){return d=kt(d,c),d.index=0,d.sibling=null,d}function r(d,c,p){return d.index=p,e?(p=d.alternate,p!==null?(p=p.index,p<c?(d.flags|=67108866,c):p):(d.flags|=67108866,c)):(d.flags|=1048576,c)}function o(d){return e&&d.alternate===null&&(d.flags|=67108866),d}function s(d,c,p,b){return c===null||c.tag!==6?(c=Ao(p,d.mode,b),c.return=d,c):(c=a(c,p),c.return=d,c)}function l(d,c,p,b){var O=p.type;return O===Ne?y(d,c,p.props.children,b,p.key):c!==null&&(c.elementType===O||typeof O=="object"&&O!==null&&O.$$typeof===qe&&Pn(O)===c.type)?(c=a(c,p.props),Qi(c,p),c.return=d,c):(c=za(p.type,p.key,p.props,null,d.mode,b),Qi(c,p),c.return=d,c)}function g(d,c,p,b){return c===null||c.tag!==4||c.stateNode.containerInfo!==p.containerInfo||c.stateNode.implementation!==p.implementation?(c=To(p,d.mode,b),c.return=d,c):(c=a(c,p.children||[]),c.return=d,c)}function y(d,c,p,b,O){return c===null||c.tag!==7?(c=Rn(p,d.mode,b,O),c.return=d,c):(c=a(c,p),c.return=d,c)}function C(d,c,p){if(typeof c=="string"&&c!==""||typeof c=="number"||typeof c=="bigint")return c=Ao(""+c,d.mode,p),c.return=d,c;if(typeof c=="object"&&c!==null){switch(c.$$typeof){case Ye:return p=za(c.type,c.key,c.props,null,d.mode,p),Qi(p,c),p.return=d,p;case Ue:return c=To(c,d.mode,p),c.return=d,c;case qe:return c=Pn(c),C(d,c,p)}if(yt(c)||Be(c))return c=Rn(c,d.mode,p,null),c.return=d,c;if(typeof c.then=="function")return C(d,Ka(c),p);if(c.$$typeof===xe)return C(d,Fa(d,c),p);Xa(d,c)}return null}function v(d,c,p,b){var O=c!==null?c.key:null;if(typeof p=="string"&&p!==""||typeof p=="number"||typeof p=="bigint")return O!==null?null:s(d,c,""+p,b);if(typeof p=="object"&&p!==null){switch(p.$$typeof){case Ye:return p.key===O?l(d,c,p,b):null;case Ue:return p.key===O?g(d,c,p,b):null;case qe:return p=Pn(p),v(d,c,p,b)}if(yt(p)||Be(p))return O!==null?null:y(d,c,p,b,null);if(typeof p.then=="function")return v(d,c,Ka(p),b);if(p.$$typeof===xe)return v(d,c,Fa(d,p),b);Xa(d,p)}return null}function f(d,c,p,b,O){if(typeof b=="string"&&b!==""||typeof b=="number"||typeof b=="bigint")return d=d.get(p)||null,s(c,d,""+b,O);if(typeof b=="object"&&b!==null){switch(b.$$typeof){case Ye:return d=d.get(b.key===null?p:b.key)||null,l(c,d,b,O);case Ue:return d=d.get(b.key===null?p:b.key)||null,g(c,d,b,O);case qe:return b=Pn(b),f(d,c,p,b,O)}if(yt(b)||Be(b))return d=d.get(p)||null,y(c,d,b,O,null);if(typeof b.then=="function")return f(d,c,p,Ka(b),O);if(b.$$typeof===xe)return f(d,c,p,Fa(c,b),O);Xa(c,b)}return null}function D(d,c,p,b){for(var O=null,J=null,R=c,H=c=0,Q=null;R!==null&&H<p.length;H++){R.index>H?(Q=R,R=null):Q=R.sibling;var $=v(d,R,p[H],b);if($===null){R===null&&(R=Q);break}e&&R&&$.alternate===null&&t(d,R),c=r($,c,H),J===null?O=$:J.sibling=$,J=$,R=Q}if(H===p.length)return n(d,R),K&&Nt(d,H),O;if(R===null){for(;H<p.length;H++)R=C(d,p[H],b),R!==null&&(c=r(R,c,H),J===null?O=R:J.sibling=R,J=R);return K&&Nt(d,H),O}for(R=i(R);H<p.length;H++)Q=f(R,d,H,p[H],b),Q!==null&&(e&&Q.alternate!==null&&R.delete(Q.key===null?H:Q.key),c=r(Q,c,H),J===null?O=Q:J.sibling=Q,J=Q);return e&&R.forEach(function(Sn){return t(d,Sn)}),K&&Nt(d,H),O}function k(d,c,p,b){if(p==null)throw Error(m(151));for(var O=null,J=null,R=c,H=c=0,Q=null,$=p.next();R!==null&&!$.done;H++,$=p.next()){R.index>H?(Q=R,R=null):Q=R.sibling;var Sn=v(d,R,$.value,b);if(Sn===null){R===null&&(R=Q);break}e&&R&&Sn.alternate===null&&t(d,R),c=r(Sn,c,H),J===null?O=Sn:J.sibling=Sn,J=Sn,R=Q}if($.done)return n(d,R),K&&Nt(d,H),O;if(R===null){for(;!$.done;H++,$=p.next())$=C(d,$.value,b),$!==null&&(c=r($,c,H),J===null?O=$:J.sibling=$,J=$);return K&&Nt(d,H),O}for(R=i(R);!$.done;H++,$=p.next())$=f(R,d,H,$.value,b),$!==null&&(e&&$.alternate!==null&&R.delete($.key===null?H:$.key),c=r($,c,H),J===null?O=$:J.sibling=$,J=$);return e&&R.forEach(function(Vg){return t(d,Vg)}),K&&Nt(d,H),O}function se(d,c,p,b){if(typeof p=="object"&&p!==null&&p.type===Ne&&p.key===null&&(p=p.props.children),typeof p=="object"&&p!==null){switch(p.$$typeof){case Ye:e:{for(var O=p.key;c!==null;){if(c.key===O){if(O=p.type,O===Ne){if(c.tag===7){n(d,c.sibling),b=a(c,p.props.children),b.return=d,d=b;break e}}else if(c.elementType===O||typeof O=="object"&&O!==null&&O.$$typeof===qe&&Pn(O)===c.type){n(d,c.sibling),b=a(c,p.props),Qi(b,p),b.return=d,d=b;break e}n(d,c);break}else t(d,c);c=c.sibling}p.type===Ne?(b=Rn(p.props.children,d.mode,b,p.key),b.return=d,d=b):(b=za(p.type,p.key,p.props,null,d.mode,b),Qi(b,p),b.return=d,d=b)}return o(d);case Ue:e:{for(O=p.key;c!==null;){if(c.key===O)if(c.tag===4&&c.stateNode.containerInfo===p.containerInfo&&c.stateNode.implementation===p.implementation){n(d,c.sibling),b=a(c,p.children||[]),b.return=d,d=b;break e}else{n(d,c);break}else t(d,c);c=c.sibling}b=To(p,d.mode,b),b.return=d,d=b}return o(d);case qe:return p=Pn(p),se(d,c,p,b)}if(yt(p))return D(d,c,p,b);if(Be(p)){if(O=Be(p),typeof O!="function")throw Error(m(150));return p=O.call(p),k(d,c,p,b)}if(typeof p.then=="function")return se(d,c,Ka(p),b);if(p.$$typeof===xe)return se(d,c,Fa(d,p),b);Xa(d,p)}return typeof p=="string"&&p!==""||typeof p=="number"||typeof p=="bigint"?(p=""+p,c!==null&&c.tag===6?(n(d,c.sibling),b=a(c,p),b.return=d,d=b):(n(d,c),b=Ao(p,d.mode,b),b.return=d,d=b),o(d)):n(d,c)}return function(d,c,p,b){try{Vi=0;var O=se(d,c,p,b);return ui=null,O}catch(R){if(R===ci||R===Qa)throw R;var J=et(29,R,null,d.mode);return J.lanes=b,J.return=d,J}}}var Un=Dc(!0),Ic=Dc(!1),an=!1;function Po(e){e.updateQueue={baseState:e.memoizedState,firstBaseUpdate:null,lastBaseUpdate:null,shared:{pending:null,lanes:0,hiddenCallbacks:null},callbacks:null}}function Mo(e,t){e=e.updateQueue,t.updateQueue===e&&(t.updateQueue={baseState:e.baseState,firstBaseUpdate:e.firstBaseUpdate,lastBaseUpdate:e.lastBaseUpdate,shared:e.shared,callbacks:null})}function rn(e){return{lane:e,tag:0,payload:null,callback:null,next:null}}function on(e,t,n){var i=e.updateQueue;if(i===null)return null;if(i=i.shared,(Z&2)!==0){var a=i.pending;return a===null?t.next=t:(t.next=a.next,a.next=t),i.pending=t,t=Ha(e),pc(e,null,n),t}return Ba(e,i,t,n),Ha(e)}function Yi(e,t,n){if(t=t.updateQueue,t!==null&&(t=t.shared,(n&4194048)!==0)){var i=t.lanes;i&=e.pendingLanes,n|=i,t.lanes=n,Cl(e,n)}}function Uo(e,t){var n=e.updateQueue,i=e.alternate;if(i!==null&&(i=i.updateQueue,n===i)){var a=null,r=null;if(n=n.firstBaseUpdate,n!==null){do{var o={lane:n.lane,tag:n.tag,payload:n.payload,callback:null,next:null};r===null?a=r=o:r=r.next=o,n=n.next}while(n!==null);r===null?a=r=t:r=r.next=t}else a=r=t;n={baseState:i.baseState,firstBaseUpdate:a,lastBaseUpdate:r,shared:i.shared,callbacks:i.callbacks},e.updateQueue=n;return}e=n.lastBaseUpdate,e===null?n.firstBaseUpdate=t:e.next=t,n.lastBaseUpdate=t}var Go=!1;function Ki(){if(Go){var e=li;if(e!==null)throw e}}function Xi(e,t,n,i){Go=!1;var a=e.updateQueue;an=!1;var r=a.firstBaseUpdate,o=a.lastBaseUpdate,s=a.shared.pending;if(s!==null){a.shared.pending=null;var l=s,g=l.next;l.next=null,o===null?r=g:o.next=g,o=l;var y=e.alternate;y!==null&&(y=y.updateQueue,s=y.lastBaseUpdate,s!==o&&(s===null?y.firstBaseUpdate=g:s.next=g,y.lastBaseUpdate=l))}if(r!==null){var C=a.baseState;o=0,y=g=l=null,s=r;do{var v=s.lane&-536870913,f=v!==s.lane;if(f?(V&v)===v:(i&v)===v){v!==0&&v===si&&(Go=!0),y!==null&&(y=y.next={lane:0,tag:s.tag,payload:s.payload,callback:null,next:null});e:{var D=e,k=s;v=t;var se=n;switch(k.tag){case 1:if(D=k.payload,typeof D=="function"){C=D.call(se,C,v);break e}C=D;break e;case 3:D.flags=D.flags&-65537|128;case 0:if(D=k.payload,v=typeof D=="function"?D.call(se,C,v):D,v==null)break e;C=N({},C,v);break e;case 2:an=!0}}v=s.callback,v!==null&&(e.flags|=64,f&&(e.flags|=8192),f=a.callbacks,f===null?a.callbacks=[v]:f.push(v))}else f={lane:v,tag:s.tag,payload:s.payload,callback:s.callback,next:null},y===null?(g=y=f,l=C):y=y.next=f,o|=v;if(s=s.next,s===null){if(s=a.shared.pending,s===null)break;f=s,s=f.next,f.next=null,a.lastBaseUpdate=f,a.shared.pending=null}}while(!0);y===null&&(l=C),a.baseState=l,a.firstBaseUpdate=g,a.lastBaseUpdate=y,r===null&&(a.shared.lanes=0),dn|=o,e.lanes=o,e.memoizedState=C}}function Rc(e,t){if(typeof e!="function")throw Error(m(191,e));e.call(t)}function Oc(e,t){var n=e.callbacks;if(n!==null)for(e.callbacks=null,e=0;e<n.length;e++)Rc(n[e],t)}var di=u(null),Ja=u(0);function xc(e,t){e=Ft,W(Ja,e),W(di,t),Ft=e|t.baseLanes}function qo(){W(Ja,Ft),W(di,di.current)}function Bo(){Ft=Ja.current,A(di),A(Ja)}var tt=u(null),gt=null;function sn(e){var t=e.alternate;W(he,he.current&1),W(tt,e),gt===null&&(t===null||di.current!==null||t.memoizedState!==null)&&(gt=e)}function Ho(e){W(he,he.current),W(tt,e),gt===null&&(gt=e)}function kc(e){e.tag===22?(W(he,he.current),W(tt,e),gt===null&&(gt=e)):ln()}function ln(){W(he,he.current),W(tt,tt.current)}function nt(e){A(tt),gt===e&&(gt=null),A(he)}var he=u(0);function $a(e){for(var t=e;t!==null;){if(t.tag===13){var n=t.memoizedState;if(n!==null&&(n=n.dehydrated,n===null||Qs(n)||Ys(n)))return t}else if(t.tag===19&&(t.memoizedProps.revealOrder==="forwards"||t.memoizedProps.revealOrder==="backwards"||t.memoizedProps.revealOrder==="unstable_legacy-backwards"||t.memoizedProps.revealOrder==="together")){if((t.flags&128)!==0)return t}else if(t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}return null}var Ut=0,B=null,re=null,Se=null,Za=!1,pi=!1,Gn=!1,er=0,Ji=0,mi=null,Mm=0;function ve(){throw Error(m(321))}function zo(e,t){if(t===null)return!1;for(var n=0;n<t.length&&n<e.length;n++)if(!Ze(e[n],t[n]))return!1;return!0}function jo(e,t,n,i,a,r){return Ut=r,B=t,t.memoizedState=null,t.updateQueue=null,t.lanes=0,h.H=e===null||e.memoizedState===null?fu:as,Gn=!1,r=n(i,a),Gn=!1,pi&&(r=Pc(t,n,i,a)),Nc(e),r}function Nc(e){h.H=ea;var t=re!==null&&re.next!==null;if(Ut=0,Se=re=B=null,Za=!1,Ji=0,mi=null,t)throw Error(m(300));e===null||Ae||(e=e.dependencies,e!==null&&_a(e)&&(Ae=!0))}function Pc(e,t,n,i){B=e;var a=0;do{if(pi&&(mi=null),Ji=0,pi=!1,25<=a)throw Error(m(301));if(a+=1,Se=re=null,e.updateQueue!=null){var r=e.updateQueue;r.lastEffect=null,r.events=null,r.stores=null,r.memoCache!=null&&(r.memoCache.index=0)}h.H=yu,r=t(n,i)}while(pi);return r}function Um(){var e=h.H,t=e.useState()[0];return t=typeof t.then=="function"?$i(t):t,e=e.useState()[0],(re!==null?re.memoizedState:null)!==e&&(B.flags|=1024),t}function _o(){var e=er!==0;return er=0,e}function Fo(e,t,n){t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~n}function Vo(e){if(Za){for(e=e.memoizedState;e!==null;){var t=e.queue;t!==null&&(t.pending=null),e=e.next}Za=!1}Ut=0,Se=re=B=null,pi=!1,Ji=er=0,mi=null}function Me(){var e={memoizedState:null,baseState:null,baseQueue:null,queue:null,next:null};return Se===null?B.memoizedState=Se=e:Se=Se.next=e,Se}function be(){if(re===null){var e=B.alternate;e=e!==null?e.memoizedState:null}else e=re.next;var t=Se===null?B.memoizedState:Se.next;if(t!==null)Se=t,re=e;else{if(e===null)throw B.alternate===null?Error(m(467)):Error(m(310));re=e,e={memoizedState:re.memoizedState,baseState:re.baseState,baseQueue:re.baseQueue,queue:re.queue,next:null},Se===null?B.memoizedState=Se=e:Se=Se.next=e}return Se}function tr(){return{lastEffect:null,events:null,stores:null,memoCache:null}}function $i(e){var t=Ji;return Ji+=1,mi===null&&(mi=[]),e=Lc(mi,e,t),t=B,(Se===null?t.memoizedState:Se.next)===null&&(t=t.alternate,h.H=t===null||t.memoizedState===null?fu:as),e}function nr(e){if(e!==null&&typeof e=="object"){if(typeof e.then=="function")return $i(e);if(e.$$typeof===xe)return Ie(e)}throw Error(m(438,String(e)))}function Qo(e){var t=null,n=B.updateQueue;if(n!==null&&(t=n.memoCache),t==null){var i=B.alternate;i!==null&&(i=i.updateQueue,i!==null&&(i=i.memoCache,i!=null&&(t={data:i.data.map(function(a){return a.slice()}),index:0})))}if(t==null&&(t={data:[],index:0}),n===null&&(n=tr(),B.updateQueue=n),n.memoCache=t,n=t.data[t.index],n===void 0)for(n=t.data[t.index]=Array(e),i=0;i<e;i++)n[i]=zn;return t.index++,n}function Gt(e,t){return typeof t=="function"?t(e):t}function ir(e){var t=be();return Yo(t,re,e)}function Yo(e,t,n){var i=e.queue;if(i===null)throw Error(m(311));i.lastRenderedReducer=n;var a=e.baseQueue,r=i.pending;if(r!==null){if(a!==null){var o=a.next;a.next=r.next,r.next=o}t.baseQueue=a=r,i.pending=null}if(r=e.baseState,a===null)e.memoizedState=r;else{t=a.next;var s=o=null,l=null,g=t,y=!1;do{var C=g.lane&-536870913;if(C!==g.lane?(V&C)===C:(Ut&C)===C){var v=g.revertLane;if(v===0)l!==null&&(l=l.next={lane:0,revertLane:0,gesture:null,action:g.action,hasEagerState:g.hasEagerState,eagerState:g.eagerState,next:null}),C===si&&(y=!0);else if((Ut&v)===v){g=g.next,v===si&&(y=!0);continue}else C={lane:0,revertLane:g.revertLane,gesture:null,action:g.action,hasEagerState:g.hasEagerState,eagerState:g.eagerState,next:null},l===null?(s=l=C,o=r):l=l.next=C,B.lanes|=v,dn|=v;C=g.action,Gn&&n(r,C),r=g.hasEagerState?g.eagerState:n(r,C)}else v={lane:C,revertLane:g.revertLane,gesture:g.gesture,action:g.action,hasEagerState:g.hasEagerState,eagerState:g.eagerState,next:null},l===null?(s=l=v,o=r):l=l.next=v,B.lanes|=C,dn|=C;g=g.next}while(g!==null&&g!==t);if(l===null?o=r:l.next=s,!Ze(r,e.memoizedState)&&(Ae=!0,y&&(n=li,n!==null)))throw n;e.memoizedState=r,e.baseState=o,e.baseQueue=l,i.lastRenderedState=r}return a===null&&(i.lanes=0),[e.memoizedState,i.dispatch]}function Ko(e){var t=be(),n=t.queue;if(n===null)throw Error(m(311));n.lastRenderedReducer=e;var i=n.dispatch,a=n.pending,r=t.memoizedState;if(a!==null){n.pending=null;var o=a=a.next;do r=e(r,o.action),o=o.next;while(o!==a);Ze(r,t.memoizedState)||(Ae=!0),t.memoizedState=r,t.baseQueue===null&&(t.baseState=r),n.lastRenderedState=r}return[r,i]}function Mc(e,t,n){var i=B,a=be(),r=K;if(r){if(n===void 0)throw Error(m(407));n=n()}else n=t();var o=!Ze((re||a).memoizedState,n);if(o&&(a.memoizedState=n,Ae=!0),a=a.queue,$o(qc.bind(null,i,a,e),[e]),a.getSnapshot!==t||o||Se!==null&&Se.memoizedState.tag&1){if(i.flags|=2048,gi(9,{destroy:void 0},Gc.bind(null,i,a,n,t),null),ce===null)throw Error(m(349));r||(Ut&127)!==0||Uc(i,t,n)}return n}function Uc(e,t,n){e.flags|=16384,e={getSnapshot:t,value:n},t=B.updateQueue,t===null?(t=tr(),B.updateQueue=t,t.stores=[e]):(n=t.stores,n===null?t.stores=[e]:n.push(e))}function Gc(e,t,n,i){t.value=n,t.getSnapshot=i,Bc(t)&&Hc(e)}function qc(e,t,n){return n(function(){Bc(t)&&Hc(e)})}function Bc(e){var t=e.getSnapshot;e=e.value;try{var n=t();return!Ze(e,n)}catch{return!0}}function Hc(e){var t=In(e,2);t!==null&&Qe(t,e,2)}function Xo(e){var t=Me();if(typeof e=="function"){var n=e;if(e=n(),Gn){Xt(!0);try{n()}finally{Xt(!1)}}}return t.memoizedState=t.baseState=e,t.queue={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:e},t}function zc(e,t,n,i){return e.baseState=n,Yo(e,re,typeof i=="function"?i:Gt)}function Gm(e,t,n,i,a){if(or(e))throw Error(m(485));if(e=t.action,e!==null){var r={payload:a,action:e,next:null,isTransition:!0,status:"pending",value:null,reason:null,listeners:[],then:function(o){r.listeners.push(o)}};h.T!==null?n(!0):r.isTransition=!1,i(r),n=t.pending,n===null?(r.next=t.pending=r,jc(t,r)):(r.next=n.next,t.pending=n.next=r)}}function jc(e,t){var n=t.action,i=t.payload,a=e.state;if(t.isTransition){var r=h.T,o={};h.T=o;try{var s=n(a,i),l=h.S;l!==null&&l(o,s),_c(e,t,s)}catch(g){Jo(e,t,g)}finally{r!==null&&o.types!==null&&(r.types=o.types),h.T=r}}else try{r=n(a,i),_c(e,t,r)}catch(g){Jo(e,t,g)}}function _c(e,t,n){n!==null&&typeof n=="object"&&typeof n.then=="function"?n.then(function(i){Fc(e,t,i)},function(i){return Jo(e,t,i)}):Fc(e,t,n)}function Fc(e,t,n){t.status="fulfilled",t.value=n,Vc(t),e.state=n,t=e.pending,t!==null&&(n=t.next,n===t?e.pending=null:(n=n.next,t.next=n,jc(e,n)))}function Jo(e,t,n){var i=e.pending;if(e.pending=null,i!==null){i=i.next;do t.status="rejected",t.reason=n,Vc(t),t=t.next;while(t!==i)}e.action=null}function Vc(e){e=e.listeners;for(var t=0;t<e.length;t++)(0,e[t])()}function Qc(e,t){return t}function Yc(e,t){if(K){var n=ce.formState;if(n!==null){e:{var i=B;if(K){if(de){t:{for(var a=de,r=mt;a.nodeType!==8;){if(!r){a=null;break t}if(a=vt(a.nextSibling),a===null){a=null;break t}}r=a.data,a=r==="F!"||r==="F"?a:null}if(a){de=vt(a.nextSibling),i=a.data==="F!";break e}}tn(i)}i=!1}i&&(t=n[0])}}return n=Me(),n.memoizedState=n.baseState=t,i={pending:null,lanes:0,dispatch:null,lastRenderedReducer:Qc,lastRenderedState:t},n.queue=i,n=mu.bind(null,B,i),i.dispatch=n,i=Xo(!1),r=is.bind(null,B,!1,i.queue),i=Me(),a={state:t,dispatch:null,action:e,pending:null},i.queue=a,n=Gm.bind(null,B,a,r,n),a.dispatch=n,i.memoizedState=e,[t,n,!1]}function Kc(e){var t=be();return Xc(t,re,e)}function Xc(e,t,n){if(t=Yo(e,t,Qc)[0],e=ir(Gt)[0],typeof t=="object"&&t!==null&&typeof t.then=="function")try{var i=$i(t)}catch(o){throw o===ci?Qa:o}else i=t;t=be();var a=t.queue,r=a.dispatch;return n!==t.memoizedState&&(B.flags|=2048,gi(9,{destroy:void 0},qm.bind(null,a,n),null)),[i,r,e]}function qm(e,t){e.action=t}function Jc(e){var t=be(),n=re;if(n!==null)return Xc(t,n,e);be(),t=t.memoizedState,n=be();var i=n.queue.dispatch;return n.memoizedState=e,[t,i,!1]}function gi(e,t,n,i){return e={tag:e,create:n,deps:i,inst:t,next:null},t=B.updateQueue,t===null&&(t=tr(),B.updateQueue=t),n=t.lastEffect,n===null?t.lastEffect=e.next=e:(i=n.next,n.next=e,e.next=i,t.lastEffect=e),e}function $c(){return be().memoizedState}function ar(e,t,n,i){var a=Me();B.flags|=e,a.memoizedState=gi(1|t,{destroy:void 0},n,i===void 0?null:i)}function rr(e,t,n,i){var a=be();i=i===void 0?null:i;var r=a.memoizedState.inst;re!==null&&i!==null&&zo(i,re.memoizedState.deps)?a.memoizedState=gi(t,r,n,i):(B.flags|=e,a.memoizedState=gi(1|t,r,n,i))}function Zc(e,t){ar(8390656,8,e,t)}function $o(e,t){rr(2048,8,e,t)}function Bm(e){B.flags|=4;var t=B.updateQueue;if(t===null)t=tr(),B.updateQueue=t,t.events=[e];else{var n=t.events;n===null?t.events=[e]:n.push(e)}}function eu(e){var t=be().memoizedState;return Bm({ref:t,nextImpl:e}),function(){if((Z&2)!==0)throw Error(m(440));return t.impl.apply(void 0,arguments)}}function tu(e,t){return rr(4,2,e,t)}function nu(e,t){return rr(4,4,e,t)}function iu(e,t){if(typeof t=="function"){e=e();var n=t(e);return function(){typeof n=="function"?n():t(null)}}if(t!=null)return e=e(),t.current=e,function(){t.current=null}}function au(e,t,n){n=n!=null?n.concat([e]):null,rr(4,4,iu.bind(null,t,e),n)}function Zo(){}function ru(e,t){var n=be();t=t===void 0?null:t;var i=n.memoizedState;return t!==null&&zo(t,i[1])?i[0]:(n.memoizedState=[e,t],e)}function ou(e,t){var n=be();t=t===void 0?null:t;var i=n.memoizedState;if(t!==null&&zo(t,i[1]))return i[0];if(i=e(),Gn){Xt(!0);try{e()}finally{Xt(!1)}}return n.memoizedState=[i,t],i}function es(e,t,n){return n===void 0||(Ut&1073741824)!==0&&(V&261930)===0?e.memoizedState=t:(e.memoizedState=n,e=sd(),B.lanes|=e,dn|=e,n)}function su(e,t,n,i){return Ze(n,t)?n:di.current!==null?(e=es(e,n,i),Ze(e,t)||(Ae=!0),e):(Ut&42)===0||(Ut&1073741824)!==0&&(V&261930)===0?(Ae=!0,e.memoizedState=n):(e=sd(),B.lanes|=e,dn|=e,t)}function lu(e,t,n,i,a){var r=L.p;L.p=r!==0&&8>r?r:8;var o=h.T,s={};h.T=s,is(e,!1,t,n);try{var l=a(),g=h.S;if(g!==null&&g(s,l),l!==null&&typeof l=="object"&&typeof l.then=="function"){var y=Pm(l,i);Zi(e,t,y,rt(e))}else Zi(e,t,i,rt(e))}catch(C){Zi(e,t,{then:function(){},status:"rejected",reason:C},rt())}finally{L.p=r,o!==null&&s.types!==null&&(o.types=s.types),h.T=o}}function Hm(){}function ts(e,t,n,i){if(e.tag!==5)throw Error(m(476));var a=cu(e).queue;lu(e,a,t,P,n===null?Hm:function(){return uu(e),n(i)})}function cu(e){var t=e.memoizedState;if(t!==null)return t;t={memoizedState:P,baseState:P,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:P},next:null};var n={};return t.next={memoizedState:n,baseState:n,baseQueue:null,queue:{pending:null,lanes:0,dispatch:null,lastRenderedReducer:Gt,lastRenderedState:n},next:null},e.memoizedState=t,e=e.alternate,e!==null&&(e.memoizedState=t),t}function uu(e){var t=cu(e);t.next===null&&(t=e.alternate.memoizedState),Zi(e,t.next.queue,{},rt())}function ns(){return Ie(fa)}function du(){return be().memoizedState}function pu(){return be().memoizedState}function zm(e){for(var t=e.return;t!==null;){switch(t.tag){case 24:case 3:var n=rt();e=rn(n);var i=on(t,e,n);i!==null&&(Qe(i,t,n),Yi(i,t,n)),t={cache:Oo()},e.payload=t;return}t=t.return}}function jm(e,t,n){var i=rt();n={lane:i,revertLane:0,gesture:null,action:n,hasEagerState:!1,eagerState:null,next:null},or(e)?gu(t,n):(n=Co(e,t,n,i),n!==null&&(Qe(n,e,i),vu(n,t,i)))}function mu(e,t,n){var i=rt();Zi(e,t,n,i)}function Zi(e,t,n,i){var a={lane:i,revertLane:0,gesture:null,action:n,hasEagerState:!1,eagerState:null,next:null};if(or(e))gu(t,a);else{var r=e.alternate;if(e.lanes===0&&(r===null||r.lanes===0)&&(r=t.lastRenderedReducer,r!==null))try{var o=t.lastRenderedState,s=r(o,n);if(a.hasEagerState=!0,a.eagerState=s,Ze(s,o))return Ba(e,t,a,0),ce===null&&qa(),!1}catch{}if(n=Co(e,t,a,i),n!==null)return Qe(n,e,i),vu(n,t,i),!0}return!1}function is(e,t,n,i){if(i={lane:2,revertLane:Ps(),gesture:null,action:i,hasEagerState:!1,eagerState:null,next:null},or(e)){if(t)throw Error(m(479))}else t=Co(e,n,i,2),t!==null&&Qe(t,e,2)}function or(e){var t=e.alternate;return e===B||t!==null&&t===B}function gu(e,t){pi=Za=!0;var n=e.pending;n===null?t.next=t:(t.next=n.next,n.next=t),e.pending=t}function vu(e,t,n){if((n&4194048)!==0){var i=t.lanes;i&=e.pendingLanes,n|=i,t.lanes=n,Cl(e,n)}}var ea={readContext:Ie,use:nr,useCallback:ve,useContext:ve,useEffect:ve,useImperativeHandle:ve,useLayoutEffect:ve,useInsertionEffect:ve,useMemo:ve,useReducer:ve,useRef:ve,useState:ve,useDebugValue:ve,useDeferredValue:ve,useTransition:ve,useSyncExternalStore:ve,useId:ve,useHostTransitionStatus:ve,useFormState:ve,useActionState:ve,useOptimistic:ve,useMemoCache:ve,useCacheRefresh:ve};ea.useEffectEvent=ve;var fu={readContext:Ie,use:nr,useCallback:function(e,t){return Me().memoizedState=[e,t===void 0?null:t],e},useContext:Ie,useEffect:Zc,useImperativeHandle:function(e,t,n){n=n!=null?n.concat([e]):null,ar(4194308,4,iu.bind(null,t,e),n)},useLayoutEffect:function(e,t){return ar(4194308,4,e,t)},useInsertionEffect:function(e,t){ar(4,2,e,t)},useMemo:function(e,t){var n=Me();t=t===void 0?null:t;var i=e();if(Gn){Xt(!0);try{e()}finally{Xt(!1)}}return n.memoizedState=[i,t],i},useReducer:function(e,t,n){var i=Me();if(n!==void 0){var a=n(t);if(Gn){Xt(!0);try{n(t)}finally{Xt(!1)}}}else a=t;return i.memoizedState=i.baseState=a,e={pending:null,lanes:0,dispatch:null,lastRenderedReducer:e,lastRenderedState:a},i.queue=e,e=e.dispatch=jm.bind(null,B,e),[i.memoizedState,e]},useRef:function(e){var t=Me();return e={current:e},t.memoizedState=e},useState:function(e){e=Xo(e);var t=e.queue,n=mu.bind(null,B,t);return t.dispatch=n,[e.memoizedState,n]},useDebugValue:Zo,useDeferredValue:function(e,t){var n=Me();return es(n,e,t)},useTransition:function(){var e=Xo(!1);return e=lu.bind(null,B,e.queue,!0,!1),Me().memoizedState=e,[!1,e]},useSyncExternalStore:function(e,t,n){var i=B,a=Me();if(K){if(n===void 0)throw Error(m(407));n=n()}else{if(n=t(),ce===null)throw Error(m(349));(V&127)!==0||Uc(i,t,n)}a.memoizedState=n;var r={value:n,getSnapshot:t};return a.queue=r,Zc(qc.bind(null,i,r,e),[e]),i.flags|=2048,gi(9,{destroy:void 0},Gc.bind(null,i,r,n,t),null),n},useId:function(){var e=Me(),t=ce.identifierPrefix;if(K){var n=Lt,i=wt;n=(i&~(1<<32-$e(i)-1)).toString(32)+n,t="_"+t+"R_"+n,n=er++,0<n&&(t+="H"+n.toString(32)),t+="_"}else n=Mm++,t="_"+t+"r_"+n.toString(32)+"_";return e.memoizedState=t},useHostTransitionStatus:ns,useFormState:Yc,useActionState:Yc,useOptimistic:function(e){var t=Me();t.memoizedState=t.baseState=e;var n={pending:null,lanes:0,dispatch:null,lastRenderedReducer:null,lastRenderedState:null};return t.queue=n,t=is.bind(null,B,!0,n),n.dispatch=t,[e,t]},useMemoCache:Qo,useCacheRefresh:function(){return Me().memoizedState=zm.bind(null,B)},useEffectEvent:function(e){var t=Me(),n={impl:e};return t.memoizedState=n,function(){if((Z&2)!==0)throw Error(m(440));return n.impl.apply(void 0,arguments)}}},as={readContext:Ie,use:nr,useCallback:ru,useContext:Ie,useEffect:$o,useImperativeHandle:au,useInsertionEffect:tu,useLayoutEffect:nu,useMemo:ou,useReducer:ir,useRef:$c,useState:function(){return ir(Gt)},useDebugValue:Zo,useDeferredValue:function(e,t){var n=be();return su(n,re.memoizedState,e,t)},useTransition:function(){var e=ir(Gt)[0],t=be().memoizedState;return[typeof e=="boolean"?e:$i(e),t]},useSyncExternalStore:Mc,useId:du,useHostTransitionStatus:ns,useFormState:Kc,useActionState:Kc,useOptimistic:function(e,t){var n=be();return zc(n,re,e,t)},useMemoCache:Qo,useCacheRefresh:pu};as.useEffectEvent=eu;var yu={readContext:Ie,use:nr,useCallback:ru,useContext:Ie,useEffect:$o,useImperativeHandle:au,useInsertionEffect:tu,useLayoutEffect:nu,useMemo:ou,useReducer:Ko,useRef:$c,useState:function(){return Ko(Gt)},useDebugValue:Zo,useDeferredValue:function(e,t){var n=be();return re===null?es(n,e,t):su(n,re.memoizedState,e,t)},useTransition:function(){var e=Ko(Gt)[0],t=be().memoizedState;return[typeof e=="boolean"?e:$i(e),t]},useSyncExternalStore:Mc,useId:du,useHostTransitionStatus:ns,useFormState:Jc,useActionState:Jc,useOptimistic:function(e,t){var n=be();return re!==null?zc(n,re,e,t):(n.baseState=e,[e,n.queue.dispatch])},useMemoCache:Qo,useCacheRefresh:pu};yu.useEffectEvent=eu;function rs(e,t,n,i){t=e.memoizedState,n=n(i,t),n=n==null?t:N({},t,n),e.memoizedState=n,e.lanes===0&&(e.updateQueue.baseState=n)}var os={enqueueSetState:function(e,t,n){e=e._reactInternals;var i=rt(),a=rn(i);a.payload=t,n!=null&&(a.callback=n),t=on(e,a,i),t!==null&&(Qe(t,e,i),Yi(t,e,i))},enqueueReplaceState:function(e,t,n){e=e._reactInternals;var i=rt(),a=rn(i);a.tag=1,a.payload=t,n!=null&&(a.callback=n),t=on(e,a,i),t!==null&&(Qe(t,e,i),Yi(t,e,i))},enqueueForceUpdate:function(e,t){e=e._reactInternals;var n=rt(),i=rn(n);i.tag=2,t!=null&&(i.callback=t),t=on(e,i,n),t!==null&&(Qe(t,e,n),Yi(t,e,n))}};function hu(e,t,n,i,a,r,o){return e=e.stateNode,typeof e.shouldComponentUpdate=="function"?e.shouldComponentUpdate(i,r,o):t.prototype&&t.prototype.isPureReactComponent?!Bi(n,i)||!Bi(a,r):!0}function bu(e,t,n,i){e=t.state,typeof t.componentWillReceiveProps=="function"&&t.componentWillReceiveProps(n,i),typeof t.UNSAFE_componentWillReceiveProps=="function"&&t.UNSAFE_componentWillReceiveProps(n,i),t.state!==e&&os.enqueueReplaceState(t,t.state,null)}function qn(e,t){var n=t;if("ref"in t){n={};for(var i in t)i!=="ref"&&(n[i]=t[i])}if(e=e.defaultProps){n===t&&(n=N({},n));for(var a in e)n[a]===void 0&&(n[a]=e[a])}return n}function Cu(e){Ga(e)}function Su(e){console.error(e)}function Au(e){Ga(e)}function sr(e,t){try{var n=e.onUncaughtError;n(t.value,{componentStack:t.stack})}catch(i){setTimeout(function(){throw i})}}function Tu(e,t,n){try{var i=e.onCaughtError;i(n.value,{componentStack:n.stack,errorBoundary:t.tag===1?t.stateNode:null})}catch(a){setTimeout(function(){throw a})}}function ss(e,t,n){return n=rn(n),n.tag=3,n.payload={element:null},n.callback=function(){sr(e,t)},n}function wu(e){return e=rn(e),e.tag=3,e}function Lu(e,t,n,i){var a=n.type.getDerivedStateFromError;if(typeof a=="function"){var r=i.value;e.payload=function(){return a(r)},e.callback=function(){Tu(t,n,i)}}var o=n.stateNode;o!==null&&typeof o.componentDidCatch=="function"&&(e.callback=function(){Tu(t,n,i),typeof a!="function"&&(pn===null?pn=new Set([this]):pn.add(this));var s=i.stack;this.componentDidCatch(i.value,{componentStack:s!==null?s:""})})}function _m(e,t,n,i,a){if(n.flags|=32768,i!==null&&typeof i=="object"&&typeof i.then=="function"){if(t=n.alternate,t!==null&&oi(t,n,a,!0),n=tt.current,n!==null){switch(n.tag){case 31:case 13:return gt===null?br():n.alternate===null&&fe===0&&(fe=3),n.flags&=-257,n.flags|=65536,n.lanes=a,i===Ya?n.flags|=16384:(t=n.updateQueue,t===null?n.updateQueue=new Set([i]):t.add(i),xs(e,i,a)),!1;case 22:return n.flags|=65536,i===Ya?n.flags|=16384:(t=n.updateQueue,t===null?(t={transitions:null,markerInstances:null,retryQueue:new Set([i])},n.updateQueue=t):(n=t.retryQueue,n===null?t.retryQueue=new Set([i]):n.add(i)),xs(e,i,a)),!1}throw Error(m(435,n.tag))}return xs(e,i,a),br(),!1}if(K)return t=tt.current,t!==null?((t.flags&65536)===0&&(t.flags|=256),t.flags|=65536,t.lanes=a,i!==Eo&&(e=Error(m(422),{cause:i}),ji(ut(e,n)))):(i!==Eo&&(t=Error(m(423),{cause:i}),ji(ut(t,n))),e=e.current.alternate,e.flags|=65536,a&=-a,e.lanes|=a,i=ut(i,n),a=ss(e.stateNode,i,a),Uo(e,a),fe!==4&&(fe=2)),!1;var r=Error(m(520),{cause:i});if(r=ut(r,n),la===null?la=[r]:la.push(r),fe!==4&&(fe=2),t===null)return!0;i=ut(i,n),n=t;do{switch(n.tag){case 3:return n.flags|=65536,e=a&-a,n.lanes|=e,e=ss(n.stateNode,i,e),Uo(n,e),!1;case 1:if(t=n.type,r=n.stateNode,(n.flags&128)===0&&(typeof t.getDerivedStateFromError=="function"||r!==null&&typeof r.componentDidCatch=="function"&&(pn===null||!pn.has(r))))return n.flags|=65536,a&=-a,n.lanes|=a,a=wu(a),Lu(a,e,n,i),Uo(n,a),!1}n=n.return}while(n!==null);return!1}var ls=Error(m(461)),Ae=!1;function Re(e,t,n,i){t.child=e===null?Ic(t,null,n,i):Un(t,e.child,n,i)}function Eu(e,t,n,i,a){n=n.render;var r=t.ref;if("ref"in i){var o={};for(var s in i)s!=="ref"&&(o[s]=i[s])}else o=i;return kn(t),i=jo(e,t,n,o,r,a),s=_o(),e!==null&&!Ae?(Fo(e,t,a),qt(e,t,a)):(K&&s&&wo(t),t.flags|=1,Re(e,t,i,a),t.child)}function Wu(e,t,n,i,a){if(e===null){var r=n.type;return typeof r=="function"&&!So(r)&&r.defaultProps===void 0&&n.compare===null?(t.tag=15,t.type=r,Du(e,t,r,i,a)):(e=za(n.type,null,i,t,t.mode,a),e.ref=t.ref,e.return=t,t.child=e)}if(r=e.child,!fs(e,a)){var o=r.memoizedProps;if(n=n.compare,n=n!==null?n:Bi,n(o,i)&&e.ref===t.ref)return qt(e,t,a)}return t.flags|=1,e=kt(r,i),e.ref=t.ref,e.return=t,t.child=e}function Du(e,t,n,i,a){if(e!==null){var r=e.memoizedProps;if(Bi(r,i)&&e.ref===t.ref)if(Ae=!1,t.pendingProps=i=r,fs(e,a))(e.flags&131072)!==0&&(Ae=!0);else return t.lanes=e.lanes,qt(e,t,a)}return cs(e,t,n,i,a)}function Iu(e,t,n,i){var a=i.children,r=e!==null?e.memoizedState:null;if(e===null&&t.stateNode===null&&(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),i.mode==="hidden"){if((t.flags&128)!==0){if(r=r!==null?r.baseLanes|n:n,e!==null){for(i=t.child=e.child,a=0;i!==null;)a=a|i.lanes|i.childLanes,i=i.sibling;i=a&~r}else i=0,t.child=null;return Ru(e,t,r,n,i)}if((n&536870912)!==0)t.memoizedState={baseLanes:0,cachePool:null},e!==null&&Va(t,r!==null?r.cachePool:null),r!==null?xc(t,r):qo(),kc(t);else return i=t.lanes=536870912,Ru(e,t,r!==null?r.baseLanes|n:n,n,i)}else r!==null?(Va(t,r.cachePool),xc(t,r),ln(),t.memoizedState=null):(e!==null&&Va(t,null),qo(),ln());return Re(e,t,a,n),t.child}function ta(e,t){return e!==null&&e.tag===22||t.stateNode!==null||(t.stateNode={_visibility:1,_pendingMarkers:null,_retryCache:null,_transitions:null}),t.sibling}function Ru(e,t,n,i,a){var r=ko();return r=r===null?null:{parent:Ce._currentValue,pool:r},t.memoizedState={baseLanes:n,cachePool:r},e!==null&&Va(t,null),qo(),kc(t),e!==null&&oi(e,t,i,!0),t.childLanes=a,null}function lr(e,t){return t=ur({mode:t.mode,children:t.children},e.mode),t.ref=e.ref,e.child=t,t.return=e,t}function Ou(e,t,n){return Un(t,e.child,null,n),e=lr(t,t.pendingProps),e.flags|=2,nt(t),t.memoizedState=null,e}function Fm(e,t,n){var i=t.pendingProps,a=(t.flags&128)!==0;if(t.flags&=-129,e===null){if(K){if(i.mode==="hidden")return e=lr(t,i),t.lanes=536870912,ta(null,e);if(Ho(t),(e=de)?(e=jd(e,mt),e=e!==null&&e.data==="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:Zt!==null?{id:wt,overflow:Lt}:null,retryLane:536870912,hydrationErrors:null},n=gc(e),n.return=t,t.child=n,De=t,de=null)):e=null,e===null)throw tn(t);return t.lanes=536870912,null}return lr(t,i)}var r=e.memoizedState;if(r!==null){var o=r.dehydrated;if(Ho(t),a)if(t.flags&256)t.flags&=-257,t=Ou(e,t,n);else if(t.memoizedState!==null)t.child=e.child,t.flags|=128,t=null;else throw Error(m(558));else if(Ae||oi(e,t,n,!1),a=(n&e.childLanes)!==0,Ae||a){if(i=ce,i!==null&&(o=Sl(i,n),o!==0&&o!==r.retryLane))throw r.retryLane=o,In(e,o),Qe(i,e,o),ls;br(),t=Ou(e,t,n)}else e=r.treeContext,de=vt(o.nextSibling),De=t,K=!0,en=null,mt=!1,e!==null&&yc(t,e),t=lr(t,i),t.flags|=4096;return t}return e=kt(e.child,{mode:i.mode,children:i.children}),e.ref=t.ref,t.child=e,e.return=t,e}function cr(e,t){var n=t.ref;if(n===null)e!==null&&e.ref!==null&&(t.flags|=4194816);else{if(typeof n!="function"&&typeof n!="object")throw Error(m(284));(e===null||e.ref!==n)&&(t.flags|=4194816)}}function cs(e,t,n,i,a){return kn(t),n=jo(e,t,n,i,void 0,a),i=_o(),e!==null&&!Ae?(Fo(e,t,a),qt(e,t,a)):(K&&i&&wo(t),t.flags|=1,Re(e,t,n,a),t.child)}function xu(e,t,n,i,a,r){return kn(t),t.updateQueue=null,n=Pc(t,i,n,a),Nc(e),i=_o(),e!==null&&!Ae?(Fo(e,t,r),qt(e,t,r)):(K&&i&&wo(t),t.flags|=1,Re(e,t,n,r),t.child)}function ku(e,t,n,i,a){if(kn(t),t.stateNode===null){var r=ni,o=n.contextType;typeof o=="object"&&o!==null&&(r=Ie(o)),r=new n(i,r),t.memoizedState=r.state!==null&&r.state!==void 0?r.state:null,r.updater=os,t.stateNode=r,r._reactInternals=t,r=t.stateNode,r.props=i,r.state=t.memoizedState,r.refs={},Po(t),o=n.contextType,r.context=typeof o=="object"&&o!==null?Ie(o):ni,r.state=t.memoizedState,o=n.getDerivedStateFromProps,typeof o=="function"&&(rs(t,n,o,i),r.state=t.memoizedState),typeof n.getDerivedStateFromProps=="function"||typeof r.getSnapshotBeforeUpdate=="function"||typeof r.UNSAFE_componentWillMount!="function"&&typeof r.componentWillMount!="function"||(o=r.state,typeof r.componentWillMount=="function"&&r.componentWillMount(),typeof r.UNSAFE_componentWillMount=="function"&&r.UNSAFE_componentWillMount(),o!==r.state&&os.enqueueReplaceState(r,r.state,null),Xi(t,i,r,a),Ki(),r.state=t.memoizedState),typeof r.componentDidMount=="function"&&(t.flags|=4194308),i=!0}else if(e===null){r=t.stateNode;var s=t.memoizedProps,l=qn(n,s);r.props=l;var g=r.context,y=n.contextType;o=ni,typeof y=="object"&&y!==null&&(o=Ie(y));var C=n.getDerivedStateFromProps;y=typeof C=="function"||typeof r.getSnapshotBeforeUpdate=="function",s=t.pendingProps!==s,y||typeof r.UNSAFE_componentWillReceiveProps!="function"&&typeof r.componentWillReceiveProps!="function"||(s||g!==o)&&bu(t,r,i,o),an=!1;var v=t.memoizedState;r.state=v,Xi(t,i,r,a),Ki(),g=t.memoizedState,s||v!==g||an?(typeof C=="function"&&(rs(t,n,C,i),g=t.memoizedState),(l=an||hu(t,n,l,i,v,g,o))?(y||typeof r.UNSAFE_componentWillMount!="function"&&typeof r.componentWillMount!="function"||(typeof r.componentWillMount=="function"&&r.componentWillMount(),typeof r.UNSAFE_componentWillMount=="function"&&r.UNSAFE_componentWillMount()),typeof r.componentDidMount=="function"&&(t.flags|=4194308)):(typeof r.componentDidMount=="function"&&(t.flags|=4194308),t.memoizedProps=i,t.memoizedState=g),r.props=i,r.state=g,r.context=o,i=l):(typeof r.componentDidMount=="function"&&(t.flags|=4194308),i=!1)}else{r=t.stateNode,Mo(e,t),o=t.memoizedProps,y=qn(n,o),r.props=y,C=t.pendingProps,v=r.context,g=n.contextType,l=ni,typeof g=="object"&&g!==null&&(l=Ie(g)),s=n.getDerivedStateFromProps,(g=typeof s=="function"||typeof r.getSnapshotBeforeUpdate=="function")||typeof r.UNSAFE_componentWillReceiveProps!="function"&&typeof r.componentWillReceiveProps!="function"||(o!==C||v!==l)&&bu(t,r,i,l),an=!1,v=t.memoizedState,r.state=v,Xi(t,i,r,a),Ki();var f=t.memoizedState;o!==C||v!==f||an||e!==null&&e.dependencies!==null&&_a(e.dependencies)?(typeof s=="function"&&(rs(t,n,s,i),f=t.memoizedState),(y=an||hu(t,n,y,i,v,f,l)||e!==null&&e.dependencies!==null&&_a(e.dependencies))?(g||typeof r.UNSAFE_componentWillUpdate!="function"&&typeof r.componentWillUpdate!="function"||(typeof r.componentWillUpdate=="function"&&r.componentWillUpdate(i,f,l),typeof r.UNSAFE_componentWillUpdate=="function"&&r.UNSAFE_componentWillUpdate(i,f,l)),typeof r.componentDidUpdate=="function"&&(t.flags|=4),typeof r.getSnapshotBeforeUpdate=="function"&&(t.flags|=1024)):(typeof r.componentDidUpdate!="function"||o===e.memoizedProps&&v===e.memoizedState||(t.flags|=4),typeof r.getSnapshotBeforeUpdate!="function"||o===e.memoizedProps&&v===e.memoizedState||(t.flags|=1024),t.memoizedProps=i,t.memoizedState=f),r.props=i,r.state=f,r.context=l,i=y):(typeof r.componentDidUpdate!="function"||o===e.memoizedProps&&v===e.memoizedState||(t.flags|=4),typeof r.getSnapshotBeforeUpdate!="function"||o===e.memoizedProps&&v===e.memoizedState||(t.flags|=1024),i=!1)}return r=i,cr(e,t),i=(t.flags&128)!==0,r||i?(r=t.stateNode,n=i&&typeof n.getDerivedStateFromError!="function"?null:r.render(),t.flags|=1,e!==null&&i?(t.child=Un(t,e.child,null,a),t.child=Un(t,null,n,a)):Re(e,t,n,a),t.memoizedState=r.state,e=t.child):e=qt(e,t,a),e}function Nu(e,t,n,i){return On(),t.flags|=256,Re(e,t,n,i),t.child}var us={dehydrated:null,treeContext:null,retryLane:0,hydrationErrors:null};function ds(e){return{baseLanes:e,cachePool:Tc()}}function ps(e,t,n){return e=e!==null?e.childLanes&~n:0,t&&(e|=at),e}function Pu(e,t,n){var i=t.pendingProps,a=!1,r=(t.flags&128)!==0,o;if((o=r)||(o=e!==null&&e.memoizedState===null?!1:(he.current&2)!==0),o&&(a=!0,t.flags&=-129),o=(t.flags&32)!==0,t.flags&=-33,e===null){if(K){if(a?sn(t):ln(),(e=de)?(e=jd(e,mt),e=e!==null&&e.data!=="&"?e:null,e!==null&&(t.memoizedState={dehydrated:e,treeContext:Zt!==null?{id:wt,overflow:Lt}:null,retryLane:536870912,hydrationErrors:null},n=gc(e),n.return=t,t.child=n,De=t,de=null)):e=null,e===null)throw tn(t);return Ys(e)?t.lanes=32:t.lanes=536870912,null}var s=i.children;return i=i.fallback,a?(ln(),a=t.mode,s=ur({mode:"hidden",children:s},a),i=Rn(i,a,n,null),s.return=t,i.return=t,s.sibling=i,t.child=s,i=t.child,i.memoizedState=ds(n),i.childLanes=ps(e,o,n),t.memoizedState=us,ta(null,i)):(sn(t),ms(t,s))}var l=e.memoizedState;if(l!==null&&(s=l.dehydrated,s!==null)){if(r)t.flags&256?(sn(t),t.flags&=-257,t=gs(e,t,n)):t.memoizedState!==null?(ln(),t.child=e.child,t.flags|=128,t=null):(ln(),s=i.fallback,a=t.mode,i=ur({mode:"visible",children:i.children},a),s=Rn(s,a,n,null),s.flags|=2,i.return=t,s.return=t,i.sibling=s,t.child=i,Un(t,e.child,null,n),i=t.child,i.memoizedState=ds(n),i.childLanes=ps(e,o,n),t.memoizedState=us,t=ta(null,i));else if(sn(t),Ys(s)){if(o=s.nextSibling&&s.nextSibling.dataset,o)var g=o.dgst;o=g,i=Error(m(419)),i.stack="",i.digest=o,ji({value:i,source:null,stack:null}),t=gs(e,t,n)}else if(Ae||oi(e,t,n,!1),o=(n&e.childLanes)!==0,Ae||o){if(o=ce,o!==null&&(i=Sl(o,n),i!==0&&i!==l.retryLane))throw l.retryLane=i,In(e,i),Qe(o,e,i),ls;Qs(s)||br(),t=gs(e,t,n)}else Qs(s)?(t.flags|=192,t.child=e.child,t=null):(e=l.treeContext,de=vt(s.nextSibling),De=t,K=!0,en=null,mt=!1,e!==null&&yc(t,e),t=ms(t,i.children),t.flags|=4096);return t}return a?(ln(),s=i.fallback,a=t.mode,l=e.child,g=l.sibling,i=kt(l,{mode:"hidden",children:i.children}),i.subtreeFlags=l.subtreeFlags&65011712,g!==null?s=kt(g,s):(s=Rn(s,a,n,null),s.flags|=2),s.return=t,i.return=t,i.sibling=s,t.child=i,ta(null,i),i=t.child,s=e.child.memoizedState,s===null?s=ds(n):(a=s.cachePool,a!==null?(l=Ce._currentValue,a=a.parent!==l?{parent:l,pool:l}:a):a=Tc(),s={baseLanes:s.baseLanes|n,cachePool:a}),i.memoizedState=s,i.childLanes=ps(e,o,n),t.memoizedState=us,ta(e.child,i)):(sn(t),n=e.child,e=n.sibling,n=kt(n,{mode:"visible",children:i.children}),n.return=t,n.sibling=null,e!==null&&(o=t.deletions,o===null?(t.deletions=[e],t.flags|=16):o.push(e)),t.child=n,t.memoizedState=null,n)}function ms(e,t){return t=ur({mode:"visible",children:t},e.mode),t.return=e,e.child=t}function ur(e,t){return e=et(22,e,null,t),e.lanes=0,e}function gs(e,t,n){return Un(t,e.child,null,n),e=ms(t,t.pendingProps.children),e.flags|=2,t.memoizedState=null,e}function Mu(e,t,n){e.lanes|=t;var i=e.alternate;i!==null&&(i.lanes|=t),Io(e.return,t,n)}function vs(e,t,n,i,a,r){var o=e.memoizedState;o===null?e.memoizedState={isBackwards:t,rendering:null,renderingStartTime:0,last:i,tail:n,tailMode:a,treeForkCount:r}:(o.isBackwards=t,o.rendering=null,o.renderingStartTime=0,o.last=i,o.tail=n,o.tailMode=a,o.treeForkCount=r)}function Uu(e,t,n){var i=t.pendingProps,a=i.revealOrder,r=i.tail;i=i.children;var o=he.current,s=(o&2)!==0;if(s?(o=o&1|2,t.flags|=128):o&=1,W(he,o),Re(e,t,i,n),i=K?zi:0,!s&&e!==null&&(e.flags&128)!==0)e:for(e=t.child;e!==null;){if(e.tag===13)e.memoizedState!==null&&Mu(e,n,t);else if(e.tag===19)Mu(e,n,t);else if(e.child!==null){e.child.return=e,e=e.child;continue}if(e===t)break e;for(;e.sibling===null;){if(e.return===null||e.return===t)break e;e=e.return}e.sibling.return=e.return,e=e.sibling}switch(a){case"forwards":for(n=t.child,a=null;n!==null;)e=n.alternate,e!==null&&$a(e)===null&&(a=n),n=n.sibling;n=a,n===null?(a=t.child,t.child=null):(a=n.sibling,n.sibling=null),vs(t,!1,a,n,r,i);break;case"backwards":case"unstable_legacy-backwards":for(n=null,a=t.child,t.child=null;a!==null;){if(e=a.alternate,e!==null&&$a(e)===null){t.child=a;break}e=a.sibling,a.sibling=n,n=a,a=e}vs(t,!0,n,null,r,i);break;case"together":vs(t,!1,null,null,void 0,i);break;default:t.memoizedState=null}return t.child}function qt(e,t,n){if(e!==null&&(t.dependencies=e.dependencies),dn|=t.lanes,(n&t.childLanes)===0)if(e!==null){if(oi(e,t,n,!1),(n&t.childLanes)===0)return null}else return null;if(e!==null&&t.child!==e.child)throw Error(m(153));if(t.child!==null){for(e=t.child,n=kt(e,e.pendingProps),t.child=n,n.return=t;e.sibling!==null;)e=e.sibling,n=n.sibling=kt(e,e.pendingProps),n.return=t;n.sibling=null}return t.child}function fs(e,t){return(e.lanes&t)!==0?!0:(e=e.dependencies,!!(e!==null&&_a(e)))}function Vm(e,t,n){switch(t.tag){case 3:Pe(t,t.stateNode.containerInfo),nn(t,Ce,e.memoizedState.cache),On();break;case 27:case 5:Wi(t);break;case 4:Pe(t,t.stateNode.containerInfo);break;case 10:nn(t,t.type,t.memoizedProps.value);break;case 31:if(t.memoizedState!==null)return t.flags|=128,Ho(t),null;break;case 13:var i=t.memoizedState;if(i!==null)return i.dehydrated!==null?(sn(t),t.flags|=128,null):(n&t.child.childLanes)!==0?Pu(e,t,n):(sn(t),e=qt(e,t,n),e!==null?e.sibling:null);sn(t);break;case 19:var a=(e.flags&128)!==0;if(i=(n&t.childLanes)!==0,i||(oi(e,t,n,!1),i=(n&t.childLanes)!==0),a){if(i)return Uu(e,t,n);t.flags|=128}if(a=t.memoizedState,a!==null&&(a.rendering=null,a.tail=null,a.lastEffect=null),W(he,he.current),i)break;return null;case 22:return t.lanes=0,Iu(e,t,n,t.pendingProps);case 24:nn(t,Ce,e.memoizedState.cache)}return qt(e,t,n)}function Gu(e,t,n){if(e!==null)if(e.memoizedProps!==t.pendingProps)Ae=!0;else{if(!fs(e,n)&&(t.flags&128)===0)return Ae=!1,Vm(e,t,n);Ae=(e.flags&131072)!==0}else Ae=!1,K&&(t.flags&1048576)!==0&&fc(t,zi,t.index);switch(t.lanes=0,t.tag){case 16:e:{var i=t.pendingProps;if(e=Pn(t.elementType),t.type=e,typeof e=="function")So(e)?(i=qn(e,i),t.tag=1,t=ku(null,t,e,i,n)):(t.tag=0,t=cs(null,t,e,i,n));else{if(e!=null){var a=e.$$typeof;if(a===ot){t.tag=11,t=Eu(null,t,e,i,n);break e}else if(a===Y){t.tag=14,t=Wu(null,t,e,i,n);break e}}throw t=It(e)||e,Error(m(306,t,""))}}return t;case 0:return cs(e,t,t.type,t.pendingProps,n);case 1:return i=t.type,a=qn(i,t.pendingProps),ku(e,t,i,a,n);case 3:e:{if(Pe(t,t.stateNode.containerInfo),e===null)throw Error(m(387));i=t.pendingProps;var r=t.memoizedState;a=r.element,Mo(e,t),Xi(t,i,null,n);var o=t.memoizedState;if(i=o.cache,nn(t,Ce,i),i!==r.cache&&Ro(t,[Ce],n,!0),Ki(),i=o.element,r.isDehydrated)if(r={element:i,isDehydrated:!1,cache:o.cache},t.updateQueue.baseState=r,t.memoizedState=r,t.flags&256){t=Nu(e,t,i,n);break e}else if(i!==a){a=ut(Error(m(424)),t),ji(a),t=Nu(e,t,i,n);break e}else for(e=t.stateNode.containerInfo,e.nodeType===9?e=e.body:e=e.nodeName==="HTML"?e.ownerDocument.body:e,de=vt(e.firstChild),De=t,K=!0,en=null,mt=!0,n=Ic(t,null,i,n),t.child=n;n;)n.flags=n.flags&-3|4096,n=n.sibling;else{if(On(),i===a){t=qt(e,t,n);break e}Re(e,t,i,n)}t=t.child}return t;case 26:return cr(e,t),e===null?(n=Kd(t.type,null,t.pendingProps,null))?t.memoizedState=n:K||(n=t.type,e=t.pendingProps,i=Er(z.current).createElement(n),i[We]=t,i[He]=e,Oe(i,n,e),Le(i),t.stateNode=i):t.memoizedState=Kd(t.type,e.memoizedProps,t.pendingProps,e.memoizedState),null;case 27:return Wi(t),e===null&&K&&(i=t.stateNode=Vd(t.type,t.pendingProps,z.current),De=t,mt=!0,a=de,fn(t.type)?(Ks=a,de=vt(i.firstChild)):de=a),Re(e,t,t.pendingProps.children,n),cr(e,t),e===null&&(t.flags|=4194304),t.child;case 5:return e===null&&K&&((a=i=de)&&(i=Ag(i,t.type,t.pendingProps,mt),i!==null?(t.stateNode=i,De=t,de=vt(i.firstChild),mt=!1,a=!0):a=!1),a||tn(t)),Wi(t),a=t.type,r=t.pendingProps,o=e!==null?e.memoizedProps:null,i=r.children,_s(a,r)?i=null:o!==null&&_s(a,o)&&(t.flags|=32),t.memoizedState!==null&&(a=jo(e,t,Um,null,null,n),fa._currentValue=a),cr(e,t),Re(e,t,i,n),t.child;case 6:return e===null&&K&&((e=n=de)&&(n=Tg(n,t.pendingProps,mt),n!==null?(t.stateNode=n,De=t,de=null,e=!0):e=!1),e||tn(t)),null;case 13:return Pu(e,t,n);case 4:return Pe(t,t.stateNode.containerInfo),i=t.pendingProps,e===null?t.child=Un(t,null,i,n):Re(e,t,i,n),t.child;case 11:return Eu(e,t,t.type,t.pendingProps,n);case 7:return Re(e,t,t.pendingProps,n),t.child;case 8:return Re(e,t,t.pendingProps.children,n),t.child;case 12:return Re(e,t,t.pendingProps.children,n),t.child;case 10:return i=t.pendingProps,nn(t,t.type,i.value),Re(e,t,i.children,n),t.child;case 9:return a=t.type._context,i=t.pendingProps.children,kn(t),a=Ie(a),i=i(a),t.flags|=1,Re(e,t,i,n),t.child;case 14:return Wu(e,t,t.type,t.pendingProps,n);case 15:return Du(e,t,t.type,t.pendingProps,n);case 19:return Uu(e,t,n);case 31:return Fm(e,t,n);case 22:return Iu(e,t,n,t.pendingProps);case 24:return kn(t),i=Ie(Ce),e===null?(a=ko(),a===null&&(a=ce,r=Oo(),a.pooledCache=r,r.refCount++,r!==null&&(a.pooledCacheLanes|=n),a=r),t.memoizedState={parent:i,cache:a},Po(t),nn(t,Ce,a)):((e.lanes&n)!==0&&(Mo(e,t),Xi(t,null,null,n),Ki()),a=e.memoizedState,r=t.memoizedState,a.parent!==i?(a={parent:i,cache:i},t.memoizedState=a,t.lanes===0&&(t.memoizedState=t.updateQueue.baseState=a),nn(t,Ce,i)):(i=r.cache,nn(t,Ce,i),i!==a.cache&&Ro(t,[Ce],n,!0))),Re(e,t,t.pendingProps.children,n),t.child;case 29:throw t.pendingProps}throw Error(m(156,t.tag))}function Bt(e){e.flags|=4}function ys(e,t,n,i,a){if((t=(e.mode&32)!==0)&&(t=!1),t){if(e.flags|=16777216,(a&335544128)===a)if(e.stateNode.complete)e.flags|=8192;else if(dd())e.flags|=8192;else throw Mn=Ya,No}else e.flags&=-16777217}function qu(e,t){if(t.type!=="stylesheet"||(t.state.loading&4)!==0)e.flags&=-16777217;else if(e.flags|=16777216,!ep(t))if(dd())e.flags|=8192;else throw Mn=Ya,No}function dr(e,t){t!==null&&(e.flags|=4),e.flags&16384&&(t=e.tag!==22?hl():536870912,e.lanes|=t,hi|=t)}function na(e,t){if(!K)switch(e.tailMode){case"hidden":t=e.tail;for(var n=null;t!==null;)t.alternate!==null&&(n=t),t=t.sibling;n===null?e.tail=null:n.sibling=null;break;case"collapsed":n=e.tail;for(var i=null;n!==null;)n.alternate!==null&&(i=n),n=n.sibling;i===null?t||e.tail===null?e.tail=null:e.tail.sibling=null:i.sibling=null}}function pe(e){var t=e.alternate!==null&&e.alternate.child===e.child,n=0,i=0;if(t)for(var a=e.child;a!==null;)n|=a.lanes|a.childLanes,i|=a.subtreeFlags&65011712,i|=a.flags&65011712,a.return=e,a=a.sibling;else for(a=e.child;a!==null;)n|=a.lanes|a.childLanes,i|=a.subtreeFlags,i|=a.flags,a.return=e,a=a.sibling;return e.subtreeFlags|=i,e.childLanes=n,t}function Qm(e,t,n){var i=t.pendingProps;switch(Lo(t),t.tag){case 16:case 15:case 0:case 11:case 7:case 8:case 12:case 9:case 14:return pe(t),null;case 1:return pe(t),null;case 3:return n=t.stateNode,i=null,e!==null&&(i=e.memoizedState.cache),t.memoizedState.cache!==i&&(t.flags|=2048),Mt(Ce),ye(),n.pendingContext&&(n.context=n.pendingContext,n.pendingContext=null),(e===null||e.child===null)&&(ri(t)?Bt(t):e===null||e.memoizedState.isDehydrated&&(t.flags&256)===0||(t.flags|=1024,Wo())),pe(t),null;case 26:var a=t.type,r=t.memoizedState;return e===null?(Bt(t),r!==null?(pe(t),qu(t,r)):(pe(t),ys(t,a,null,i,n))):r?r!==e.memoizedState?(Bt(t),pe(t),qu(t,r)):(pe(t),t.flags&=-16777217):(e=e.memoizedProps,e!==i&&Bt(t),pe(t),ys(t,a,e,i,n)),null;case 27:if(Aa(t),n=z.current,a=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==i&&Bt(t);else{if(!i){if(t.stateNode===null)throw Error(m(166));return pe(t),null}e=I.current,ri(t)?hc(t):(e=Vd(a,i,n),t.stateNode=e,Bt(t))}return pe(t),null;case 5:if(Aa(t),a=t.type,e!==null&&t.stateNode!=null)e.memoizedProps!==i&&Bt(t);else{if(!i){if(t.stateNode===null)throw Error(m(166));return pe(t),null}if(r=I.current,ri(t))hc(t);else{var o=Er(z.current);switch(r){case 1:r=o.createElementNS("http://www.w3.org/2000/svg",a);break;case 2:r=o.createElementNS("http://www.w3.org/1998/Math/MathML",a);break;default:switch(a){case"svg":r=o.createElementNS("http://www.w3.org/2000/svg",a);break;case"math":r=o.createElementNS("http://www.w3.org/1998/Math/MathML",a);break;case"script":r=o.createElement("div"),r.innerHTML="<script><\/script>",r=r.removeChild(r.firstChild);break;case"select":r=typeof i.is=="string"?o.createElement("select",{is:i.is}):o.createElement("select"),i.multiple?r.multiple=!0:i.size&&(r.size=i.size);break;default:r=typeof i.is=="string"?o.createElement(a,{is:i.is}):o.createElement(a)}}r[We]=t,r[He]=i;e:for(o=t.child;o!==null;){if(o.tag===5||o.tag===6)r.appendChild(o.stateNode);else if(o.tag!==4&&o.tag!==27&&o.child!==null){o.child.return=o,o=o.child;continue}if(o===t)break e;for(;o.sibling===null;){if(o.return===null||o.return===t)break e;o=o.return}o.sibling.return=o.return,o=o.sibling}t.stateNode=r;e:switch(Oe(r,a,i),a){case"button":case"input":case"select":case"textarea":i=!!i.autoFocus;break e;case"img":i=!0;break e;default:i=!1}i&&Bt(t)}}return pe(t),ys(t,t.type,e===null?null:e.memoizedProps,t.pendingProps,n),null;case 6:if(e&&t.stateNode!=null)e.memoizedProps!==i&&Bt(t);else{if(typeof i!="string"&&t.stateNode===null)throw Error(m(166));if(e=z.current,ri(t)){if(e=t.stateNode,n=t.memoizedProps,i=null,a=De,a!==null)switch(a.tag){case 27:case 5:i=a.memoizedProps}e[We]=t,e=!!(e.nodeValue===n||i!==null&&i.suppressHydrationWarning===!0||Pd(e.nodeValue,n)),e||tn(t,!0)}else e=Er(e).createTextNode(i),e[We]=t,t.stateNode=e}return pe(t),null;case 31:if(n=t.memoizedState,e===null||e.memoizedState!==null){if(i=ri(t),n!==null){if(e===null){if(!i)throw Error(m(318));if(e=t.memoizedState,e=e!==null?e.dehydrated:null,!e)throw Error(m(557));e[We]=t}else On(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;pe(t),e=!1}else n=Wo(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=n),e=!0;if(!e)return t.flags&256?(nt(t),t):(nt(t),null);if((t.flags&128)!==0)throw Error(m(558))}return pe(t),null;case 13:if(i=t.memoizedState,e===null||e.memoizedState!==null&&e.memoizedState.dehydrated!==null){if(a=ri(t),i!==null&&i.dehydrated!==null){if(e===null){if(!a)throw Error(m(318));if(a=t.memoizedState,a=a!==null?a.dehydrated:null,!a)throw Error(m(317));a[We]=t}else On(),(t.flags&128)===0&&(t.memoizedState=null),t.flags|=4;pe(t),a=!1}else a=Wo(),e!==null&&e.memoizedState!==null&&(e.memoizedState.hydrationErrors=a),a=!0;if(!a)return t.flags&256?(nt(t),t):(nt(t),null)}return nt(t),(t.flags&128)!==0?(t.lanes=n,t):(n=i!==null,e=e!==null&&e.memoizedState!==null,n&&(i=t.child,a=null,i.alternate!==null&&i.alternate.memoizedState!==null&&i.alternate.memoizedState.cachePool!==null&&(a=i.alternate.memoizedState.cachePool.pool),r=null,i.memoizedState!==null&&i.memoizedState.cachePool!==null&&(r=i.memoizedState.cachePool.pool),r!==a&&(i.flags|=2048)),n!==e&&n&&(t.child.flags|=8192),dr(t,t.updateQueue),pe(t),null);case 4:return ye(),e===null&&qs(t.stateNode.containerInfo),pe(t),null;case 10:return Mt(t.type),pe(t),null;case 19:if(A(he),i=t.memoizedState,i===null)return pe(t),null;if(a=(t.flags&128)!==0,r=i.rendering,r===null)if(a)na(i,!1);else{if(fe!==0||e!==null&&(e.flags&128)!==0)for(e=t.child;e!==null;){if(r=$a(e),r!==null){for(t.flags|=128,na(i,!1),e=r.updateQueue,t.updateQueue=e,dr(t,e),t.subtreeFlags=0,e=n,n=t.child;n!==null;)mc(n,e),n=n.sibling;return W(he,he.current&1|2),K&&Nt(t,i.treeForkCount),t.child}e=e.sibling}i.tail!==null&&Xe()>fr&&(t.flags|=128,a=!0,na(i,!1),t.lanes=4194304)}else{if(!a)if(e=$a(r),e!==null){if(t.flags|=128,a=!0,e=e.updateQueue,t.updateQueue=e,dr(t,e),na(i,!0),i.tail===null&&i.tailMode==="hidden"&&!r.alternate&&!K)return pe(t),null}else 2*Xe()-i.renderingStartTime>fr&&n!==536870912&&(t.flags|=128,a=!0,na(i,!1),t.lanes=4194304);i.isBackwards?(r.sibling=t.child,t.child=r):(e=i.last,e!==null?e.sibling=r:t.child=r,i.last=r)}return i.tail!==null?(e=i.tail,i.rendering=e,i.tail=e.sibling,i.renderingStartTime=Xe(),e.sibling=null,n=he.current,W(he,a?n&1|2:n&1),K&&Nt(t,i.treeForkCount),e):(pe(t),null);case 22:case 23:return nt(t),Bo(),i=t.memoizedState!==null,e!==null?e.memoizedState!==null!==i&&(t.flags|=8192):i&&(t.flags|=8192),i?(n&536870912)!==0&&(t.flags&128)===0&&(pe(t),t.subtreeFlags&6&&(t.flags|=8192)):pe(t),n=t.updateQueue,n!==null&&dr(t,n.retryQueue),n=null,e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(n=e.memoizedState.cachePool.pool),i=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(i=t.memoizedState.cachePool.pool),i!==n&&(t.flags|=2048),e!==null&&A(Nn),null;case 24:return n=null,e!==null&&(n=e.memoizedState.cache),t.memoizedState.cache!==n&&(t.flags|=2048),Mt(Ce),pe(t),null;case 25:return null;case 30:return null}throw Error(m(156,t.tag))}function Ym(e,t){switch(Lo(t),t.tag){case 1:return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 3:return Mt(Ce),ye(),e=t.flags,(e&65536)!==0&&(e&128)===0?(t.flags=e&-65537|128,t):null;case 26:case 27:case 5:return Aa(t),null;case 31:if(t.memoizedState!==null){if(nt(t),t.alternate===null)throw Error(m(340));On()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 13:if(nt(t),e=t.memoizedState,e!==null&&e.dehydrated!==null){if(t.alternate===null)throw Error(m(340));On()}return e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 19:return A(he),null;case 4:return ye(),null;case 10:return Mt(t.type),null;case 22:case 23:return nt(t),Bo(),e!==null&&A(Nn),e=t.flags,e&65536?(t.flags=e&-65537|128,t):null;case 24:return Mt(Ce),null;case 25:return null;default:return null}}function Bu(e,t){switch(Lo(t),t.tag){case 3:Mt(Ce),ye();break;case 26:case 27:case 5:Aa(t);break;case 4:ye();break;case 31:t.memoizedState!==null&&nt(t);break;case 13:nt(t);break;case 19:A(he);break;case 10:Mt(t.type);break;case 22:case 23:nt(t),Bo(),e!==null&&A(Nn);break;case 24:Mt(Ce)}}function ia(e,t){try{var n=t.updateQueue,i=n!==null?n.lastEffect:null;if(i!==null){var a=i.next;n=a;do{if((n.tag&e)===e){i=void 0;var r=n.create,o=n.inst;i=r(),o.destroy=i}n=n.next}while(n!==a)}}catch(s){ie(t,t.return,s)}}function cn(e,t,n){try{var i=t.updateQueue,a=i!==null?i.lastEffect:null;if(a!==null){var r=a.next;i=r;do{if((i.tag&e)===e){var o=i.inst,s=o.destroy;if(s!==void 0){o.destroy=void 0,a=t;var l=n,g=s;try{g()}catch(y){ie(a,l,y)}}}i=i.next}while(i!==r)}}catch(y){ie(t,t.return,y)}}function Hu(e){var t=e.updateQueue;if(t!==null){var n=e.stateNode;try{Oc(t,n)}catch(i){ie(e,e.return,i)}}}function zu(e,t,n){n.props=qn(e.type,e.memoizedProps),n.state=e.memoizedState;try{n.componentWillUnmount()}catch(i){ie(e,t,i)}}function aa(e,t){try{var n=e.ref;if(n!==null){switch(e.tag){case 26:case 27:case 5:var i=e.stateNode;break;case 30:i=e.stateNode;break;default:i=e.stateNode}typeof n=="function"?e.refCleanup=n(i):n.current=i}}catch(a){ie(e,t,a)}}function Et(e,t){var n=e.ref,i=e.refCleanup;if(n!==null)if(typeof i=="function")try{i()}catch(a){ie(e,t,a)}finally{e.refCleanup=null,e=e.alternate,e!=null&&(e.refCleanup=null)}else if(typeof n=="function")try{n(null)}catch(a){ie(e,t,a)}else n.current=null}function ju(e){var t=e.type,n=e.memoizedProps,i=e.stateNode;try{e:switch(t){case"button":case"input":case"select":case"textarea":n.autoFocus&&i.focus();break e;case"img":n.src?i.src=n.src:n.srcSet&&(i.srcset=n.srcSet)}}catch(a){ie(e,e.return,a)}}function hs(e,t,n){try{var i=e.stateNode;fg(i,e.type,n,t),i[He]=t}catch(a){ie(e,e.return,a)}}function _u(e){return e.tag===5||e.tag===3||e.tag===26||e.tag===27&&fn(e.type)||e.tag===4}function bs(e){e:for(;;){for(;e.sibling===null;){if(e.return===null||_u(e.return))return null;e=e.return}for(e.sibling.return=e.return,e=e.sibling;e.tag!==5&&e.tag!==6&&e.tag!==18;){if(e.tag===27&&fn(e.type)||e.flags&2||e.child===null||e.tag===4)continue e;e.child.return=e,e=e.child}if(!(e.flags&2))return e.stateNode}}function Cs(e,t,n){var i=e.tag;if(i===5||i===6)e=e.stateNode,t?(n.nodeType===9?n.body:n.nodeName==="HTML"?n.ownerDocument.body:n).insertBefore(e,t):(t=n.nodeType===9?n.body:n.nodeName==="HTML"?n.ownerDocument.body:n,t.appendChild(e),n=n._reactRootContainer,n!=null||t.onclick!==null||(t.onclick=Ot));else if(i!==4&&(i===27&&fn(e.type)&&(n=e.stateNode,t=null),e=e.child,e!==null))for(Cs(e,t,n),e=e.sibling;e!==null;)Cs(e,t,n),e=e.sibling}function pr(e,t,n){var i=e.tag;if(i===5||i===6)e=e.stateNode,t?n.insertBefore(e,t):n.appendChild(e);else if(i!==4&&(i===27&&fn(e.type)&&(n=e.stateNode),e=e.child,e!==null))for(pr(e,t,n),e=e.sibling;e!==null;)pr(e,t,n),e=e.sibling}function Fu(e){var t=e.stateNode,n=e.memoizedProps;try{for(var i=e.type,a=t.attributes;a.length;)t.removeAttributeNode(a[0]);Oe(t,i,n),t[We]=e,t[He]=n}catch(r){ie(e,e.return,r)}}var Ht=!1,Te=!1,Ss=!1,Vu=typeof WeakSet=="function"?WeakSet:Set,Ee=null;function Km(e,t){if(e=e.containerInfo,zs=kr,e=ac(e),go(e)){if("selectionStart"in e)var n={start:e.selectionStart,end:e.selectionEnd};else e:{n=(n=e.ownerDocument)&&n.defaultView||window;var i=n.getSelection&&n.getSelection();if(i&&i.rangeCount!==0){n=i.anchorNode;var a=i.anchorOffset,r=i.focusNode;i=i.focusOffset;try{n.nodeType,r.nodeType}catch{n=null;break e}var o=0,s=-1,l=-1,g=0,y=0,C=e,v=null;t:for(;;){for(var f;C!==n||a!==0&&C.nodeType!==3||(s=o+a),C!==r||i!==0&&C.nodeType!==3||(l=o+i),C.nodeType===3&&(o+=C.nodeValue.length),(f=C.firstChild)!==null;)v=C,C=f;for(;;){if(C===e)break t;if(v===n&&++g===a&&(s=o),v===r&&++y===i&&(l=o),(f=C.nextSibling)!==null)break;C=v,v=C.parentNode}C=f}n=s===-1||l===-1?null:{start:s,end:l}}else n=null}n=n||{start:0,end:0}}else n=null;for(js={focusedElem:e,selectionRange:n},kr=!1,Ee=t;Ee!==null;)if(t=Ee,e=t.child,(t.subtreeFlags&1028)!==0&&e!==null)e.return=t,Ee=e;else for(;Ee!==null;){switch(t=Ee,r=t.alternate,e=t.flags,t.tag){case 0:if((e&4)!==0&&(e=t.updateQueue,e=e!==null?e.events:null,e!==null))for(n=0;n<e.length;n++)a=e[n],a.ref.impl=a.nextImpl;break;case 11:case 15:break;case 1:if((e&1024)!==0&&r!==null){e=void 0,n=t,a=r.memoizedProps,r=r.memoizedState,i=n.stateNode;try{var D=qn(n.type,a);e=i.getSnapshotBeforeUpdate(D,r),i.__reactInternalSnapshotBeforeUpdate=e}catch(k){ie(n,n.return,k)}}break;case 3:if((e&1024)!==0){if(e=t.stateNode.containerInfo,n=e.nodeType,n===9)Vs(e);else if(n===1)switch(e.nodeName){case"HEAD":case"HTML":case"BODY":Vs(e);break;default:e.textContent=""}}break;case 5:case 26:case 27:case 6:case 4:case 17:break;default:if((e&1024)!==0)throw Error(m(163))}if(e=t.sibling,e!==null){e.return=t.return,Ee=e;break}Ee=t.return}}function Qu(e,t,n){var i=n.flags;switch(n.tag){case 0:case 11:case 15:jt(e,n),i&4&&ia(5,n);break;case 1:if(jt(e,n),i&4)if(e=n.stateNode,t===null)try{e.componentDidMount()}catch(o){ie(n,n.return,o)}else{var a=qn(n.type,t.memoizedProps);t=t.memoizedState;try{e.componentDidUpdate(a,t,e.__reactInternalSnapshotBeforeUpdate)}catch(o){ie(n,n.return,o)}}i&64&&Hu(n),i&512&&aa(n,n.return);break;case 3:if(jt(e,n),i&64&&(e=n.updateQueue,e!==null)){if(t=null,n.child!==null)switch(n.child.tag){case 27:case 5:t=n.child.stateNode;break;case 1:t=n.child.stateNode}try{Oc(e,t)}catch(o){ie(n,n.return,o)}}break;case 27:t===null&&i&4&&Fu(n);case 26:case 5:jt(e,n),t===null&&i&4&&ju(n),i&512&&aa(n,n.return);break;case 12:jt(e,n);break;case 31:jt(e,n),i&4&&Xu(e,n);break;case 13:jt(e,n),i&4&&Ju(e,n),i&64&&(e=n.memoizedState,e!==null&&(e=e.dehydrated,e!==null&&(n=ag.bind(null,n),wg(e,n))));break;case 22:if(i=n.memoizedState!==null||Ht,!i){t=t!==null&&t.memoizedState!==null||Te,a=Ht;var r=Te;Ht=i,(Te=t)&&!r?_t(e,n,(n.subtreeFlags&8772)!==0):jt(e,n),Ht=a,Te=r}break;case 30:break;default:jt(e,n)}}function Yu(e){var t=e.alternate;t!==null&&(e.alternate=null,Yu(t)),e.child=null,e.deletions=null,e.sibling=null,e.tag===5&&(t=e.stateNode,t!==null&&Xr(t)),e.stateNode=null,e.return=null,e.dependencies=null,e.memoizedProps=null,e.memoizedState=null,e.pendingProps=null,e.stateNode=null,e.updateQueue=null}var ge=null,je=!1;function zt(e,t,n){for(n=n.child;n!==null;)Ku(e,t,n),n=n.sibling}function Ku(e,t,n){if(Je&&typeof Je.onCommitFiberUnmount=="function")try{Je.onCommitFiberUnmount(Di,n)}catch{}switch(n.tag){case 26:Te||Et(n,t),zt(e,t,n),n.memoizedState?n.memoizedState.count--:n.stateNode&&(n=n.stateNode,n.parentNode.removeChild(n));break;case 27:Te||Et(n,t);var i=ge,a=je;fn(n.type)&&(ge=n.stateNode,je=!1),zt(e,t,n),ma(n.stateNode),ge=i,je=a;break;case 5:Te||Et(n,t);case 6:if(i=ge,a=je,ge=null,zt(e,t,n),ge=i,je=a,ge!==null)if(je)try{(ge.nodeType===9?ge.body:ge.nodeName==="HTML"?ge.ownerDocument.body:ge).removeChild(n.stateNode)}catch(r){ie(n,t,r)}else try{ge.removeChild(n.stateNode)}catch(r){ie(n,t,r)}break;case 18:ge!==null&&(je?(e=ge,Hd(e.nodeType===9?e.body:e.nodeName==="HTML"?e.ownerDocument.body:e,n.stateNode),Ei(e)):Hd(ge,n.stateNode));break;case 4:i=ge,a=je,ge=n.stateNode.containerInfo,je=!0,zt(e,t,n),ge=i,je=a;break;case 0:case 11:case 14:case 15:cn(2,n,t),Te||cn(4,n,t),zt(e,t,n);break;case 1:Te||(Et(n,t),i=n.stateNode,typeof i.componentWillUnmount=="function"&&zu(n,t,i)),zt(e,t,n);break;case 21:zt(e,t,n);break;case 22:Te=(i=Te)||n.memoizedState!==null,zt(e,t,n),Te=i;break;default:zt(e,t,n)}}function Xu(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null))){e=e.dehydrated;try{Ei(e)}catch(n){ie(t,t.return,n)}}}function Ju(e,t){if(t.memoizedState===null&&(e=t.alternate,e!==null&&(e=e.memoizedState,e!==null&&(e=e.dehydrated,e!==null))))try{Ei(e)}catch(n){ie(t,t.return,n)}}function Xm(e){switch(e.tag){case 31:case 13:case 19:var t=e.stateNode;return t===null&&(t=e.stateNode=new Vu),t;case 22:return e=e.stateNode,t=e._retryCache,t===null&&(t=e._retryCache=new Vu),t;default:throw Error(m(435,e.tag))}}function mr(e,t){var n=Xm(e);t.forEach(function(i){if(!n.has(i)){n.add(i);var a=rg.bind(null,e,i);i.then(a,a)}})}function _e(e,t){var n=t.deletions;if(n!==null)for(var i=0;i<n.length;i++){var a=n[i],r=e,o=t,s=o;e:for(;s!==null;){switch(s.tag){case 27:if(fn(s.type)){ge=s.stateNode,je=!1;break e}break;case 5:ge=s.stateNode,je=!1;break e;case 3:case 4:ge=s.stateNode.containerInfo,je=!0;break e}s=s.return}if(ge===null)throw Error(m(160));Ku(r,o,a),ge=null,je=!1,r=a.alternate,r!==null&&(r.return=null),a.return=null}if(t.subtreeFlags&13886)for(t=t.child;t!==null;)$u(t,e),t=t.sibling}var bt=null;function $u(e,t){var n=e.alternate,i=e.flags;switch(e.tag){case 0:case 11:case 14:case 15:_e(t,e),Fe(e),i&4&&(cn(3,e,e.return),ia(3,e),cn(5,e,e.return));break;case 1:_e(t,e),Fe(e),i&512&&(Te||n===null||Et(n,n.return)),i&64&&Ht&&(e=e.updateQueue,e!==null&&(i=e.callbacks,i!==null&&(n=e.shared.hiddenCallbacks,e.shared.hiddenCallbacks=n===null?i:n.concat(i))));break;case 26:var a=bt;if(_e(t,e),Fe(e),i&512&&(Te||n===null||Et(n,n.return)),i&4){var r=n!==null?n.memoizedState:null;if(i=e.memoizedState,n===null)if(i===null)if(e.stateNode===null){e:{i=e.type,n=e.memoizedProps,a=a.ownerDocument||a;t:switch(i){case"title":r=a.getElementsByTagName("title")[0],(!r||r[Oi]||r[We]||r.namespaceURI==="http://www.w3.org/2000/svg"||r.hasAttribute("itemprop"))&&(r=a.createElement(i),a.head.insertBefore(r,a.querySelector("head > title"))),Oe(r,i,n),r[We]=e,Le(r),i=r;break e;case"link":var o=$d("link","href",a).get(i+(n.href||""));if(o){for(var s=0;s<o.length;s++)if(r=o[s],r.getAttribute("href")===(n.href==null||n.href===""?null:n.href)&&r.getAttribute("rel")===(n.rel==null?null:n.rel)&&r.getAttribute("title")===(n.title==null?null:n.title)&&r.getAttribute("crossorigin")===(n.crossOrigin==null?null:n.crossOrigin)){o.splice(s,1);break t}}r=a.createElement(i),Oe(r,i,n),a.head.appendChild(r);break;case"meta":if(o=$d("meta","content",a).get(i+(n.content||""))){for(s=0;s<o.length;s++)if(r=o[s],r.getAttribute("content")===(n.content==null?null:""+n.content)&&r.getAttribute("name")===(n.name==null?null:n.name)&&r.getAttribute("property")===(n.property==null?null:n.property)&&r.getAttribute("http-equiv")===(n.httpEquiv==null?null:n.httpEquiv)&&r.getAttribute("charset")===(n.charSet==null?null:n.charSet)){o.splice(s,1);break t}}r=a.createElement(i),Oe(r,i,n),a.head.appendChild(r);break;default:throw Error(m(468,i))}r[We]=e,Le(r),i=r}e.stateNode=i}else Zd(a,e.type,e.stateNode);else e.stateNode=Jd(a,i,e.memoizedProps);else r!==i?(r===null?n.stateNode!==null&&(n=n.stateNode,n.parentNode.removeChild(n)):r.count--,i===null?Zd(a,e.type,e.stateNode):Jd(a,i,e.memoizedProps)):i===null&&e.stateNode!==null&&hs(e,e.memoizedProps,n.memoizedProps)}break;case 27:_e(t,e),Fe(e),i&512&&(Te||n===null||Et(n,n.return)),n!==null&&i&4&&hs(e,e.memoizedProps,n.memoizedProps);break;case 5:if(_e(t,e),Fe(e),i&512&&(Te||n===null||Et(n,n.return)),e.flags&32){a=e.stateNode;try{Kn(a,"")}catch(D){ie(e,e.return,D)}}i&4&&e.stateNode!=null&&(a=e.memoizedProps,hs(e,a,n!==null?n.memoizedProps:a)),i&1024&&(Ss=!0);break;case 6:if(_e(t,e),Fe(e),i&4){if(e.stateNode===null)throw Error(m(162));i=e.memoizedProps,n=e.stateNode;try{n.nodeValue=i}catch(D){ie(e,e.return,D)}}break;case 3:if(Ir=null,a=bt,bt=Wr(t.containerInfo),_e(t,e),bt=a,Fe(e),i&4&&n!==null&&n.memoizedState.isDehydrated)try{Ei(t.containerInfo)}catch(D){ie(e,e.return,D)}Ss&&(Ss=!1,Zu(e));break;case 4:i=bt,bt=Wr(e.stateNode.containerInfo),_e(t,e),Fe(e),bt=i;break;case 12:_e(t,e),Fe(e);break;case 31:_e(t,e),Fe(e),i&4&&(i=e.updateQueue,i!==null&&(e.updateQueue=null,mr(e,i)));break;case 13:_e(t,e),Fe(e),e.child.flags&8192&&e.memoizedState!==null!=(n!==null&&n.memoizedState!==null)&&(vr=Xe()),i&4&&(i=e.updateQueue,i!==null&&(e.updateQueue=null,mr(e,i)));break;case 22:a=e.memoizedState!==null;var l=n!==null&&n.memoizedState!==null,g=Ht,y=Te;if(Ht=g||a,Te=y||l,_e(t,e),Te=y,Ht=g,Fe(e),i&8192)e:for(t=e.stateNode,t._visibility=a?t._visibility&-2:t._visibility|1,a&&(n===null||l||Ht||Te||Bn(e)),n=null,t=e;;){if(t.tag===5||t.tag===26){if(n===null){l=n=t;try{if(r=l.stateNode,a)o=r.style,typeof o.setProperty=="function"?o.setProperty("display","none","important"):o.display="none";else{s=l.stateNode;var C=l.memoizedProps.style,v=C!=null&&C.hasOwnProperty("display")?C.display:null;s.style.display=v==null||typeof v=="boolean"?"":(""+v).trim()}}catch(D){ie(l,l.return,D)}}}else if(t.tag===6){if(n===null){l=t;try{l.stateNode.nodeValue=a?"":l.memoizedProps}catch(D){ie(l,l.return,D)}}}else if(t.tag===18){if(n===null){l=t;try{var f=l.stateNode;a?zd(f,!0):zd(l.stateNode,!1)}catch(D){ie(l,l.return,D)}}}else if((t.tag!==22&&t.tag!==23||t.memoizedState===null||t===e)&&t.child!==null){t.child.return=t,t=t.child;continue}if(t===e)break e;for(;t.sibling===null;){if(t.return===null||t.return===e)break e;n===t&&(n=null),t=t.return}n===t&&(n=null),t.sibling.return=t.return,t=t.sibling}i&4&&(i=e.updateQueue,i!==null&&(n=i.retryQueue,n!==null&&(i.retryQueue=null,mr(e,n))));break;case 19:_e(t,e),Fe(e),i&4&&(i=e.updateQueue,i!==null&&(e.updateQueue=null,mr(e,i)));break;case 30:break;case 21:break;default:_e(t,e),Fe(e)}}function Fe(e){var t=e.flags;if(t&2){try{for(var n,i=e.return;i!==null;){if(_u(i)){n=i;break}i=i.return}if(n==null)throw Error(m(160));switch(n.tag){case 27:var a=n.stateNode,r=bs(e);pr(e,r,a);break;case 5:var o=n.stateNode;n.flags&32&&(Kn(o,""),n.flags&=-33);var s=bs(e);pr(e,s,o);break;case 3:case 4:var l=n.stateNode.containerInfo,g=bs(e);Cs(e,g,l);break;default:throw Error(m(161))}}catch(y){ie(e,e.return,y)}e.flags&=-3}t&4096&&(e.flags&=-4097)}function Zu(e){if(e.subtreeFlags&1024)for(e=e.child;e!==null;){var t=e;Zu(t),t.tag===5&&t.flags&1024&&t.stateNode.reset(),e=e.sibling}}function jt(e,t){if(t.subtreeFlags&8772)for(t=t.child;t!==null;)Qu(e,t.alternate,t),t=t.sibling}function Bn(e){for(e=e.child;e!==null;){var t=e;switch(t.tag){case 0:case 11:case 14:case 15:cn(4,t,t.return),Bn(t);break;case 1:Et(t,t.return);var n=t.stateNode;typeof n.componentWillUnmount=="function"&&zu(t,t.return,n),Bn(t);break;case 27:ma(t.stateNode);case 26:case 5:Et(t,t.return),Bn(t);break;case 22:t.memoizedState===null&&Bn(t);break;case 30:Bn(t);break;default:Bn(t)}e=e.sibling}}function _t(e,t,n){for(n=n&&(t.subtreeFlags&8772)!==0,t=t.child;t!==null;){var i=t.alternate,a=e,r=t,o=r.flags;switch(r.tag){case 0:case 11:case 15:_t(a,r,n),ia(4,r);break;case 1:if(_t(a,r,n),i=r,a=i.stateNode,typeof a.componentDidMount=="function")try{a.componentDidMount()}catch(g){ie(i,i.return,g)}if(i=r,a=i.updateQueue,a!==null){var s=i.stateNode;try{var l=a.shared.hiddenCallbacks;if(l!==null)for(a.shared.hiddenCallbacks=null,a=0;a<l.length;a++)Rc(l[a],s)}catch(g){ie(i,i.return,g)}}n&&o&64&&Hu(r),aa(r,r.return);break;case 27:Fu(r);case 26:case 5:_t(a,r,n),n&&i===null&&o&4&&ju(r),aa(r,r.return);break;case 12:_t(a,r,n);break;case 31:_t(a,r,n),n&&o&4&&Xu(a,r);break;case 13:_t(a,r,n),n&&o&4&&Ju(a,r);break;case 22:r.memoizedState===null&&_t(a,r,n),aa(r,r.return);break;case 30:break;default:_t(a,r,n)}t=t.sibling}}function As(e,t){var n=null;e!==null&&e.memoizedState!==null&&e.memoizedState.cachePool!==null&&(n=e.memoizedState.cachePool.pool),e=null,t.memoizedState!==null&&t.memoizedState.cachePool!==null&&(e=t.memoizedState.cachePool.pool),e!==n&&(e!=null&&e.refCount++,n!=null&&_i(n))}function Ts(e,t){e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&_i(e))}function Ct(e,t,n,i){if(t.subtreeFlags&10256)for(t=t.child;t!==null;)ed(e,t,n,i),t=t.sibling}function ed(e,t,n,i){var a=t.flags;switch(t.tag){case 0:case 11:case 15:Ct(e,t,n,i),a&2048&&ia(9,t);break;case 1:Ct(e,t,n,i);break;case 3:Ct(e,t,n,i),a&2048&&(e=null,t.alternate!==null&&(e=t.alternate.memoizedState.cache),t=t.memoizedState.cache,t!==e&&(t.refCount++,e!=null&&_i(e)));break;case 12:if(a&2048){Ct(e,t,n,i),e=t.stateNode;try{var r=t.memoizedProps,o=r.id,s=r.onPostCommit;typeof s=="function"&&s(o,t.alternate===null?"mount":"update",e.passiveEffectDuration,-0)}catch(l){ie(t,t.return,l)}}else Ct(e,t,n,i);break;case 31:Ct(e,t,n,i);break;case 13:Ct(e,t,n,i);break;case 23:break;case 22:r=t.stateNode,o=t.alternate,t.memoizedState!==null?r._visibility&2?Ct(e,t,n,i):ra(e,t):r._visibility&2?Ct(e,t,n,i):(r._visibility|=2,vi(e,t,n,i,(t.subtreeFlags&10256)!==0||!1)),a&2048&&As(o,t);break;case 24:Ct(e,t,n,i),a&2048&&Ts(t.alternate,t);break;default:Ct(e,t,n,i)}}function vi(e,t,n,i,a){for(a=a&&((t.subtreeFlags&10256)!==0||!1),t=t.child;t!==null;){var r=e,o=t,s=n,l=i,g=o.flags;switch(o.tag){case 0:case 11:case 15:vi(r,o,s,l,a),ia(8,o);break;case 23:break;case 22:var y=o.stateNode;o.memoizedState!==null?y._visibility&2?vi(r,o,s,l,a):ra(r,o):(y._visibility|=2,vi(r,o,s,l,a)),a&&g&2048&&As(o.alternate,o);break;case 24:vi(r,o,s,l,a),a&&g&2048&&Ts(o.alternate,o);break;default:vi(r,o,s,l,a)}t=t.sibling}}function ra(e,t){if(t.subtreeFlags&10256)for(t=t.child;t!==null;){var n=e,i=t,a=i.flags;switch(i.tag){case 22:ra(n,i),a&2048&&As(i.alternate,i);break;case 24:ra(n,i),a&2048&&Ts(i.alternate,i);break;default:ra(n,i)}t=t.sibling}}var oa=8192;function fi(e,t,n){if(e.subtreeFlags&oa)for(e=e.child;e!==null;)td(e,t,n),e=e.sibling}function td(e,t,n){switch(e.tag){case 26:fi(e,t,n),e.flags&oa&&e.memoizedState!==null&&Mg(n,bt,e.memoizedState,e.memoizedProps);break;case 5:fi(e,t,n);break;case 3:case 4:var i=bt;bt=Wr(e.stateNode.containerInfo),fi(e,t,n),bt=i;break;case 22:e.memoizedState===null&&(i=e.alternate,i!==null&&i.memoizedState!==null?(i=oa,oa=16777216,fi(e,t,n),oa=i):fi(e,t,n));break;default:fi(e,t,n)}}function nd(e){var t=e.alternate;if(t!==null&&(e=t.child,e!==null)){t.child=null;do t=e.sibling,e.sibling=null,e=t;while(e!==null)}}function sa(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var n=0;n<t.length;n++){var i=t[n];Ee=i,ad(i,e)}nd(e)}if(e.subtreeFlags&10256)for(e=e.child;e!==null;)id(e),e=e.sibling}function id(e){switch(e.tag){case 0:case 11:case 15:sa(e),e.flags&2048&&cn(9,e,e.return);break;case 3:sa(e);break;case 12:sa(e);break;case 22:var t=e.stateNode;e.memoizedState!==null&&t._visibility&2&&(e.return===null||e.return.tag!==13)?(t._visibility&=-3,gr(e)):sa(e);break;default:sa(e)}}function gr(e){var t=e.deletions;if((e.flags&16)!==0){if(t!==null)for(var n=0;n<t.length;n++){var i=t[n];Ee=i,ad(i,e)}nd(e)}for(e=e.child;e!==null;){switch(t=e,t.tag){case 0:case 11:case 15:cn(8,t,t.return),gr(t);break;case 22:n=t.stateNode,n._visibility&2&&(n._visibility&=-3,gr(t));break;default:gr(t)}e=e.sibling}}function ad(e,t){for(;Ee!==null;){var n=Ee;switch(n.tag){case 0:case 11:case 15:cn(8,n,t);break;case 23:case 22:if(n.memoizedState!==null&&n.memoizedState.cachePool!==null){var i=n.memoizedState.cachePool.pool;i!=null&&i.refCount++}break;case 24:_i(n.memoizedState.cache)}if(i=n.child,i!==null)i.return=n,Ee=i;else e:for(n=e;Ee!==null;){i=Ee;var a=i.sibling,r=i.return;if(Yu(i),i===n){Ee=null;break e}if(a!==null){a.return=r,Ee=a;break e}Ee=r}}}var Jm={getCacheForType:function(e){var t=Ie(Ce),n=t.data.get(e);return n===void 0&&(n=e(),t.data.set(e,n)),n},cacheSignal:function(){return Ie(Ce).controller.signal}},$m=typeof WeakMap=="function"?WeakMap:Map,Z=0,ce=null,j=null,V=0,ne=0,it=null,un=!1,yi=!1,ws=!1,Ft=0,fe=0,dn=0,Hn=0,Ls=0,at=0,hi=0,la=null,Ve=null,Es=!1,vr=0,rd=0,fr=1/0,yr=null,pn=null,we=0,mn=null,bi=null,Vt=0,Ws=0,Ds=null,od=null,ca=0,Is=null;function rt(){return(Z&2)!==0&&V!==0?V&-V:h.T!==null?Ps():Al()}function sd(){if(at===0)if((V&536870912)===0||K){var e=La;La<<=1,(La&3932160)===0&&(La=262144),at=e}else at=536870912;return e=tt.current,e!==null&&(e.flags|=32),at}function Qe(e,t,n){(e===ce&&(ne===2||ne===9)||e.cancelPendingCommit!==null)&&(Ci(e,0),gn(e,V,at,!1)),Ri(e,n),((Z&2)===0||e!==ce)&&(e===ce&&((Z&2)===0&&(Hn|=n),fe===4&&gn(e,V,at,!1)),Wt(e))}function ld(e,t,n){if((Z&6)!==0)throw Error(m(327));var i=!n&&(t&127)===0&&(t&e.expiredLanes)===0||Ii(e,t),a=i?tg(e,t):Os(e,t,!0),r=i;do{if(a===0){yi&&!i&&gn(e,t,0,!1);break}else{if(n=e.current.alternate,r&&!Zm(n)){a=Os(e,t,!1),r=!1;continue}if(a===2){if(r=t,e.errorRecoveryDisabledLanes&r)var o=0;else o=e.pendingLanes&-536870913,o=o!==0?o:o&536870912?536870912:0;if(o!==0){t=o;e:{var s=e;a=la;var l=s.current.memoizedState.isDehydrated;if(l&&(Ci(s,o).flags|=256),o=Os(s,o,!1),o!==2){if(ws&&!l){s.errorRecoveryDisabledLanes|=r,Hn|=r,a=4;break e}r=Ve,Ve=a,r!==null&&(Ve===null?Ve=r:Ve.push.apply(Ve,r))}a=o}if(r=!1,a!==2)continue}}if(a===1){Ci(e,0),gn(e,t,0,!0);break}e:{switch(i=e,r=a,r){case 0:case 1:throw Error(m(345));case 4:if((t&4194048)!==t)break;case 6:gn(i,t,at,!un);break e;case 2:Ve=null;break;case 3:case 5:break;default:throw Error(m(329))}if((t&62914560)===t&&(a=vr+300-Xe(),10<a)){if(gn(i,t,at,!un),Wa(i,0,!0)!==0)break e;Vt=t,i.timeoutHandle=qd(cd.bind(null,i,n,Ve,yr,Es,t,at,Hn,hi,un,r,"Throttled",-0,0),a);break e}cd(i,n,Ve,yr,Es,t,at,Hn,hi,un,r,null,-0,0)}}break}while(!0);Wt(e)}function cd(e,t,n,i,a,r,o,s,l,g,y,C,v,f){if(e.timeoutHandle=-1,C=t.subtreeFlags,C&8192||(C&16785408)===16785408){C={stylesheets:null,count:0,imgCount:0,imgBytes:0,suspenseyImages:[],waitingForImages:!0,waitingForViewTransition:!1,unsuspend:Ot},td(t,r,C);var D=(r&62914560)===r?vr-Xe():(r&4194048)===r?rd-Xe():0;if(D=Ug(C,D),D!==null){Vt=r,e.cancelPendingCommit=D(yd.bind(null,e,t,r,n,i,a,o,s,l,y,C,null,v,f)),gn(e,r,o,!g);return}}yd(e,t,r,n,i,a,o,s,l)}function Zm(e){for(var t=e;;){var n=t.tag;if((n===0||n===11||n===15)&&t.flags&16384&&(n=t.updateQueue,n!==null&&(n=n.stores,n!==null)))for(var i=0;i<n.length;i++){var a=n[i],r=a.getSnapshot;a=a.value;try{if(!Ze(r(),a))return!1}catch{return!1}}if(n=t.child,t.subtreeFlags&16384&&n!==null)n.return=t,t=n;else{if(t===e)break;for(;t.sibling===null;){if(t.return===null||t.return===e)return!0;t=t.return}t.sibling.return=t.return,t=t.sibling}}return!0}function gn(e,t,n,i){t&=~Ls,t&=~Hn,e.suspendedLanes|=t,e.pingedLanes&=~t,i&&(e.warmLanes|=t),i=e.expirationTimes;for(var a=t;0<a;){var r=31-$e(a),o=1<<r;i[r]=-1,a&=~o}n!==0&&bl(e,n,t)}function hr(){return(Z&6)===0?(ua(0),!1):!0}function Rs(){if(j!==null){if(ne===0)var e=j.return;else e=j,Pt=xn=null,Vo(e),ui=null,Vi=0,e=j;for(;e!==null;)Bu(e.alternate,e),e=e.return;j=null}}function Ci(e,t){var n=e.timeoutHandle;n!==-1&&(e.timeoutHandle=-1,bg(n)),n=e.cancelPendingCommit,n!==null&&(e.cancelPendingCommit=null,n()),Vt=0,Rs(),ce=e,j=n=kt(e.current,null),V=t,ne=0,it=null,un=!1,yi=Ii(e,t),ws=!1,hi=at=Ls=Hn=dn=fe=0,Ve=la=null,Es=!1,(t&8)!==0&&(t|=t&32);var i=e.entangledLanes;if(i!==0)for(e=e.entanglements,i&=t;0<i;){var a=31-$e(i),r=1<<a;t|=e[a],i&=~r}return Ft=t,qa(),n}function ud(e,t){B=null,h.H=ea,t===ci||t===Qa?(t=Ec(),ne=3):t===No?(t=Ec(),ne=4):ne=t===ls?8:t!==null&&typeof t=="object"&&typeof t.then=="function"?6:1,it=t,j===null&&(fe=1,sr(e,ut(t,e.current)))}function dd(){var e=tt.current;return e===null?!0:(V&4194048)===V?gt===null:(V&62914560)===V||(V&536870912)!==0?e===gt:!1}function pd(){var e=h.H;return h.H=ea,e===null?ea:e}function md(){var e=h.A;return h.A=Jm,e}function br(){fe=4,un||(V&4194048)!==V&&tt.current!==null||(yi=!0),(dn&134217727)===0&&(Hn&134217727)===0||ce===null||gn(ce,V,at,!1)}function Os(e,t,n){var i=Z;Z|=2;var a=pd(),r=md();(ce!==e||V!==t)&&(yr=null,Ci(e,t)),t=!1;var o=fe;e:do try{if(ne!==0&&j!==null){var s=j,l=it;switch(ne){case 8:Rs(),o=6;break e;case 3:case 2:case 9:case 6:tt.current===null&&(t=!0);var g=ne;if(ne=0,it=null,Si(e,s,l,g),n&&yi){o=0;break e}break;default:g=ne,ne=0,it=null,Si(e,s,l,g)}}eg(),o=fe;break}catch(y){ud(e,y)}while(!0);return t&&e.shellSuspendCounter++,Pt=xn=null,Z=i,h.H=a,h.A=r,j===null&&(ce=null,V=0,qa()),o}function eg(){for(;j!==null;)gd(j)}function tg(e,t){var n=Z;Z|=2;var i=pd(),a=md();ce!==e||V!==t?(yr=null,fr=Xe()+500,Ci(e,t)):yi=Ii(e,t);e:do try{if(ne!==0&&j!==null){t=j;var r=it;t:switch(ne){case 1:ne=0,it=null,Si(e,t,r,1);break;case 2:case 9:if(wc(r)){ne=0,it=null,vd(t);break}t=function(){ne!==2&&ne!==9||ce!==e||(ne=7),Wt(e)},r.then(t,t);break e;case 3:ne=7;break e;case 4:ne=5;break e;case 7:wc(r)?(ne=0,it=null,vd(t)):(ne=0,it=null,Si(e,t,r,7));break;case 5:var o=null;switch(j.tag){case 26:o=j.memoizedState;case 5:case 27:var s=j;if(o?ep(o):s.stateNode.complete){ne=0,it=null;var l=s.sibling;if(l!==null)j=l;else{var g=s.return;g!==null?(j=g,Cr(g)):j=null}break t}}ne=0,it=null,Si(e,t,r,5);break;case 6:ne=0,it=null,Si(e,t,r,6);break;case 8:Rs(),fe=6;break e;default:throw Error(m(462))}}ng();break}catch(y){ud(e,y)}while(!0);return Pt=xn=null,h.H=i,h.A=a,Z=n,j!==null?0:(ce=null,V=0,qa(),fe)}function ng(){for(;j!==null&&!Lp();)gd(j)}function gd(e){var t=Gu(e.alternate,e,Ft);e.memoizedProps=e.pendingProps,t===null?Cr(e):j=t}function vd(e){var t=e,n=t.alternate;switch(t.tag){case 15:case 0:t=xu(n,t,t.pendingProps,t.type,void 0,V);break;case 11:t=xu(n,t,t.pendingProps,t.type.render,t.ref,V);break;case 5:Vo(t);default:Bu(n,t),t=j=mc(t,Ft),t=Gu(n,t,Ft)}e.memoizedProps=e.pendingProps,t===null?Cr(e):j=t}function Si(e,t,n,i){Pt=xn=null,Vo(t),ui=null,Vi=0;var a=t.return;try{if(_m(e,a,t,n,V)){fe=1,sr(e,ut(n,e.current)),j=null;return}}catch(r){if(a!==null)throw j=a,r;fe=1,sr(e,ut(n,e.current)),j=null;return}t.flags&32768?(K||i===1?e=!0:yi||(V&536870912)!==0?e=!1:(un=e=!0,(i===2||i===9||i===3||i===6)&&(i=tt.current,i!==null&&i.tag===13&&(i.flags|=16384))),fd(t,e)):Cr(t)}function Cr(e){var t=e;do{if((t.flags&32768)!==0){fd(t,un);return}e=t.return;var n=Qm(t.alternate,t,Ft);if(n!==null){j=n;return}if(t=t.sibling,t!==null){j=t;return}j=t=e}while(t!==null);fe===0&&(fe=5)}function fd(e,t){do{var n=Ym(e.alternate,e);if(n!==null){n.flags&=32767,j=n;return}if(n=e.return,n!==null&&(n.flags|=32768,n.subtreeFlags=0,n.deletions=null),!t&&(e=e.sibling,e!==null)){j=e;return}j=e=n}while(e!==null);fe=6,j=null}function yd(e,t,n,i,a,r,o,s,l){e.cancelPendingCommit=null;do Sr();while(we!==0);if((Z&6)!==0)throw Error(m(327));if(t!==null){if(t===e.current)throw Error(m(177));if(r=t.lanes|t.childLanes,r|=bo,Pp(e,n,r,o,s,l),e===ce&&(j=ce=null,V=0),bi=t,mn=e,Vt=n,Ws=r,Ds=a,od=i,(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?(e.callbackNode=null,e.callbackPriority=0,og(Ta,function(){return Ad(),null})):(e.callbackNode=null,e.callbackPriority=0),i=(t.flags&13878)!==0,(t.subtreeFlags&13878)!==0||i){i=h.T,h.T=null,a=L.p,L.p=2,o=Z,Z|=4;try{Km(e,t,n)}finally{Z=o,L.p=a,h.T=i}}we=1,hd(),bd(),Cd()}}function hd(){if(we===1){we=0;var e=mn,t=bi,n=(t.flags&13878)!==0;if((t.subtreeFlags&13878)!==0||n){n=h.T,h.T=null;var i=L.p;L.p=2;var a=Z;Z|=4;try{$u(t,e);var r=js,o=ac(e.containerInfo),s=r.focusedElem,l=r.selectionRange;if(o!==s&&s&&s.ownerDocument&&ic(s.ownerDocument.documentElement,s)){if(l!==null&&go(s)){var g=l.start,y=l.end;if(y===void 0&&(y=g),"selectionStart"in s)s.selectionStart=g,s.selectionEnd=Math.min(y,s.value.length);else{var C=s.ownerDocument||document,v=C&&C.defaultView||window;if(v.getSelection){var f=v.getSelection(),D=s.textContent.length,k=Math.min(l.start,D),se=l.end===void 0?k:Math.min(l.end,D);!f.extend&&k>se&&(o=se,se=k,k=o);var d=nc(s,k),c=nc(s,se);if(d&&c&&(f.rangeCount!==1||f.anchorNode!==d.node||f.anchorOffset!==d.offset||f.focusNode!==c.node||f.focusOffset!==c.offset)){var p=C.createRange();p.setStart(d.node,d.offset),f.removeAllRanges(),k>se?(f.addRange(p),f.extend(c.node,c.offset)):(p.setEnd(c.node,c.offset),f.addRange(p))}}}}for(C=[],f=s;f=f.parentNode;)f.nodeType===1&&C.push({element:f,left:f.scrollLeft,top:f.scrollTop});for(typeof s.focus=="function"&&s.focus(),s=0;s<C.length;s++){var b=C[s];b.element.scrollLeft=b.left,b.element.scrollTop=b.top}}kr=!!zs,js=zs=null}finally{Z=a,L.p=i,h.T=n}}e.current=t,we=2}}function bd(){if(we===2){we=0;var e=mn,t=bi,n=(t.flags&8772)!==0;if((t.subtreeFlags&8772)!==0||n){n=h.T,h.T=null;var i=L.p;L.p=2;var a=Z;Z|=4;try{Qu(e,t.alternate,t)}finally{Z=a,L.p=i,h.T=n}}we=3}}function Cd(){if(we===4||we===3){we=0,Ep();var e=mn,t=bi,n=Vt,i=od;(t.subtreeFlags&10256)!==0||(t.flags&10256)!==0?we=5:(we=0,bi=mn=null,Sd(e,e.pendingLanes));var a=e.pendingLanes;if(a===0&&(pn=null),Yr(n),t=t.stateNode,Je&&typeof Je.onCommitFiberRoot=="function")try{Je.onCommitFiberRoot(Di,t,void 0,(t.current.flags&128)===128)}catch{}if(i!==null){t=h.T,a=L.p,L.p=2,h.T=null;try{for(var r=e.onRecoverableError,o=0;o<i.length;o++){var s=i[o];r(s.value,{componentStack:s.stack})}}finally{h.T=t,L.p=a}}(Vt&3)!==0&&Sr(),Wt(e),a=e.pendingLanes,(n&261930)!==0&&(a&42)!==0?e===Is?ca++:(ca=0,Is=e):ca=0,ua(0)}}function Sd(e,t){(e.pooledCacheLanes&=t)===0&&(t=e.pooledCache,t!=null&&(e.pooledCache=null,_i(t)))}function Sr(){return hd(),bd(),Cd(),Ad()}function Ad(){if(we!==5)return!1;var e=mn,t=Ws;Ws=0;var n=Yr(Vt),i=h.T,a=L.p;try{L.p=32>n?32:n,h.T=null,n=Ds,Ds=null;var r=mn,o=Vt;if(we=0,bi=mn=null,Vt=0,(Z&6)!==0)throw Error(m(331));var s=Z;if(Z|=4,id(r.current),ed(r,r.current,o,n),Z=s,ua(0,!1),Je&&typeof Je.onPostCommitFiberRoot=="function")try{Je.onPostCommitFiberRoot(Di,r)}catch{}return!0}finally{L.p=a,h.T=i,Sd(e,t)}}function Td(e,t,n){t=ut(n,t),t=ss(e.stateNode,t,2),e=on(e,t,2),e!==null&&(Ri(e,2),Wt(e))}function ie(e,t,n){if(e.tag===3)Td(e,e,n);else for(;t!==null;){if(t.tag===3){Td(t,e,n);break}else if(t.tag===1){var i=t.stateNode;if(typeof t.type.getDerivedStateFromError=="function"||typeof i.componentDidCatch=="function"&&(pn===null||!pn.has(i))){e=ut(n,e),n=wu(2),i=on(t,n,2),i!==null&&(Lu(n,i,t,e),Ri(i,2),Wt(i));break}}t=t.return}}function xs(e,t,n){var i=e.pingCache;if(i===null){i=e.pingCache=new $m;var a=new Set;i.set(t,a)}else a=i.get(t),a===void 0&&(a=new Set,i.set(t,a));a.has(n)||(ws=!0,a.add(n),e=ig.bind(null,e,t,n),t.then(e,e))}function ig(e,t,n){var i=e.pingCache;i!==null&&i.delete(t),e.pingedLanes|=e.suspendedLanes&n,e.warmLanes&=~n,ce===e&&(V&n)===n&&(fe===4||fe===3&&(V&62914560)===V&&300>Xe()-vr?(Z&2)===0&&Ci(e,0):Ls|=n,hi===V&&(hi=0)),Wt(e)}function wd(e,t){t===0&&(t=hl()),e=In(e,t),e!==null&&(Ri(e,t),Wt(e))}function ag(e){var t=e.memoizedState,n=0;t!==null&&(n=t.retryLane),wd(e,n)}function rg(e,t){var n=0;switch(e.tag){case 31:case 13:var i=e.stateNode,a=e.memoizedState;a!==null&&(n=a.retryLane);break;case 19:i=e.stateNode;break;case 22:i=e.stateNode._retryCache;break;default:throw Error(m(314))}i!==null&&i.delete(t),wd(e,n)}function og(e,t){return _r(e,t)}var Ar=null,Ai=null,ks=!1,Tr=!1,Ns=!1,vn=0;function Wt(e){e!==Ai&&e.next===null&&(Ai===null?Ar=Ai=e:Ai=Ai.next=e),Tr=!0,ks||(ks=!0,lg())}function ua(e,t){if(!Ns&&Tr){Ns=!0;do for(var n=!1,i=Ar;i!==null;){if(e!==0){var a=i.pendingLanes;if(a===0)var r=0;else{var o=i.suspendedLanes,s=i.pingedLanes;r=(1<<31-$e(42|e)+1)-1,r&=a&~(o&~s),r=r&201326741?r&201326741|1:r?r|2:0}r!==0&&(n=!0,Dd(i,r))}else r=V,r=Wa(i,i===ce?r:0,i.cancelPendingCommit!==null||i.timeoutHandle!==-1),(r&3)===0||Ii(i,r)||(n=!0,Dd(i,r));i=i.next}while(n);Ns=!1}}function sg(){Ld()}function Ld(){Tr=ks=!1;var e=0;vn!==0&&hg()&&(e=vn);for(var t=Xe(),n=null,i=Ar;i!==null;){var a=i.next,r=Ed(i,t);r===0?(i.next=null,n===null?Ar=a:n.next=a,a===null&&(Ai=n)):(n=i,(e!==0||(r&3)!==0)&&(Tr=!0)),i=a}we!==0&&we!==5||ua(e),vn!==0&&(vn=0)}function Ed(e,t){for(var n=e.suspendedLanes,i=e.pingedLanes,a=e.expirationTimes,r=e.pendingLanes&-62914561;0<r;){var o=31-$e(r),s=1<<o,l=a[o];l===-1?((s&n)===0||(s&i)!==0)&&(a[o]=Np(s,t)):l<=t&&(e.expiredLanes|=s),r&=~s}if(t=ce,n=V,n=Wa(e,e===t?n:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),i=e.callbackNode,n===0||e===t&&(ne===2||ne===9)||e.cancelPendingCommit!==null)return i!==null&&i!==null&&Fr(i),e.callbackNode=null,e.callbackPriority=0;if((n&3)===0||Ii(e,n)){if(t=n&-n,t===e.callbackPriority)return t;switch(i!==null&&Fr(i),Yr(n)){case 2:case 8:n=fl;break;case 32:n=Ta;break;case 268435456:n=yl;break;default:n=Ta}return i=Wd.bind(null,e),n=_r(n,i),e.callbackPriority=t,e.callbackNode=n,t}return i!==null&&i!==null&&Fr(i),e.callbackPriority=2,e.callbackNode=null,2}function Wd(e,t){if(we!==0&&we!==5)return e.callbackNode=null,e.callbackPriority=0,null;var n=e.callbackNode;if(Sr()&&e.callbackNode!==n)return null;var i=V;return i=Wa(e,e===ce?i:0,e.cancelPendingCommit!==null||e.timeoutHandle!==-1),i===0?null:(ld(e,i,t),Ed(e,Xe()),e.callbackNode!=null&&e.callbackNode===n?Wd.bind(null,e):null)}function Dd(e,t){if(Sr())return null;ld(e,t,!0)}function lg(){Cg(function(){(Z&6)!==0?_r(vl,sg):Ld()})}function Ps(){if(vn===0){var e=si;e===0&&(e=wa,wa<<=1,(wa&261888)===0&&(wa=256)),vn=e}return vn}function Id(e){return e==null||typeof e=="symbol"||typeof e=="boolean"?null:typeof e=="function"?e:Oa(""+e)}function Rd(e,t){var n=t.ownerDocument.createElement("input");return n.name=t.name,n.value=t.value,e.id&&n.setAttribute("form",e.id),t.parentNode.insertBefore(n,t),e=new FormData(e),n.parentNode.removeChild(n),e}function cg(e,t,n,i,a){if(t==="submit"&&n&&n.stateNode===a){var r=Id((a[He]||null).action),o=i.submitter;o&&(t=(t=o[He]||null)?Id(t.formAction):o.getAttribute("formAction"),t!==null&&(r=t,o=null));var s=new Pa("action","action",null,i,a);e.push({event:s,listeners:[{instance:null,listener:function(){if(i.defaultPrevented){if(vn!==0){var l=o?Rd(a,o):new FormData(a);ts(n,{pending:!0,data:l,method:a.method,action:r},null,l)}}else typeof r=="function"&&(s.preventDefault(),l=o?Rd(a,o):new FormData(a),ts(n,{pending:!0,data:l,method:a.method,action:r},r,l))},currentTarget:a}]})}}for(var Ms=0;Ms<ho.length;Ms++){var Us=ho[Ms],ug=Us.toLowerCase(),dg=Us[0].toUpperCase()+Us.slice(1);ht(ug,"on"+dg)}ht(sc,"onAnimationEnd"),ht(lc,"onAnimationIteration"),ht(cc,"onAnimationStart"),ht("dblclick","onDoubleClick"),ht("focusin","onFocus"),ht("focusout","onBlur"),ht(Wm,"onTransitionRun"),ht(Dm,"onTransitionStart"),ht(Im,"onTransitionCancel"),ht(uc,"onTransitionEnd"),Qn("onMouseEnter",["mouseout","mouseover"]),Qn("onMouseLeave",["mouseout","mouseover"]),Qn("onPointerEnter",["pointerout","pointerover"]),Qn("onPointerLeave",["pointerout","pointerover"]),Ln("onChange","change click focusin focusout input keydown keyup selectionchange".split(" ")),Ln("onSelect","focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")),Ln("onBeforeInput",["compositionend","keypress","textInput","paste"]),Ln("onCompositionEnd","compositionend focusout keydown keypress keyup mousedown".split(" ")),Ln("onCompositionStart","compositionstart focusout keydown keypress keyup mousedown".split(" ")),Ln("onCompositionUpdate","compositionupdate focusout keydown keypress keyup mousedown".split(" "));var da="abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),pg=new Set("beforetoggle cancel close invalid load scroll scrollend toggle".split(" ").concat(da));function Od(e,t){t=(t&4)!==0;for(var n=0;n<e.length;n++){var i=e[n],a=i.event;i=i.listeners;e:{var r=void 0;if(t)for(var o=i.length-1;0<=o;o--){var s=i[o],l=s.instance,g=s.currentTarget;if(s=s.listener,l!==r&&a.isPropagationStopped())break e;r=s,a.currentTarget=g;try{r(a)}catch(y){Ga(y)}a.currentTarget=null,r=l}else for(o=0;o<i.length;o++){if(s=i[o],l=s.instance,g=s.currentTarget,s=s.listener,l!==r&&a.isPropagationStopped())break e;r=s,a.currentTarget=g;try{r(a)}catch(y){Ga(y)}a.currentTarget=null,r=l}}}}function _(e,t){var n=t[Kr];n===void 0&&(n=t[Kr]=new Set);var i=e+"__bubble";n.has(i)||(xd(t,e,2,!1),n.add(i))}function Gs(e,t,n){var i=0;t&&(i|=4),xd(n,e,i,t)}var wr="_reactListening"+Math.random().toString(36).slice(2);function qs(e){if(!e[wr]){e[wr]=!0,Ll.forEach(function(n){n!=="selectionchange"&&(pg.has(n)||Gs(n,!1,e),Gs(n,!0,e))});var t=e.nodeType===9?e:e.ownerDocument;t===null||t[wr]||(t[wr]=!0,Gs("selectionchange",!1,t))}}function xd(e,t,n,i){switch(sp(t)){case 2:var a=Bg;break;case 8:a=Hg;break;default:a=el}n=a.bind(null,t,n,e),a=void 0,!ao||t!=="touchstart"&&t!=="touchmove"&&t!=="wheel"||(a=!0),i?a!==void 0?e.addEventListener(t,n,{capture:!0,passive:a}):e.addEventListener(t,n,!0):a!==void 0?e.addEventListener(t,n,{passive:a}):e.addEventListener(t,n,!1)}function Bs(e,t,n,i,a){var r=i;if((t&1)===0&&(t&2)===0&&i!==null)e:for(;;){if(i===null)return;var o=i.tag;if(o===3||o===4){var s=i.stateNode.containerInfo;if(s===a)break;if(o===4)for(o=i.return;o!==null;){var l=o.tag;if((l===3||l===4)&&o.stateNode.containerInfo===a)return;o=o.return}for(;s!==null;){if(o=_n(s),o===null)return;if(l=o.tag,l===5||l===6||l===26||l===27){i=r=o;continue e}s=s.parentNode}}i=i.return}Ul(function(){var g=r,y=no(n),C=[];e:{var v=dc.get(e);if(v!==void 0){var f=Pa,D=e;switch(e){case"keypress":if(ka(n)===0)break e;case"keydown":case"keyup":f=rm;break;case"focusin":D="focus",f=lo;break;case"focusout":D="blur",f=lo;break;case"beforeblur":case"afterblur":f=lo;break;case"click":if(n.button===2)break e;case"auxclick":case"dblclick":case"mousedown":case"mousemove":case"mouseup":case"mouseout":case"mouseover":case"contextmenu":f=Bl;break;case"drag":case"dragend":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"dragstart":case"drop":f=Qp;break;case"touchcancel":case"touchend":case"touchmove":case"touchstart":f=lm;break;case sc:case lc:case cc:f=Xp;break;case uc:f=um;break;case"scroll":case"scrollend":f=Fp;break;case"wheel":f=pm;break;case"copy":case"cut":case"paste":f=$p;break;case"gotpointercapture":case"lostpointercapture":case"pointercancel":case"pointerdown":case"pointermove":case"pointerout":case"pointerover":case"pointerup":f=zl;break;case"toggle":case"beforetoggle":f=gm}var k=(t&4)!==0,se=!k&&(e==="scroll"||e==="scrollend"),d=k?v!==null?v+"Capture":null:v;k=[];for(var c=g,p;c!==null;){var b=c;if(p=b.stateNode,b=b.tag,b!==5&&b!==26&&b!==27||p===null||d===null||(b=ki(c,d),b!=null&&k.push(pa(c,b,p))),se)break;c=c.return}0<k.length&&(v=new f(v,D,null,n,y),C.push({event:v,listeners:k}))}}if((t&7)===0){e:{if(v=e==="mouseover"||e==="pointerover",f=e==="mouseout"||e==="pointerout",v&&n!==to&&(D=n.relatedTarget||n.fromElement)&&(_n(D)||D[jn]))break e;if((f||v)&&(v=y.window===y?y:(v=y.ownerDocument)?v.defaultView||v.parentWindow:window,f?(D=n.relatedTarget||n.toElement,f=g,D=D?_n(D):null,D!==null&&(se=M(D),k=D.tag,D!==se||k!==5&&k!==27&&k!==6)&&(D=null)):(f=null,D=g),f!==D)){if(k=Bl,b="onMouseLeave",d="onMouseEnter",c="mouse",(e==="pointerout"||e==="pointerover")&&(k=zl,b="onPointerLeave",d="onPointerEnter",c="pointer"),se=f==null?v:xi(f),p=D==null?v:xi(D),v=new k(b,c+"leave",f,n,y),v.target=se,v.relatedTarget=p,b=null,_n(y)===g&&(k=new k(d,c+"enter",D,n,y),k.target=p,k.relatedTarget=se,b=k),se=b,f&&D)t:{for(k=mg,d=f,c=D,p=0,b=d;b;b=k(b))p++;b=0;for(var O=c;O;O=k(O))b++;for(;0<p-b;)d=k(d),p--;for(;0<b-p;)c=k(c),b--;for(;p--;){if(d===c||c!==null&&d===c.alternate){k=d;break t}d=k(d),c=k(c)}k=null}else k=null;f!==null&&kd(C,v,f,k,!1),D!==null&&se!==null&&kd(C,se,D,k,!0)}}e:{if(v=g?xi(g):window,f=v.nodeName&&v.nodeName.toLowerCase(),f==="select"||f==="input"&&v.type==="file")var J=Xl;else if(Yl(v))if(Jl)J=wm;else{J=Am;var R=Sm}else f=v.nodeName,!f||f.toLowerCase()!=="input"||v.type!=="checkbox"&&v.type!=="radio"?g&&eo(g.elementType)&&(J=Xl):J=Tm;if(J&&(J=J(e,g))){Kl(C,J,n,y);break e}R&&R(e,v,g),e==="focusout"&&g&&v.type==="number"&&g.memoizedProps.value!=null&&Zr(v,"number",v.value)}switch(R=g?xi(g):window,e){case"focusin":(Yl(R)||R.contentEditable==="true")&&(Zn=R,vo=g,Hi=null);break;case"focusout":Hi=vo=Zn=null;break;case"mousedown":fo=!0;break;case"contextmenu":case"mouseup":case"dragend":fo=!1,rc(C,n,y);break;case"selectionchange":if(Em)break;case"keydown":case"keyup":rc(C,n,y)}var H;if(uo)e:{switch(e){case"compositionstart":var Q="onCompositionStart";break e;case"compositionend":Q="onCompositionEnd";break e;case"compositionupdate":Q="onCompositionUpdate";break e}Q=void 0}else $n?Vl(e,n)&&(Q="onCompositionEnd"):e==="keydown"&&n.keyCode===229&&(Q="onCompositionStart");Q&&(jl&&n.locale!=="ko"&&($n||Q!=="onCompositionStart"?Q==="onCompositionEnd"&&$n&&(H=Gl()):($t=y,ro="value"in $t?$t.value:$t.textContent,$n=!0)),R=Lr(g,Q),0<R.length&&(Q=new Hl(Q,e,null,n,y),C.push({event:Q,listeners:R}),H?Q.data=H:(H=Ql(n),H!==null&&(Q.data=H)))),(H=fm?ym(e,n):hm(e,n))&&(Q=Lr(g,"onBeforeInput"),0<Q.length&&(R=new Hl("onBeforeInput","beforeinput",null,n,y),C.push({event:R,listeners:Q}),R.data=H)),cg(C,e,g,n,y)}Od(C,t)})}function pa(e,t,n){return{instance:e,listener:t,currentTarget:n}}function Lr(e,t){for(var n=t+"Capture",i=[];e!==null;){var a=e,r=a.stateNode;if(a=a.tag,a!==5&&a!==26&&a!==27||r===null||(a=ki(e,n),a!=null&&i.unshift(pa(e,a,r)),a=ki(e,t),a!=null&&i.push(pa(e,a,r))),e.tag===3)return i;e=e.return}return[]}function mg(e){if(e===null)return null;do e=e.return;while(e&&e.tag!==5&&e.tag!==27);return e||null}function kd(e,t,n,i,a){for(var r=t._reactName,o=[];n!==null&&n!==i;){var s=n,l=s.alternate,g=s.stateNode;if(s=s.tag,l!==null&&l===i)break;s!==5&&s!==26&&s!==27||g===null||(l=g,a?(g=ki(n,r),g!=null&&o.unshift(pa(n,g,l))):a||(g=ki(n,r),g!=null&&o.push(pa(n,g,l)))),n=n.return}o.length!==0&&e.push({event:t,listeners:o})}var gg=/\r\n?/g,vg=/\u0000|\uFFFD/g;function Nd(e){return(typeof e=="string"?e:""+e).replace(gg,`
+`).replace(vg,"")}function Pd(e,t){return t=Nd(t),Nd(e)===t}function oe(e,t,n,i,a,r){switch(n){case"children":typeof i=="string"?t==="body"||t==="textarea"&&i===""||Kn(e,i):(typeof i=="number"||typeof i=="bigint")&&t!=="body"&&Kn(e,""+i);break;case"className":Ia(e,"class",i);break;case"tabIndex":Ia(e,"tabindex",i);break;case"dir":case"role":case"viewBox":case"width":case"height":Ia(e,n,i);break;case"style":Pl(e,i,r);break;case"data":if(t!=="object"){Ia(e,"data",i);break}case"src":case"href":if(i===""&&(t!=="a"||n!=="href")){e.removeAttribute(n);break}if(i==null||typeof i=="function"||typeof i=="symbol"||typeof i=="boolean"){e.removeAttribute(n);break}i=Oa(""+i),e.setAttribute(n,i);break;case"action":case"formAction":if(typeof i=="function"){e.setAttribute(n,"javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')");break}else typeof r=="function"&&(n==="formAction"?(t!=="input"&&oe(e,t,"name",a.name,a,null),oe(e,t,"formEncType",a.formEncType,a,null),oe(e,t,"formMethod",a.formMethod,a,null),oe(e,t,"formTarget",a.formTarget,a,null)):(oe(e,t,"encType",a.encType,a,null),oe(e,t,"method",a.method,a,null),oe(e,t,"target",a.target,a,null)));if(i==null||typeof i=="symbol"||typeof i=="boolean"){e.removeAttribute(n);break}i=Oa(""+i),e.setAttribute(n,i);break;case"onClick":i!=null&&(e.onclick=Ot);break;case"onScroll":i!=null&&_("scroll",e);break;case"onScrollEnd":i!=null&&_("scrollend",e);break;case"dangerouslySetInnerHTML":if(i!=null){if(typeof i!="object"||!("__html"in i))throw Error(m(61));if(n=i.__html,n!=null){if(a.children!=null)throw Error(m(60));e.innerHTML=n}}break;case"multiple":e.multiple=i&&typeof i!="function"&&typeof i!="symbol";break;case"muted":e.muted=i&&typeof i!="function"&&typeof i!="symbol";break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"defaultValue":case"defaultChecked":case"innerHTML":case"ref":break;case"autoFocus":break;case"xlinkHref":if(i==null||typeof i=="function"||typeof i=="boolean"||typeof i=="symbol"){e.removeAttribute("xlink:href");break}n=Oa(""+i),e.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href",n);break;case"contentEditable":case"spellCheck":case"draggable":case"value":case"autoReverse":case"externalResourcesRequired":case"focusable":case"preserveAlpha":i!=null&&typeof i!="function"&&typeof i!="symbol"?e.setAttribute(n,""+i):e.removeAttribute(n);break;case"inert":case"allowFullScreen":case"async":case"autoPlay":case"controls":case"default":case"defer":case"disabled":case"disablePictureInPicture":case"disableRemotePlayback":case"formNoValidate":case"hidden":case"loop":case"noModule":case"noValidate":case"open":case"playsInline":case"readOnly":case"required":case"reversed":case"scoped":case"seamless":case"itemScope":i&&typeof i!="function"&&typeof i!="symbol"?e.setAttribute(n,""):e.removeAttribute(n);break;case"capture":case"download":i===!0?e.setAttribute(n,""):i!==!1&&i!=null&&typeof i!="function"&&typeof i!="symbol"?e.setAttribute(n,i):e.removeAttribute(n);break;case"cols":case"rows":case"size":case"span":i!=null&&typeof i!="function"&&typeof i!="symbol"&&!isNaN(i)&&1<=i?e.setAttribute(n,i):e.removeAttribute(n);break;case"rowSpan":case"start":i==null||typeof i=="function"||typeof i=="symbol"||isNaN(i)?e.removeAttribute(n):e.setAttribute(n,i);break;case"popover":_("beforetoggle",e),_("toggle",e),Da(e,"popover",i);break;case"xlinkActuate":Rt(e,"http://www.w3.org/1999/xlink","xlink:actuate",i);break;case"xlinkArcrole":Rt(e,"http://www.w3.org/1999/xlink","xlink:arcrole",i);break;case"xlinkRole":Rt(e,"http://www.w3.org/1999/xlink","xlink:role",i);break;case"xlinkShow":Rt(e,"http://www.w3.org/1999/xlink","xlink:show",i);break;case"xlinkTitle":Rt(e,"http://www.w3.org/1999/xlink","xlink:title",i);break;case"xlinkType":Rt(e,"http://www.w3.org/1999/xlink","xlink:type",i);break;case"xmlBase":Rt(e,"http://www.w3.org/XML/1998/namespace","xml:base",i);break;case"xmlLang":Rt(e,"http://www.w3.org/XML/1998/namespace","xml:lang",i);break;case"xmlSpace":Rt(e,"http://www.w3.org/XML/1998/namespace","xml:space",i);break;case"is":Da(e,"is",i);break;case"innerText":case"textContent":break;default:(!(2<n.length)||n[0]!=="o"&&n[0]!=="O"||n[1]!=="n"&&n[1]!=="N")&&(n=jp.get(n)||n,Da(e,n,i))}}function Hs(e,t,n,i,a,r){switch(n){case"style":Pl(e,i,r);break;case"dangerouslySetInnerHTML":if(i!=null){if(typeof i!="object"||!("__html"in i))throw Error(m(61));if(n=i.__html,n!=null){if(a.children!=null)throw Error(m(60));e.innerHTML=n}}break;case"children":typeof i=="string"?Kn(e,i):(typeof i=="number"||typeof i=="bigint")&&Kn(e,""+i);break;case"onScroll":i!=null&&_("scroll",e);break;case"onScrollEnd":i!=null&&_("scrollend",e);break;case"onClick":i!=null&&(e.onclick=Ot);break;case"suppressContentEditableWarning":case"suppressHydrationWarning":case"innerHTML":case"ref":break;case"innerText":case"textContent":break;default:if(!El.hasOwnProperty(n))e:{if(n[0]==="o"&&n[1]==="n"&&(a=n.endsWith("Capture"),t=n.slice(2,a?n.length-7:void 0),r=e[He]||null,r=r!=null?r[n]:null,typeof r=="function"&&e.removeEventListener(t,r,a),typeof i=="function")){typeof r!="function"&&r!==null&&(n in e?e[n]=null:e.hasAttribute(n)&&e.removeAttribute(n)),e.addEventListener(t,i,a);break e}n in e?e[n]=i:i===!0?e.setAttribute(n,""):Da(e,n,i)}}}function Oe(e,t,n){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"img":_("error",e),_("load",e);var i=!1,a=!1,r;for(r in n)if(n.hasOwnProperty(r)){var o=n[r];if(o!=null)switch(r){case"src":i=!0;break;case"srcSet":a=!0;break;case"children":case"dangerouslySetInnerHTML":throw Error(m(137,t));default:oe(e,t,r,o,n,null)}}a&&oe(e,t,"srcSet",n.srcSet,n,null),i&&oe(e,t,"src",n.src,n,null);return;case"input":_("invalid",e);var s=r=o=a=null,l=null,g=null;for(i in n)if(n.hasOwnProperty(i)){var y=n[i];if(y!=null)switch(i){case"name":a=y;break;case"type":o=y;break;case"checked":l=y;break;case"defaultChecked":g=y;break;case"value":r=y;break;case"defaultValue":s=y;break;case"children":case"dangerouslySetInnerHTML":if(y!=null)throw Error(m(137,t));break;default:oe(e,t,i,y,n,null)}}Ol(e,r,s,l,g,o,a,!1);return;case"select":_("invalid",e),i=o=r=null;for(a in n)if(n.hasOwnProperty(a)&&(s=n[a],s!=null))switch(a){case"value":r=s;break;case"defaultValue":o=s;break;case"multiple":i=s;default:oe(e,t,a,s,n,null)}t=r,n=o,e.multiple=!!i,t!=null?Yn(e,!!i,t,!1):n!=null&&Yn(e,!!i,n,!0);return;case"textarea":_("invalid",e),r=a=i=null;for(o in n)if(n.hasOwnProperty(o)&&(s=n[o],s!=null))switch(o){case"value":i=s;break;case"defaultValue":a=s;break;case"children":r=s;break;case"dangerouslySetInnerHTML":if(s!=null)throw Error(m(91));break;default:oe(e,t,o,s,n,null)}kl(e,i,a,r);return;case"option":for(l in n)n.hasOwnProperty(l)&&(i=n[l],i!=null)&&(l==="selected"?e.selected=i&&typeof i!="function"&&typeof i!="symbol":oe(e,t,l,i,n,null));return;case"dialog":_("beforetoggle",e),_("toggle",e),_("cancel",e),_("close",e);break;case"iframe":case"object":_("load",e);break;case"video":case"audio":for(i=0;i<da.length;i++)_(da[i],e);break;case"image":_("error",e),_("load",e);break;case"details":_("toggle",e);break;case"embed":case"source":case"link":_("error",e),_("load",e);case"area":case"base":case"br":case"col":case"hr":case"keygen":case"meta":case"param":case"track":case"wbr":case"menuitem":for(g in n)if(n.hasOwnProperty(g)&&(i=n[g],i!=null))switch(g){case"children":case"dangerouslySetInnerHTML":throw Error(m(137,t));default:oe(e,t,g,i,n,null)}return;default:if(eo(t)){for(y in n)n.hasOwnProperty(y)&&(i=n[y],i!==void 0&&Hs(e,t,y,i,n,void 0));return}}for(s in n)n.hasOwnProperty(s)&&(i=n[s],i!=null&&oe(e,t,s,i,n,null))}function fg(e,t,n,i){switch(t){case"div":case"span":case"svg":case"path":case"a":case"g":case"p":case"li":break;case"input":var a=null,r=null,o=null,s=null,l=null,g=null,y=null;for(f in n){var C=n[f];if(n.hasOwnProperty(f)&&C!=null)switch(f){case"checked":break;case"value":break;case"defaultValue":l=C;default:i.hasOwnProperty(f)||oe(e,t,f,null,i,C)}}for(var v in i){var f=i[v];if(C=n[v],i.hasOwnProperty(v)&&(f!=null||C!=null))switch(v){case"type":r=f;break;case"name":a=f;break;case"checked":g=f;break;case"defaultChecked":y=f;break;case"value":o=f;break;case"defaultValue":s=f;break;case"children":case"dangerouslySetInnerHTML":if(f!=null)throw Error(m(137,t));break;default:f!==C&&oe(e,t,v,f,i,C)}}$r(e,o,s,l,g,y,r,a);return;case"select":f=o=s=v=null;for(r in n)if(l=n[r],n.hasOwnProperty(r)&&l!=null)switch(r){case"value":break;case"multiple":f=l;default:i.hasOwnProperty(r)||oe(e,t,r,null,i,l)}for(a in i)if(r=i[a],l=n[a],i.hasOwnProperty(a)&&(r!=null||l!=null))switch(a){case"value":v=r;break;case"defaultValue":s=r;break;case"multiple":o=r;default:r!==l&&oe(e,t,a,r,i,l)}t=s,n=o,i=f,v!=null?Yn(e,!!n,v,!1):!!i!=!!n&&(t!=null?Yn(e,!!n,t,!0):Yn(e,!!n,n?[]:"",!1));return;case"textarea":f=v=null;for(s in n)if(a=n[s],n.hasOwnProperty(s)&&a!=null&&!i.hasOwnProperty(s))switch(s){case"value":break;case"children":break;default:oe(e,t,s,null,i,a)}for(o in i)if(a=i[o],r=n[o],i.hasOwnProperty(o)&&(a!=null||r!=null))switch(o){case"value":v=a;break;case"defaultValue":f=a;break;case"children":break;case"dangerouslySetInnerHTML":if(a!=null)throw Error(m(91));break;default:a!==r&&oe(e,t,o,a,i,r)}xl(e,v,f);return;case"option":for(var D in n)v=n[D],n.hasOwnProperty(D)&&v!=null&&!i.hasOwnProperty(D)&&(D==="selected"?e.selected=!1:oe(e,t,D,null,i,v));for(l in i)v=i[l],f=n[l],i.hasOwnProperty(l)&&v!==f&&(v!=null||f!=null)&&(l==="selected"?e.selected=v&&typeof v!="function"&&typeof v!="symbol":oe(e,t,l,v,i,f));return;case"img":case"link":case"area":case"base":case"br":case"col":case"embed":case"hr":case"keygen":case"meta":case"param":case"source":case"track":case"wbr":case"menuitem":for(var k in n)v=n[k],n.hasOwnProperty(k)&&v!=null&&!i.hasOwnProperty(k)&&oe(e,t,k,null,i,v);for(g in i)if(v=i[g],f=n[g],i.hasOwnProperty(g)&&v!==f&&(v!=null||f!=null))switch(g){case"children":case"dangerouslySetInnerHTML":if(v!=null)throw Error(m(137,t));break;default:oe(e,t,g,v,i,f)}return;default:if(eo(t)){for(var se in n)v=n[se],n.hasOwnProperty(se)&&v!==void 0&&!i.hasOwnProperty(se)&&Hs(e,t,se,void 0,i,v);for(y in i)v=i[y],f=n[y],!i.hasOwnProperty(y)||v===f||v===void 0&&f===void 0||Hs(e,t,y,v,i,f);return}}for(var d in n)v=n[d],n.hasOwnProperty(d)&&v!=null&&!i.hasOwnProperty(d)&&oe(e,t,d,null,i,v);for(C in i)v=i[C],f=n[C],!i.hasOwnProperty(C)||v===f||v==null&&f==null||oe(e,t,C,v,i,f)}function Md(e){switch(e){case"css":case"script":case"font":case"img":case"image":case"input":case"link":return!0;default:return!1}}function yg(){if(typeof performance.getEntriesByType=="function"){for(var e=0,t=0,n=performance.getEntriesByType("resource"),i=0;i<n.length;i++){var a=n[i],r=a.transferSize,o=a.initiatorType,s=a.duration;if(r&&s&&Md(o)){for(o=0,s=a.responseEnd,i+=1;i<n.length;i++){var l=n[i],g=l.startTime;if(g>s)break;var y=l.transferSize,C=l.initiatorType;y&&Md(C)&&(l=l.responseEnd,o+=y*(l<s?1:(s-g)/(l-g)))}if(--i,t+=8*(r+o)/(a.duration/1e3),e++,10<e)break}}if(0<e)return t/e/1e6}return navigator.connection&&(e=navigator.connection.downlink,typeof e=="number")?e:5}var zs=null,js=null;function Er(e){return e.nodeType===9?e:e.ownerDocument}function Ud(e){switch(e){case"http://www.w3.org/2000/svg":return 1;case"http://www.w3.org/1998/Math/MathML":return 2;default:return 0}}function Gd(e,t){if(e===0)switch(t){case"svg":return 1;case"math":return 2;default:return 0}return e===1&&t==="foreignObject"?0:e}function _s(e,t){return e==="textarea"||e==="noscript"||typeof t.children=="string"||typeof t.children=="number"||typeof t.children=="bigint"||typeof t.dangerouslySetInnerHTML=="object"&&t.dangerouslySetInnerHTML!==null&&t.dangerouslySetInnerHTML.__html!=null}var Fs=null;function hg(){var e=window.event;return e&&e.type==="popstate"?e===Fs?!1:(Fs=e,!0):(Fs=null,!1)}var qd=typeof setTimeout=="function"?setTimeout:void 0,bg=typeof clearTimeout=="function"?clearTimeout:void 0,Bd=typeof Promise=="function"?Promise:void 0,Cg=typeof queueMicrotask=="function"?queueMicrotask:typeof Bd<"u"?function(e){return Bd.resolve(null).then(e).catch(Sg)}:qd;function Sg(e){setTimeout(function(){throw e})}function fn(e){return e==="head"}function Hd(e,t){var n=t,i=0;do{var a=n.nextSibling;if(e.removeChild(n),a&&a.nodeType===8)if(n=a.data,n==="/$"||n==="/&"){if(i===0){e.removeChild(a),Ei(t);return}i--}else if(n==="$"||n==="$?"||n==="$~"||n==="$!"||n==="&")i++;else if(n==="html")ma(e.ownerDocument.documentElement);else if(n==="head"){n=e.ownerDocument.head,ma(n);for(var r=n.firstChild;r;){var o=r.nextSibling,s=r.nodeName;r[Oi]||s==="SCRIPT"||s==="STYLE"||s==="LINK"&&r.rel.toLowerCase()==="stylesheet"||n.removeChild(r),r=o}}else n==="body"&&ma(e.ownerDocument.body);n=a}while(n);Ei(t)}function zd(e,t){var n=e;e=0;do{var i=n.nextSibling;if(n.nodeType===1?t?(n._stashedDisplay=n.style.display,n.style.display="none"):(n.style.display=n._stashedDisplay||"",n.getAttribute("style")===""&&n.removeAttribute("style")):n.nodeType===3&&(t?(n._stashedText=n.nodeValue,n.nodeValue=""):n.nodeValue=n._stashedText||""),i&&i.nodeType===8)if(n=i.data,n==="/$"){if(e===0)break;e--}else n!=="$"&&n!=="$?"&&n!=="$~"&&n!=="$!"||e++;n=i}while(n)}function Vs(e){var t=e.firstChild;for(t&&t.nodeType===10&&(t=t.nextSibling);t;){var n=t;switch(t=t.nextSibling,n.nodeName){case"HTML":case"HEAD":case"BODY":Vs(n),Xr(n);continue;case"SCRIPT":case"STYLE":continue;case"LINK":if(n.rel.toLowerCase()==="stylesheet")continue}e.removeChild(n)}}function Ag(e,t,n,i){for(;e.nodeType===1;){var a=n;if(e.nodeName.toLowerCase()!==t.toLowerCase()){if(!i&&(e.nodeName!=="INPUT"||e.type!=="hidden"))break}else if(i){if(!e[Oi])switch(t){case"meta":if(!e.hasAttribute("itemprop"))break;return e;case"link":if(r=e.getAttribute("rel"),r==="stylesheet"&&e.hasAttribute("data-precedence"))break;if(r!==a.rel||e.getAttribute("href")!==(a.href==null||a.href===""?null:a.href)||e.getAttribute("crossorigin")!==(a.crossOrigin==null?null:a.crossOrigin)||e.getAttribute("title")!==(a.title==null?null:a.title))break;return e;case"style":if(e.hasAttribute("data-precedence"))break;return e;case"script":if(r=e.getAttribute("src"),(r!==(a.src==null?null:a.src)||e.getAttribute("type")!==(a.type==null?null:a.type)||e.getAttribute("crossorigin")!==(a.crossOrigin==null?null:a.crossOrigin))&&r&&e.hasAttribute("async")&&!e.hasAttribute("itemprop"))break;return e;default:return e}}else if(t==="input"&&e.type==="hidden"){var r=a.name==null?null:""+a.name;if(a.type==="hidden"&&e.getAttribute("name")===r)return e}else return e;if(e=vt(e.nextSibling),e===null)break}return null}function Tg(e,t,n){if(t==="")return null;for(;e.nodeType!==3;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!n||(e=vt(e.nextSibling),e===null))return null;return e}function jd(e,t){for(;e.nodeType!==8;)if((e.nodeType!==1||e.nodeName!=="INPUT"||e.type!=="hidden")&&!t||(e=vt(e.nextSibling),e===null))return null;return e}function Qs(e){return e.data==="$?"||e.data==="$~"}function Ys(e){return e.data==="$!"||e.data==="$?"&&e.ownerDocument.readyState!=="loading"}function wg(e,t){var n=e.ownerDocument;if(e.data==="$~")e._reactRetry=t;else if(e.data!=="$?"||n.readyState!=="loading")t();else{var i=function(){t(),n.removeEventListener("DOMContentLoaded",i)};n.addEventListener("DOMContentLoaded",i),e._reactRetry=i}}function vt(e){for(;e!=null;e=e.nextSibling){var t=e.nodeType;if(t===1||t===3)break;if(t===8){if(t=e.data,t==="$"||t==="$!"||t==="$?"||t==="$~"||t==="&"||t==="F!"||t==="F")break;if(t==="/$"||t==="/&")return null}}return e}var Ks=null;function _d(e){e=e.nextSibling;for(var t=0;e;){if(e.nodeType===8){var n=e.data;if(n==="/$"||n==="/&"){if(t===0)return vt(e.nextSibling);t--}else n!=="$"&&n!=="$!"&&n!=="$?"&&n!=="$~"&&n!=="&"||t++}e=e.nextSibling}return null}function Fd(e){e=e.previousSibling;for(var t=0;e;){if(e.nodeType===8){var n=e.data;if(n==="$"||n==="$!"||n==="$?"||n==="$~"||n==="&"){if(t===0)return e;t--}else n!=="/$"&&n!=="/&"||t++}e=e.previousSibling}return null}function Vd(e,t,n){switch(t=Er(n),e){case"html":if(e=t.documentElement,!e)throw Error(m(452));return e;case"head":if(e=t.head,!e)throw Error(m(453));return e;case"body":if(e=t.body,!e)throw Error(m(454));return e;default:throw Error(m(451))}}function ma(e){for(var t=e.attributes;t.length;)e.removeAttributeNode(t[0]);Xr(e)}var ft=new Map,Qd=new Set;function Wr(e){return typeof e.getRootNode=="function"?e.getRootNode():e.nodeType===9?e:e.ownerDocument}var Qt=L.d;L.d={f:Lg,r:Eg,D:Wg,C:Dg,L:Ig,m:Rg,X:xg,S:Og,M:kg};function Lg(){var e=Qt.f(),t=hr();return e||t}function Eg(e){var t=Fn(e);t!==null&&t.tag===5&&t.type==="form"?uu(t):Qt.r(e)}var Ti=typeof document>"u"?null:document;function Yd(e,t,n){var i=Ti;if(i&&typeof t=="string"&&t){var a=lt(t);a='link[rel="'+e+'"][href="'+a+'"]',typeof n=="string"&&(a+='[crossorigin="'+n+'"]'),Qd.has(a)||(Qd.add(a),e={rel:e,crossOrigin:n,href:t},i.querySelector(a)===null&&(t=i.createElement("link"),Oe(t,"link",e),Le(t),i.head.appendChild(t)))}}function Wg(e){Qt.D(e),Yd("dns-prefetch",e,null)}function Dg(e,t){Qt.C(e,t),Yd("preconnect",e,t)}function Ig(e,t,n){Qt.L(e,t,n);var i=Ti;if(i&&e&&t){var a='link[rel="preload"][as="'+lt(t)+'"]';t==="image"&&n&&n.imageSrcSet?(a+='[imagesrcset="'+lt(n.imageSrcSet)+'"]',typeof n.imageSizes=="string"&&(a+='[imagesizes="'+lt(n.imageSizes)+'"]')):a+='[href="'+lt(e)+'"]';var r=a;switch(t){case"style":r=wi(e);break;case"script":r=Li(e)}ft.has(r)||(e=N({rel:"preload",href:t==="image"&&n&&n.imageSrcSet?void 0:e,as:t},n),ft.set(r,e),i.querySelector(a)!==null||t==="style"&&i.querySelector(ga(r))||t==="script"&&i.querySelector(va(r))||(t=i.createElement("link"),Oe(t,"link",e),Le(t),i.head.appendChild(t)))}}function Rg(e,t){Qt.m(e,t);var n=Ti;if(n&&e){var i=t&&typeof t.as=="string"?t.as:"script",a='link[rel="modulepreload"][as="'+lt(i)+'"][href="'+lt(e)+'"]',r=a;switch(i){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":r=Li(e)}if(!ft.has(r)&&(e=N({rel:"modulepreload",href:e},t),ft.set(r,e),n.querySelector(a)===null)){switch(i){case"audioworklet":case"paintworklet":case"serviceworker":case"sharedworker":case"worker":case"script":if(n.querySelector(va(r)))return}i=n.createElement("link"),Oe(i,"link",e),Le(i),n.head.appendChild(i)}}}function Og(e,t,n){Qt.S(e,t,n);var i=Ti;if(i&&e){var a=Vn(i).hoistableStyles,r=wi(e);t=t||"default";var o=a.get(r);if(!o){var s={loading:0,preload:null};if(o=i.querySelector(ga(r)))s.loading=5;else{e=N({rel:"stylesheet",href:e,"data-precedence":t},n),(n=ft.get(r))&&Xs(e,n);var l=o=i.createElement("link");Le(l),Oe(l,"link",e),l._p=new Promise(function(g,y){l.onload=g,l.onerror=y}),l.addEventListener("load",function(){s.loading|=1}),l.addEventListener("error",function(){s.loading|=2}),s.loading|=4,Dr(o,t,i)}o={type:"stylesheet",instance:o,count:1,state:s},a.set(r,o)}}}function xg(e,t){Qt.X(e,t);var n=Ti;if(n&&e){var i=Vn(n).hoistableScripts,a=Li(e),r=i.get(a);r||(r=n.querySelector(va(a)),r||(e=N({src:e,async:!0},t),(t=ft.get(a))&&Js(e,t),r=n.createElement("script"),Le(r),Oe(r,"link",e),n.head.appendChild(r)),r={type:"script",instance:r,count:1,state:null},i.set(a,r))}}function kg(e,t){Qt.M(e,t);var n=Ti;if(n&&e){var i=Vn(n).hoistableScripts,a=Li(e),r=i.get(a);r||(r=n.querySelector(va(a)),r||(e=N({src:e,async:!0,type:"module"},t),(t=ft.get(a))&&Js(e,t),r=n.createElement("script"),Le(r),Oe(r,"link",e),n.head.appendChild(r)),r={type:"script",instance:r,count:1,state:null},i.set(a,r))}}function Kd(e,t,n,i){var a=(a=z.current)?Wr(a):null;if(!a)throw Error(m(446));switch(e){case"meta":case"title":return null;case"style":return typeof n.precedence=="string"&&typeof n.href=="string"?(t=wi(n.href),n=Vn(a).hoistableStyles,i=n.get(t),i||(i={type:"style",instance:null,count:0,state:null},n.set(t,i)),i):{type:"void",instance:null,count:0,state:null};case"link":if(n.rel==="stylesheet"&&typeof n.href=="string"&&typeof n.precedence=="string"){e=wi(n.href);var r=Vn(a).hoistableStyles,o=r.get(e);if(o||(a=a.ownerDocument||a,o={type:"stylesheet",instance:null,count:0,state:{loading:0,preload:null}},r.set(e,o),(r=a.querySelector(ga(e)))&&!r._p&&(o.instance=r,o.state.loading=5),ft.has(e)||(n={rel:"preload",as:"style",href:n.href,crossOrigin:n.crossOrigin,integrity:n.integrity,media:n.media,hrefLang:n.hrefLang,referrerPolicy:n.referrerPolicy},ft.set(e,n),r||Ng(a,e,n,o.state))),t&&i===null)throw Error(m(528,""));return o}if(t&&i!==null)throw Error(m(529,""));return null;case"script":return t=n.async,n=n.src,typeof n=="string"&&t&&typeof t!="function"&&typeof t!="symbol"?(t=Li(n),n=Vn(a).hoistableScripts,i=n.get(t),i||(i={type:"script",instance:null,count:0,state:null},n.set(t,i)),i):{type:"void",instance:null,count:0,state:null};default:throw Error(m(444,e))}}function wi(e){return'href="'+lt(e)+'"'}function ga(e){return'link[rel="stylesheet"]['+e+"]"}function Xd(e){return N({},e,{"data-precedence":e.precedence,precedence:null})}function Ng(e,t,n,i){e.querySelector('link[rel="preload"][as="style"]['+t+"]")?i.loading=1:(t=e.createElement("link"),i.preload=t,t.addEventListener("load",function(){return i.loading|=1}),t.addEventListener("error",function(){return i.loading|=2}),Oe(t,"link",n),Le(t),e.head.appendChild(t))}function Li(e){return'[src="'+lt(e)+'"]'}function va(e){return"script[async]"+e}function Jd(e,t,n){if(t.count++,t.instance===null)switch(t.type){case"style":var i=e.querySelector('style[data-href~="'+lt(n.href)+'"]');if(i)return t.instance=i,Le(i),i;var a=N({},n,{"data-href":n.href,"data-precedence":n.precedence,href:null,precedence:null});return i=(e.ownerDocument||e).createElement("style"),Le(i),Oe(i,"style",a),Dr(i,n.precedence,e),t.instance=i;case"stylesheet":a=wi(n.href);var r=e.querySelector(ga(a));if(r)return t.state.loading|=4,t.instance=r,Le(r),r;i=Xd(n),(a=ft.get(a))&&Xs(i,a),r=(e.ownerDocument||e).createElement("link"),Le(r);var o=r;return o._p=new Promise(function(s,l){o.onload=s,o.onerror=l}),Oe(r,"link",i),t.state.loading|=4,Dr(r,n.precedence,e),t.instance=r;case"script":return r=Li(n.src),(a=e.querySelector(va(r)))?(t.instance=a,Le(a),a):(i=n,(a=ft.get(r))&&(i=N({},n),Js(i,a)),e=e.ownerDocument||e,a=e.createElement("script"),Le(a),Oe(a,"link",i),e.head.appendChild(a),t.instance=a);case"void":return null;default:throw Error(m(443,t.type))}else t.type==="stylesheet"&&(t.state.loading&4)===0&&(i=t.instance,t.state.loading|=4,Dr(i,n.precedence,e));return t.instance}function Dr(e,t,n){for(var i=n.querySelectorAll('link[rel="stylesheet"][data-precedence],style[data-precedence]'),a=i.length?i[i.length-1]:null,r=a,o=0;o<i.length;o++){var s=i[o];if(s.dataset.precedence===t)r=s;else if(r!==a)break}r?r.parentNode.insertBefore(e,r.nextSibling):(t=n.nodeType===9?n.head:n,t.insertBefore(e,t.firstChild))}function Xs(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.title==null&&(e.title=t.title)}function Js(e,t){e.crossOrigin==null&&(e.crossOrigin=t.crossOrigin),e.referrerPolicy==null&&(e.referrerPolicy=t.referrerPolicy),e.integrity==null&&(e.integrity=t.integrity)}var Ir=null;function $d(e,t,n){if(Ir===null){var i=new Map,a=Ir=new Map;a.set(n,i)}else a=Ir,i=a.get(n),i||(i=new Map,a.set(n,i));if(i.has(e))return i;for(i.set(e,null),n=n.getElementsByTagName(e),a=0;a<n.length;a++){var r=n[a];if(!(r[Oi]||r[We]||e==="link"&&r.getAttribute("rel")==="stylesheet")&&r.namespaceURI!=="http://www.w3.org/2000/svg"){var o=r.getAttribute(t)||"";o=e+o;var s=i.get(o);s?s.push(r):i.set(o,[r])}}return i}function Zd(e,t,n){e=e.ownerDocument||e,e.head.insertBefore(n,t==="title"?e.querySelector("head > title"):null)}function Pg(e,t,n){if(n===1||t.itemProp!=null)return!1;switch(e){case"meta":case"title":return!0;case"style":if(typeof t.precedence!="string"||typeof t.href!="string"||t.href==="")break;return!0;case"link":if(typeof t.rel!="string"||typeof t.href!="string"||t.href===""||t.onLoad||t.onError)break;return t.rel==="stylesheet"?(e=t.disabled,typeof t.precedence=="string"&&e==null):!0;case"script":if(t.async&&typeof t.async!="function"&&typeof t.async!="symbol"&&!t.onLoad&&!t.onError&&t.src&&typeof t.src=="string")return!0}return!1}function ep(e){return!(e.type==="stylesheet"&&(e.state.loading&3)===0)}function Mg(e,t,n,i){if(n.type==="stylesheet"&&(typeof i.media!="string"||matchMedia(i.media).matches!==!1)&&(n.state.loading&4)===0){if(n.instance===null){var a=wi(i.href),r=t.querySelector(ga(a));if(r){t=r._p,t!==null&&typeof t=="object"&&typeof t.then=="function"&&(e.count++,e=Rr.bind(e),t.then(e,e)),n.state.loading|=4,n.instance=r,Le(r);return}r=t.ownerDocument||t,i=Xd(i),(a=ft.get(a))&&Xs(i,a),r=r.createElement("link"),Le(r);var o=r;o._p=new Promise(function(s,l){o.onload=s,o.onerror=l}),Oe(r,"link",i),n.instance=r}e.stylesheets===null&&(e.stylesheets=new Map),e.stylesheets.set(n,t),(t=n.state.preload)&&(n.state.loading&3)===0&&(e.count++,n=Rr.bind(e),t.addEventListener("load",n),t.addEventListener("error",n))}}var $s=0;function Ug(e,t){return e.stylesheets&&e.count===0&&xr(e,e.stylesheets),0<e.count||0<e.imgCount?function(n){var i=setTimeout(function(){if(e.stylesheets&&xr(e,e.stylesheets),e.unsuspend){var r=e.unsuspend;e.unsuspend=null,r()}},6e4+t);0<e.imgBytes&&$s===0&&($s=62500*yg());var a=setTimeout(function(){if(e.waitingForImages=!1,e.count===0&&(e.stylesheets&&xr(e,e.stylesheets),e.unsuspend)){var r=e.unsuspend;e.unsuspend=null,r()}},(e.imgBytes>$s?50:800)+t);return e.unsuspend=n,function(){e.unsuspend=null,clearTimeout(i),clearTimeout(a)}}:null}function Rr(){if(this.count--,this.count===0&&(this.imgCount===0||!this.waitingForImages)){if(this.stylesheets)xr(this,this.stylesheets);else if(this.unsuspend){var e=this.unsuspend;this.unsuspend=null,e()}}}var Or=null;function xr(e,t){e.stylesheets=null,e.unsuspend!==null&&(e.count++,Or=new Map,t.forEach(Gg,e),Or=null,Rr.call(e))}function Gg(e,t){if(!(t.state.loading&4)){var n=Or.get(e);if(n)var i=n.get(null);else{n=new Map,Or.set(e,n);for(var a=e.querySelectorAll("link[data-precedence],style[data-precedence]"),r=0;r<a.length;r++){var o=a[r];(o.nodeName==="LINK"||o.getAttribute("media")!=="not all")&&(n.set(o.dataset.precedence,o),i=o)}i&&n.set(null,i)}a=t.instance,o=a.getAttribute("data-precedence"),r=n.get(o)||i,r===i&&n.set(null,a),n.set(o,a),this.count++,i=Rr.bind(this),a.addEventListener("load",i),a.addEventListener("error",i),r?r.parentNode.insertBefore(a,r.nextSibling):(e=e.nodeType===9?e.head:e,e.insertBefore(a,e.firstChild)),t.state.loading|=4}}var fa={$$typeof:xe,Provider:null,Consumer:null,_currentValue:P,_currentValue2:P,_threadCount:0};function qg(e,t,n,i,a,r,o,s,l){this.tag=1,this.containerInfo=e,this.pingCache=this.current=this.pendingChildren=null,this.timeoutHandle=-1,this.callbackNode=this.next=this.pendingContext=this.context=this.cancelPendingCommit=null,this.callbackPriority=0,this.expirationTimes=Vr(-1),this.entangledLanes=this.shellSuspendCounter=this.errorRecoveryDisabledLanes=this.expiredLanes=this.warmLanes=this.pingedLanes=this.suspendedLanes=this.pendingLanes=0,this.entanglements=Vr(0),this.hiddenUpdates=Vr(null),this.identifierPrefix=i,this.onUncaughtError=a,this.onCaughtError=r,this.onRecoverableError=o,this.pooledCache=null,this.pooledCacheLanes=0,this.formState=l,this.incompleteTransitions=new Map}function tp(e,t,n,i,a,r,o,s,l,g,y,C){return e=new qg(e,t,n,o,l,g,y,C,s),t=1,r===!0&&(t|=24),r=et(3,null,null,t),e.current=r,r.stateNode=e,t=Oo(),t.refCount++,e.pooledCache=t,t.refCount++,r.memoizedState={element:i,isDehydrated:n,cache:t},Po(r),e}function np(e){return e?(e=ni,e):ni}function ip(e,t,n,i,a,r){a=np(a),i.context===null?i.context=a:i.pendingContext=a,i=rn(t),i.payload={element:n},r=r===void 0?null:r,r!==null&&(i.callback=r),n=on(e,i,t),n!==null&&(Qe(n,e,t),Yi(n,e,t))}function ap(e,t){if(e=e.memoizedState,e!==null&&e.dehydrated!==null){var n=e.retryLane;e.retryLane=n!==0&&n<t?n:t}}function Zs(e,t){ap(e,t),(e=e.alternate)&&ap(e,t)}function rp(e){if(e.tag===13||e.tag===31){var t=In(e,67108864);t!==null&&Qe(t,e,67108864),Zs(e,67108864)}}function op(e){if(e.tag===13||e.tag===31){var t=rt();t=Qr(t);var n=In(e,t);n!==null&&Qe(n,e,t),Zs(e,t)}}var kr=!0;function Bg(e,t,n,i){var a=h.T;h.T=null;var r=L.p;try{L.p=2,el(e,t,n,i)}finally{L.p=r,h.T=a}}function Hg(e,t,n,i){var a=h.T;h.T=null;var r=L.p;try{L.p=8,el(e,t,n,i)}finally{L.p=r,h.T=a}}function el(e,t,n,i){if(kr){var a=tl(i);if(a===null)Bs(e,t,i,Nr,n),lp(e,i);else if(jg(a,e,t,n,i))i.stopPropagation();else if(lp(e,i),t&4&&-1<zg.indexOf(e)){for(;a!==null;){var r=Fn(a);if(r!==null)switch(r.tag){case 3:if(r=r.stateNode,r.current.memoizedState.isDehydrated){var o=wn(r.pendingLanes);if(o!==0){var s=r;for(s.pendingLanes|=2,s.entangledLanes|=2;o;){var l=1<<31-$e(o);s.entanglements[1]|=l,o&=~l}Wt(r),(Z&6)===0&&(fr=Xe()+500,ua(0))}}break;case 31:case 13:s=In(r,2),s!==null&&Qe(s,r,2),hr(),Zs(r,2)}if(r=tl(i),r===null&&Bs(e,t,i,Nr,n),r===a)break;a=r}a!==null&&i.stopPropagation()}else Bs(e,t,i,null,n)}}function tl(e){return e=no(e),nl(e)}var Nr=null;function nl(e){if(Nr=null,e=_n(e),e!==null){var t=M(e);if(t===null)e=null;else{var n=t.tag;if(n===13){if(e=X(t),e!==null)return e;e=null}else if(n===31){if(e=ue(t),e!==null)return e;e=null}else if(n===3){if(t.stateNode.current.memoizedState.isDehydrated)return t.tag===3?t.stateNode.containerInfo:null;e=null}else t!==e&&(e=null)}}return Nr=e,null}function sp(e){switch(e){case"beforetoggle":case"cancel":case"click":case"close":case"contextmenu":case"copy":case"cut":case"auxclick":case"dblclick":case"dragend":case"dragstart":case"drop":case"focusin":case"focusout":case"input":case"invalid":case"keydown":case"keypress":case"keyup":case"mousedown":case"mouseup":case"paste":case"pause":case"play":case"pointercancel":case"pointerdown":case"pointerup":case"ratechange":case"reset":case"resize":case"seeked":case"submit":case"toggle":case"touchcancel":case"touchend":case"touchstart":case"volumechange":case"change":case"selectionchange":case"textInput":case"compositionstart":case"compositionend":case"compositionupdate":case"beforeblur":case"afterblur":case"beforeinput":case"blur":case"fullscreenchange":case"focus":case"hashchange":case"popstate":case"select":case"selectstart":return 2;case"drag":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"mousemove":case"mouseout":case"mouseover":case"pointermove":case"pointerout":case"pointerover":case"scroll":case"touchmove":case"wheel":case"mouseenter":case"mouseleave":case"pointerenter":case"pointerleave":return 8;case"message":switch(Wp()){case vl:return 2;case fl:return 8;case Ta:case Dp:return 32;case yl:return 268435456;default:return 32}default:return 32}}var il=!1,yn=null,hn=null,bn=null,ya=new Map,ha=new Map,Cn=[],zg="mousedown mouseup touchcancel touchend touchstart auxclick dblclick pointercancel pointerdown pointerup dragend dragstart drop compositionend compositionstart keydown keypress keyup input textInput copy cut paste click change contextmenu reset".split(" ");function lp(e,t){switch(e){case"focusin":case"focusout":yn=null;break;case"dragenter":case"dragleave":hn=null;break;case"mouseover":case"mouseout":bn=null;break;case"pointerover":case"pointerout":ya.delete(t.pointerId);break;case"gotpointercapture":case"lostpointercapture":ha.delete(t.pointerId)}}function ba(e,t,n,i,a,r){return e===null||e.nativeEvent!==r?(e={blockedOn:t,domEventName:n,eventSystemFlags:i,nativeEvent:r,targetContainers:[a]},t!==null&&(t=Fn(t),t!==null&&rp(t)),e):(e.eventSystemFlags|=i,t=e.targetContainers,a!==null&&t.indexOf(a)===-1&&t.push(a),e)}function jg(e,t,n,i,a){switch(t){case"focusin":return yn=ba(yn,e,t,n,i,a),!0;case"dragenter":return hn=ba(hn,e,t,n,i,a),!0;case"mouseover":return bn=ba(bn,e,t,n,i,a),!0;case"pointerover":var r=a.pointerId;return ya.set(r,ba(ya.get(r)||null,e,t,n,i,a)),!0;case"gotpointercapture":return r=a.pointerId,ha.set(r,ba(ha.get(r)||null,e,t,n,i,a)),!0}return!1}function cp(e){var t=_n(e.target);if(t!==null){var n=M(t);if(n!==null){if(t=n.tag,t===13){if(t=X(n),t!==null){e.blockedOn=t,Tl(e.priority,function(){op(n)});return}}else if(t===31){if(t=ue(n),t!==null){e.blockedOn=t,Tl(e.priority,function(){op(n)});return}}else if(t===3&&n.stateNode.current.memoizedState.isDehydrated){e.blockedOn=n.tag===3?n.stateNode.containerInfo:null;return}}}e.blockedOn=null}function Pr(e){if(e.blockedOn!==null)return!1;for(var t=e.targetContainers;0<t.length;){var n=tl(e.nativeEvent);if(n===null){n=e.nativeEvent;var i=new n.constructor(n.type,n);to=i,n.target.dispatchEvent(i),to=null}else return t=Fn(n),t!==null&&rp(t),e.blockedOn=n,!1;t.shift()}return!0}function up(e,t,n){Pr(e)&&n.delete(t)}function _g(){il=!1,yn!==null&&Pr(yn)&&(yn=null),hn!==null&&Pr(hn)&&(hn=null),bn!==null&&Pr(bn)&&(bn=null),ya.forEach(up),ha.forEach(up)}function Mr(e,t){e.blockedOn===t&&(e.blockedOn=null,il||(il=!0,w.unstable_scheduleCallback(w.unstable_NormalPriority,_g)))}var Ur=null;function dp(e){Ur!==e&&(Ur=e,w.unstable_scheduleCallback(w.unstable_NormalPriority,function(){Ur===e&&(Ur=null);for(var t=0;t<e.length;t+=3){var n=e[t],i=e[t+1],a=e[t+2];if(typeof i!="function"){if(nl(i||n)===null)continue;break}var r=Fn(n);r!==null&&(e.splice(t,3),t-=3,ts(r,{pending:!0,data:a,method:n.method,action:i},i,a))}}))}function Ei(e){function t(l){return Mr(l,e)}yn!==null&&Mr(yn,e),hn!==null&&Mr(hn,e),bn!==null&&Mr(bn,e),ya.forEach(t),ha.forEach(t);for(var n=0;n<Cn.length;n++){var i=Cn[n];i.blockedOn===e&&(i.blockedOn=null)}for(;0<Cn.length&&(n=Cn[0],n.blockedOn===null);)cp(n),n.blockedOn===null&&Cn.shift();if(n=(e.ownerDocument||e).$$reactFormReplay,n!=null)for(i=0;i<n.length;i+=3){var a=n[i],r=n[i+1],o=a[He]||null;if(typeof r=="function")o||dp(n);else if(o){var s=null;if(r&&r.hasAttribute("formAction")){if(a=r,o=r[He]||null)s=o.formAction;else if(nl(a)!==null)continue}else s=o.action;typeof s=="function"?n[i+1]=s:(n.splice(i,3),i-=3),dp(n)}}}function pp(){function e(r){r.canIntercept&&r.info==="react-transition"&&r.intercept({handler:function(){return new Promise(function(o){return a=o})},focusReset:"manual",scroll:"manual"})}function t(){a!==null&&(a(),a=null),i||setTimeout(n,20)}function n(){if(!i&&!navigation.transition){var r=navigation.currentEntry;r&&r.url!=null&&navigation.navigate(r.url,{state:r.getState(),info:"react-transition",history:"replace"})}}if(typeof navigation=="object"){var i=!1,a=null;return navigation.addEventListener("navigate",e),navigation.addEventListener("navigatesuccess",t),navigation.addEventListener("navigateerror",t),setTimeout(n,100),function(){i=!0,navigation.removeEventListener("navigate",e),navigation.removeEventListener("navigatesuccess",t),navigation.removeEventListener("navigateerror",t),a!==null&&(a(),a=null)}}}function al(e){this._internalRoot=e}Gr.prototype.render=al.prototype.render=function(e){var t=this._internalRoot;if(t===null)throw Error(m(409));var n=t.current,i=rt();ip(n,i,e,t,null,null)},Gr.prototype.unmount=al.prototype.unmount=function(){var e=this._internalRoot;if(e!==null){this._internalRoot=null;var t=e.containerInfo;ip(e.current,2,null,e,null,null),hr(),t[jn]=null}};function Gr(e){this._internalRoot=e}Gr.prototype.unstable_scheduleHydration=function(e){if(e){var t=Al();e={blockedOn:null,target:e,priority:t};for(var n=0;n<Cn.length&&t!==0&&t<Cn[n].priority;n++);Cn.splice(n,0,e),n===0&&cp(e)}};var mp=F.version;if(mp!=="19.2.4")throw Error(m(527,mp,"19.2.4"));L.findDOMNode=function(e){var t=e._reactInternals;if(t===void 0)throw typeof e.render=="function"?Error(m(188)):(e=Object.keys(e).join(","),Error(m(268,e)));return e=T(t),e=e!==null?ee(e):null,e=e===null?null:e.stateNode,e};var Fg={bundleType:0,version:"19.2.4",rendererPackageName:"react-dom",currentDispatcherRef:h,reconcilerVersion:"19.2.4"};if(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__<"u"){var qr=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(!qr.isDisabled&&qr.supportsFiber)try{Di=qr.inject(Fg),Je=qr}catch{}}return Sa.createRoot=function(e,t){if(!x(e))throw Error(m(299));var n=!1,i="",a=Cu,r=Su,o=Au;return t!=null&&(t.unstable_strictMode===!0&&(n=!0),t.identifierPrefix!==void 0&&(i=t.identifierPrefix),t.onUncaughtError!==void 0&&(a=t.onUncaughtError),t.onCaughtError!==void 0&&(r=t.onCaughtError),t.onRecoverableError!==void 0&&(o=t.onRecoverableError)),t=tp(e,1,!1,null,null,n,i,null,a,r,o,pp),e[jn]=t.current,qs(e),new al(t)},Sa.hydrateRoot=function(e,t,n){if(!x(e))throw Error(m(299));var i=!1,a="",r=Cu,o=Su,s=Au,l=null;return n!=null&&(n.unstable_strictMode===!0&&(i=!0),n.identifierPrefix!==void 0&&(a=n.identifierPrefix),n.onUncaughtError!==void 0&&(r=n.onUncaughtError),n.onCaughtError!==void 0&&(o=n.onCaughtError),n.onRecoverableError!==void 0&&(s=n.onRecoverableError),n.formState!==void 0&&(l=n.formState)),t=tp(e,1,!0,t,n??null,i,a,l,r,o,s,pp),t.context=np(null),n=t.current,i=rt(),i=Qr(i),a=rn(i),a.callback=null,on(n,a,i),n=i,t.current.lanes=n,Ri(t,n),Wt(t),e[jn]=t.current,qs(e),new Gr(t)},Sa.version="19.2.4",Sa}var Tp;function tv(){if(Tp)return sl.exports;Tp=1;function w(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>"u"||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!="function"))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(w)}catch(F){console.error(F)}}return w(),sl.exports=ev(),sl.exports}var nv=tv();function iv({subjects:w,selectedSubject:F,selectedTopic:U,onSubjectSelect:m,onTopicSelect:x,isOpen:M,onToggle:X}){const ue=w.find(E=>E.id===F);return S.jsx(S.Fragment,{children:S.jsxs("nav",{className:`flex flex-col h-screen bg-white shadow-2xl flex-shrink-0 border-r-2 border-indigo-100 transition-all duration-300 ease-in-out ${M?"w-80":"w-24"}`,children:[S.jsx("div",{className:"px-6 py-8 border-b-2 border-indigo-100 bg-gradient-to-r from-indigo-600 to-purple-600 text-white flex-shrink-0",children:S.jsxs("div",{className:"flex items-center justify-between",children:[M&&S.jsxs("div",{children:[S.jsx("h1",{className:"text-4xl font-bold tracking-tight",children:"📚"}),S.jsx("p",{className:"text-base font-semibold mt-3 opacity-90",children:"Interview Prep Guide"})]}),!M&&S.jsx("h1",{className:"text-3xl font-bold",children:"📚"}),S.jsx("button",{onClick:X,className:"p-2 hover:bg-white/20 rounded-lg transition-colors",title:M?"Collapse":"Expand",children:M?S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M15.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L10 12.586l3.293-3.293a1 1 0 011.414 0z"})}):S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M4.293 10.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L10 7.414l-3.293 3.293a1 1 0 01-1.414 0z"})})})]})}),S.jsxs("div",{className:"flex flex-1 overflow-hidden gap-0",children:[S.jsxs("div",{className:"flex-1 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white",children:[S.jsxs("div",{className:"px-5 py-4 text-xs font-bold uppercase tracking-widest text-indigo-600 bg-white border-b border-gray-200 sticky top-0",children:[M&&"Subjects",!M&&"📋"]}),S.jsx("ul",{className:"space-y-3 p-4",children:w.map(E=>S.jsx("li",{children:S.jsx("button",{className:`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${F===E.id?"bg-indigo-600 text-white shadow-lg scale-105":"text-gray-700 hover:bg-indigo-100 hover:text-indigo-700"}`,onClick:()=>m(E.id),title:E.name,children:M?E.name:E.name.charAt(0).toUpperCase()})},E.id))})]}),ue&&M&&S.jsxs("div",{className:"w-40 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white",children:[S.jsx("div",{className:"px-5 py-4 text-xs font-bold uppercase tracking-widest text-purple-600 bg-white border-b border-gray-200 sticky top-0",children:"Topics"}),S.jsx("ul",{className:"space-y-3 p-4",children:ue.topics.map(E=>S.jsx("li",{children:S.jsxs("button",{className:`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 flex items-center justify-between ${U===E.id?"bg-purple-600 text-white shadow-lg scale-105":"text-gray-700 hover:bg-purple-100 hover:text-purple-700"}`,onClick:()=>x(E.id),children:[S.jsx("span",{children:E.name}),S.jsx("span",{className:`text-xs font-bold px-3 py-1 rounded-full ml-2 ${U===E.id?"bg-white/30 text-white":"bg-indigo-100 text-indigo-700"}`,children:E.questions.length})]})},E.id))})]})]})]})})}function av({snippet:w}){const[F,U]=Yt.useState(!1),m=()=>{navigator.clipboard.writeText(w.code),U(!0),setTimeout(()=>U(!1),2e3)};return S.jsxs("div",{className:"bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-2xl overflow-hidden hover:shadow-lg transition-all",children:[S.jsxs("div",{className:"flex justify-between items-center px-5 py-4 bg-gradient-to-r from-gray-800 to-gray-900 border-b-2 border-gray-700",children:[S.jsxs("div",{className:"flex items-center gap-2",children:[S.jsx("div",{className:"w-3 h-3 bg-red-500 rounded-full"}),S.jsx("div",{className:"w-3 h-3 bg-yellow-500 rounded-full"}),S.jsx("div",{className:"w-3 h-3 bg-green-500 rounded-full"}),S.jsx("span",{className:"ml-3 text-indigo-400 text-xs font-bold uppercase tracking-widest",children:w.language})]}),S.jsx("button",{onClick:m,className:`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${F?"bg-green-600 text-white":"bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:scale-105"}`,title:"Copy code",children:F?S.jsxs(S.Fragment,{children:[S.jsx("svg",{className:"w-4 h-4",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"})}),"Copied!"]}):S.jsxs(S.Fragment,{children:[S.jsx("svg",{className:"w-4 h-4",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:S.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"})}),"Copy"]})})]}),S.jsx("pre",{className:"p-5 text-gray-300 text-sm overflow-x-auto font-mono leading-relaxed bg-gray-900",children:S.jsx("code",{className:"text-gray-100",children:w.code})})]})}function rv({diagram:w}){return S.jsxs("div",{className:"bg-white border border-gray-200 rounded-lg overflow-hidden my-4",children:[S.jsx("div",{className:"px-4 py-3 bg-gray-100 border-b border-gray-200",children:S.jsx("h4",{className:"text-sm font-semibold text-purple-600 uppercase tracking-wide",children:w.title})}),S.jsx("div",{className:"p-6 bg-gray-50 flex justify-center",children:S.jsx("img",{src:w.imageUrl,alt:w.title,className:"max-w-full h-auto rounded-lg max-h-96 object-contain"})}),w.description&&S.jsx("div",{className:"px-4 py-3 bg-white border-t border-gray-200",children:S.jsx("p",{className:"text-sm text-gray-700 leading-relaxed",children:w.description})})]})}function ov({question:w}){const[F,U]=Yt.useState(!1);return S.jsxs("div",{className:"bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all duration-300",children:[S.jsxs("div",{className:"flex items-center justify-between gap-4 cursor-pointer px-6 py-4",onClick:()=>U(!F),children:[S.jsx("p",{className:"text-lg font-bold text-gray-900 leading-relaxed flex-1",children:w.question}),S.jsx("div",{className:"flex-shrink-0 text-gray-400 hover:text-indigo-600 transition-colors",children:F?S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"})}):S.jsx("svg",{className:"w-6 h-6",fill:"currentColor",viewBox:"0 0 20 20",children:S.jsx("path",{d:"M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"})})})]}),F&&S.jsxs("div",{className:"mt-8 pt-8 px-6 pb-6 border-t-2 border-gray-100 space-y-6 animate-in fade-in duration-300",children:[S.jsxs("div",{children:[S.jsx("h3",{className:"inline-block px-3 py-1 bg-green-100 rounded-full text-xs font-bold text-green-700 mb-3",children:"ANSWER"}),S.jsx("p",{className:"text-gray-800 leading-relaxed text-base",children:w.answer})]}),w.diagrams&&w.diagrams.length>0&&S.jsxs("div",{className:"space-y-4 pt-4 border-t border-gray-100",children:[S.jsxs("h4",{className:"font-bold text-gray-900 text-sm uppercase tracking-wide flex items-center gap-2",children:[S.jsx("div",{className:"w-2 h-2 bg-purple-600 rounded-full"}),"Diagrams"]}),S.jsx("div",{className:"space-y-4",children:w.diagrams.map((m,x)=>S.jsx(rv,{diagram:m},x))})]}),w.codeSnippets&&w.codeSnippets.length>0&&S.jsxs("div",{className:"space-y-4 pt-4 border-t border-gray-100",children:[S.jsxs("h4",{className:"font-bold text-gray-900 text-sm uppercase tracking-wide flex items-center gap-2",children:[S.jsx("div",{className:"w-2 h-2 bg-indigo-600 rounded-full"}),"Code Examples"]}),S.jsx("div",{className:"space-y-3",children:w.codeSnippets.map((m,x)=>S.jsx(av,{snippet:m},x))})]})]})]})}function sv({subjects:w,selectedSubject:F,selectedTopic:U}){const m=w.find(X=>X.id===F),x=m?.topics.find(X=>X.id===U),M=Yt.useRef(null);return Yt.useEffect(()=>{M.current?.scrollTo(0,0)},[U]),F?U?x?S.jsx("div",{ref:M,className:"content-area flex-1 overflow-y-auto bg-gradient-to-br from-gray-50 to-gray-100 p-12 md:p-16",children:S.jsxs("div",{className:"max-w-5xl mx-auto",children:[S.jsxs("nav",{className:"flex items-center gap-3 mb-8 text-sm",children:[S.jsx("span",{className:"px-4 py-2 bg-white rounded-full font-semibold text-indigo-600 shadow-sm border-2 border-indigo-100",children:m?.name}),S.jsx("svg",{className:"w-5 h-5 text-gray-400",fill:"none",stroke:"currentColor",viewBox:"0 0 24 24",children:S.jsx("path",{strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:2,d:"M9 5l7 7-7 7"})}),S.jsx("span",{className:"px-4 py-2 bg-white rounded-full font-semibold text-purple-600 shadow-sm border-2 border-purple-100",children:x.name})]}),S.jsxs("div",{className:"mb-10 space-y-4",children:[S.jsx("h1",{className:"text-5xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent",children:x.name}),S.jsx("div",{className:"flex items-center gap-4",children:S.jsxs("div",{className:"flex items-center gap-2",children:[S.jsx("div",{className:"w-8 h-8 bg-indigo-600 rounded-full text-white flex items-center justify-center font-bold text-sm",children:x.questions.length}),S.jsxs("span",{className:"text-gray-700 font-semibold",children:["question",x.questions.length!==1?"s":""]})]})})]}),S.jsxs("div",{className:"mb-10 space-y-2",children:[S.jsx("div",{className:"h-2 bg-gray-200 rounded-full overflow-hidden shadow-inner",children:S.jsx("div",{className:"h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500",style:{width:`${Math.min(x.questions.length/15*100,100)}%`}})}),S.jsx("p",{className:"text-sm text-gray-500",children:"Learning path progress"})]}),S.jsx("div",{className:"grid gap-8",children:x.questions.map((X,ue)=>S.jsx("div",{className:"transform transition-all duration-300 hover:scale-[1.01]",children:S.jsxs("div",{className:"flex gap-4",children:[S.jsx("div",{className:"flex-shrink-0",children:S.jsx("div",{className:"w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold shadow-lg",children:ue+1})}),S.jsx("div",{className:"flex-1",children:S.jsx(ov,{question:X})})]})},X.id))})]})}):S.jsx("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:S.jsx("h2",{className:"text-3xl font-bold text-gray-800",children:"Topic Not Found"})}):S.jsxs("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:[S.jsx("div",{className:"text-6xl mb-4",children:"👉"}),S.jsx("h2",{className:"text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3",children:"Select a Topic"}),S.jsx("p",{className:"text-gray-600 text-lg",children:"Choose a topic to view questions and answers."})]}):S.jsxs("div",{className:"content-area flex flex-col items-center justify-center flex-1 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto",children:[S.jsx("div",{className:"text-6xl mb-4",children:"📚"}),S.jsx("h2",{className:"text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3",children:"Welcome to Interview Prep"}),S.jsx("p",{className:"text-gray-600 text-lg",children:"Choose a subject from the sidebar to get started."})]})}const lv={id:"js-basics",name:"Basics",questions:[{id:"q1",question:"What are the different data types in JavaScript?",answer:"JavaScript has 8 data types: Number, String, Boolean, Null, Undefined, Symbol, BigInt, and Object. Primitive types are immutable, while objects are mutable reference types.",codeSnippets:[{language:"javascript",code:`// Primitive types
 const num = 42;
 const str = "Hello";
 const bool = true;
@@ -84,7 +84,7 @@ typeof result === 'number' && isNaN(result);
 const num = 0 / 0;
 if (Number.isNaN(num)) {
   console.log("Invalid calculation");
-}`}]}]},ug={id:"js-async",name:"Asynchronous Programming",questions:[{id:"q6",question:"What is a Promise in JavaScript?",answer:"A Promise is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. It has three states: pending, fulfilled, or rejected.",codeSnippets:[{language:"javascript",code:`const promise = new Promise((resolve, reject) => {
+}`}]}]},cv={id:"js-async",name:"Asynchronous Programming",questions:[{id:"q6",question:"What is a Promise in JavaScript?",answer:"A Promise is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. It has three states: pending, fulfilled, or rejected.",codeSnippets:[{language:"javascript",code:`const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     const success = Math.random() > 0.5;
     if (success) {
@@ -195,7 +195,7 @@ async function displayPosts(id) {
   } catch (err) {
     console.error(err);
   }
-}`}]}]},dg={id:"js-closures",name:"Closures & Scope",questions:[{id:"q23",question:"What is a closure in JavaScript?",answer:"A closure is a function that has access to variables in its outer scope even after the outer function has returned. Functions form closures around the data they need.",codeSnippets:[{language:"javascript",code:`// Simple closure
+}`}]}]},uv={id:"js-closures",name:"Closures & Scope",questions:[{id:"q23",question:"What is a closure in JavaScript?",answer:"A closure is a function that has access to variables in its outer scope even after the outer function has returned. Functions form closures around the data they need.",codeSnippets:[{language:"javascript",code:`// Simple closure
 function outer() {
   const message = 'Hello'; // Variable in outer scope
 
@@ -283,7 +283,7 @@ function outer() {
 }
 
 // Scope chain - JavaScript looks up the scope chain
-// inner -> middle -> outer -> global`}]}]},pg={id:"js-this",name:"'this' Binding & Objects",questions:[{id:"q25",question:"What is 'this' in JavaScript and how is it determined?",answer:"'this' is a keyword that refers to the object context. Its value is determined by HOW a function is called: as method (object), function, constructor, or with call/apply/bind.",codeSnippets:[{language:"javascript",code:`// 1. Method call - 'this' is the object
+// inner -> middle -> outer -> global`}]}]},dv={id:"js-this",name:"'this' Binding & Objects",questions:[{id:"q25",question:"What is 'this' in JavaScript and how is it determined?",answer:"'this' is a keyword that refers to the object context. Its value is determined by HOW a function is called: as method (object), function, constructor, or with call/apply/bind.",codeSnippets:[{language:"javascript",code:`// 1. Method call - 'this' is the object
 const obj = {
   name: 'Alice',
   greet() {
@@ -354,7 +354,7 @@ Array.prototype.join.call(arrayLike, '-');
 // 'a-b-c'
 
 // Borrow Array.prototype.forEach
-Array.prototype.forEach.call(arrayLike, item => console.log(item));`}]}]},mg={id:"js-prototypes",name:"Prototypes & Inheritance",questions:[{id:"q27",question:"What are prototypes in JavaScript?",answer:"Prototypes are objects that other objects can inherit properties and methods from. Every object has a prototype ([[Prototype]]). Objects delegate to their prototype when a property is not found.",codeSnippets:[{language:"javascript",code:`// Prototype chain
+Array.prototype.forEach.call(arrayLike, item => console.log(item));`}]}]},pv={id:"js-prototypes",name:"Prototypes & Inheritance",questions:[{id:"q27",question:"What are prototypes in JavaScript?",answer:"Prototypes are objects that other objects can inherit properties and methods from. Every object has a prototype ([[Prototype]]). Objects delegate to their prototype when a property is not found.",codeSnippets:[{language:"javascript",code:`// Prototype chain
 const person = {
   greet() {
     console.log('Hello');
@@ -439,7 +439,7 @@ const dog = new Dog('Rex', 'Labrador');
 dog.speak(); // 'Rex speaks'
 dog.bark();  // 'Rex barks'
 
-// Both are equivalent - classes are syntactic sugar over prototypes`}]}]},fg={id:"javascript",name:"JavaScript",topics:[cg,ug,dg,pg,mg]},gg={id:"react-basics",name:"Basics",questions:[{id:"q11",question:"What are React hooks?",answer:"Hooks are functions that let you use state and other React features in functional components. Common hooks are useState, useEffect, useContext, and useReducer.",codeSnippets:[{language:"jsx",code:`import { useState, useEffect } from 'react';
+// Both are equivalent - classes are syntactic sugar over prototypes`}]}]},mv={id:"javascript",name:"JavaScript",topics:[lv,cv,uv,dv,pv]},gv={id:"react-basics",name:"Basics",questions:[{id:"q11",question:"What are React hooks?",answer:"Hooks are functions that let you use state and other React features in functional components. Common hooks are useState, useEffect, useContext, and useReducer.",codeSnippets:[{language:"jsx",code:`import { useState, useEffect } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -564,7 +564,7 @@ function MyComponent() {
       // componentWillUnmount
     };
   }, []);
-}`}]}]},yg={id:"react-hooks",name:"Hooks Deep Dive",questions:[{id:"q16",question:"What is the useState hook and how does it work?",answer:"useState is a React hook that lets you add state to functional components. It returns an array with the current state value and a function to update it.",codeSnippets:[{language:"jsx",code:`import { useState } from 'react';
+}`}]}]},vv={id:"react-hooks",name:"Hooks Deep Dive",questions:[{id:"q16",question:"What is the useState hook and how does it work?",answer:"useState is a React hook that lets you add state to functional components. It returns an array with the current state value and a function to update it.",codeSnippets:[{language:"jsx",code:`import { useState } from 'react';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -760,7 +760,7 @@ function useForm(initialValues, onSubmit) {
   };
 
   return { values, handleChange, handleSubmit };
-}`}]}]},vg={id:"react-performance",name:"Performance Optimization",questions:[{id:"q21",question:"What is React.memo and when should you use it?",answer:"React.memo is a higher-order component that memoizes a component. It prevents re-renders if props haven't changed. Use it for expensive components that receive same props frequently.",codeSnippets:[{language:"jsx",code:`// Without memo - re-renders even if props are same
+}`}]}]},fv={id:"react-performance",name:"Performance Optimization",questions:[{id:"q21",question:"What is React.memo and when should you use it?",answer:"React.memo is a higher-order component that memoizes a component. It prevents re-renders if props haven't changed. Use it for expensive components that receive same props frequently.",codeSnippets:[{language:"jsx",code:`// Without memo - re-renders even if props are same
 function Button({ label, onClick }) {
   console.log('Button rendered');
   return <button onClick={onClick}>{label}</button>;
@@ -828,7 +828,7 @@ function ExpensiveComponent({ items }) {
 
 // When to use:
 // useMemo - expensive calculations, array/object that affects child renders
-// useCallback - function passed to memoized child components`}]}]},hg={id:"react-unit-testing",name:"Unit Testing",questions:[{id:"q31",question:"What is React Testing Library and how does it differ from Enzyme?",answer:"React Testing Library is a modern testing utility that encourages testing components from a user's perspective. It queries the DOM using user-facing selectors (text, roles, labels). Enzyme tests component internals (state, props) and implementation details. React Testing Library is now the recommended approach as it prevents testing implementation details and ensures your tests resemble actual user interactions.",codeSnippets:[{language:"javascript",code:`// React Testing Library - User-centric approach
+// useCallback - function passed to memoized child components`}]}]},yv={id:"react-unit-testing",name:"Unit Testing",questions:[{id:"q31",question:"What is React Testing Library and how does it differ from Enzyme?",answer:"React Testing Library is a modern testing utility that encourages testing components from a user's perspective. It queries the DOM using user-facing selectors (text, roles, labels). Enzyme tests component internals (state, props) and implementation details. React Testing Library is now the recommended approach as it prevents testing implementation details and ensures your tests resemble actual user interactions.",codeSnippets:[{language:"javascript",code:`// React Testing Library - User-centric approach
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -1015,7 +1015,7 @@ test('query method examples', () => {
   // findByText - returns promise, waits for element
   const result = await screen.findByText('Success!');
   expect(result).toBeInTheDocument();
-});`}]}]},bg={id:"react",name:"React",topics:[gg,yg,vg,hg]},Cg={id:"csharp-creational",name:"Creational Patterns",questions:[{id:"q1",question:"What is the Singleton pattern and how do you implement it in C#?",answer:"The Singleton pattern ensures a class has only one instance and provides a global point of access to it. It's useful for centralized management of resources like database connections, logging, or configuration. There are multiple implementation approaches with different thread-safety guarantees.",codeSnippets:[{language:"csharp",code:`// Eager initialization - Thread-safe
+});`}]}]},hv={id:"react",name:"React",topics:[gv,vv,fv,yv]},bv={id:"csharp-creational",name:"Creational Patterns",questions:[{id:"q1",question:"What is the Singleton pattern and how do you implement it in C#?",answer:"The Singleton pattern ensures a class has only one instance and provides a global point of access to it. It's useful for centralized management of resources like database connections, logging, or configuration. There are multiple implementation approaches with different thread-safety guarantees.",codeSnippets:[{language:"csharp",code:`// Eager initialization - Thread-safe
 public class Singleton
 {
     private static readonly Singleton _instance = new Singleton();
@@ -1236,7 +1236,7 @@ clonedUser.Name = "Jane";
 clonedUser.Roles.Add("Manager");
 
 Console.WriteLine($"Original: {originalUser.Name}, Roles: {string.Join(", ", originalUser.Roles)}");
-Console.WriteLine($"Cloned: {clonedUser.Name}, Roles: {string.Join(", ", clonedUser.Roles)}");`}]}]},Sg={id:"csharp-structural",name:"Structural Patterns",questions:[{id:"q6",question:"What is the Adapter pattern and provide a C# example.",answer:"The Adapter pattern converts the interface of a class into another interface clients expect. It lets classes work together that couldn't otherwise because of incompatible interfaces. It's useful for integrating legacy code or third-party libraries.",codeSnippets:[{language:"csharp",code:`// Existing interface (third-party)
+Console.WriteLine($"Cloned: {clonedUser.Name}, Roles: {string.Join(", ", clonedUser.Roles)}");`}]}]},Cv={id:"csharp-structural",name:"Structural Patterns",questions:[{id:"q6",question:"What is the Adapter pattern and provide a C# example.",answer:"The Adapter pattern converts the interface of a class into another interface clients expect. It lets classes work together that couldn't otherwise because of incompatible interfaces. It's useful for integrating legacy code or third-party libraries.",codeSnippets:[{language:"csharp",code:`// Existing interface (third-party)
 public interface ILegacySystem
 {
     string GetData();
@@ -1461,7 +1461,7 @@ Circle vectorCircle = new Circle(10, 20, 5, new VectorRenderer());
 Circle rasterCircle = new Circle(10, 20, 5, new RasterRenderer());
 
 vectorCircle.Draw(); // Vector rendering circle...
-rasterCircle.Draw(); // Raster rendering circle...`}]}]},wg={id:"csharp-behavioral",name:"Behavioral Patterns",questions:[{id:"q11",question:"What is the Observer pattern and how do you implement it in C#?",answer:"The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified automatically. In C#, you can use delegates, events, or implement IObserver/IObservable.",codeSnippets:[{language:"csharp",code:`// Using Events and Delegates
+rasterCircle.Draw(); // Raster rendering circle...`}]}]},Sv={id:"csharp-behavioral",name:"Behavioral Patterns",questions:[{id:"q11",question:"What is the Observer pattern and how do you implement it in C#?",answer:"The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified automatically. In C#, you can use delegates, events, or implement IObserver/IObservable.",codeSnippets:[{language:"csharp",code:`// Using Events and Delegates
 public class StockPrice
 {
     private decimal _price;
@@ -1761,7 +1761,7 @@ director.SetNext(ceo);
 
 manager.Handle(new ExpenseRequest { Amount = 500 });   // Manager approves
 manager.Handle(new ExpenseRequest { Amount = 3000 });  // Director approves
-manager.Handle(new ExpenseRequest { Amount = 50000 }); // CEO approves`}]}]},Ag={id:"csharp",name:"C# Design Patterns",topics:[Cg,Sg,wg]},Lg={id:"microservices-communication",name:"Service Communication",questions:[{id:"q1",question:"What is the API Gateway pattern and why is it important in microservices?",answer:"The API Gateway pattern provides a single entry point for all client requests to a microservices architecture. It handles request routing, protocol translation, authentication, rate limiting, and response aggregation. It simplifies client code and provides a facade over complex microservices.",codeSnippets:[{language:"csharp",code:`// API Gateway using middleware
+manager.Handle(new ExpenseRequest { Amount = 50000 }); // CEO approves`}]}]},Av={id:"csharp",name:"C# Design Patterns",topics:[bv,Cv,Sv]},Tv={id:"microservices-communication",name:"Service Communication",questions:[{id:"q1",question:"What is the API Gateway pattern and why is it important in microservices?",answer:"The API Gateway pattern provides a single entry point for all client requests to a microservices architecture. It handles request routing, protocol translation, authentication, rate limiting, and response aggregation. It simplifies client code and provides a facade over complex microservices.",codeSnippets:[{language:"csharp",code:`// API Gateway using middleware
 public class ApiGateway
 {
     private readonly IServiceProvider _serviceProvider;
@@ -2193,7 +2193,7 @@ public class RabbitMQMessageQueue : IMessageQueue
             channel.BasicConsume(queue: queueName, autoAck: false, consumer: consumer);
         }
     }
-}`}]}]},Tg={id:"microservices-resilience",name:"Resilience Patterns",questions:[{id:"q1",question:"What is the Circuit Breaker pattern and how does it prevent cascading failures?",answer:"The Circuit Breaker pattern monitors for failures and temporarily stops requests to a failing service. It has three states: Closed (normal), Open (blocking requests), and Half-Open (testing recovery). Prevents cascading failures and allows services to recover gracefully.",codeSnippets:[{language:"csharp",code:`// Circuit Breaker Implementation
+}`}]}]},wv={id:"microservices-resilience",name:"Resilience Patterns",questions:[{id:"q1",question:"What is the Circuit Breaker pattern and how does it prevent cascading failures?",answer:"The Circuit Breaker pattern monitors for failures and temporarily stops requests to a failing service. It has three states: Closed (normal), Open (blocking requests), and Half-Open (testing recovery). Prevents cascading failures and allows services to recover gracefully.",codeSnippets:[{language:"csharp",code:`// Circuit Breaker Implementation
 public enum CircuitState
 {
     Closed,      // Normal operation
@@ -2585,7 +2585,7 @@ var combinedPolicy = Policy.WrapAsync(
     timeoutPolicy,
     retryPolicy,
     fallbackPolicy
-);`}]}]},Eg={id:"microservices-data",name:"Data Management",questions:[{id:"q1",question:"What is the Database per Service pattern and its advantages/disadvantages?",answer:"The Database per Service pattern assigns each microservice its own database, ensuring loose coupling and independent scaling. Advantages: autonomy, technology flexibility, easier scaling. Disadvantages: distributed transactions, data consistency challenges, cross-service queries.",codeSnippets:[{language:"C#",code:`// Database per Service Pattern
+);`}]}]},Lv={id:"microservices-data",name:"Data Management",questions:[{id:"q1",question:"What is the Database per Service pattern and its advantages/disadvantages?",answer:"The Database per Service pattern assigns each microservice its own database, ensuring loose coupling and independent scaling. Advantages: autonomy, technology flexibility, easier scaling. Disadvantages: distributed transactions, data consistency challenges, cross-service queries.",codeSnippets:[{language:"C#",code:`// Database per Service Pattern
 // OrderService - PostgreSQL
 public class OrderService
 {
@@ -3325,7 +3325,7 @@ public class EventProjectionService : IHostedService
     }
     
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
-}`}]}]},Dg={id:"microservices",name:"Microservices",topics:[Lg,Tg,Eg]},Rg={id:"csharp-oops-concepts",name:"OOPs Concepts",questions:[{id:"q1",question:"What are the four pillars of OOP and explain each one briefly?",answer:"The four pillars are: (1) Encapsulation - bundling data and methods, hiding internals with access modifiers. (2) Inheritance - deriving new classes from existing ones, reusing code. (3) Polymorphism - objects can take many forms, same method name different behavior. (4) Abstraction - hiding complexity, exposing only essential features through interfaces/abstract classes.",codeSnippets:[{language:"csharp",code:`using System;
+}`}]}]},Ev={id:"microservices",name:"Microservices",topics:[Tv,wv,Lv]},Wv={id:"csharp-oops-concepts",name:"OOPs Concepts",questions:[{id:"q1",question:"What are the four pillars of OOP and explain each one briefly?",answer:"The four pillars are: (1) Encapsulation - bundling data and methods, hiding internals with access modifiers. (2) Inheritance - deriving new classes from existing ones, reusing code. (3) Polymorphism - objects can take many forms, same method name different behavior. (4) Abstraction - hiding complexity, exposing only essential features through interfaces/abstract classes.",codeSnippets:[{language:"csharp",code:`using System;
 
 // 1. ENCAPSULATION - Hide internals, expose through properties
 public class BankAccount
@@ -5320,7 +5320,7 @@ public class GoodPractice
 
 // Use constructor to validate
 var good = new GoodPractice("Valid");
-// good = new GoodPractice(null); // Throws ArgumentNullException`}]}]},Wg={id:"csharp-solid-principles",name:"SOLID Principles",questions:[{id:"q1",question:"What are SOLID principles and why are they important?",answer:"SOLID is an acronym for five design principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) that make code more maintainable, scalable, and testable. They help you write clean code that's easy to understand, modify, and extend without breaking existing functionality.",codeSnippets:[{language:"csharp",code:`// BAD - Violates SOLID principles
+// good = new GoodPractice(null); // Throws ArgumentNullException`}]}]},Dv={id:"csharp-solid-principles",name:"SOLID Principles",questions:[{id:"q1",question:"What are SOLID principles and why are they important?",answer:"SOLID is an acronym for five design principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) that make code more maintainable, scalable, and testable. They help you write clean code that's easy to understand, modify, and extend without breaking existing functionality.",codeSnippets:[{language:"csharp",code:`// BAD - Violates SOLID principles
 public class UserManager
 {
     // Violates SRP - does too many things
@@ -6566,7 +6566,7 @@ public class BadUserRegistrationService
 }
 
 // This requires actual database and email service to test!
-// No way to inject mocks`}]}]},Og={id:"csharp-multi-threading",name:"Multi-threading",questions:[{id:"q1",question:"What is multi-threading and why is it important in C#?",answer:"Multi-threading allows multiple threads to execute within a single process, enabling concurrent execution of code. It's important for improving application responsiveness, better resource utilization, and handling multiple operations simultaneously.",codeSnippets:[{language:"csharp",code:`// Creating and starting threads
+// No way to inject mocks`}]}]},Iv={id:"csharp-multi-threading",name:"Multi-threading",questions:[{id:"q1",question:"What is multi-threading and why is it important in C#?",answer:"Multi-threading allows multiple threads to execute within a single process, enabling concurrent execution of code. It's important for improving application responsiveness, better resource utilization, and handling multiple operations simultaneously.",codeSnippets:[{language:"csharp",code:`// Creating and starting threads
 Thread thread1 = new Thread(() => Console.WriteLine("Thread 1"));
 Thread thread2 = new Thread(() => Console.WriteLine("Thread 2"));
 
@@ -6757,7 +6757,7 @@ dict.AddOrUpdate("key", 20, (k, v) => v + 20);
 // Thread-safe bag
 ConcurrentBag<string> bag = new ConcurrentBag<string>();
 bag.Add("item1");
-bag.TryTake(out string item);`}]}]},Ig={id:"csharp-async-programming",name:"Asynchronous Programming",questions:[{id:"q1",question:"What is asynchronous programming and why is it important in C#?",answer:"Asynchronous programming allows operations to run without blocking the calling thread. It's important for improving application responsiveness, especially for I/O operations like database queries, API calls, and file access. It enables better resource utilization by allowing the thread to work on other tasks while waiting.",codeSnippets:[{language:"csharp",code:`// Synchronous - blocks thread
+bag.TryTake(out string item);`}]}]},Rv={id:"csharp-async-programming",name:"Asynchronous Programming",questions:[{id:"q1",question:"What is asynchronous programming and why is it important in C#?",answer:"Asynchronous programming allows operations to run without blocking the calling thread. It's important for improving application responsiveness, especially for I/O operations like database queries, API calls, and file access. It enables better resource utilization by allowing the thread to work on other tasks while waiting.",codeSnippets:[{language:"csharp",code:`// Synchronous - blocks thread
 public string FetchDataSync()
 {
     System.Threading.Thread.Sleep(2000); // Simulates I/O operation
@@ -7088,7 +7088,7 @@ public class MyControl : Control
 // Rule of thumb
 // async void: Only for top-level event handlers
 // async Task: For all other methods
-// async Task<T>: When you need to return a value`}]}]},xg={id:"csharp-linq",name:"LINQ (Language Integrated Query)",questions:[{id:"q1",question:"What is LINQ and why is it important in C#?",answer:"LINQ (Language Integrated Query) provides a uniform way to query different data sources using C# syntax. It works with objects (LINQ to Objects), databases (LINQ to SQL/Entity Framework), XML (LINQ to XML), and more. It's important because it provides type-safe, readable queries with compile-time checking and IntelliSense support.",codeSnippets:[{language:"csharp",code:`using System;
+// async Task<T>: When you need to return a value`}]}]},Ov={id:"csharp-linq",name:"LINQ (Language Integrated Query)",questions:[{id:"q1",question:"What is LINQ and why is it important in C#?",answer:"LINQ (Language Integrated Query) provides a uniform way to query different data sources using C# syntax. It works with objects (LINQ to Objects), databases (LINQ to SQL/Entity Framework), XML (LINQ to XML), and more. It's important because it provides type-safe, readable queries with compile-time checking and IntelliSense support.",codeSnippets:[{language:"csharp",code:`using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -7726,7 +7726,7 @@ var tracked = context.Employees
 var untracked = context.Employees
     .AsNoTracking()
     .Where(e => e.Salary > 50000)
-    .ToList(); // Faster - no tracking overhead`}]}]},kg={id:"csharp-garbage-collection",name:"Garbage Collection",questions:[{id:"q1",question:"What is garbage collection and why is it important?",answer:"Garbage collection is the automatic memory management process that frees memory occupied by objects no longer needed. It's important because it eliminates manual memory management, prevents memory leaks, and reduces the chance of bugs like accessing freed memory or double-freeing.",codeSnippets:[{language:"csharp",code:`// In languages without GC (like C++), you must manage memory manually
+    .ToList(); // Faster - no tracking overhead`}]}]},xv={id:"csharp-garbage-collection",name:"Garbage Collection",questions:[{id:"q1",question:"What is garbage collection and why is it important?",answer:"Garbage collection is the automatic memory management process that frees memory occupied by objects no longer needed. It's important because it eliminates manual memory management, prevents memory leaks, and reduces the chance of bugs like accessing freed memory or double-freeing.",codeSnippets:[{language:"csharp",code:`// In languages without GC (like C++), you must manage memory manually
 // void* ptr = malloc(sizeof(int));
 // free(ptr);  // Easy to forget, leading to leaks
 
@@ -8908,7 +8908,7 @@ public void ConfigureLowLatency()
 // 5. Reuse collections instead of creating new ones
 // 6. Use ArrayPool<T> for temporary arrays
 // 7. Profile to find hotspots
-// 8. Configure GC mode appropriately (Workstation vs Server)`}]}]},Ng={id:"csharp-collections",name:"Collections",questions:[{id:"q1",question:"What are collections in C# and what are the main types?",answer:"Collections are data structures that store and manage groups of objects. Main types: List<T> (ordered, indexable), Dictionary<K,V> (key-value pairs), HashSet<T> (unique items), Queue<T> (FIFO), Stack<T> (LIFO), LinkedList<T> (doubly-linked). Located in System.Collections.Generic namespace.",codeSnippets:[{language:"csharp",code:`using System;
+// 8. Configure GC mode appropriately (Workstation vs Server)`}]}]},kv={id:"csharp-collections",name:"Collections",questions:[{id:"q1",question:"What are collections in C# and what are the main types?",answer:"Collections are data structures that store and manage groups of objects. Main types: List<T> (ordered, indexable), Dictionary<K,V> (key-value pairs), HashSet<T> (unique items), Queue<T> (FIFO), Stack<T> (LIFO), LinkedList<T> (doubly-linked). Located in System.Collections.Generic namespace.",codeSnippets:[{language:"csharp",code:`using System;
 using System.Collections.Generic;
 
 // 1. List<T> - Dynamic array, ordered
@@ -10451,7 +10451,7 @@ public class SelectionExamples
         // Access last operation (LIFO)
         var undoStack = new Stack<Operation>();
     }
-}`}]}]},Mg={id:"csharp-net-core",name:".NET Core",questions:[{id:"q1",question:"What is .NET Core and how is it different from .NET Framework?",answer:".NET Core is a cross-platform, open-source runtime for building modern applications. .NET Framework is Windows-only, older, not open-source. .NET Core runs on Windows, Linux, macOS. .NET Core is faster, lighter, modular. .NET Core 5+ is now called just '.NET'. Use .NET Core for new projects.",codeSnippets:[{language:"csharp",code:`// .NET Core Program.cs - Minimal hosting setup
+}`}]}]},Nv={id:"csharp-net-core",name:".NET Core",questions:[{id:"q1",question:"What is .NET Core and how is it different from .NET Framework?",answer:".NET Core is a cross-platform, open-source runtime for building modern applications. .NET Framework is Windows-only, older, not open-source. .NET Core runs on Windows, Linux, macOS. .NET Core is faster, lighter, modular. .NET Core 5+ is now called just '.NET'. Use .NET Core for new projects.",codeSnippets:[{language:"csharp",code:`// .NET Core Program.cs - Minimal hosting setup
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -12333,7 +12333,7 @@ Console.WriteLine("4. Avoid conflicting with existing methods");
 Console.WriteLine("5. Document with XML comments");
 Console.WriteLine("6. Use namespacing to avoid pollution");
 Console.WriteLine("7. Don't abuse - keep code readable");
-Console.WriteLine("8. Consider performance for frequently called methods");`}]}]},Ug={id:"csharp-advanced",name:"C# Advanced",topics:[Rg,Wg,Og,Ig,xg,kg,Ng,Mg]},qg={id:"azure-app-services",name:"App Services",questions:[{id:"q1",question:"What is Azure App Service and what types of applications can you host?",answer:"Azure App Service is a fully managed platform for building and hosting web apps, mobile backends, and RESTful APIs. Types: Web Apps (.NET, Node, Python, Java, PHP), Mobile Apps, API Apps, Function Apps. Provides auto-scaling, built-in CI/CD, SSL/TLS, monitoring. Pricing tiers: Free, Shared, Basic, Standard, Premium, Isolated.",codeSnippets:[{language:"csharp",code:`// Azure App Service - Deployment from Program.cs
+Console.WriteLine("8. Consider performance for frequently called methods");`}]}]},Pv={id:"csharp-advanced",name:"C# Advanced",topics:[Wv,Dv,Iv,Rv,Ov,xv,kv,Nv]},Mv={id:"azure-app-services",name:"App Services",questions:[{id:"q1",question:"What is Azure App Service and what types of applications can you host?",answer:"Azure App Service is a fully managed platform for building and hosting web apps, mobile backends, and RESTful APIs. Types: Web Apps (.NET, Node, Python, Java, PHP), Mobile Apps, API Apps, Function Apps. Provides auto-scaling, built-in CI/CD, SSL/TLS, monitoring. Pricing tiers: Free, Shared, Basic, Standard, Premium, Isolated.",codeSnippets:[{language:"csharp",code:`// Azure App Service - Deployment from Program.cs
 using Microsoft.AspNetCore.Builder;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
@@ -12710,7 +12710,7 @@ Console.WriteLine("✓ Application starts");
 Console.WriteLine("✓ Database migrations succeed");
 Console.WriteLine("✓ Health endpoint responds");
 Console.WriteLine("✓ Slot swap successful");
-Console.WriteLine("✓ Monitoring shows no errors");`}]}]},Gg={id:"azure-containers",name:"Container Deployment",questions:[{id:"q1",question:"What is Docker and how do you containerize a .NET application?",answer:"Docker packages application with dependencies in isolated container. Dockerfile defines build steps. Container runs same everywhere (development, testing, production). Base images: mcr.microsoft.com/dotnet/sdk (build), mcr.microsoft.com/dotnet/runtime (run). Multi-stage builds: build in SDK, run in runtime for smaller image.",codeSnippets:[{language:"csharp",code:`// Dockerfile for .NET Application
+Console.WriteLine("✓ Monitoring shows no errors");`}]}]},Uv={id:"azure-containers",name:"Container Deployment",questions:[{id:"q1",question:"What is Docker and how do you containerize a .NET application?",answer:"Docker packages application with dependencies in isolated container. Dockerfile defines build steps. Container runs same everywhere (development, testing, production). Base images: mcr.microsoft.com/dotnet/sdk (build), mcr.microsoft.com/dotnet/runtime (run). Multi-stage builds: build in SDK, run in runtime for smaller image.",codeSnippets:[{language:"csharp",code:`// Dockerfile for .NET Application
 
 /*
 # Multi-stage build
@@ -13002,7 +13002,7 @@ Console.WriteLine("  --docker-registry-server-user <username> \\");
 Console.WriteLine("  --docker-registry-server-password <password>");
 
 // Webhook for auto-update on ACR push
-Console.WriteLine("Webhook triggers automatic deployment on image push");`}]}]},Pg={id:"azure-service-bus",name:"Service Bus & Functions",questions:[{id:"q1",question:"What is Azure Service Bus and what are its main components?",answer:"Azure Service Bus is enterprise messaging service (asynchronous communication). Components: Queues (one-to-one), Topics (one-to-many with subscriptions), Relay (hybrid connections). Features: message sessions, dead-letter queues, duplicate detection, message TTL. Use for decoupling applications, ordering guarantees, delayed processing.",codeSnippets:[{language:"csharp",code:`using Azure.Messaging.ServiceBus;
+Console.WriteLine("Webhook triggers automatic deployment on image push");`}]}]},Gv={id:"azure-service-bus",name:"Service Bus & Functions",questions:[{id:"q1",question:"What is Azure Service Bus and what are its main components?",answer:"Azure Service Bus is enterprise messaging service (asynchronous communication). Components: Queues (one-to-one), Topics (one-to-many with subscriptions), Relay (hybrid connections). Features: message sessions, dead-letter queues, duplicate detection, message TTL. Use for decoupling applications, ordering guarantees, delayed processing.",codeSnippets:[{language:"csharp",code:`using Azure.Messaging.ServiceBus;
 
 // Azure Service Bus - Queues and Topics
 
@@ -13314,7 +13314,7 @@ Console.WriteLine("2. Decoupled microservices");
 Console.WriteLine("3. Async message handling");
 Console.WriteLine("4. Auto-scaling per message");
 Console.WriteLine("5. Guaranteed delivery");
-Console.WriteLine("6. Dead-letter handling");`}]}]},Bg={id:"azure-cloud-deployment",name:"Cloud Deployment",questions:[{id:"q1",question:"What is Infrastructure as Code (IaC) and how do you use it in Azure?",answer:"IaC defines infrastructure in code files (Bicep, ARM templates, Terraform). Version control friendly. Repeatable deployments. Azure-specific: Bicep (recommended, simpler syntax), ARM templates (JSON). Terraform (multi-cloud). Define resources in code, deploy via CLI or pipelines.",codeSnippets:[{language:"csharp",code:`// Bicep - Infrastructure as Code for Azure
+Console.WriteLine("6. Dead-letter handling");`}]}]},qv={id:"azure-cloud-deployment",name:"Cloud Deployment",questions:[{id:"q1",question:"What is Infrastructure as Code (IaC) and how do you use it in Azure?",answer:"IaC defines infrastructure in code files (Bicep, ARM templates, Terraform). Version control friendly. Repeatable deployments. Azure-specific: Bicep (recommended, simpler syntax), ARM templates (JSON). Terraform (multi-cloud). Define resources in code, deploy via CLI or pipelines.",codeSnippets:[{language:"csharp",code:`// Bicep - Infrastructure as Code for Azure
 
 /*
 // main.bicep
@@ -13653,7 +13653,7 @@ Console.WriteLine("Built-in Roles:");
 Console.WriteLine("Owner - Full access including RBAC");
 Console.WriteLine("Contributor - Full access, no RBAC");
 Console.WriteLine("Reader - Read-only access");
-Console.WriteLine("User Access Administrator - Manage RBAC");`}]}]},zg={id:"azure-networking",name:"Networking",questions:[{id:"q1",question:"What is Azure Virtual Network (VNet) and how do you use it?",answer:"VNet is isolated network environment in Azure. Contains subnets (subdivisions). Enables: communication between Azure resources, access to on-premises networks via VPN/ExpressRoute, filtering with Network Security Groups (NSG). Supports custom IP address space. Required for VMs, databases, etc.",codeSnippets:[{language:"csharp",code:`// Azure Virtual Network (VNet)
+Console.WriteLine("User Access Administrator - Manage RBAC");`}]}]},Bv={id:"azure-networking",name:"Networking",questions:[{id:"q1",question:"What is Azure Virtual Network (VNet) and how do you use it?",answer:"VNet is isolated network environment in Azure. Contains subnets (subdivisions). Enables: communication between Azure resources, access to on-premises networks via VPN/ExpressRoute, filtering with Network Security Groups (NSG). Supports custom IP address space. Required for VMs, databases, etc.",codeSnippets:[{language:"csharp",code:`// Azure Virtual Network (VNet)
 
 Console.WriteLine("VNet Components:");
 Console.WriteLine("Virtual Network (VNet) - IP address space (e.g., 10.0.0.0/16)");
@@ -13853,7 +13853,7 @@ Console.WriteLine("Setup (requires provider):");
 Console.WriteLine("1. Contact ExpressRoute provider");
 Console.WriteLine("2. Provision circuit");
 Console.WriteLine("3. Create connection");
-Console.WriteLine("4. Configure BGP peering");`}]}]},jg={id:"azure-api-security",name:"API Security & API Management",questions:[{id:"q1",question:"What is Azure API Management (APIM) and its key features?",answer:"APIM is gateway for APIs: publish, manage, secure, monitor. Key features: API versioning, rate limiting, authentication (OAuth, API Key), request/response transformation, analytics, developer portal, policy engine. Sits between clients and backend services.",codeSnippets:[{language:"csharp",code:`// Azure API Management (APIM)
+Console.WriteLine("4. Configure BGP peering");`}]}]},Hv={id:"azure-api-security",name:"API Security & API Management",questions:[{id:"q1",question:"What is Azure API Management (APIM) and its key features?",answer:"APIM is gateway for APIs: publish, manage, secure, monitor. Key features: API versioning, rate limiting, authentication (OAuth, API Key), request/response transformation, analytics, developer portal, policy engine. Sits between clients and backend services.",codeSnippets:[{language:"csharp",code:`// Azure API Management (APIM)
 
 Console.WriteLine("APIM Components:");
 Console.WriteLine("┌─ Gateway");
@@ -14135,4 +14135,4495 @@ Console.WriteLine("  --selector admin");
 Console.WriteLine("Monitor WAF:");
 Console.WriteLine("- Application Gateway Logs");
 Console.WriteLine("- Application Gateway Metrics");
-Console.WriteLine("- Log Analytics Workspace");`}]}]},Hg={id:"azure",name:"Microsoft Azure",topics:[qg,Gg,Pg,Bg,zg,jg]},dl=[fg,bg,Ag,Dg,Ug,Hg];function _g(){const[L,F]=Yt.useState(null),[q,m]=Yt.useState(null),[x,U]=Yt.useState(!0),X=ue=>{F(ue);const E=dl.find(A=>A.id===ue);E&&E.topics.length>0?m(E.topics[0].id):m(null)};return Yt.useEffect(()=>{const ue=document.querySelector(".content-area");ue&&(ue.scrollTop=0)},[q]),S.jsxs("div",{className:"app",children:[S.jsx(ig,{subjects:dl,selectedSubject:L,selectedTopic:q,onSubjectSelect:X,onTopicSelect:m,isOpen:x,onToggle:()=>U(!x)}),S.jsx(lg,{subjects:dl,selectedSubject:L,selectedTopic:q})]})}ng.createRoot(document.getElementById("root")).render(S.jsx(Yt.StrictMode,{children:S.jsx(_g,{})}));
+Console.WriteLine("- Log Analytics Workspace");`}]}]},zv={id:"azure-storage-services",name:"Storage Services",questions:[{id:"q1",question:"What are the main Azure Storage services and their use cases?",answer:"Azure Storage consists of four main services: 1) Blob Storage - for unstructured data (files, images, videos, backups). 2) File Shares - for managed SMB/NFS file shares accessible from multiple VMs. 3) Queue Storage - for asynchronous message queuing between services. 4) Table Storage - for NoSQL structured data (now mostly replaced by Cosmos DB). All support redundancy options: LRS (3 copies locally), GRS (3 locally + 3 in region pair), RA-GRS (GRS + read access). Pricing tiers: Hot (frequent access), Cool (infrequent), Archive (rare access).",codeSnippets:[{language:"csharp",code:`// Azure Storage Services Overview
+using Azure.Storage.Blobs;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Queues;
+using Azure.Data.Tables;
+using Azure.Identity;
+
+var storageAccountName = "mystorageaccount";
+var storageUri = new Uri($"https://{storageAccountName}.blob.core.windows.net");
+
+// 1. Blob Storage - Unstructured data (images, documents, videos)
+var blobClient = new BlobContainerClient(
+    new Uri($"https://{storageAccountName}.blob.core.windows.net/mycontainer"),
+    new DefaultAzureCredential()
+);
+
+await blobClient.UploadBlobAsync("file.txt", BinaryData.FromString("content"));
+BlobDownloadInfo download = await blobClient.GetBlobClient("file.txt").DownloadAsync();
+
+// 2. File Shares - SMB/NFS file shares for VMs
+var fileShareUri = new Uri($"https://{storageAccountName}.file.core.windows.net/myshare");
+var shareClient = new ShareClient(fileShareUri, new DefaultAzureCredential());
+
+ShareDirectoryClient dirClient = shareClient.GetRootDirectoryClient();
+await dirClient.UploadFileAsync("document.txt", BinaryData.FromString("data"));
+
+// 3. Queue Storage - Asynchronous messaging
+var queueUri = new Uri($"https://{storageAccountName}.queue.core.windows.net/myqueue");
+var queueClient = new QueueClient(queueUri, new DefaultAzureCredential());
+
+await queueClient.SendMessageAsync("order-12345");
+QueueMessage[] messages = await queueClient.ReceiveMessagesAsync(1);
+
+// 4. Table Storage - NoSQL structured data
+var tableUri = new Uri($"https://{storageAccountName}.table.core.windows.net");
+var tableClient = new TableClient(tableUri, "Products", new DefaultAzureCredential());
+
+// Storage Tiers
+Console.WriteLine("Azure Storage Tiers:");
+Console.WriteLine("Hot    - Frequent access, highest cost, instant retrieval");
+Console.WriteLine("Cool   - Infrequent access (30+ days), lower cost");
+Console.WriteLine("Archive - Rare access (90+ days), lowest cost, rehydration needed");
+
+// Redundancy Options
+Console.WriteLine("\\nRedundancy Options:");
+Console.WriteLine("LRS  - Locally Redundant (3 copies in same datacenter)");
+Console.WriteLine("GRS  - Geo-Redundant (3 local + 3 in secondary region)");
+Console.WriteLine("RA-GRS - Read-Access Geo-Redundant (can read from secondary)");
+Console.WriteLine("GZRS - Geo-Zone-Redundant (zone redundancy + geo)");`}]},{id:"q2",question:"How do you implement Blob Storage with access tiers and lifecycle management?",answer:"Blob Storage supports access tiers (Hot, Cool, Archive) for cost optimization. Hot tier is for frequent access. Cool tier for infrequent access (30+ days minimum), cheaper but retrieval slightly slower. Archive tier for rare access (90+ days), cheapest but requires rehydration. Lifecycle policies automatically move blobs between tiers based on age. Can specify rules like: move to Cool after 30 days, to Archive after 90 days. Supports blob versioning and soft delete for protection.",codeSnippets:[{language:"csharp",code:`// Azure Blob Storage - Access Tiers & Lifecycle
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+using Azure.Identity;
+
+var blobContainerUri = new Uri("https://mystorageaccount.blob.core.windows.net/mycontainer");
+var containerClient = new BlobContainerClient(blobContainerUri, new DefaultAzureCredential());
+
+// 1. Upload to different tiers
+var blobClient = containerClient.GetBlobClient("report.pdf");
+
+// Upload to Hot tier (default)
+using (var stream = new MemoryStream(File.ReadAllBytes("large-file.pdf")))
+{
+    await blobClient.UploadAsync(stream, overwrite: true);
+}
+
+// Move to Cool tier
+await blobClient.SetAccessTierAsync(AccessTier.Cool);
+
+// Move to Archive tier (requires rehydration to access)
+await blobClient.SetAccessTierAsync(AccessTier.Archive);
+
+// 2. Rehydrate from Archive
+await blobClient.SetAccessTierAsync(AccessTier.Hot, RehydratePriority.High);
+// High priority: 1 hour, Standard priority: 15 hours
+
+// 3. Download and check tier
+BlobDownloadInfo download = await blobClient.DownloadAsync();
+Console.WriteLine($"Blob tier: {download.Details.AccessTier}");
+
+// 4. List blobs with properties
+await foreach (BlobItem blobItem in containerClient.GetBlobsAsync(
+    BlobTraits.None,
+    BlobStates.None))
+{
+    Console.WriteLine($"Name: {blobItem.Name}");
+    Console.WriteLine($"Size: {blobItem.Properties.ContentLength} bytes");
+    Console.WriteLine($"Tier: {blobItem.Properties.AccessTier}");
+    Console.WriteLine($"Created: {blobItem.Properties.CreatedOn}");
+}
+
+// 5. Lifecycle Management Policy (JSON config for Azure Portal or CLI)
+var lifecyclePolicy = @"
+{
+  'rules': [
+    {
+      'name': 'AutoTiering',
+      'enabled': true,
+      'type': 'Lifecycle',
+      'definition': {
+        'actions': {
+          'baseBlob': {
+            'tierToCool': {
+              'daysAfterModificationGreaterThan': 30
+            },
+            'tierToArchive': {
+              'daysAfterModificationGreaterThan': 90
+            },
+            'delete': {
+              'daysAfterModificationGreaterThan': 365
+            }
+          }
+        },
+        'filters': {
+          'blobTypes': ['blockBlob']
+        }
+      }
+    }
+  ]
+}";
+
+// CLI to set lifecycle policy:
+// az storage account management-policy create --account-name mystorageaccount 
+// --resource-group myRG --policy @policy.json
+
+// 6. Soft Delete & Versioning
+var containerProperties = new BlobContainerProperties();
+// Enable soft delete (items recoverable for 7 days after deletion)
+// Enable versioning (keeps previous versions)
+
+// Cost Optimization Example
+Console.WriteLine("Storage Cost Optimization Strategy:");
+Console.WriteLine("- New data (0-30 days) → Hot tier");
+Console.WriteLine("- Aged data (30-90 days) → Cool tier");
+Console.WriteLine("- Old backups (90+ days) → Archive tier");
+Console.WriteLine("- Never accessed (365+ days) → Delete");
+Console.WriteLine("\\nThis can reduce storage costs by 50-80%");`}]},{id:"q3",question:"What is the difference between Blob Storage, File Shares, and Queue Storage?",answer:"Blob Storage: Unstructured data storage (images, videos, documents, backups), REST API access, optimal for massive scale data. File Shares: Managed SMB/NFS shares for network access, mount like network drives, supports Windows/Linux, good for legacy apps sharing files. Queue Storage: Asynchronous message queuing for decoupling services, FIFO, messages expire after 7 days (default), small payload size (64KB). Choose Blob for files, File Shares for shared network access, Queue for async communication.",codeSnippets:[{language:"csharp",code:`// Comparison: Blob vs File Shares vs Queue Storage
+using Azure.Storage.Blobs;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
+using Azure.Identity;
+
+var accountName = "mystorageaccount";
+
+// ============= BLOB STORAGE =============
+// Use Case: Large files, images, backups, unstructured data
+// Access: REST API, HTTP/HTTPS, SDKs
+// Scale: Petabytes, millions of files
+
+var blobUri = new Uri($"https://{accountName}.blob.core.windows.net/files");
+var blobContainer = new BlobContainerClient(blobUri, new DefaultAzureCredential());
+
+// Upload large file
+var blockBlobClient = blobContainer.GetBlockBlobClient("large-video.mp4");
+await blockBlobClient.UploadAsync("video.mp4", overwrite: true);
+
+// Upload with metadata
+var blobHttpHeaders = new BlobHttpHeaders { ContentType = "image/jpeg" };
+var metadata = new Dictionary<string, string> { { "department", "marketing" } };
+await blockBlobClient.SetHttpHeadersAsync(blobHttpHeaders);
+await blockBlobClient.SetMetadataAsync(metadata);
+
+Console.WriteLine("✓ Blob Storage: Best for unstructured large data");
+
+// ============= FILE SHARES =============
+// Use Case: Shared file access, legacy apps, SMB protocol
+// Access: SMB 3.0 (Windows/Linux/macOS), NFS 4.1
+// Scale: Up to 100TB per share
+
+var fileShareUri = new Uri($"https://{accountName}.file.core.windows.net");
+var fileShareClient = new ShareClient(fileShareUri, new DefaultAzureCredential());
+
+var shareRootDir = fileShareClient.GetRootDirectoryClient();
+var subdirectory = shareRootDir.GetSubdirectoryClient("documents");
+await subdirectory.CreateIfNotExistsAsync();
+
+// Upload file to share
+using (var stream = File.OpenRead("report.docx"))
+{
+    await subdirectory.GetFileClient("report.docx").UploadAsync(stream, overwrite: true);
+}
+
+// Can be mounted like network drive:
+// Windows: net use Z: \\\\mystorageaccount.file.core.windows.net\\fileshare password /user:azure\\mystorageaccount
+// Linux: mount -t cifs //mystorageaccount.file.core.windows.net/fileshare /mnt/share -o username=mystorageaccount
+
+Console.WriteLine("✓ File Shares: Best for shared network file access");
+
+// ============= QUEUE STORAGE =============
+// Use Case: Asynchronous job queuing, decoupling services
+// Access: REST API, message-based
+// Message Size: Up to 64KB, TTL 7 days default
+
+var queueUri = new Uri($"https://{accountName}.queue.core.windows.net");
+var queueClient = new QueueClient(queueUri, new DefaultAzureCredential());
+
+// Producer: Enqueue message
+await queueClient.SendMessageAsync("process-order-12345");
+await queueClient.SendMessageAsync("send-email-user-456");
+
+// Consumer: Dequeue and process
+QueueMessage[] messages = await queueClient.ReceiveMessagesAsync(
+    maxMessages: 10,
+    visibilityTimeout: TimeSpan.FromMinutes(5)
+);
+
+foreach (QueueMessage message in messages)
+{
+    Console.WriteLine($"Processing: {message.Body}");
+    
+    // Process the message
+    await ProcessOrderAsync(message.Body.ToString());
+    
+    // Delete from queue when done
+    await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+}
+
+// If processing fails, message becomes visible again after visibilityTimeout
+// Max retries: message TTL (default 7 days)
+
+Console.WriteLine("✓ Queue Storage: Best for asynchronous task queuing");
+
+// ============= COMPARISON TABLE =============
+var comparison = new[]
+{
+    new { Service = "Blob", Use = "Large files/images/backups", Protocol = "REST/HTTP", Scale = "Petabytes", Cost = "$" },
+    new { Service = "File Shares", Use = "Shared network access", Protocol = "SMB/NFS", Scale = "100TB/share", Cost = "$" },
+    new { Service = "Queue", Use = "Async messaging", Protocol = "REST/HTTP", Scale = "Millions msg", Cost = "$" }
+};
+
+Console.WriteLine("\\nComparison:");
+Console.WriteLine("Service      | Use Case               | Protocol    | Scale         | Cost");
+Console.WriteLine("-------------|------------------------|-------------|---------------|------");
+foreach (var row in comparison)
+{
+    Console.WriteLine($"{row.Service,-12} | {row.Use,-22} | {row.Protocol,-11} | {row.Scale,-13} | {row.Cost}");
+}
+
+async Task ProcessOrderAsync(string orderId)
+{
+    await Task.Delay(1000);
+    Console.WriteLine($"Order {orderId} processed successfully");
+}`}]},{id:"q4",question:"How do you secure Azure Storage with SAS tokens and managed identities?",answer:"Azure Storage can be secured using: 1) Storage Account Keys (not recommended for production, full access). 2) Shared Access Signatures (SAS) - time-limited tokens with specific permissions, can be Account-level or Service-level. 3) Managed Identities - best practice, Azure AD integration, no credentials to manage, automatic rotation. 4) Azure RBAC - role-based access control with fine-grained permissions. SAS tokens include expiration, IP restrictions, protocol constraints. Managed identities with Azure.Identity DefaultAzureCredential is production-recommended.",codeSnippets:[{language:"csharp",code:`// Azure Storage Security - SAS Tokens & Managed Identities
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Sas;
+using Azure.Storage.Sas;
+using Azure.Identity;
+using Azure;
+
+var accountName = "mystorageaccount";
+var accountKey = "your-account-key";
+var containerName = "mycontainer";
+
+// ============= APPROACH 1: Managed Identity (RECOMMENDED) =============
+// Best practice: No credentials needed, automatic rotation
+// Requirements: Enable Managed Identity on your Azure resource (VM, App Service, Function, etc.)
+
+var blobUri = new Uri($"https://{accountName}.blob.core.windows.net/{containerName}");
+var blobContainerClient = new BlobContainerClient(
+    blobUri,
+    new DefaultAzureCredential() // Uses Managed Identity automatically
+);
+
+// Access blob without any credentials!
+var blobClient = blobContainerClient.GetBlobClient("data.json");
+BlobDownloadInfo download = await blobClient.DownloadAsync();
+Console.WriteLine("✓ Accessed blob using Managed Identity");
+
+// ============= APPROACH 2: Account-Level SAS Token =============
+// Temporary token with expiration, specific permissions, IP/protocol restrictions
+
+var sharedKeyCredential = new StorageSharedKeyCredential(accountName, accountKey);
+
+// Create Account SAS (high privilege, access to all services)
+AccountSasBuilder sasBuilder = new AccountSasBuilder()
+{
+    Services = AccountSasServices.Blobs | AccountSasServices.Queues,
+    ResourceTypes = AccountSasResourceTypes.All,
+    ExpiresOn = DateTimeOffset.UtcNow.AddHours(1),
+    Protocol = SasProtocol.Https,
+    IPRange = new SasIPRange(System.Net.IPAddress.Parse("203.0.113.0"), System.Net.IPAddress.Parse("203.0.113.100"))
+};
+
+sasBuilder.SetPermissions(AccountSasPermissions.All);
+
+string accountSasToken = sasBuilder.ToSasQueryParameters(sharedKeyCredential).ToString();
+Console.WriteLine($"Account SAS Token: {accountSasToken}");
+
+// ============= APPROACH 3: Service-Level SAS Token =============
+// Specific to a container or blob, more secure than account SAS
+
+BlobSasBuilder blobSasBuilder = new BlobSasBuilder()
+{
+    BlobContainerName = containerName,
+    BlobName = "data.json",
+    ExpiresOn = DateTimeOffset.UtcNow.AddMinutes(30), // Expires in 30 minutes
+    Protocol = SasProtocol.Https
+};
+
+// Read-only permissions
+blobSasBuilder.SetPermissions(BlobSasPermissions.Read);
+
+string blobSasToken = blobSasBuilder.ToSasQueryParameters(sharedKeyCredential).ToString();
+string sasUri = new UriBuilder(blobUri)
+{
+    Query = blobSasToken
+}.Uri.ToString();
+
+Console.WriteLine($"Blob SAS URI: {sasUri}");
+
+// Grant write permission for 1 hour
+var writeSasBuilder = new BlobSasBuilder()
+{
+    BlobContainerName = containerName,
+    ExpiresOn = DateTimeOffset.UtcNow.AddHours(1)
+};
+writeSasBuilder.SetPermissions(BlobSasPermissions.Write | BlobSasPermissions.Create | BlobSasPermissions.Delete);
+
+// ============= APPROACH 4: Azure RBAC (Recommended for production) =============
+// Assign roles to Managed Identity or users
+// Roles: Storage Blob Data Owner, Storage Blob Data Contributor, Storage Blob Data Reader
+
+// Example: Assign 'Storage Blob Data Reader' role to app's Managed Identity
+// az role assignment create \\
+//   --role "Storage Blob Data Reader" \\
+//   --assignee-object-id <managed-identity-object-id> \\
+//   --scope /subscriptions/<sub>/resourceGroups/<rg>/providers/Microsoft.Storage/storageAccounts/<account>
+
+// ============= SECURITY BEST PRACTICES =============
+Console.WriteLine("\\nSecurity Best Practices:");
+Console.WriteLine("1. ✓ Use Managed Identity for Azure services (no credentials)");
+Console.WriteLine("2. ✓ Use SAS tokens for temporary/external access (time-limited)");
+Console.WriteLine("3. ✓ Apply IP restrictions to SAS tokens");
+Console.WriteLine("4. ✓ Use HTTPS only (SasProtocol.Https)");
+Console.WriteLine("5. ✓ Never expose account keys in code");
+Console.WriteLine("6. ✓ Rotate keys regularly (if using)");
+Console.WriteLine("7. ✓ Use RBAC for permanent role-based access");
+Console.WriteLine("8. ✓ Enable firewall rules (allow specific VNets/IPs)");
+Console.WriteLine("9. ✓ Monitor access logs and alerts");
+Console.WriteLine("10. ✓ Use private endpoints (deny public access)");
+
+// ============= PRIVATE ENDPOINT EXAMPLE =============
+// Block public internet, only allow from private VNet
+Console.WriteLine("\\nPrivate Endpoint Setup:");
+Console.WriteLine("az network private-endpoint create \\\\");
+Console.WriteLine("  --name myPrivateEndpoint \\\\");
+Console.WriteLine("  --resource-group myRG \\\\");
+Console.WriteLine("  --vnet-name myVNet \\\\");
+Console.WriteLine("  --subnet mySubnet \\\\");
+Console.WriteLine("  --private-connection-resource-id /subscriptions/.../storageAccounts/mystorageaccount \\\\");
+Console.WriteLine("  --group-ids blob");`}]},{id:"q5",question:"How do you implement Queue Storage for producer-consumer patterns?",answer:"Queue Storage enables decoupling of services using producer-consumer pattern. Producer sends messages, consumer processes them. Messages have TTL (7 days default), visibility timeout (how long message hidden after receive), and dead-letter handling. Implement polling or use Azure Functions with Queue trigger for automatic scaling. Use message batching for efficiency. Implement idempotent processing for reliability (same message processed multiple times shouldn't cause issues).",codeSnippets:[{language:"csharp",code:`// Azure Queue Storage - Producer-Consumer Pattern
+using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
+using Azure.Identity;
+using System.Text.Json;
+
+var queueUri = new Uri("https://mystorageaccount.queue.core.windows.net/orders");
+var queueClient = new QueueClient(queueUri, new DefaultAzureCredential());
+
+// ============= PRODUCER: Send Orders =============
+async Task ProduceOrdersAsync()
+{
+    var orders = new[]
+    {
+        new Order { OrderId = "ORD-001", CustomerId = "CUST-100", Total = 99.99m },
+        new Order { OrderId = "ORD-002", CustomerId = "CUST-101", Total = 149.99m },
+        new Order { OrderId = "ORD-003", CustomerId = "CUST-102", Total = 79.99m }
+    };
+
+    foreach (var order in orders)
+    {
+        // Serialize order to JSON
+        string messageText = JsonSerializer.Serialize(order);
+        
+        // Send to queue
+        await queueClient.SendMessageAsync(messageText);
+        Console.WriteLine($"✓ Enqueued order: {order.OrderId}");
+    }
+}
+
+// ============= CONSUMER: Process Orders (Polling) =============
+async Task ConsumeOrdersAsync(CancellationToken cancellationToken)
+{
+    Console.WriteLine("Consumer started, waiting for messages...");
+    
+    while (!cancellationToken.IsCancellationRequested)
+    {
+        try
+        {
+            // Receive up to 10 messages
+            QueueMessage[] messages = await queueClient.ReceiveMessagesAsync(
+                maxMessages: 10,
+                visibilityTimeout: TimeSpan.FromMinutes(5) // Hidden for 5 min while processing
+            );
+
+            if (messages.Length == 0)
+            {
+                Console.WriteLine("No messages, waiting...");
+                await Task.Delay(TimeSpan.FromSeconds(10));
+                continue;
+            }
+
+            foreach (QueueMessage message in messages)
+            {
+                try
+                {
+                    // Deserialize message
+                    var order = JsonSerializer.Deserialize<Order>(message.Body.ToString());
+                    Console.WriteLine($"Processing order: {order?.OrderId}");
+
+                    // Process order (simulate work)
+                    await ProcessOrderAsync(order);
+
+                    // Delete message on successful processing
+                    await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+                    Console.WriteLine($"✓ Order processed and removed from queue");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error processing message: {ex.Message}");
+                    // Message visibility resets, will be retried
+                    // After max retries (TTL expires), goes to dead-letter queue
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Consumer error: {ex.Message}");
+            await Task.Delay(TimeSpan.FromSeconds(5));
+        }
+    }
+}
+
+// ============= DEAD-LETTER QUEUE =============
+async Task HandleDeadLettersAsync()
+{
+    var dlqClient = new QueueClient(
+        new Uri("https://mystorageaccount.queue.core.windows.net/orders-deadletter"),
+        new DefaultAzureCredential()
+    );
+
+    var messages = await dlqClient.ReceiveMessagesAsync(maxMessages: 1);
+    if (messages.Length > 0)
+    {
+        Console.WriteLine($"Dead-letter message: {messages[0].Body}");
+        // Manual review or retry logic
+    }
+}
+
+// ============= IDEMPOTENT PROCESSING =============
+async Task ProcessOrderIdempotentAsync(Order order)
+{
+    // Check if already processed (idempotency key)
+    string idempotencyKey = $"order-{order.OrderId}";
+    
+    if (await IsAlreadyProcessedAsync(idempotencyKey))
+    {
+        Console.WriteLine($"Order {order.OrderId} already processed, skipping");
+        return;
+    }
+
+    // Process order
+    await ProcessOrderAsync(order);
+
+    // Mark as processed
+    await MarkAsProcessedAsync(idempotencyKey);
+}
+
+// ============= BATCH PROCESSING =============
+async Task ProcessBatchAsync()
+{
+    int batchSize = 10;
+    var messages = await queueClient.ReceiveMessagesAsync(maxMessages: batchSize);
+
+    if (messages.Length > 0)
+    {
+        var orders = messages
+            .Select(m => JsonSerializer.Deserialize<Order>(m.Body.ToString()))
+            .ToList();
+
+        // Batch database insert (more efficient)
+        await BatchInsertOrdersAsync(orders);
+
+        // Delete all messages at once
+        foreach (var message in messages)
+        {
+            await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
+        }
+    }
+}
+
+// ============= PRIORITY QUEUES =============
+async Task PriorityQueuePatternAsync()
+{
+    var highPriorityQueue = new QueueClient(
+        new Uri("https://mystorageaccount.queue.core.windows.net/orders-high-priority"),
+        new DefaultAzureCredential()
+    );
+
+    var normalQueue = new QueueClient(
+        new Uri("https://mystorageaccount.queue.core.windows.net/orders-normal"),
+        new DefaultAzureCredential()
+    );
+
+    // Consumer processes high-priority first
+    var highPriorityMessages = await highPriorityQueue.ReceiveMessagesAsync(maxMessages: 5);
+    if (highPriorityMessages.Length > 0)
+    {
+        Console.WriteLine("Processing high-priority orders first!");
+    }
+
+    var normalMessages = await normalQueue.ReceiveMessagesAsync(maxMessages: 5);
+    Console.WriteLine("Then processing normal orders");
+}
+
+// ============= HELPER METHODS =============
+async Task ProcessOrderAsync(Order order)
+{
+    await Task.Delay(1000); // Simulate processing
+    Console.WriteLine($"Order {order.OrderId} processed successfully");
+}
+
+async Task<bool> IsAlreadyProcessedAsync(string idempotencyKey)
+{
+    await Task.Delay(100);
+    return false; // Check in database
+}
+
+async Task MarkAsProcessedAsync(string idempotencyKey)
+{
+    await Task.Delay(100);
+    Console.WriteLine($"Marked {idempotencyKey} as processed");
+}
+
+async Task BatchInsertOrdersAsync(List<Order> orders)
+{
+    await Task.Delay(500);
+    Console.WriteLine($"Batch inserted {orders.Count} orders");
+}
+
+// ============= QUEUE CONFIGURATION =============
+Console.WriteLine("Queue Storage Configuration:");
+Console.WriteLine("- Max message size: 64 KB");
+Console.WriteLine("- Default TTL: 7 days");
+Console.WriteLine("- Visibility timeout: Configurable per receive (max 12 hours)");
+Console.WriteLine("- Max queue size: 500 TB");
+Console.WriteLine("- Throughput: Millions of messages per day");
+
+// Main execution
+var cts = new CancellationTokenSource();
+
+// Start producer
+await ProduceOrdersAsync();
+
+// Start consumer
+_ = ConsumeOrdersAsync(cts.Token);
+
+// Run for 30 seconds
+await Task.Delay(TimeSpan.FromSeconds(30));
+cts.Cancel();
+
+class Order
+{
+    public string OrderId { get; set; }
+    public string CustomerId { get; set; }
+    public decimal Total { get; set; }
+}`}]}]},jv={id:"azure-durable-functions",name:"Durable Functions",questions:[{id:"q1",question:"What are Azure Durable Functions and what problems do they solve?",answer:"Azure Durable Functions extend Azure Functions with stateful workflow capabilities. They solve problems: 1) Function orchestration - coordinating multiple functions with dependencies. 2) Long-running processes - workflows lasting hours/days without timeout. 3) Distributed transactions - managing state across function calls. 4) Retry logic - built-in with exponential backoff. 5) Checkpointing - automatic resumption from failure point. 6) Fan-out/fan-in - parallel task execution and aggregation. Key patterns: Orchestrator functions coordinate work, Activity functions do the work, Entity functions maintain state. Uses event sourcing internally, enabling replaying from checkpoints.",codeSnippets:[{language:"csharp",code:`// Azure Durable Functions - Core Concepts
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= ORCHESTRATOR FUNCTION =============
+// Coordinates workflow, schedules tasks, manages state
+// Note: Must be deterministic (same input = same execution path)
+
+[FunctionName("OrderProcessingOrchestrator")]
+public static async Task RunOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    var order = context.GetInput<Order>();
+    var results = new List<string>();
+
+    try
+    {
+        // Step 1: Validate order (calls activity function)
+        var isValid = await context.CallActivityAsync<bool>(
+            "ValidateOrderActivity",
+            order
+        );
+
+        if (!isValid)
+        {
+            throw new InvalidOperationException("Order validation failed");
+        }
+
+        // Step 2: Process payment
+        var paymentResult = await context.CallActivityAsync<string>(
+            "ProcessPaymentActivity",
+            order.Total
+        );
+        results.Add(paymentResult);
+
+        // Step 3: Send confirmation email
+        await context.CallActivityAsync(
+            "SendConfirmationEmailActivity",
+            order.CustomerEmail
+        );
+
+        // Step 4: Update inventory
+        await context.CallActivityAsync(
+            "UpdateInventoryActivity",
+            order.Items
+        );
+
+        await context.CallActivityAsync(
+            "LogSuccessActivity",
+            $"Order {order.OrderId} completed successfully"
+        );
+    }
+    catch (Exception ex)
+    {
+        await context.CallActivityAsync(
+            "LogErrorActivity",
+            ex.Message
+        );
+        throw;
+    }
+}
+
+// ============= ACTIVITY FUNCTIONS =============
+// Do the actual work (HTTP calls, database operations, etc.)
+// Can be retried, can fail, no side-effect restrictions
+
+[FunctionName("ValidateOrderActivity")]
+public static async Task<bool> ValidateOrder(
+    [ActivityTrigger] Order order)
+{
+    Console.WriteLine($"Validating order {order.OrderId}");
+    await Task.Delay(500);
+    return order.Total > 0 && !string.IsNullOrEmpty(order.CustomerEmail);
+}
+
+[FunctionName("ProcessPaymentActivity")]
+public static async Task<string> ProcessPayment(
+    [ActivityTrigger] decimal paymentAmount)
+{
+    Console.WriteLine($"Processing payment of \${paymentAmount}");
+    await Task.Delay(1000); // Simulate payment gateway
+    return $"Payment processed: \${paymentAmount}";
+}
+
+[FunctionName("SendConfirmationEmailActivity")]
+public static async Task SendConfirmationEmail(
+    [ActivityTrigger] string email)
+{
+    Console.WriteLine($"Sending confirmation to {email}");
+    await Task.Delay(300);
+}
+
+[FunctionName("UpdateInventoryActivity")]
+public static async Task UpdateInventory(
+    [ActivityTrigger] List<OrderItem> items)
+{
+    Console.WriteLine($"Updating inventory for {items.Count} items");
+    await Task.Delay(400);
+}
+
+[FunctionName("LogSuccessActivity")]
+public static void LogSuccess([ActivityTrigger] string message)
+{
+    Console.WriteLine($"✓ {message}");
+}
+
+[FunctionName("LogErrorActivity")]
+public static void LogError([ActivityTrigger] string error)
+{
+    Console.WriteLine($"✗ Error: {error}");
+}
+
+// ============= CLIENT FUNCTION =============
+// Starts the orchestrator
+
+[FunctionName("StartOrderProcessing")]
+public static async Task<string> StartOrchestrator(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "orders")] Order order,
+    [DurableClient] IDurableOrchestrationClient client)
+{
+    string instanceId = await client.StartNewAsync(
+        "OrderProcessingOrchestrator",
+        order
+    );
+
+    Console.WriteLine($"Started orchestration with ID: {instanceId}");
+    return instanceId;
+}
+
+// ============= CHECK STATUS =============
+[FunctionName("GetOrchestrationStatus")]
+public static async Task<IActionResult> GetStatus(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "orders/{instanceId}")] string instanceId,
+    [DurableClient] IDurableOrchestrationClient client)
+{
+    var status = await client.GetStatusAsync(instanceId);
+    
+    return new OkObjectResult(new
+    {
+        InstanceId = instanceId,
+        Status = status.RuntimeStatus,
+        Input = status.Input,
+        Output = status.Output,
+        CreatedTime = status.CreatedTime,
+        LastUpdatedTime = status.LastUpdatedTime
+    });
+}
+
+// ============= KEY BENEFITS =============
+Console.WriteLine("Durable Functions Benefits:");
+Console.WriteLine("✓ Automatic checkpointing - resume from failure point");
+Console.WriteLine("✓ Long-running workflows - hours/days, no timeout");
+Console.WriteLine("✓ Built-in retry logic - exponential backoff");
+Console.WriteLine("✓ Fan-out/fan-in patterns - parallel execution");
+Console.WriteLine("✓ State management - automatic");
+Console.WriteLine("✓ Event sourcing - full execution history");
+
+class Order
+{
+    public string OrderId { get; set; }
+    public decimal Total { get; set; }
+    public string CustomerEmail { get; set; }
+    public List<OrderItem> Items { get; set; }
+}
+
+class OrderItem
+{
+    public string ProductId { get; set; }
+    public int Quantity { get; set; }
+}`}]},{id:"q2",question:"What are the different Durable Functions patterns (Fan-out/Fan-in, Chaining, etc.)?",answer:"Main patterns: 1) Function Chaining - sequential execution where output of one is input to next. 2) Fan-out/Fan-in - call multiple activities in parallel, then aggregate results. 3) Async HTTP APIs - long-running workflows with polling mechanism. 4) Monitor - recurring operations checking conditions. 5) Human interaction - workflows waiting for human approval. 6) Sub-orchestrations - orchestrators calling other orchestrators. 7) Entity functions - durable state management for counters, voting, etc. Each pattern solves specific workflow challenges.",codeSnippets:[{language:"csharp",code:`// Durable Functions - Common Patterns
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+// ============= PATTERN 1: FUNCTION CHAINING =============
+// Sequential execution: A → B → C
+// Output of A becomes input to B, etc.
+
+[FunctionName("ChainingOrchestrator")]
+public static async Task<string> Chaining(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string input)
+{
+    try
+    {
+        // Step 1: Get user
+        var user = await context.CallActivityAsync<User>(
+            "GetUserActivity",
+            input
+        );
+        Console.WriteLine($"Step 1: Got user {user.Name}");
+
+        // Step 2: Get user orders (uses user from step 1)
+        var orders = await context.CallActivityAsync<List<Order>>(
+            "GetUserOrdersActivity",
+            user.UserId
+        );
+        Console.WriteLine($"Step 2: Got {orders.Count} orders");
+
+        // Step 3: Calculate total spent (uses orders from step 2)
+        var totalSpentAmount = await context.CallActivityAsync<decimal>(
+            "CalculateTotalSpentActivity",
+            orders
+        );
+        Console.WriteLine($"Step 3: Total spent: \${totalSpentAmount}");
+
+        // Step 4: Award loyalty points (uses totalSpent from step 3)
+        var loyaltyPoints = await context.CallActivityAsync<int>(
+            "AwardLoyaltyPointsActivity",
+            new { UserId = user.UserId, TotalSpent = totalSpentAmount }
+        );
+
+        return $"Chaining complete. User earned {loyaltyPoints} points";
+    }
+    catch (Exception ex)
+    {
+        return $"Chaining failed: {ex.Message}";
+    }
+}
+
+// ============= PATTERN 2: FAN-OUT/FAN-IN =============
+// Call multiple tasks in PARALLEL, then aggregate results
+// Parallel execution = faster than sequential
+
+[FunctionName("FanOutFanInOrchestrator")]
+public static async Task<ParallelResults> FanOutFanIn(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string orderId)
+{
+    try
+    {
+        // Start multiple tasks in PARALLEL
+        var tasks = new List<Task>();
+
+        // Task 1: Validate order
+        tasks.Add(context.CallActivityAsync("ValidateOrderActivity", orderId));
+
+        // Task 2: Check inventory (runs in parallel!)
+        tasks.Add(context.CallActivityAsync("CheckInventoryActivity", orderId));
+
+        // Task 3: Verify payment method (runs in parallel!)
+        tasks.Add(context.CallActivityAsync("VerifyPaymentActivity", orderId));
+
+        // Task 4: Check fraud (runs in parallel!)
+        tasks.Add(context.CallActivityAsync("CheckFraudActivity", orderId));
+
+        // Wait for ALL tasks to complete
+        await Task.WhenAll(tasks);
+
+        // FAN-IN: Aggregate results
+        var results = await context.CallActivityAsync<ParallelResults>(
+            "AggregateResultsActivity",
+            orderId
+        );
+
+        return results;
+    }
+    catch (Exception ex)
+    {
+        throw;
+    }
+}
+
+// ============= PATTERN 3: ASYNC HTTP APIS =============
+// Long-running workflow with status checking
+
+[FunctionName("ReportOrchestrator")]
+public static async Task<string> GenerateReportOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    ReportRequest request)
+{
+    // This orchestrator runs for hours
+    var location = await context.CallActivityAsync<string>(
+        "GenerateLargeReportActivity",
+        request
+    );
+
+    return location;
+}
+
+[FunctionName("GenerateLargeReportActivity")]
+public static async Task<string> GenerateLargeReport(
+    [ActivityTrigger] ReportRequest request)
+{
+    // Simulate long-running report generation (1 hour+)
+    await Task.Delay(TimeSpan.FromHours(1));
+    return $"https://storage.blob.core.windows.net/reports/{request.ReportName}.pdf";
+}
+
+[FunctionName("StartReportGeneration")]
+public static async Task<DurableOrchestrationStatus> StartReport(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "reports")] ReportRequest request,
+    [DurableClient] IDurableOrchestrationClient client)
+{
+    string instanceId = await client.StartNewAsync(
+        "ReportOrchestrator",
+        request
+    );
+
+    // Return status URL for polling
+    return new DurableOrchestrationStatus
+    {
+        InstanceId = instanceId,
+        StatusQueryGetUri = $"/api/reports/{instanceId}"
+    };
+}
+
+// ============= PATTERN 4: MONITOR =============
+// Continuously check a condition, retry on failure
+
+[FunctionName("MonitorOrchestrator")]
+public static async Task Monitor(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string deploymentId)
+{
+    var retryPolicy = new RetryOptions(
+        firstRetryInterval: TimeSpan.FromSeconds(5),
+        maxNumberOfAttempts: 30 // Try for 2.5 minutes
+    )
+    {
+        BackoffCoefficient = 1.5
+    };
+
+    while (true)
+    {
+        try
+        {
+            // Check deployment status every 5 seconds
+            var status = await context.CallActivityWithRetryAsync<string>(
+                "CheckDeploymentStatusActivity",
+                retryPolicy,
+                deploymentId
+            );
+
+            if (status == "Completed")
+            {
+                Console.WriteLine("Deployment completed!");
+                break;
+            }
+
+            // Wait before next check
+            var nextCheckTime = context.CurrentUtcDateTime.AddSeconds(5);
+            await context.CreateTimer(nextCheckTime, CancellationToken.None);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Deployment failed: {ex.Message}");
+            throw;
+        }
+    }
+}
+
+// ============= PATTERN 5: HUMAN INTERACTION =============
+// Workflow waiting for human approval
+
+[FunctionName("ApprovalOrchestrator")]
+public static async Task<string> HumanApproval(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    PurchaseOrder po)
+{
+    // Request human approval
+    await context.CallActivityAsync("RequestApprovalActivity", po);
+
+    // Wait for approval (timeout after 48 hours)
+    var approvalTimeout = context.CreateTimer(
+        context.CurrentUtcDateTime.AddHours(48),
+        CancellationToken.None
+    );
+
+    var approvalTask = context.WaitForExternalEvent<bool>("ApprovalSubmitted");
+
+    var winner = await Task.WhenAny(approvalTask, approvalTimeout);
+
+    if (winner == approvalTask)
+    {
+        // Approval received before timeout
+        bool isApproved = approvalTask.Result;
+
+        if (isApproved)
+        {
+            await context.CallActivityAsync("ProcessPurchaseActivity", po);
+            return "Purchase approved and processed";
+        }
+        else
+        {
+            await context.CallActivityAsync("RejectPurchaseActivity", po);
+            return "Purchase rejected";
+        }
+    }
+    else
+    {
+        // Timeout
+        return "Approval request timed out";
+    }
+}
+
+[FunctionName("SubmitApproval")]
+public static async Task SubmitApproval(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "approve/{instanceId}")] string instanceId,
+    bool approved,
+    [DurableClient] IDurableOrchestrationClient client)
+{
+    // Send approval decision to waiting orchestrator
+    await client.RaiseEventAsync(instanceId, "ApprovalSubmitted", approved);
+}
+
+// ============= PATTERN 6: SUB-ORCHESTRATIONS =============
+// Orchestrator calling another orchestrator
+
+[FunctionName("ParentOrchestrator")]
+public static async Task<string> ParentOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    int orderId)
+{
+    // Call sub-orchestrator
+    var paymentResult = await context.CallSubOrchestratorAsync<string>(
+        "PaymentSubOrchestrator",
+        orderId
+    );
+
+    var shipmentResult = await context.CallSubOrchestratorAsync<string>(
+        "ShipmentSubOrchestrator",
+        orderId
+    );
+
+    return $"Parent: {paymentResult}, {shipmentResult}";
+}
+
+[FunctionName("PaymentSubOrchestrator")]
+public static async Task<string> PaymentSubOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    int orderId)
+{
+    var result = await context.CallActivityAsync<string>(
+        "ProcessPaymentActivity",
+        orderId
+    );
+    return result;
+}
+
+// ============= PATTERN 7: ENTITY FUNCTIONS =============
+// Durable state management (counters, flags, etc.)
+
+[FunctionName("CounterEntity")]
+public static void Counter(
+    [EntityFunctionInput] IDurableEntityContext context)
+{
+    var currentValue = context.State<int>();
+
+    switch (context.OperationName.ToLowerInvariant())
+    {
+        case "add":
+            currentValue += (int)context.GetInput<int>();
+            break;
+        case "get":
+            context.SetResult(currentValue);
+            break;
+        case "set":
+            currentValue = (int)context.GetInput<int>();
+            break;
+    }
+
+    context.State = currentValue;
+}
+
+// Use entity in orchestrator
+[FunctionName("CounterOrchestrator")]
+public static async Task UseCounter(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    var entityId = new EntityId("CounterEntity", "myCounter");
+
+    // Call entity operations
+    await context.CallEntityAsync(entityId, "add", 5);
+    await context.CallEntityAsync(entityId, "add", 3);
+    var value = await context.CallEntityAsync<int>(entityId, "get");
+
+    Console.WriteLine($"Counter value: {value}"); // 8
+}
+
+// ============= PATTERN SUMMARY =============
+Console.WriteLine("Durable Functions Patterns:");
+Console.WriteLine("1. Chaining        - Sequential A→B→C");
+Console.WriteLine("2. Fan-out/Fan-in  - Parallel tasks then aggregate");
+Console.WriteLine("3. Async HTTP APIs - Long-running with status polling");
+Console.WriteLine("4. Monitor         - Repeated checks with backoff");
+Console.WriteLine("5. Human Approval  - Wait for external approval event");
+Console.WriteLine("6. Sub-orchestrations - Nested orchestrator calls");
+Console.WriteLine("7. Entity Functions - Durable state management");
+
+class User { public string UserId { get; set; } public string Name { get; set; } }
+class Order { public string OrderId { get; set; } }
+class ReportRequest { public string ReportName { get; set; } }
+class PurchaseOrder { public string PONumber { get; set; } public decimal Amount { get; set; } }
+class ParallelResults { public bool ValidationPassed { get; set; } }
+class DurableOrchestrationStatus { public string InstanceId { get; set; } public string StatusQueryGetUri { get; set; } }`}]},{id:"q3",question:"How do you handle retries and error handling in Durable Functions?",answer:"Durable Functions provide RetryOptions for automatic retry with exponential backoff. Configure firstRetryInterval, maxNumberOfAttempts, and backoffCoefficient. Activity functions can fail and retry automatically. Use try-catch in orchestrators to handle exceptions. Failed activity calls throw exceptions. Orchestrators are replayed from checkpoints on failure, so they must be deterministic (no DateTime.Now, no random). Automatic state management means retries don't duplicate side effects. Dead-letter pattern: move failed messages to separate queue after exhausting retries.",codeSnippets:[{language:"csharp",code:`// Durable Functions - Retry & Error Handling
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= RETRY OPTIONS =============
+// Automatic retry with exponential backoff
+
+[FunctionName("RetryOrchestrator")]
+public static async Task RetryExample(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    // Configure retry policy
+    var retryOptions = new RetryOptions(
+        firstRetryInterval: TimeSpan.FromSeconds(1),
+        maxNumberOfAttempts: 3
+    )
+    {
+        BackoffCoefficient = 2.0, // Exponential backoff: 1s, 2s, 4s
+        Handle = ex => ex is TimeoutException or HttpRequestException // Retry only these
+    };
+
+    try
+    {
+        // Call with retry
+        var result = await context.CallActivityWithRetryAsync<string>(
+            "UnreliableApiCallActivity",
+            retryOptions,
+            "data"
+        );
+
+        Console.WriteLine($"Success: {result}");
+    }
+    catch (FunctionFailedException ex)
+    {
+        // After 3 retries, still failed
+        Console.WriteLine($"Failed after retries: {ex.InnerException?.Message}");
+    }
+}
+
+// ============= CUSTOM RETRY LOGIC =============
+
+[FunctionName("CustomRetryOrchestrator")]
+public static async Task CustomRetry(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string orderId)
+{
+    int maxAttempts = 5;
+    int attempt = 0;
+    Exception lastException = null;
+
+    while (attempt < maxAttempts)
+    {
+        try
+        {
+            attempt++;
+            Console.WriteLine($"Attempt {attempt} of {maxAttempts}");
+
+            var result = await context.CallActivityAsync<string>(
+                "ProcessOrderActivity",
+                orderId
+            );
+
+            Console.WriteLine($"Success on attempt {attempt}");
+            return;
+        }
+        catch (Exception ex)
+        {
+            lastException = ex;
+            Console.WriteLine($"Attempt {attempt} failed: {ex.Message}");
+
+            if (attempt < maxAttempts)
+            {
+                // Exponential backoff: 2^attempt seconds
+                var backoffSeconds = Math.Pow(2, attempt);
+                var nextRetryTime = context.CurrentUtcDateTime.AddSeconds(backoffSeconds);
+
+                // Wait before retry
+                await context.CreateTimer(nextRetryTime, CancellationToken.None);
+            }
+        }
+    }
+
+    // All retries exhausted
+    throw new InvalidOperationException(
+        $"Failed after {maxAttempts} attempts",
+        lastException
+    );
+}
+
+// ============= DEAD-LETTER PATTERN =============
+// Move permanently failed messages to separate queue
+
+[FunctionName("DeadLetterOrchestrator")]
+public static async Task DeadLetterPattern(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    OrderMessage message)
+{
+    var retryOptions = new RetryOptions(
+        TimeSpan.FromSeconds(1),
+        maxNumberOfAttempts: 3
+    );
+
+    try
+    {
+        await context.CallActivityWithRetryAsync(
+            "ProcessOrderActivity",
+            retryOptions,
+            message
+        );
+    }
+    catch (FunctionFailedException ex)
+    {
+        // Send to dead-letter queue for manual review
+        await context.CallActivityAsync(
+            "SendToDeadLetterActivity",
+            new { Message = message, Error = ex.InnerException?.Message }
+        );
+    }
+}
+
+[FunctionName("SendToDeadLetterActivity")]
+public static async Task SendToDeadLetter(
+    [ActivityTrigger] IDictionary<string, object> failedData,
+    [Queue("order-deadletter")] IAsyncCollector<string> deadLetterQueue)
+{
+    await deadLetterQueue.AddAsync(System.Text.Json.JsonSerializer.Serialize(failedData));
+    Console.WriteLine("Message sent to dead-letter queue for review");
+}
+
+// ============= HANDLE SPECIFIC EXCEPTIONS =============
+
+[FunctionName("SelectiveRetryOrchestrator")]
+public static async Task SelectiveRetry(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string paymentId)
+{
+    var retryOptions = new RetryOptions(
+        TimeSpan.FromSeconds(1),
+        maxNumberOfAttempts: 3
+    )
+    {
+        // Only retry transient errors (network, timeout)
+        // Don't retry validation errors
+        Handle = ex =>
+        {
+            var innerEx = ex.InnerException;
+            if (innerEx is TimeoutException) return true;
+            if (innerEx is HttpRequestException) return true;
+            if (innerEx is InvalidOperationException) return false; // Validation error, don't retry
+
+            return false;
+        }
+    };
+
+    try
+    {
+        await context.CallActivityWithRetryAsync(
+            "ProcessPaymentActivity",
+            retryOptions,
+            paymentId
+        );
+    }
+    catch (FunctionFailedException ex)
+    {
+        var innerException = ex.InnerException;
+
+        if (innerException is InvalidOperationException)
+        {
+            // Validation failed, don't retry
+            Console.WriteLine($"Validation error (permanent): {innerException.Message}");
+            throw;
+        }
+
+        if (innerException is TimeoutException)
+        {
+            // Timeout, already retried
+            Console.WriteLine($"Timeout after retries: {innerException.Message}");
+            throw;
+        }
+    }
+}
+
+// ============= ORCHESTRATOR MUST BE DETERMINISTIC =============
+// These will cause issues with replaying!
+
+[FunctionName("NonDeterministicOrchestrator")]
+public static async Task BadPractices(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    // ❌ BAD: Using DateTime.Now - not deterministic
+    // var now = DateTime.Now;
+
+    // ✓ GOOD: Use context.CurrentUtcDateTime
+    var now = context.CurrentUtcDateTime;
+
+    // ❌ BAD: Using Random
+    // var random = new Random().Next(10);
+
+    // ✓ GOOD: Pass randomness from activity
+    // var random = await context.CallActivityAsync<int>("GetRandomActivity", null);
+
+    // ❌ BAD: Using GUID directly
+    // var id = Guid.NewGuid();
+
+    // ✓ GOOD: Get GUID from activity
+    // var id = await context.CallActivityAsync<Guid>("GenerateGuidActivity", null);
+
+    // ❌ BAD: Direct I/O operations
+    // File.WriteAllText("log.txt", "message");
+
+    // ✓ GOOD: Use activity function
+    // await context.CallActivityAsync("LogActivity", "message");
+}
+
+// ============= TIMEOUT HANDLING =============
+
+[FunctionName("TimeoutOrchestrator")]
+public static async Task<string> HandleTimeout(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string reportId)
+{
+    try
+    {
+        // Set timeout of 30 minutes
+        var timeoutAttempt = context.CreateTimer(
+            context.CurrentUtcDateTime.AddMinutes(30),
+            CancellationToken.None
+        );
+
+        var reportTask = context.CallActivityAsync<string>(
+            "GenerateReportActivity",
+            reportId
+        );
+
+        // Race: either report completes or timeout fires
+        var winner = await Task.WhenAny(reportTask, timeoutAttempt);
+
+        if (winner == reportTask)
+        {
+            return reportTask.Result;
+        }
+        else
+        {
+            return "Report generation timed out after 30 minutes";
+        }
+    }
+    catch (FunctionFailedException ex)
+    {
+        Console.WriteLine($"Error: {ex.InnerException?.Message}");
+        throw;
+    }
+}
+
+// ============= BEST PRACTICES =============
+Console.WriteLine("Retry & Error Handling Best Practices:");
+Console.WriteLine("✓ Use RetryOptions for automatic exponential backoff");
+Console.WriteLine("✓ Configure maxNumberOfAttempts appropriate to SLA");
+Console.WriteLine("✓ Use Handle predicate to filter retryable exceptions");
+Console.WriteLine("✓ Use dead-letter pattern for permanently failed messages");
+Console.WriteLine("✓ Keep orchestrators deterministic (no DateTime.Now, Random, I/O)");
+Console.WriteLine("✓ Use activity functions for side effects");
+Console.WriteLine("✓ Handle FunctionFailedException to access inner exception");
+Console.WriteLine("✓ Set appropriate timeouts with CreateTimer");
+Console.WriteLine("✓ Log failures for monitoring and alerting");
+Console.WriteLine("✓ Test retry scenarios in development");
+
+class OrderMessage { public string OrderId { get; set; } }`}]},{id:"q4",question:"What is event sourcing in Durable Functions and how is it used internally?",answer:"Event sourcing is the internal mechanism Durable Functions uses for reliability. Instead of storing function state directly, it stores all events (actions) that happened: 'orchestrator called activity X', 'activity X returned result Y', etc. On failure, the orchestrator replays all events to restore to the exact point of failure, then continues. This enables zero data loss, automatic checkpointing, and instant recovery. History is stored in storage account (table storage or SQL database). Replay is deterministic if orchestrator is pure (same inputs always produce same execution path). This is why orchestrators must be deterministic.",codeSnippets:[{language:"csharp",code:`// Azure Durable Functions - Event Sourcing Internals
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= HOW EVENT SOURCING WORKS =============
+
+[FunctionName("EventSourcingExampleOrchestrator")]
+public static async Task EventSourcingExample(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    OrderData order)
+{
+    // Every action generates an event that is stored
+
+    // Event 1: Orchestrator started
+    Console.WriteLine("[Event 1] Orchestrator started");
+
+    // Event 2: Call ValidateOrder activity
+    var isValid = await context.CallActivityAsync<bool>(
+        "ValidateOrderActivity",
+        order
+    );
+    // Event stored: { Type: "TaskScheduled", Activity: "ValidateOrder", ... }
+    // Event stored: { Type: "TaskCompleted", Activity: "ValidateOrder", Result: true }
+    Console.WriteLine("[Event 2] Validate order returned: " + isValid);
+
+    // Event 3: Call ProcessPayment activity
+    var paymentId = await context.CallActivityAsync<string>(
+        "ProcessPaymentActivity",
+        order.Amount
+    );
+    // Event stored: { Type: "TaskScheduled", Activity: "ProcessPayment", ... }
+    // Event stored: { Type: "TaskCompleted", Activity: "ProcessPayment", Result: "PAY-123" }
+    Console.WriteLine("[Event 3] Payment processed: " + paymentId);
+
+    // Event 4: Call UpdateInventory activity
+    await context.CallActivityAsync(
+        "UpdateInventoryActivity",
+        order.Items
+    );
+    // Event stored: { Type: "TaskScheduled", Activity: "UpdateInventory", ... }
+    // Event stored: { Type: "TaskCompleted", Activity: "UpdateInventory" }
+    Console.WriteLine("[Event 4] Inventory updated");
+
+    // Event 5: Orchestrator completed
+    Console.WriteLine("[Event 5] Orchestrator completed successfully");
+
+    /* HISTORY STORAGE in Azure Table Storage:
+     * 
+     * InstanceId: ORDER-001
+     * 
+     * Event History:
+     * {
+     *   "InstanceId": "ORDER-001",
+     *   "ExecutionId": "1",
+     *   "Sequence": 0,
+     *   "EventType": "OrchestratorStarted",
+     *   "Timestamp": "2024-01-15T10:00:00Z"
+     * },
+     * {
+     *   "InstanceId": "ORDER-001",
+     *   "Sequence": 1,
+     *   "EventType": "TaskScheduled",
+     *   "Name": "ValidateOrderActivity",
+     *   "Input": "{ OrderId: 'ORD-001' }"
+     * },
+     * {
+     *   "InstanceId": "ORDER-001",
+     *   "Sequence": 2,
+     *   "EventType": "TaskCompleted",
+     *   "Result": "true"
+     * },
+     * ...
+     */
+}
+
+// ============= REPLAY MECHANISM ON FAILURE =============
+
+[FunctionName("ReplayOnFailureOrchestrator")]
+public static async Task ReplayMechanism(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string itemId)
+{
+    try
+    {
+        // Step 1: Get inventory
+        var inventory = await context.CallActivityAsync<int>(
+            "GetInventoryActivity",
+            itemId
+        );
+
+        // If this crashes here ↓, the whole orchestration restarts
+
+        // Step 2: Check stock
+        if (inventory < 10)
+        {
+            throw new InvalidOperationException("Low stock!");
+        }
+
+        // Step 3: Reorder
+        var orderId = await context.CallActivityAsync<string>(
+            "PlaceReorderActivity",
+            itemId
+        );
+
+        // REPLAY FLOW ON FAILURE:
+        // 1. Orchestrator restarts from beginning
+        // 2. Events replayed: GetInventory activity ran, returned same result (cached)
+        // 3. Stock check runs again (using cached result, not calling activity again)
+        // 4. Reaches the point where it crashed
+        // 5. Continues from there (PlaceReorder now executes)
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error: {ex.Message}");
+    }
+}
+
+// ============= WHY DETERMINISTIC? =============
+
+[FunctionName("DeterministicRequirementOrchestrator")]
+public static async Task DeterministicRequirement(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    string processId)
+{
+    // SCENARIO: First execution completes up to step 2, then fails
+
+    // ❌ WRONG: Using DateTime.Now
+    // First execution:
+    //   Step 1: now = 2024-01-15 10:00:00
+    //   Step 2: CRASH
+    // Replay:
+    //   Step 1: now = 2024-01-15 10:00:05 (different time!)
+    //   This causes different behavior, breaking replay guarantee
+
+    // ✓ CORRECT: Use context.CurrentUtcDateTime
+    var now = context.CurrentUtcDateTime;
+    // First execution:
+    //   Step 1: now = 2024-01-15 10:00:00
+    //   Step 2: CRASH
+    // Replay:
+    //   Step 1: now = 2024-01-15 10:00:00 (same time!)
+    //   Replay produces identical behavior
+
+    // ❌ WRONG: Using Random
+    // var randomValue = new Random().Next(100);
+    // First execution: randomValue = 42
+    // Replay: randomValue = 73 (different!)
+
+    // ✓ CORRECT: Get random from activity
+    // var randomValue = await context.CallActivityAsync<int>("GetRandomActivity", null);
+    // Deterministic because activity result is replayed
+
+    // ❌ WRONG: Direct I/O
+    // var data = File.ReadAllText("data.json");
+    // File may have changed!
+
+    // ✓ CORRECT: Use activity
+    // var data = await context.CallActivityAsync<string>("ReadFileActivity", "data.json");
+}
+
+// ============= CHECKING EXECUTION HISTORY =============
+
+[FunctionName("CheckExecutionHistory")]
+public static async Task CheckHistory(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "history/{instanceId}")] string instanceId,
+    [DurableClient] IDurableOrchestrationClient client)
+{
+    var status = await client.GetStatusAsync(instanceId);
+
+    Console.WriteLine($"Instance ID: {instanceId}");
+    Console.WriteLine($"Status: {status.RuntimeStatus}");
+    Console.WriteLine($"Created: {status.CreatedTime}");
+    Console.WriteLine($"Completed: {status.CompletedTime}");
+    Console.WriteLine($"\\nExecution History:");
+
+    var history = status.History;
+    for (int i = 0; i < history.Count; i++)
+    {
+        var item = history[i];
+        Console.WriteLine($"  Event {i}: {item}");
+    }
+
+    // Example output:
+    // Event 0: { "EventType": "OrchestratorStarted" }
+    // Event 1: { "EventType": "TaskScheduled", "Name": "ValidateOrder" }
+    // Event 2: { "EventType": "TaskCompleted", "Result": "true" }
+    // Event 3: { "EventType": "TaskScheduled", "Name": "ProcessPayment" }
+    // Event 4: { "EventType": "TaskCompleted", "Result": "payment-123" }
+}
+
+// ============= EVENT SOURCING BENEFITS =============
+Console.WriteLine("Event Sourcing Benefits in Durable Functions:");
+Console.WriteLine("✓ Automatic checkpointing - save to storage after each step");
+Console.WriteLine("✓ Deterministic replay - exact restoration to failure point");
+Console.WriteLine("✓ Zero data loss - all work is recorded");
+Console.WriteLine("✓ Instant recovery - continue from last checkpoint");
+Console.WriteLine("✓ Full history - complete audit trail of execution");
+Console.WriteLine("✓ Failure handling - transparent automatic recovery");
+
+// ============= CONFIGURING STORAGE =============
+Console.WriteLine("\\nEvent Storage Backends:");
+Console.WriteLine("- Table Storage (default, cost-effective)");
+Console.WriteLine("- SQL Database (better for analysis)");
+Console.WriteLine("- Netherite (faster, event log only)");
+
+class OrderData { public string OrderId { get; set; } public decimal Amount { get; set; } public List<string> Items { get; set; } }`}]},{id:"q5",question:"How do you monitor, debug, and troubleshoot Durable Functions?",answer:"Monitor using Application Insights with custom metrics and traces. Track orchestrator status: Pending, Running, Completed, Failed, Terminated. Use IDurableOrchestrationClient.GetStatusAsync() to check instance status and execution history. Debug: enable verbose logging, inspect history in storage table, replay execution in local emulator. Common issues: orchestrator not deterministic (changes cause mismatches), activity timeouts (configure with RetryOptions), storage account connectivity. Use Durable Functions monitoring extension in Azure Portal to visualize workflow execution. Set up alerts for failures.",codeSnippets:[{language:"csharp",code:`// Durable Functions - Monitoring, Debugging, Troubleshooting
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= MONITORING WITH APPLICATION INSIGHTS =============
+
+[FunctionName("MonitoredOrchestrator")]
+public static async Task MonitoredWorkflow(
+    [OrchestrationTrigger] IDurableOrchestrationContext context,
+    ILogger log,
+    string orderId)
+{
+    try
+    {
+        // Log orchestrator events
+        context.SetCustomStatus("Starting order processing");
+
+        var isValid = await context.CallActivityAsync<bool>(
+            "ValidateOrderActivity",
+            orderId
+        );
+
+        if (!isValid)
+        {
+            context.SetCustomStatus("Validation failed");
+            throw new InvalidOperationException("Invalid order");
+        }
+
+        context.SetCustomStatus("Processing payment");
+        var paymentId = await context.CallActivityAsync<string>(
+            "ProcessPaymentActivity",
+            orderId
+        );
+
+        context.SetCustomStatus("Updating inventory");
+        await context.CallActivityAsync("UpdateInventoryActivity", orderId);
+
+        context.SetCustomStatus("Order completed");
+    }
+    catch (Exception ex)
+    {
+        context.SetCustomStatus($"Failed: {ex.Message}");
+        throw;
+    }
+}
+
+// ============= DETAILED LOGGING IN ACTIVITIES =============
+
+[FunctionName("LoggedActivity")]
+public static async Task<string> ActivityWithLogging(
+    [ActivityTrigger] string orderId,
+    ILogger log)
+{
+    log.LogInformation($"Processing order: {orderId}");
+
+    try
+    {
+        // Simulate work
+        await Task.Delay(1000);
+
+        log.LogInformation($"Order {orderId} processed successfully");
+        return $"Completed-{orderId}";
+    }
+    catch (Exception ex)
+    {
+        log.LogError($"Error processing order {orderId}: {ex.Message}");
+        throw;
+    }
+}
+
+// ============= CHECK INSTANCE STATUS =============
+
+[FunctionName("CheckInstanceStatus")]
+public static async Task<object> CheckStatus(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "orchestration/{instanceId}/status")] string instanceId,
+    [DurableClient] IDurableOrchestrationClient client,
+    ILogger log)
+{
+    var status = await client.GetStatusAsync(instanceId);
+
+    if (status == null)
+    {
+        return new { Error = "Instance not found" };
+    }
+
+    log.LogInformation($"Instance {instanceId} status: {status.RuntimeStatus}");
+
+    return new
+    {
+        InstanceId = instanceId,
+        Status = status.RuntimeStatus.ToString(), // Pending, Running, Completed, Failed, etc.
+        Input = status.Input,
+        Output = status.Output,
+        CreatedTime = status.CreatedTime,
+        LastUpdatedTime = status.LastUpdatedTime,
+        CompletedTime = status.CompletedTime,
+        IsRuntimeStatus = status.IsRuntimeStatus,
+        
+        // History of all events
+        History = status.History,
+        
+        // Custom status set by orchestrator
+        CustomStatus = status.CustomStatus
+    };
+}
+
+// ============= EXECUTION HISTORY ANALYSIS =============
+
+[FunctionName("AnalyzeExecutionHistory")]
+public static async Task AnalyzeHistory(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "orchestration/{instanceId}/history")] string instanceId,
+    [DurableClient] IDurableOrchestrationClient client,
+    ILogger log)
+{
+    var status = await client.GetStatusAsync(instanceId);
+
+    if (status?.History == null)
+        return;
+
+    var taskDurations = new Dictionary<string, TimeSpan>();
+    DateTime? previousTimestamp = null;
+
+    foreach (var historyItem in status.History)
+    {
+        // Each history item contains execution details
+        var json = historyItem.ToString();
+        
+        // Parse to find task completions
+        if (json.Contains("TaskCompleted"))
+        {
+            log.LogInformation($"Task completed: {json}");
+        }
+
+        if (json.Contains("TaskFailed"))
+        {
+            log.LogError($"Task failed: {json}");
+        }
+
+        if (json.Contains("OrchestratorStarted"))
+        {
+            log.LogInformation("Orchestrator started");
+        }
+    }
+
+    log.LogInformation($"Total events in history: {status.History.Count}");
+}
+
+// ============= TERMINATE STUCK ORCHESTRATION =============
+
+[FunctionName("TerminateOrchestration")]
+public static async Task Terminate(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "orchestration/{instanceId}/terminate")] string instanceId,
+    [DurableClient] IDurableOrchestrationClient client,
+    ILogger log)
+{
+    await client.TerminateAsync(instanceId, "Manually terminated");
+    log.LogWarning($"Orchestration {instanceId} terminated");
+}
+
+// ============= PURGE INSTANCE HISTORY =============
+
+[FunctionName("PurgeHistory")]
+public static async Task PurgeOldInstances(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "purge")] object input,
+    [DurableClient] IDurableOrchestrationClient client,
+    ILogger log)
+{
+    // Clean up instances older than 30 days
+    var cutoffTime = DateTime.UtcNow.AddDays(-30);
+
+    await client.PurgeInstanceHistoryAsync(
+        createdTimeFrom: DateTime.MinValue,
+        createdTimeTo: cutoffTime,
+        runtimeStatus: new[] { OrchestrationRuntimeStatus.Completed }
+    );
+
+    log.LogInformation("Purged completed instances older than 30 days");
+}
+
+// ============= COMMON ISSUES & SOLUTIONS =============
+
+[FunctionName("TroubleshootingGuide")]
+public static void TroubleshootingGuide()
+{
+    Console.WriteLine("Durable Functions Troubleshooting:");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 1: Orchestration stuck in 'Running' state");
+    Console.WriteLine("  Cause: Activity function crashed, orchestrator waiting");
+    Console.WriteLine("  Solution: Check activity function logs in Application Insights");
+    Console.WriteLine("  Action: Fix activity bug and redeploy");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 2: 'Orchestration violated deterministic constraint'");
+    Console.WriteLine("  Cause: Orchestrator code changed or non-deterministic operation used");
+    Console.WriteLine("  Solution: Don't modify orchestrator logic mid-flight, use DateTime.UtcNow");
+    Console.WriteLine("  Action: Deploy orchestrator change only after current instances complete");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 3: Activity function timeouts");
+    Console.WriteLine("  Cause: Activity takes longer than expected");
+    Console.WriteLine("  Solution: Configure RetryOptions with longer timeout");
+    Console.WriteLine("  Action: await context.CallActivityWithRetryAsync() with RetryOptions");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 4: Storage account connection errors");
+    Console.WriteLine("  Cause: Connection string misconfigured");
+    Console.WriteLine("  Solution: Check AzureWebJobsStorage setting in local.settings.json");
+    Console.WriteLine("  Action: Verify storage account access keys in Azure Portal");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 5: Instance history not updating");
+    Console.WriteLine("  Cause: Storage account permissions issue");
+    Console.WriteLine("  Solution: Ensure managed identity has Storage Contributor role");
+    Console.WriteLine("  Action: Check RBAC assignments in Azure Portal");
+    Console.WriteLine("");
+
+    Console.WriteLine("Issue 6: Duplicate execution of activity");
+    Console.WriteLine("  Cause: Activity called twice due to wrong code");
+    Console.WriteLine("  Solution: Implement idempotent activities");
+    Console.WriteLine("  Action: Use idempotency keys to prevent duplicate processing");
+}
+
+// ============= CUSTOM METRICS =============
+
+[FunctionName("MetricsOrchestrator")]
+public static async Task MetricsExample(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    var startTime = context.CurrentUtcDateTime;
+
+    try
+    {
+        await context.CallActivityAsync("LongRunningActivity", null);
+
+        var duration = context.CurrentUtcDateTime - startTime;
+        context.SetCustomStatus($"Completed in {duration.TotalSeconds}s");
+    }
+    catch (Exception ex)
+    {
+        context.SetCustomStatus($"Failed after {(context.CurrentUtcDateTime - startTime).TotalSeconds}s");
+    }
+}
+
+// ============= STRUCTURED LOGGING =============
+
+[FunctionName("StructuredLoggingActivity")]
+public static async Task StructuredLogging(
+    [ActivityTrigger] IDictionary<string, object> data,
+    ILogger log)
+{
+    // Structured logging for better querying in Application Insights
+    using (log.BeginScope(new Dictionary<string, object>
+    {
+        { "OrderId", data["OrderId"] },
+        { "CustomerId", data["CustomerId"] },
+        { "Amount", data["Amount"] }
+    }))
+    {
+        log.LogInformation("Processing order with structured logging");
+        // Logs will include OrderId, CustomerId, Amount for correlation
+    }
+}
+
+// ============= MONITORING BEST PRACTICES =============
+Console.WriteLine("\\nMonitoring Best Practices:");
+Console.WriteLine("✓ Use SetCustomStatus() for workflow visibility");
+Console.WriteLine("✓ Track orchestration instances with tags");
+Console.WriteLine("✓ Set up alerts for failed orchestrations");
+Console.WriteLine("✓ Monitor storage account metrics (latency, failures)");
+Console.WriteLine("✓ Use Application Insights for distributed tracing");
+Console.WriteLine("✓ Implement activity function timeouts");
+Console.WriteLine("✓ Regular purge of old instance history");
+Console.WriteLine("✓ Test disaster scenarios (storage failure, activity timeout)");
+Console.WriteLine("✓ Document retry policies and timeouts");
+Console.WriteLine("✓ Use correlation IDs for end-to-end tracing");`}]}]},_v={id:"azure-event-grid",name:"Event Grid",questions:[{id:"q1",question:"What is Azure Event Grid and what are its core components?",answer:"Azure Event Grid is a fully managed event routing service that connects event publishers to event subscribers using pub-sub pattern. Core components: 1) Event Sources - produce events (Storage, Service Bus, custom topics). 2) Event Handlers - receive and process events (Functions, Logic Apps, Webhooks, Event Hubs). 3) Topics - endpoints where events are published. 4) Event Subscriptions - route events from topics to handlers. 5) Event Filters - filter events by type, subject, or data. Supports thousands of events per second with at-least-once delivery guarantee. Integrates with 200+ Azure services and custom webhooks.",codeSnippets:[{language:"csharp",code:`// Azure Event Grid - Core Concepts
+using Azure;
+using Azure.Messaging.EventGrid;
+using Microsoft.Azure.WebJobs;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= EVENT SOURCES =============
+// Built-in sources: Storage, Service Bus, App Configuration, IoT Hub, etc.
+
+public static class EventSources
+{
+    public const string StorageSource = "Microsoft.Storage.StorageAccounts";
+    public const string ServiceBusSource = "Microsoft.ServiceBus.Namespaces";
+    public const string AppConfigSource = "Microsoft.AppConfiguration.ConfigurationStores";
+    public const string IoTHubSource = "Microsoft.Devices.IoTHubs";
+}
+
+// ============= CUSTOM TOPIC =============
+// Create custom topic for application events
+
+[FunctionName("PublishEventToCustomTopic")]
+public static async Task PublishEvent(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "events")] EventData eventData,
+    [EventGrid(TopicEndpointUri = "EventGridTopicUri", TopicKeySetting = "EventGridTopicKey")] IAsyncCollector<EventGridEvent> eventCollector)
+{
+    // Create event
+    var eventGridEvent = new EventGridEvent(
+        subject: $"/orders/{eventData.OrderId}",
+        eventType: "Orders.OrderCreated",
+        dataVersion: "1.0",
+        data: eventData
+    );
+
+    // Publish event
+    await eventCollector.AddAsync(eventGridEvent);
+
+    Console.WriteLine($"Event published for order {eventData.OrderId}");
+}
+
+// ============= EVENT HANDLER (WEBHOOK) =============
+// Handle events from Event Grid
+
+[FunctionName("EventGridWebhook")]
+public static async Task HandleEventGridEvents(
+    [HttpTrigger(AuthorizationLevel.Function, "post", Route = "eventgrid")] EventGridEvent[] events)
+{
+    foreach (var @event in events)
+    {
+        // Handle validation event (sent first time webhook is registered)
+        if (@event.EventType == "Microsoft.EventGrid.SubscriptionValidationEvent")
+        {
+            var validationEvent = @event.Data as dynamic;
+            var validationCode = validationEvent?.validationCode;
+            Console.WriteLine($"Validation code: {validationCode}");
+            continue;
+        }
+
+        Console.WriteLine($"Event Type: {@event.EventType}");
+        Console.WriteLine($"Subject: {@event.Subject}");
+        Console.WriteLine($"Data: {@event.Data}");
+    }
+
+    await Task.CompletedTask;
+}
+
+// ============= EVENT HANDLER (AZURE FUNCTION) =============
+// Process events using Event Grid trigger
+
+[FunctionName("OrderCreatedEventHandler")]
+public static async Task ProcessOrderEvent(
+    [EventGridTrigger] EventGridEvent eventGridEvent,
+    ILogger log)
+{
+    log.LogInformation($"Processing event: {eventGridEvent.EventType}");
+    log.LogInformation($"Subject: {eventGridEvent.Subject}");
+
+    // Parse event data
+    var orderData = eventGridEvent.Data as dynamic;
+    var orderId = orderData.OrderId;
+
+    log.LogInformation($"Order created: {orderId}");
+
+    // Process order (call function, write to database, etc.)
+    await ProcessOrderAsync(orderId);
+}
+
+// ============= EVENT SUBSCRIPTION =============
+// Route events from topic to handler
+
+public class EventSubscriptionConfig
+{
+    // Topics: Custom topic or event source (Storage, Service Bus, etc.)
+    public string TopicName { get; set; }
+
+    // Event types to subscribe to
+    public List<string> EventTypes { get; set; } = new()
+    {
+        "Orders.OrderCreated",
+        "Orders.OrderUpdated",
+        "Orders.OrderCancelled"
+    };
+
+    // Filter by subject prefix/suffix
+    public string SubjectFilter { get; set; } = "/orders/";
+
+    // Endpoint where events are sent
+    public string EndpointUri { get; set; }
+
+    // Retry policy
+    public RetryPolicy RetryPolicy { get; set; } = new()
+    {
+        MaxDeliveryAttempts = 30,
+        EventTimeToLiveInMinutes = 1440 // 24 hours
+    };
+
+    // Dead-letter endpoint for failed events
+    public string DeadLetterEndpoint { get; set; }
+}
+
+public class RetryPolicy
+{
+    public int MaxDeliveryAttempts { get; set; }
+    public int EventTimeToLiveInMinutes { get; set; }
+}
+
+// ============= EVENT TYPES =============
+// Common Event Grid event types
+
+public static class CommonEventTypes
+{
+    // Storage events
+    public const string BlobCreated = "Microsoft.Storage.BlobCreated";
+    public const string BlobDeleted = "Microsoft.Storage.BlobDeleted";
+
+    // Service Bus events
+    public const string ServiceBusQueueMessage = "Microsoft.ServiceBus.QueueMessageDelivered";
+
+    // App Configuration events
+    public const string AppConfigKeyValueModified = "Microsoft.AppConfiguration.KeyValueModified";
+
+    // IoT Hub events
+    public const string IoTDeviceTelemetry = "Microsoft.Devices.DeviceTelemetry";
+
+    // Custom events
+    public const string OrderCreated = "Orders.OrderCreated";
+    public const string PaymentProcessed = "Payment.PaymentProcessed";
+}
+
+// ============= EVENT DATA =============
+class EventData
+{
+    public string OrderId { get; set; }
+    public decimal Amount { get; set; }
+    public string CustomerEmail { get; set; }
+    public DateTime CreatedAt { get; set; }
+}
+
+async Task ProcessOrderAsync(string orderId)
+{
+    await Task.Delay(100);
+    Console.WriteLine($"Order {orderId} processed");
+}
+
+// ============= EVENT GRID ARCHITECTURE =============
+Console.WriteLine("Event Grid Architecture:");
+Console.WriteLine("Event Sources → Event Grid Topic → Event Subscriptions → Event Handlers");
+Console.WriteLine("");
+Console.WriteLine("Publishers publish events to topics");
+Console.WriteLine("Subscribers subscribe to topics");
+Console.WriteLine("Event Grid routes events based on subscriptions and filters");
+Console.WriteLine("");
+Console.WriteLine("Delivery: At-least-once (events may be delivered multiple times)");
+Console.WriteLine("Ordering: Best-effort (not guaranteed within same subscription)");
+Console.WriteLine("Throughput: Thousands of events per second");`}]},{id:"q2",question:"How do you configure event subscriptions and filters in Event Grid?",answer:"Event subscriptions connect event sources to handlers. Configure: 1) Event types - subscribe to specific event types (Azure-provided or custom). 2) Subject filtering - include/exclude by subject prefix/suffix (e.g., /orders/premium). 3) Advanced filters - filter by data properties (e.g., amount > 100). 4) Endpoints - send to Webhook, Function, Logic App, Event Hub, Service Bus Queue, Storage Queue. 5) Delivery properties - add custom headers or properties to events. 6) Retry policy - set max attempts and TTL. 7) Dead-letter - handle failed deliveries. Multiple subscriptions per topic enable different handlers to process same events.",codeSnippets:[{language:"csharp",code:`// Event Grid - Subscriptions & Filters
+using Azure.Messaging.EventGrid;
+using System;
+using System.Collections.Generic;
+
+// ============= EVENT SUBSCRIPTION WITH FILTERS =============
+
+public class EventSubscriptionWithFilters
+{
+    // Filter 1: By Event Type
+    public List<string> FilterByEventType()
+    {
+        return new List<string>
+        {
+            "Orders.OrderCreated",
+            "Orders.OrderCancelled"
+        };
+        // Only these event types are delivered
+    }
+
+    // Filter 2: By Subject (Simple)
+    public class SubjectFilter
+    {
+        public string Prefix { get; set; } = "/orders/premium/";  // Include prefix
+        public string Suffix { get; set; } = ".json";             // Include suffix
+    }
+
+    // Filter 3: Advanced Filters (on data properties)
+    public class AdvancedFilters
+    {
+        // Number comparisons
+        public bool FilterByAmount(decimal eventAmount)
+        {
+            return eventAmount > 100;  // Only amounts > 100
+        }
+
+        // String contains
+        public bool FilterByCustomer(string customerEmail)
+        {
+            return customerEmail.Contains("@premium.com");
+        }
+
+        // String in list
+        public bool FilterByStatus(string orderStatus)
+        {
+            var validStatuses = new[] { "Pending", "Processing", "Shipped" };
+            return Array.Exists(validStatuses, s => s == orderStatus);
+        }
+
+        // Boolean matches
+        public bool FilterByExpressShipping(bool isExpress)
+        {
+            return isExpress == true;  // Only express orders
+        }
+    }
+}
+
+// ============= CREATE SUBSCRIPTION PROGRAMMATICALLY =============
+
+public async Task CreateEventSubscription(string topicName, string resourceGroup)
+{
+    // Subscription 1: Premium orders to premium handler
+    var premiumSubscription = new
+    {
+        Name = "PremiumOrderSubscription",
+        EventTypes = new[] { "Orders.OrderCreated" },
+        SubjectFilter = new
+        {
+            Prefix = "/orders/premium/",
+            CaseSensitive = false
+        },
+        Labels = new[] { "premium-orders" },
+        EndpointType = "WebHook",
+        Endpoint = "https://myfunction.azurewebsites.net/api/premium-orders",
+        RetryPolicy = new
+        {
+            MaxDeliveryAttempts = 30,
+            EventTimeToLiveInMinutes = 1440
+        },
+        DeadLetterDestination = new
+        {
+            EndpointType = "StorageQueue",
+            ResourceId = "/subscriptions/.../queues/order-deadletter"
+        }
+    };
+
+    // Subscription 2: Large orders to Logic App
+    var largeOrderSubscription = new
+    {
+        Name = "LargeOrderSubscription",
+        EventTypes = new[] { "Orders.OrderCreated" },
+        AdvancedFilters = new
+        {
+            Filters = new[]
+            {
+                new
+                {
+                    OperatorType = "NumberGreaterThan",
+                    Key = "data.amount",
+                    Value = 1000
+                }
+            }
+        },
+        EndpointType = "LogicApp",
+        Endpoint = "https://prod-logicapp.azurelogicapps.net/...",
+        RetryPolicy = new
+        {
+            MaxDeliveryAttempts = 60,
+            EventTimeToLiveInMinutes = 2880
+        }
+    };
+
+    // Subscription 3: All events to Event Hub
+    var eventHubSubscription = new
+    {
+        Name = "AllEventsToEventHub",
+        EventTypes = new[] { "*" },  // All event types
+        EndpointType = "EventHub",
+        Endpoint = "/subscriptions/.../eventhubs/order-stream/",
+        DeliveryWithResourceIdentity = new
+        {
+            Identity = new { Type = "SystemAssigned" },
+            Destination = new
+            {
+                EndpointType = "EventHub",
+                ResourceId = "/subscriptions/.../eventhubs/order-stream/"
+            }
+        }
+    };
+
+    Console.WriteLine("Subscriptions configured");
+}
+
+// ============= DELIVERY PROPERTIES =============
+
+public class DeliveryProperties
+{
+    public static Dictionary<string, string> AddCustomHeaders()
+    {
+        return new Dictionary<string, string>
+        {
+            { "X-Custom-Header", "OrderProcessing" },
+            { "X-Order-Priority", "High" },
+            { "Authorization", "Bearer token" }
+        };
+    }
+}
+
+// ============= FILTER OPERATORS =============
+
+public class FilterOperators
+{
+    // Number operators
+    public const string NumberGreaterThan = "NumberGreaterThan";
+    public const string NumberGreaterThanOrEquals = "NumberGreaterThanOrEquals";
+    public const string NumberLessThan = "NumberLessThan";
+    public const string NumberLessThanOrEquals = "NumberLessThanOrEquals";
+    public const string NumberIn = "NumberIn";
+    public const string NumberNotIn = "NumberNotIn";
+
+    // String operators
+    public const string StringContains = "StringContains";
+    public const string StringNotContains = "StringNotContains";
+    public const string StringBeginsWith = "StringBeginsWith";
+    public const string StringNotBeginsWith = "StringNotBeginsWith";
+    public const string StringEndsWith = "StringEndsWith";
+    public const string StringNotEndsWith = "StringNotEndsWith";
+    public const string StringIn = "StringIn";
+    public const string StringNotIn = "StringNotIn";
+
+    // Boolean operators
+    public const string BoolEquals = "BoolEquals";
+
+    // Example: Filter orders with amount > 500 AND status = "Pending"
+    public static void ExampleComplexFilter()
+    {
+        var filters = new[]
+        {
+            new
+            {
+                OperatorType = "NumberGreaterThan",
+                Key = "data.amount",
+                Value = 500
+            },
+            new
+            {
+                OperatorType = "StringEquals",
+                Key = "data.status",
+                Value = "Pending"
+            }
+        };
+        // Both conditions must be true (AND logic)
+    }
+}
+
+// ============= ENDPOINT TYPES =============
+
+public class EndpointTypes
+{
+    // 1. Webhook - Custom HTTP endpoint
+    public string WebhookEndpoint => "https://myapp.com/webhook";
+
+    // 2. Azure Function - Managed by Azure Functions runtime
+    public string FunctionEndpoint => "https://myfunc.azurewebsites.net/api/handler";
+
+    // 3. Event Hub - Stream events to Event Hub
+    public string EventHubEndpoint => "/subscriptions/.../eventhubs/myeventhub";
+
+    // 4. Service Bus Queue - Route to queue
+    public string ServiceBusQueueEndpoint => "/subscriptions/.../queues/myqueue";
+
+    // 5. Service Bus Topic - Route to topic
+    public string ServiceBusTopicEndpoint => "/subscriptions/.../topics/mytopic";
+
+    // 6. Storage Queue - Route to storage queue
+    public string StorageQueueEndpoint => "https://mystg.queue.core.windows.net/myqueue";
+
+    // 7. Logic App - Managed connector
+    public string LogicAppEndpoint => "https://prod-logicapp.azurelogicapps.net/triggers/manual";
+
+    // 8. Hybrid Connection - Relay to on-premises
+    public string HybridConnectionEndpoint => "/subscriptions/.../hybridConnections/myconnection";
+}
+
+// ============= SUBSCRIPTION BEST PRACTICES =============
+
+Console.WriteLine("Event Subscription Best Practices:");
+Console.WriteLine("✓ Use specific event types, not '*' unless needed");
+Console.WriteLine("✓ Filter by subject prefix to reduce unwanted events");
+Console.WriteLine("✓ Use advanced filters for fine-grained control");
+Console.WriteLine("✓ Configure dead-letter endpoint for failed events");
+Console.WriteLine("✓ Set appropriate retry policy (max 30 attempts default)");
+Console.WriteLine("✓ Use managed identity instead of connection strings");
+Console.WriteLine("✓ Test subscriptions with test events before production");
+Console.WriteLine("✓ Monitor subscription health and event delivery");
+Console.WriteLine("✓ Use Event Grid explorer to validate filters");`}]},{id:"q3",question:"How do you handle event delivery failures and implement dead-letter processing?",answer:"Event Grid uses retry policy for failed deliveries. Configure: 1) Max delivery attempts (1-30, default 30). 2) Event TTL (1440 minutes default, max 1440). After max retries or TTL expiration, events go to dead-letter endpoint if configured. Dead-letter handlers receive failed events for analysis/reprocessing. Failures occur due to: non-2xx HTTP responses, timeouts, malformed requests. Use exponential backoff between retries (internal). Implement dead-letter as Storage Queue or custom blob for audit trail. Monitor dead-letter queue for patterns and fix root causes.",codeSnippets:[{language:"csharp",code:`// Event Grid - Failure Handling & Dead-Letter
+using Azure.Messaging.EventGrid;
+using Azure.Storage.Queues;
+using Microsoft.Azure.Cosmos.Table;
+using Microsoft.Azure.WebJobs;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= RETRY POLICY CONFIGURATION =============
+
+public class RetryConfiguration
+{
+    // Conservative: Few retries, quick failure
+    public static Dictionary<string, object> ConservativeRetry()
+    {
+        return new Dictionary<string, object>
+        {
+            { "MaxDeliveryAttempts", 3 },
+            { "EventTimeToLiveInMinutes", 60 }  // 1 hour
+        };
+    }
+
+    // Aggressive: Many retries, long TTL
+    public static Dictionary<string, object> AggressiveRetry()
+    {
+        return new Dictionary<string, object>
+        {
+            { "MaxDeliveryAttempts", 30 },
+            { "EventTimeToLiveInMinutes", 1440 }  // 24 hours
+        };
+    }
+
+    // Custom: Tailored to workload
+    public static Dictionary<string, object> CustomRetry(int maxAttempts, int ttlMinutes)
+    {
+        return new Dictionary<string, object>
+        {
+            { "MaxDeliveryAttempts", Math.Clamp(maxAttempts, 1, 30) },
+            { "EventTimeToLiveInMinutes", Math.Clamp(ttlMinutes, 1, 1440) }
+        };
+    }
+}
+
+// ============= HANDLER WITH PROPER ERROR HANDLING =============
+
+[FunctionName("EventHandler")]
+public static async Task HandleEventWithErrorHandling(
+    [EventGridTrigger] EventGridEvent[] events,
+    ILogger log)
+{
+    foreach (var @event in events)
+    {
+        try
+        {
+            log.LogInformation($"Processing event: {@event.EventType}");
+
+            // Simulate processing
+            var order = @event.Data as dynamic;
+            var orderId = order?.orderId;
+
+            // Business logic might fail (non-2xx response)
+            if (orderId == null)
+            {
+                throw new ArgumentException("Order ID is required");
+            }
+
+            await ProcessOrderAsync(orderId);
+            log.LogInformation($"Event processed successfully for {orderId}");
+        }
+        catch (Exception ex)
+        {
+            // Log error - Event Grid will retry
+            log.LogError($"Error processing event: {ex.Message}");
+            
+            // Important: Throw to signal failure (HTTP non-2xx)
+            // Event Grid will retry based on retry policy
+            throw;
+        }
+    }
+}
+
+// ============= DEAD-LETTER HANDLER =============
+
+[FunctionName("DeadLetterProcessor")]
+public static async Task ProcessDeadLetterEvents(
+    [QueueTrigger("event-deadletter")] CloudQueueMessage deadLetterMessage,
+    [Queue("event-deadletter-archive")] IAsyncCollector<string> archiveQueue,
+    [Table("DeadLetterEvents")] CloudTable deadLetterTable,
+    ILogger log)
+{
+    try
+    {
+        log.LogError($"Processing dead-letter event: {deadLetterMessage.AsString}");
+
+        // Parse event
+        var eventData = deadLetterMessage.AsString;
+
+        // 1. Archive for audit trail
+        await archiveQueue.AddAsync(eventData);
+
+        // 2. Log to table for analysis
+        var deadLetterEntity = new DeadLetterEntity
+        {
+            PartitionKey = DateTime.UtcNow.ToString("yyyy-MM-dd"),
+            RowKey = Guid.NewGuid().ToString(),
+            EventData = eventData,
+            ReceivedAt = DateTime.UtcNow,
+            Reason = "Max retries exceeded or TTL expired"
+        };
+
+        await deadLetterTable.ExecuteAsync(TableOperation.Insert(deadLetterEntity));
+
+        // 3. Alert on critical errors
+        await AlertOnCriticalErrorAsync(eventData, log);
+
+        // 4. Reprocess if applicable
+        bool shouldRetry = ShouldRetryEvent(eventData);
+        if (shouldRetry)
+        {
+            await ResubmitEventAsync(eventData, log);
+        }
+    }
+    catch (Exception ex)
+    {
+        log.LogError($"Error processing dead-letter: {ex.Message}");
+        throw;
+    }
+}
+
+// ============= DEAD-LETTER ENTITY FOR TABLE STORAGE =============
+
+public class DeadLetterEntity : TableEntity
+{
+    public string EventData { get; set; }
+    public DateTime ReceivedAt { get; set; }
+    public string Reason { get; set; }
+    public int RetryCount { get; set; }
+    public string ErrorMessage { get; set; }
+}
+
+// ============= FAILURE ANALYSIS =============
+
+[FunctionName("AnalyzeDeadLetterPatterns")]
+public static async Task AnalyzeFailurePatterns(
+    [TimerTrigger("0 0 * * * *")] TimerInfo myTimer,
+    [Table("DeadLetterEvents")] CloudTable deadLetterTable,
+    ILogger log)
+{
+    // Query dead-letter events from last hour
+    var filter = TableQuery.GenerateFilterCondition(
+        "ReceivedAt",
+        QueryComparisons.GreaterThan,
+        DateTime.UtcNow.AddHours(-1).ToString("O")
+    );
+
+    var query = new TableQuery<DeadLetterEntity>().Where(filter);
+    var results = await deadLetterTable.ExecuteQuerySegmentedAsync(query, null);
+
+    log.LogInformation($"Dead-letter events in last hour: {results.Results.Count}");
+
+    // Analyze patterns
+    var errorCounts = new Dictionary<string, int>();
+    foreach (var entity in results.Results)
+    {
+        if (errorCounts.ContainsKey(entity.Reason))
+        {
+            errorCounts[entity.Reason]++;
+        }
+        else
+        {
+            errorCounts[entity.Reason] = 1;
+        }
+    }
+
+    // Log summary
+    foreach (var error in errorCounts)
+    {
+        log.LogWarning($"Error: {error.Key} - Count: {error.Value}");
+    }
+
+    // Alert if threshold exceeded
+    if (results.Results.Count > 100)
+    {
+        log.LogError("Dead-letter queue exceeding threshold!");
+        await SendAlertAsync(log);
+    }
+}
+
+// ============= EVENT RETRY DECISION LOGIC =============
+
+private static bool ShouldRetryEvent(string eventData)
+{
+    // Determine if event should be retried based on error type
+    // Transient errors: timeout, rate limit, service unavailable
+    // Permanent errors: validation failure, authentication error
+
+    // Example: Check if error is transient
+    if (eventData.Contains("timeout") || eventData.Contains("ServiceUnavailable"))
+    {
+        return true;  // Retry transient errors
+    }
+
+    if (eventData.Contains("ValidationError") || eventData.Contains("Unauthorized"))
+    {
+        return false;  // Don't retry permanent errors
+    }
+
+    return false;
+}
+
+// ============= RESUBMIT EVENT TO EVENT GRID =============
+
+private static async Task ResubmitEventAsync(string eventData, ILogger log)
+{
+    try
+    {
+        // Parse original event
+        var originalEvent = System.Text.Json.JsonDocument.Parse(eventData);
+
+        // Create new event for reprocessing
+        var resubmitEvent = new EventGridEvent(
+            subject: "/resubmitted/",
+            eventType: "Event.Resubmitted",
+            dataVersion: "1.0",
+            data: originalEvent.RootElement
+        );
+
+        log.LogInformation("Event resubmitted to Event Grid");
+        await Task.CompletedTask;
+    }
+    catch (Exception ex)
+    {
+        log.LogError($"Failed to resubmit event: {ex.Message}");
+    }
+}
+
+// ============= ALERTING =============
+
+private static async Task AlertOnCriticalErrorAsync(string eventData, ILogger log)
+{
+    // Send alert via email, SMS, or Teams
+    log.LogError($"CRITICAL: Dead-letter event: {eventData}");
+    await Task.CompletedTask;
+}
+
+private static async Task SendAlertAsync(ILogger log)
+{
+    // Trigger alert (email, Teams, SMS)
+    log.LogError("ALERT: Dead-letter queue threshold exceeded");
+    await Task.CompletedTask;
+}
+
+// ============= HTTP STATUS CODES =============
+
+Console.WriteLine("HTTP Status Code Handling:");
+Console.WriteLine("✓ 2xx (Success) - Event delivered, no retry");
+Console.WriteLine("✗ 3xx (Redirect) - Treated as failure, will retry");
+Console.WriteLine("✗ 4xx (Client Error) - Treated as failure, will retry");
+Console.WriteLine("  - 400, 401, 403: Permanent failures, consider dead-letter");
+Console.WriteLine("✗ 5xx (Server Error) - Transient failure, will retry");
+Console.WriteLine("✗ Timeout - Transient failure, will retry");
+Console.WriteLine("✗ No Response - Treated as failure, will retry");
+
+async Task ProcessOrderAsync(string orderId)
+{
+    await Task.Delay(100);
+}`}]},{id:"q4",question:"What are Event Grid event schemas and how do you parse events?",answer:"Event Grid uses CloudEvents or Event Grid schema. CloudEvents: standardized, W3C format with subject, type, source, id, time. Event Grid schema: Azure-specific with eventType, subject, data, eventTime, id. Both support custom data payload. Events are delivered as JSON array (even single events). Parse using: EventGridEvent[] (built-in), JsonDocument for raw JSON, or custom deserializers. Event properties: subject (resource identifier), eventType (what happened), eventTime (UTC), data (payload), id (unique), dataVersion. Handle both system events (Storage, Service Bus) and custom application events.",codeSnippets:[{language:"csharp",code:`// Event Grid - Event Schemas & Parsing
+using Azure.Messaging.EventGrid;
+using System;
+using System.Collections.Generic;
+using System.Text.Json;
+
+// ============= EVENT GRID SCHEMA =============
+
+public class EventGridSchema
+{
+    public static void ExampleEventGridEvent()
+    {
+        var json = @"
+{
+  ""id"": ""2d1781af-3a4c-4d7c-b93d-aacd7590859c"",
+  ""eventType"": ""Microsoft.Storage.BlobCreated"",
+  ""subject"": ""/blobServices/default/containers/test-container/blobs/test.txt"",
+  ""eventTime"": ""2024-01-15T12:34:56.000Z"",
+  ""data"": {
+    ""api"": ""PutBlob"",
+    ""clientRequestId"": ""xyz123"",
+    ""requestId"": ""abc456"",
+    ""eTag"": ""0x123456"",
+    ""contentType"": ""text/plain"",
+    ""contentLength"": 1024,
+    ""blobType"": ""BlockBlob"",
+    ""url"": ""https://mystg.blob.core.windows.net/test-container/test.txt""
+  },
+  ""dataVersion"": ""1.0"",
+  ""metadataVersion"": ""1""
+}";
+
+        Console.WriteLine("Event Grid Schema Properties:");
+        Console.WriteLine("- id: Unique event identifier");
+        Console.WriteLine("- eventType: What happened (e.g., BlobCreated)");
+        Console.WriteLine("- subject: Resource that generated event");
+        Console.WriteLine("- eventTime: When event occurred (UTC)");
+        Console.WriteLine("- data: Event-specific data payload");
+        Console.WriteLine("- dataVersion: Schema version for data");
+        Console.WriteLine("- metadataVersion: Event Grid schema version");
+    }
+}
+
+// ============= CLOUD EVENTS SCHEMA =============
+
+public class CloudEventsSchema
+{
+    public static void ExampleCloudEvent()
+    {
+        var json = @"
+{
+  ""specversion"": ""1.0"",
+  ""type"": ""com.example.orders.created"",
+  ""source"": ""https://myapp.com/orders"",
+  ""subject"": ""order/12345"",
+  ""id"": ""A234-1234-1234"",
+  ""time"": ""2024-01-15T12:34:56Z"",
+  ""datacontenttype"": ""application/json"",
+  ""data"": {
+    ""orderId"": ""12345"",
+    ""amount"": 99.99,
+    ""customer"": ""john@example.com""
+  }
+}";
+
+        Console.WriteLine("CloudEvents Schema Properties:");
+        Console.WriteLine("- specversion: CloudEvents specification version (1.0)");
+        Console.WriteLine("- type: Event type (reverse-domain notation)");
+        Console.WriteLine("- source: Event source");
+        Console.WriteLine("- subject: Resource context");
+        Console.WriteLine("- id: Unique identifier");
+        Console.WriteLine("- time: Timestamp");
+        Console.WriteLine("- datacontenttype: Payload content type");
+        Console.WriteLine("- data: Event payload");
+    }
+}
+
+// ============= PARSING EVENT GRID EVENTS =============
+
+public class EventParsing
+{
+    // Method 1: Using EventGridEvent (built-in binding)
+    public static void ParseUsingEventGridEvent(EventGridEvent[] events)
+    {
+        foreach (var @event in events)
+        {
+            Console.WriteLine($"ID: {@event.Id}");
+            Console.WriteLine($"Type: {@event.EventType}");
+            Console.WriteLine($"Subject: {@event.Subject}");
+            Console.WriteLine($"Time: {@event.EventTime}");
+            Console.WriteLine($"Data: {@event.Data}");
+            Console.WriteLine($"Data Version: {@event.DataVersion}");
+        }
+    }
+
+    // Method 2: Custom deserialization
+    public static void ParseCustom(string jsonPayload)
+    {
+        using var document = JsonDocument.Parse(jsonPayload);
+        var root = document.RootElement;
+
+        if (root.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var item in root.EnumerateArray())
+            {
+                var id = item.GetProperty("id").GetString();
+                var eventType = item.GetProperty("eventType").GetString();
+                var subject = item.GetProperty("subject").GetString();
+                var data = item.GetProperty("data");
+
+                Console.WriteLine($"Event: {eventType} for {subject}");
+            }
+        }
+    }
+
+    // Method 3: POCO deserialization
+    public static void ParseToPoco(string jsonPayload)
+    {
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var events = JsonSerializer.Deserialize<EventGridEventDto[]>(jsonPayload, options);
+
+        foreach (var @event in events)
+        {
+            Console.WriteLine($"Event: {@event.EventType}");
+            var orderData = JsonSerializer.Deserialize<OrderData>(@event.Data.ToString(), options);
+            Console.WriteLine($"Order: {orderData?.OrderId}");
+        }
+    }
+}
+
+public class EventGridEventDto
+{
+    public string Id { get; set; }
+    public string EventType { get; set; }
+    public string Subject { get; set; }
+    public DateTime EventTime { get; set; }
+    public JsonElement Data { get; set; }
+    public string DataVersion { get; set; }
+}
+
+public class OrderData
+{
+    public string OrderId { get; set; }
+    public decimal Amount { get; set; }
+}
+
+// ============= SYSTEM EVENTS PARSING =============
+
+public class SystemEventsParser
+{
+    // Storage Blob event
+    public static void ParseStorageBlobEvent(EventGridEvent @event)
+    {
+        if (@event.EventType == "Microsoft.Storage.BlobCreated")
+        {
+            var blobData = @event.Data as dynamic;
+            var url = blobData?.url;
+            var contentLength = blobData?.contentLength;
+
+            Console.WriteLine($"Blob created: {url}, Size: {contentLength}");
+        }
+    }
+
+    // Service Bus message event
+    public static void ParseServiceBusEvent(EventGridEvent @event)
+    {
+        if (@event.EventType.Contains("ServiceBus"))
+        {
+            var messageData = @event.Data as dynamic;
+            var messageId = messageData?.messageId;
+
+            Console.WriteLine($"Service Bus message: {messageId}");
+        }
+    }
+
+    // IoT Hub event
+    public static void ParseIoTEvent(EventGridEvent @event)
+    {
+        if (@event.EventType.Contains("Devices"))
+        {
+            var deviceData = @event.Data as dynamic;
+            var deviceId = deviceData?.deviceId;
+
+            Console.WriteLine($"IoT Device: {deviceId}");
+        }
+    }
+}
+
+// ============= CUSTOM APPLICATION EVENTS =============
+
+public class CustomEventParser
+{
+    public class CustomOrderEvent
+    {
+        public string OrderId { get; set; }
+        public decimal Amount { get; set; }
+        public string Status { get; set; }
+        public DateTime CreatedAt { get; set; }
+    }
+
+    public static void ParseCustomOrderEvent(EventGridEvent @event)
+    {
+        if (@event.EventType == "Orders.OrderCreated")
+        {
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var orderEvent = JsonSerializer.Deserialize<CustomOrderEvent>(
+                @event.Data.ToString(),
+                options
+            );
+
+            Console.WriteLine($"Order {orderEvent.OrderId}: {orderEvent.Amount}");
+        }
+    }
+}
+
+// ============= EVENT VALIDATION =============
+
+public class EventValidation
+{
+    public static bool ValidateEvent(EventGridEvent @event)
+    {
+        // Check required fields
+        if (string.IsNullOrEmpty(@event.Id))
+            return false;
+
+        if (string.IsNullOrEmpty(@event.EventType))
+            return false;
+
+        if (@event.EventTime == default)
+            return false;
+
+        if (@event.Data == null)
+            return false;
+
+        return true;
+    }
+
+    public static void ValidateEventData(EventGridEvent @event)
+    {
+        // Event-specific validation
+        if (@event.EventType == "Orders.OrderCreated")
+        {
+            var orderData = @event.Data as dynamic;
+
+            if (orderData?.orderId == null)
+                throw new ArgumentException("Order ID required");
+
+            if ((decimal)orderData?.amount <= 0)
+                throw new ArgumentException("Amount must be positive");
+        }
+    }
+}
+
+// ============= PARSING BEST PRACTICES =============
+
+Console.WriteLine("Event Parsing Best Practices:");
+Console.WriteLine("✓ Always validate event structure before parsing");
+Console.WriteLine("✓ Use try-catch for JSON parsing");
+Console.WriteLine("✓ Handle both event types in subscription");
+Console.WriteLine("✓ Use PropertyNameCaseInsensitive for JSON deserialization");
+Console.WriteLine("✓ Validate required fields exist");
+Console.WriteLine("✓ Log unparseable events for debugging");
+Console.WriteLine("✓ Version your event schema (dataVersion)");
+Console.WriteLine("✓ Test with actual events from Event Grid");`}]},{id:"q5",question:"How do you monitor and troubleshoot Event Grid issues?",answer:"Monitor Event Grid using: 1) Azure Portal - view metrics (published events, delivery attempts, unmatched events). 2) Diagnostic Logs - activity logs, failed deliveries. 3) Application Insights - track handler performance. 4) Event Grid Viewer - test event delivery. 5) Metrics to track: delivery success rate, latency, unmatched events, dead-letter count. Common issues: handlers returning non-2xx, validation webhook failing, subject filters too strict, mismatched event types. Debug by: testing webhook with Event Grid Viewer, checking handler logs, verifying filters, inspecting dead-letter queue. Set up alerts for high failure rates or dead-letter queue growth.",codeSnippets:[{language:"csharp",code:`// Event Grid - Monitoring & Troubleshooting
+using Azure.Monitor.Query;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= MONITORING WITH APPLICATION INSIGHTS =============
+
+[FunctionName("MonitoredEventHandler")]
+public static async Task HandleEventWithMonitoring(
+    [EventGridTrigger] EventGridEvent[] events,
+    TelemetryClient telemetryClient,
+    ILogger log)
+{
+    foreach (var @event in events)
+    {
+        using (var operation = telemetryClient.StartOperation<RequestTelemetry>(
+            $"EventProcessing-{@event.EventType}"))
+        {
+            try
+            {
+                var startTime = DateTime.UtcNow;
+
+                log.LogInformation($"Processing event: {@event.EventType}");
+
+                // Custom dimension tracking
+                telemetryClient.TrackEvent(
+                    "EventReceived",
+                    new Dictionary<string, string>
+                    {
+                        { "EventType", @event.EventType },
+                        { "Subject", @event.Subject },
+                        { "EventId", @event.Id }
+                    }
+                );
+
+                // Process event
+                await ProcessEventAsync(@event);
+
+                var duration = DateTime.UtcNow - startTime;
+                telemetryClient.TrackEvent(
+                    "EventProcessed",
+                    new Dictionary<string, string>
+                    {
+                        { "EventType", @event.EventType },
+                        { "Status", "Success" }
+                    },
+                    new Dictionary<string, double>
+                    {
+                        { "ProcessingTimeMs", duration.TotalMilliseconds }
+                    }
+                );
+            }
+            catch (Exception ex)
+            {
+                // Track exception
+                telemetryClient.TrackException(ex);
+                telemetryClient.TrackEvent(
+                    "EventProcessingFailed",
+                    new Dictionary<string, string>
+                    {
+                        { "EventType", @event.EventType },
+                        { "ErrorMessage", ex.Message }
+                    }
+                );
+
+                operation.Telemetry.Success = false;
+                throw;
+            }
+        }
+    }
+}
+
+// ============= CUSTOM METRICS TRACKING =============
+
+public class EventGridMetrics
+{
+    public static void TrackMetrics(TelemetryClient telemetryClient)
+    {
+        // Track custom metrics
+        telemetryClient.GetMetric("EventsProcessed").TrackValue(1);
+        telemetryClient.GetMetric("EventProcessingDurationMs").TrackValue(150);
+        telemetryClient.GetMetric("DeadLetterQueueSize").TrackValue(5);
+        telemetryClient.GetMetric("FailureRate").TrackValue(0.02); // 2%
+    }
+}
+
+// ============= DIAGNOSTIC LOGGING =============
+
+[FunctionName("DiagnosticEventHandler")]
+public static async Task HandleEventWithDiagnostics(
+    [EventGridTrigger] EventGridEvent[] events,
+    ILogger log)
+{
+    log.LogInformation($"Received {events.Length} events");
+
+    foreach (var @event in events)
+    {
+        try
+        {
+            // Log event details
+            log.LogInformation(
+                "Event: {@EventDetails}",
+                new
+                {
+                    Id = @event.Id,
+                    Type = @event.EventType,
+                    Subject = @event.Subject,
+                    Time = @event.EventTime,
+                    DataVersion = @event.DataVersion
+                }
+            );
+
+            // Validate event
+            if (string.IsNullOrEmpty(@event.Id))
+            {
+                log.LogWarning("Event missing ID: {Subject}", @event.Subject);
+                continue;
+            }
+
+            // Process
+            await ProcessEventAsync(@event);
+
+            log.LogInformation("Event processed successfully: {EventId}", @event.Id);
+        }
+        catch (Exception ex)
+        {
+            log.LogError(
+                ex,
+                "Error processing event {EventId}: {ErrorMessage}",
+                @event.Id,
+                ex.Message
+            );
+
+            // Log event data for debugging
+            log.LogError(
+                "Event data: {@EventData}",
+                @event.Data
+            );
+
+            throw;
+        }
+    }
+}
+
+// ============= WEBHOOK VALIDATION =============
+
+[FunctionName("ValidateEventGridWebhook")]
+public static async Task ValidateWebhook(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "webhook")] EventGridEvent[] events,
+    ILogger log)
+{
+    foreach (var @event in events)
+    {
+        // Handle subscription validation
+        if (@event.EventType == "Microsoft.EventGrid.SubscriptionValidationEvent")
+        {
+            log.LogInformation("Validating Event Grid subscription");
+
+            var validationEvent = @event.Data as dynamic;
+            var validationCode = validationEvent?.validationCode;
+
+            log.LogInformation("Validation code: {ValidationCode}", validationCode);
+
+            // Must return validation code within 5 minutes
+            // Return 200 OK with validation response
+        }
+    }
+    await Task.CompletedTask;
+}
+
+// ============= MONITORING CHECKLIST =============
+
+[FunctionName("MonitoringDashboard")]
+public static void MonitoringChecklist()
+{
+    Console.WriteLine("Event Grid Monitoring Checklist:");
+    Console.WriteLine("");
+
+    Console.WriteLine("Metrics to Monitor:");
+    Console.WriteLine("✓ Published Events - Count of events published");
+    Console.WriteLine("✓ Delivery Attempts - Total delivery attempts");
+    Console.WriteLine("✓ Delivered Events - Successfully delivered");
+    Console.WriteLine("✓ Failed Events - Failed deliveries");
+    Console.WriteLine("✓ Unmatched Events - Events not matching any subscription");
+    Console.WriteLine("✓ Dead-letter Events - Events moved to dead-letter");
+    Console.WriteLine("");
+
+    Console.WriteLine("Alerts to Set Up:");
+    Console.WriteLine("⚠ High failure rate (>10% failed events)");
+    Console.WriteLine("⚠ Dead-letter queue growing (>100 messages/hour)");
+    Console.WriteLine("⚠ Unmatched events spike (>1000 events/hour)");
+    Console.WriteLine("⚠ Handler timeouts (>5% timeout rate)");
+    Console.WriteLine("⚠ Handler returning 4xx errors");
+    Console.WriteLine("");
+
+    Console.WriteLine("Troubleshooting Steps:");
+    Console.WriteLine("1. Check Azure Portal metrics");
+    Console.WriteLine("2. Review function logs in Application Insights");
+    Console.WriteLine("3. Inspect dead-letter queue");
+    Console.WriteLine("4. Test webhook with Event Grid Viewer");
+    Console.WriteLine("5. Validate subscription filters");
+    Console.WriteLine("6. Check handler response codes (must return 2xx)");
+    Console.WriteLine("7. Verify network connectivity");
+    Console.WriteLine("8. Review retry policy settings");
+}
+
+// ============= HEALTH CHECK ENDPOINT =============
+
+[FunctionName("EventGridHealthCheck")]
+public static async Task<object> HealthCheck(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "health")] object req,
+    ILogger log)
+{
+    try
+    {
+        // Check handler readiness
+        var isHealthy = await CheckHandlerHealthAsync();
+
+        if (isHealthy)
+        {
+            log.LogInformation("Health check passed");
+            return new { Status = "Healthy", Timestamp = DateTime.UtcNow };
+        }
+        else
+        {
+            log.LogError("Health check failed");
+            return new { Status = "Unhealthy", Timestamp = DateTime.UtcNow };
+        }
+    }
+    catch (Exception ex)
+    {
+        log.LogError($"Health check error: {ex.Message}");
+        return new { Status = "Error", Error = ex.Message };
+    }
+}
+
+// ============= PERFORMANCE MONITORING =============
+
+public class PerformanceMonitoring
+{
+    public static Dictionary<string, double> TrackPerformanceMetrics()
+    {
+        return new Dictionary<string, double>
+        {
+            { "AverageProcessingTimeMs", 150 },
+            { "MaxProcessingTimeMs", 5000 },
+            { "P95ProcessingTimeMs", 800 },
+            { "P99ProcessingTimeMs", 2000 },
+            { "ThroughputEventsPerSecond", 100 },
+            { "SuccessRatePercentage", 98.5 },
+            { "FailureRatePercentage", 1.5 }
+        };
+    }
+}
+
+// ============= COMMON ISSUES & SOLUTIONS =============
+
+Console.WriteLine("");
+Console.WriteLine("Common Event Grid Issues:");
+Console.WriteLine("");
+Console.WriteLine("Issue 1: Webhook not receiving events");
+Console.WriteLine("  Check: Is handler returning 200-299 status?");
+Console.WriteLine("  Check: Can Event Grid reach the webhook URL?");
+Console.WriteLine("  Check: Are subscription filters too restrictive?");
+Console.WriteLine("");
+
+Console.WriteLine("Issue 2: High dead-letter count");
+Console.WriteLine("  Check: Handler error logs");
+Console.WriteLine("  Check: Handler response status codes");
+Console.WriteLine("  Check: Network connectivity");
+Console.WriteLine("");
+
+Console.WriteLine("Issue 3: Unmatched events spike");
+Console.WriteLine("  Check: Event type filters");
+Console.WriteLine("  Check: Subject filters");
+Console.WriteLine("  Check: Are subscriptions correctly configured?");
+Console.WriteLine("");
+
+Console.WriteLine("Issue 4: Webhook validation failing");
+Console.WriteLine("  Check: Handler must respond to validation event");
+Console.WriteLine("  Check: Return validation code in response");
+Console.WriteLine("  Check: Must respond within 5 minutes");
+
+async Task ProcessEventAsync(EventGridEvent @event)
+{
+    await Task.Delay(100);
+}
+
+async Task<bool> CheckHandlerHealthAsync()
+{
+    await Task.Delay(100);
+    return true;
+}`}]}]},Fv={id:"azure-event-hub",name:"Event Hub",questions:[{id:"q1",question:"What is Azure Event Hub and what are its core concepts?",answer:"Azure Event Hub is a fully managed, real-time big data streaming platform that ingests and processes millions of events per second. Core concepts: 1) Event Hubs - namespace containers for topics. 2) Topics - like queues but optimized for streaming. 3) Partitions - ordered log of events enabling parallel consumption. 4) Consumer Groups - independent readers of event stream. 5) Event Processors - handle event consumption and checkpointing. 6) Throughput Units/Capacity Units - control ingress/egress rates. Key differences from Service Bus: Event Hub is event streaming (append-only log), Service Bus is messaging (queue/topic). Event Hub supports 1MB+ event sizes, millions events/sec, multiple independent consumers reading same stream. Use cases: IoT telemetry, log analytics, event sourcing.",codeSnippets:[{language:"csharp",code:`// Azure Event Hub - Core Concepts
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Producer;
+using Azure.Messaging.EventHubs.Consumer;
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+// ============= CORE COMPONENTS =============
+
+// 1. Event Hub Namespace
+public class EventHubNamespace
+{
+    public string NamespaceName { get; set; } = "myeventhubns";
+    public string ConnectionString { get; set; } = "Endpoint=sb://...";
+    public string[] EventHubNames { get; set; } = { "order-events", "user-events" };
+}
+
+// 2. Event Hub (Topic)
+public class EventHubInfo
+{
+    public string Name { get; set; } = "order-events";
+    public int PartitionCount { get; set; } = 4;
+    public int RetentionDays { get; set; } = 7;
+    public long MaxMessageSizeBytes { get; set; } = 1048576; // 1MB
+    public DateTime CreatedAt { get; set; }
+}
+
+// 3. Partitions & Consumer Groups
+public class EventHubStructure
+{
+    public string EventHubName { get; set; } = "order-events";
+    
+    // Partitions: ordered log of events
+    public int[] Partitions { get; set; } = { 0, 1, 2, 3 };
+    
+    // Consumer Groups: independent readers
+    public Dictionary<string, ConsumerGroupInfo> ConsumerGroups { get; set; } = new()
+    {
+        { "order-processing", new ConsumerGroupInfo { Name = "order-processing" } },
+        { "analytics", new ConsumerGroupInfo { Name = "analytics" } },
+        { "backup", new ConsumerGroupInfo { Name = "backup" } }
+    };
+}
+
+public class ConsumerGroupInfo
+{
+    public string Name { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public Dictionary<int, PartitionProperties> PartitionStatus { get; set; } = new();
+}
+
+// 4. Event (Message)
+public class EventHubEvent
+{
+    public string OrderId { get; set; }
+    public decimal Amount { get; set; }
+    public string CustomerId { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public string Status { get; set; }
+}
+
+// ============= THROUGHPUT & SCALING =============
+
+public class ThroughputConfiguration
+{
+    // Standard tier: Throughput Units (TU)
+    public int ThroughputUnits { get; set; } = 10;  // 1 TU = 1 MB/s ingress, 2 MB/s egress
+    public int MaxConnections { get; set; } = 5000; // Per TU
+
+    // Premium tier: Event Hub Capacity Units (ECU)
+    public int CapacityUnits { get; set; } = 1;     // 1 ECU = 10 MB/s ingress, 20 MB/s egress
+    public int MaxBandwidthMbps { get; set; } = 10; // Per ECU
+}
+
+// ============= PUBLISHING EVENTS =============
+
+public class EventPublisher
+{
+    private EventHubProducerClient _producer;
+
+    public EventPublisher(string connectionString, string eventHubName)
+    {
+        _producer = new EventHubProducerClient(connectionString, eventHubName);
+    }
+
+    // Publish single event
+    public async Task PublishEventAsync(EventHubEvent evt)
+    {
+        var eventData = new EventData(System.Text.Encoding.UTF8.GetBytes(
+            System.Text.Json.JsonSerializer.Serialize(evt)
+        ));
+
+        // Optional: Set partition key (ensures events with same key go to same partition)
+        await _producer.SendAsync(new[] { eventData }, 
+            new SendEventOptions { PartitionKey = evt.CustomerId });
+    }
+
+    // Publish batch events
+    public async Task PublishBatchAsync(IEnumerable<EventHubEvent> events)
+    {
+        var batch = await _producer.CreateBatchAsync();
+
+        foreach (var evt in events)
+        {
+            var eventData = new EventData(System.Text.Encoding.UTF8.GetBytes(
+                System.Text.Json.JsonSerializer.Serialize(evt)
+            ));
+
+            // Add to batch; if batch full, send and start new batch
+            if (!batch.TryAdd(eventData))
+            {
+                await _producer.SendAsync(batch);
+                batch = await _producer.CreateBatchAsync();
+                batch.TryAdd(eventData);
+            }
+        }
+
+        // Send remaining events
+        if (batch.Count > 0)
+        {
+            await _producer.SendAsync(batch);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _producer.CloseAsync();
+    }
+}
+
+// ============= CONSUMING EVENTS =============
+
+public class EventConsumer
+{
+    private EventHubConsumerClient _consumer;
+
+    public EventConsumer(string connectionString, string eventHubName, string consumerGroup)
+    {
+        _consumer = new EventHubConsumerClient(consumerGroup, connectionString, eventHubName);
+    }
+
+    // Read from specific partition
+    public async Task ConsumeFromPartitionAsync(int partitionId)
+    {
+        var startingPosition = EventPosition.Latest;
+        
+        await foreach (PartitionEvent partitionEvent in 
+            _consumer.ReadEventsFromPartitionAsync(partitionId, startingPosition))
+        {
+            var eventBody = System.Text.Encoding.UTF8.GetString(partitionEvent.Data.Body);
+            Console.WriteLine($"Partition {partitionId}: {eventBody}");
+        }
+    }
+
+    // Read from all partitions (for specific consumer group)
+    public async Task ConsumeFromAllPartitionsAsync()
+    {
+        var startingPosition = EventPosition.Earliest;
+
+        await foreach (PartitionEvent partitionEvent in 
+            _consumer.ReadEventsAsync(startingPosition))
+        {
+            var eventBody = System.Text.Encoding.UTF8.GetString(partitionEvent.Data.Body);
+            var partitionId = partitionEvent.Partition.PartitionId;
+            var offset = partitionEvent.Data.Offset;
+            var sequenceNumber = partitionEvent.Data.SequenceNumber;
+
+            Console.WriteLine($"Partition {partitionId}, Offset: {offset}, Seq: {sequenceNumber}");
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _consumer.CloseAsync();
+    }
+}
+
+// ============= KEY DIFFERENCES FROM SERVICE BUS =============
+
+public class EventHubVsServiceBus
+{
+    public static void ComparisonTable()
+    {
+        Console.WriteLine("Event Hub vs Service Bus:");
+        Console.WriteLine("");
+        Console.WriteLine("Feature                  | Event Hub              | Service Bus");
+        Console.WriteLine("Purpose                  | Event streaming        | Queuing/Messaging");
+        Console.WriteLine("Data model               | Append-only log        | Queue/Topic");
+        Console.WriteLine("Retention                | Hours/Days             | Until consumed");
+        Console.WriteLine("Consumer model           | Multiple independent   | Single consumer");
+        Console.WriteLine("Throughput               | Very high (millions)   | High");
+        Console.WriteLine("Message size             | Up to 1MB              | 256KB default");
+        Console.WriteLine("Ordering                 | Per partition          | Per session");
+        Console.WriteLine("Use case                 | Real-time streaming    | Decoupled messaging");
+    }
+}
+
+// ============= EVENT HUB ARCHITECTURE =============
+
+Console.WriteLine("Event Hub Architecture:");
+Console.WriteLine("");
+Console.WriteLine("Publishers → Event Hub (Topic) → Partitions → Consumer Groups → Consumers");
+Console.WriteLine("");
+Console.WriteLine("Publishers:");
+Console.WriteLine("- Send events to Event Hub");
+Console.WriteLine("- Can specify partition key for ordering");
+Console.WriteLine("");
+Console.WriteLine("Partitions:");
+Console.WriteLine("- Ordered log of events within partition");
+Console.WriteLine("- 4-32 partitions typical");
+Console.WriteLine("- Each partition can have concurrent consumers");
+Console.WriteLine("");
+Console.WriteLine("Consumer Groups:");
+Console.WriteLine("- Independent stream readers");
+Console.WriteLine("- Multiple apps can process same stream");
+Console.WriteLine("- Each group tracks own offset per partition");
+Console.WriteLine("");
+Console.WriteLine("Consumers:");
+Console.WriteLine("- Read from partition using consumer group");
+Console.WriteLine("- Can use EventProcessorClient for automatic checkpointing");`}]},{id:"q2",question:"How do partitions and consumer groups work in Event Hub?",answer:"Partitions are ordered logs within an Event Hub - events are appended sequentially to one partition based on partition key or round-robin. Key benefits: 1) Ordered processing - events in same partition maintain order. 2) Parallel consumption - different consumers read different partitions. 3) Throughput - adding partitions increases overall event rate. Typical partition count: 4-32, can scale dynamically. Consumer Groups enable independent readers of same event stream - each group maintains own offset per partition. Multiple applications can process same events simultaneously. Default consumer group: $Default. Use consumer groups for different processing scenarios (real-time analytics, batch processing, backup). Each partition can have at most one active consumer per consumer group.",codeSnippets:[{language:"csharp",code:`// Event Hub - Partitions & Consumer Groups
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Consumer;
+using Azure.Messaging.EventHubs.Processor;
+using Azure.Storage.Blobs;
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+// ============= PARTITION KEY =============
+
+public class PartitionKeyStrategy
+{
+    // Strategy 1: Ensure ordering by customer
+    public static string GetPartitionKeyByCustomer(string customerId)
+    {
+        return customerId;  // Same customer → same partition → ordered
+    }
+
+    // Strategy 2: Distribute events round-robin
+    public static string NoPartitionKey()
+    {
+        return null;  // Event Hub chooses partition
+    }
+
+    // Strategy 3: Partition by tenant
+    public static string GetPartitionKeyByTenant(string tenantId)
+    {
+        return tenantId;
+    }
+}
+
+// ============= CONSUMER GROUP MANAGEMENT =============
+
+public class ConsumerGroupManagement
+{
+    // Create/list consumer groups
+    public async Task ManageConsumerGroupsAsync(string connectionString, string eventHubName)
+    {
+        var client = new EventHubAdministrationClient(connectionString);
+
+        // List all consumer groups
+        await foreach (var groupName in client.ListConsumerGroupsAsync(eventHubName))
+        {
+            Console.WriteLine($"Consumer Group: {groupName}");
+        }
+
+        // Get consumer group properties
+        try
+        {
+            var properties = await client.GetConsumerGroupAsync(eventHubName, "order-processing");
+            Console.WriteLine($"Consumer Group: {properties.Value.Name}");
+            Console.WriteLine($"Created At: {properties.Value.CreatedOn}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+    }
+}
+
+// ============= PARTITION PROPERTIES =============
+
+public class PartitionInformation
+{
+    public async Task GetPartitionInfoAsync(string connectionString, string eventHubName)
+    {
+        var client = new EventHubConsumerClient(
+            EventHubConsumerClient.DefaultConsumerGroupName,
+            connectionString,
+            eventHubName
+        );
+
+        try
+        {
+            var properties = await client.GetEventHubPropertiesAsync();
+
+            Console.WriteLine($"Event Hub: {properties.Name}");
+            Console.WriteLine($"Created: {properties.CreatedOn}");
+            Console.WriteLine($"Partitions: {properties.PartitionIds.Length}");
+
+            foreach (var partitionId in properties.PartitionIds)
+            {
+                var partitionProperties = await client.GetPartitionPropertiesAsync(partitionId);
+
+                Console.WriteLine($"  Partition {partitionId}:");
+                Console.WriteLine($"    First Offset: {partitionProperties.FirstSequenceNumber}");
+                Console.WriteLine($"    Last Offset: {partitionProperties.LastSequenceNumber}");
+                Console.WriteLine($"    Last Enqueued Time: {partitionProperties.LastEnqueuedTimeUtc}");
+            }
+        }
+        finally
+        {
+            await client.CloseAsync();
+        }
+    }
+}
+
+// ============= CONSUMER GROUP OFFSET TRACKING =============
+
+public class OffsetTracking
+{
+    // Manual offset tracking
+    public async Task ReadWithManualCheckpointAsync(
+        string connectionString,
+        string eventHubName,
+        string consumerGroup)
+    {
+        var client = new EventHubConsumerClient(consumerGroup, connectionString, eventHubName);
+
+        try
+        {
+            var startingPosition = EventPosition.Earliest;
+
+            await foreach (PartitionEvent partitionEvent in 
+                client.ReadEventsAsync(startingPosition))
+            {
+                // Process event
+                ProcessEvent(partitionEvent);
+
+                // Manually track offset
+                string offset = partitionEvent.Data.Offset;
+                long sequenceNumber = partitionEvent.Data.SequenceNumber;
+
+                Console.WriteLine($"Processed - Offset: {offset}, Seq: {sequenceNumber}");
+                // Save offset to persistent storage (database, blob, etc.)
+            }
+        }
+        finally
+        {
+            await client.CloseAsync();
+        }
+    }
+
+    // Automatic checkpointing with EventProcessorClient
+    public async Task ReadWithEventProcessorAsync(
+        string connectionString,
+        string eventHubName,
+        string consumerGroup,
+        string blobConnectionString,
+        string blobContainerName)
+    {
+        var storageClient = new BlobContainerClient(
+            new Uri($"https://..." + blobContainerName),
+            new Azure.Storage.StorageSharedKeyCredential("", "")
+        );
+
+        var processor = new EventProcessorClient(
+            storageClient,
+            consumerGroup,
+            connectionString,
+            eventHubName
+        );
+
+        processor.ProcessEventAsync += ProcessEventHandlerAsync;
+        processor.ProcessErrorAsync += ProcessErrorHandlerAsync;
+
+        await processor.StartProcessingAsync();
+        // Continue processing until stopped
+        await processor.StopProcessingAsync();
+    }
+
+    private async Task ProcessEventHandlerAsync(ProcessEventArgs args)
+    {
+        try
+        {
+            ProcessEvent(args.Data);
+            // Checkpoint automatically saved
+            await args.UpdateCheckpointAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error processing event: {ex.Message}");
+        }
+    }
+
+    private async Task ProcessErrorHandlerAsync(ProcessErrorEventArgs args)
+    {
+        Console.WriteLine($"Error in partition {args.PartitionId}: {args.Exception.Message}");
+        await Task.CompletedTask;
+    }
+
+    private void ProcessEvent(EventData eventData)
+    {
+        var eventBody = System.Text.Encoding.UTF8.GetString(eventData.Body);
+        Console.WriteLine($"Event: {eventBody}");
+    }
+}
+
+// ============= PARTITION STRATEGY =============
+
+public class PartitionStrategy
+{
+    public static void WhenToUsePartitionKey()
+    {
+        Console.WriteLine("Use Partition Key when:");
+        Console.WriteLine("✓ Order matters (events from same customer should be ordered)");
+        Console.WriteLine("✓ Downstream processing depends on order");
+        Console.WriteLine("✓ Stateful processing (grouping related events)");
+        Console.WriteLine("");
+
+        Console.WriteLine("Don't use Partition Key when:");
+        Console.WriteLine("✗ Order doesn't matter (random events)");
+        Console.WriteLine("✗ Need maximum throughput (distributed across all partitions)");
+        Console.WriteLine("✗ Want load balancing across partitions");
+    }
+
+    public static void ScalingConsumers()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Consumer Scaling:");
+        Console.WriteLine("- If partitions > consumers: Some consumers read multiple partitions");
+        Console.WriteLine("- If partitions = consumers: Each consumer reads 1 partition");
+        Console.WriteLine("- If partitions < consumers: Some consumers idle");
+        Console.WriteLine("- Optimal: Consumers <= Partitions");
+        Console.WriteLine("- Recommendation: 1 consumer per partition for best throughput");
+    }
+}
+
+// ============= CONSUMER GROUP USE CASES =============
+
+public class ConsumerGroupUseCases
+{
+    public static void Examples()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Consumer Group Use Cases:");
+        Console.WriteLine("");
+
+        Console.WriteLine("1. Real-time Dashboard:");
+        Console.WriteLine("   Consumer Group: 'dashboard'");
+        Console.WriteLine("   Purpose: Display live event metrics");
+        Console.WriteLine("   Offset: Latest (skip past events)");
+        Console.WriteLine("");
+
+        Console.WriteLine("2. Analytics Batch Processing:");
+        Console.WriteLine("   Consumer Group: 'analytics'");
+        Console.WriteLine("   Purpose: Process all events for analysis");
+        Console.WriteLine("   Offset: Earliest (process from beginning)");
+        Console.WriteLine("");
+
+        Console.WriteLine("3. Backup/Archive:");
+        Console.WriteLine("   Consumer Group: 'backup'");
+        Console.WriteLine("   Purpose: Store all events to long-term storage");
+        Console.WriteLine("   Offset: Earliest with checkpointing");
+        Console.WriteLine("");
+
+        Console.WriteLine("4. Multiple Applications:");
+        Console.WriteLine("   Each app has own consumer group");
+        Console.WriteLine("   Each reads entire event stream independently");
+        Console.WriteLine("   No interference between applications");
+    }
+}`}]},{id:"q3",question:"How do you publish events efficiently and handle batching in Event Hub?",answer:"Event publishing optimizes throughput through batching. Key strategies: 1) Create batch with CreateBatchAsync() - groups events before sending. 2) Check batch capacity with TryAdd() - prevents exceeding size limits. 3) Send full batch immediately - reduces network round-trips. 4) Use partition keys for ordering - same key = same partition. 5) Handle backpressure - retry on transient failures. Performance optimization: batch size ~1MB, 1000 events typical batch, tune based on event size. Failed events can be retried with exponential backoff. For throughput units, calculate: events/sec * avg_event_size / 1MB = TU needed. Max batch size 1MB, individual event max 1MB.",codeSnippets:[{language:"csharp",code:`// Event Hub - Publishing & Batching
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Producer;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+// ============= BATCH PUBLISHING =============
+
+public class BatchPublisher
+{
+    private EventHubProducerClient _producer;
+
+    public BatchPublisher(string connectionString, string eventHubName)
+    {
+        _producer = new EventHubProducerClient(connectionString, eventHubName);
+    }
+
+    // Basic batch publishing
+    public async Task PublishBatchAsync(List<EventData> events)
+    {
+        var batch = await _producer.CreateBatchAsync();
+
+        foreach (var @event in events)
+        {
+            if (!batch.TryAdd(@event))
+            {
+                // Batch is full, send it
+                await _producer.SendAsync(batch);
+
+                // Create new batch
+                batch = await _producer.CreateBatchAsync();
+
+                // Add event to new batch (must succeed)
+                if (!batch.TryAdd(@event))
+                {
+                    throw new InvalidOperationException("Event too large for batch");
+                }
+            }
+        }
+
+        // Send remaining events
+        if (batch.Count > 0)
+        {
+            await _producer.SendAsync(batch);
+        }
+    }
+
+    // Publishing with partition key
+    public async Task PublishWithPartitionKeyAsync(
+        List<EventData> events,
+        string partitionKey)
+    {
+        var sendOptions = new SendEventOptions { PartitionKey = partitionKey };
+        var batch = await _producer.CreateBatchAsync(sendOptions);
+
+        foreach (var @event in events)
+        {
+            if (!batch.TryAdd(@event))
+            {
+                await _producer.SendAsync(batch);
+                batch = await _producer.CreateBatchAsync(sendOptions);
+                batch.TryAdd(@event);
+            }
+        }
+
+        if (batch.Count > 0)
+        {
+            await _producer.SendAsync(batch);
+        }
+    }
+
+    // Publishing to specific partition
+    public async Task PublishToSpecificPartitionAsync(
+        List<EventData> events,
+        int partitionId)
+    {
+        var sendOptions = new SendEventOptions { PartitionId = partitionId.ToString() };
+        var batch = await _producer.CreateBatchAsync(sendOptions);
+
+        foreach (var @event in events)
+        {
+            if (!batch.TryAdd(@event))
+            {
+                await _producer.SendAsync(batch);
+                batch = await _producer.CreateBatchAsync(sendOptions);
+                batch.TryAdd(@event);
+            }
+        }
+
+        if (batch.Count > 0)
+        {
+            await _producer.SendAsync(batch);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _producer.CloseAsync();
+    }
+}
+
+// ============= BATCH SIZE OPTIMIZATION =============
+
+public class BatchOptimization
+{
+    // Get batch properties
+    public async Task AnalyzeBatchAsync(string connectionString, string eventHubName)
+    {
+        var producer = new EventHubProducerClient(connectionString, eventHubName);
+
+        try
+        {
+            var batchOptions = new CreateBatchOptions();
+            var batch = await producer.CreateBatchAsync(batchOptions);
+
+            Console.WriteLine($"Max Batch Size: {batch.MaximumSizeInBytes} bytes");
+            Console.WriteLine($"Available Size: {batch.SizeInBytes} bytes");
+
+            // Create sample events and check size
+            var sampleEvent = new EventData(System.Text.Encoding.UTF8.GetBytes(
+                JsonSerializer.Serialize(new { orderId = "12345", amount = 99.99 })
+            ));
+
+            if (batch.TryAdd(sampleEvent))
+            {
+                Console.WriteLine($"Sample Event Size: {sampleEvent.Body.Length} bytes");
+                Console.WriteLine($"Batch Used: {batch.SizeInBytes} bytes");
+            }
+        }
+        finally
+        {
+            await producer.CloseAsync();
+        }
+    }
+}
+
+// ============= THROUGHPUT CALCULATION =============
+
+public class ThroughputCalculation
+{
+    public static void CalculateThroughputUnits()
+    {
+        Console.WriteLine("Throughput Unit (TU) Sizing:");
+        Console.WriteLine("");
+
+        // Example: 100,000 events/sec, average 1KB per event
+        int eventsPerSecond = 100000;
+        int avgEventSizeBytes = 1024;  // 1KB
+
+        double ingressMBps = (eventsPerSecond * avgEventSizeBytes) / (1024.0 * 1024.0);
+        int tuNeeded = (int)Math.Ceiling(ingressMBps);
+
+        Console.WriteLine($"Events/sec: {eventsPerSecond}");
+        Console.WriteLine($"Avg Event Size: {avgEventSizeBytes} bytes");
+        Console.WriteLine($"Required Ingress: {ingressMBps:F2} MB/s");
+        Console.WriteLine($"Throughput Units Needed: {tuNeeded} TU");
+        Console.WriteLine("");
+
+        Console.WriteLine("1 TU = 1 MB/s ingress, 2 MB/s egress");
+        Console.WriteLine("Scale up: Add more TU");
+        Console.WriteLine("Monitor: Use Azure Monitor for actual usage");
+    }
+}
+
+// ============= ERROR HANDLING & RETRY =============
+
+public class ErrorHandlingPublisher
+{
+    private EventHubProducerClient _producer;
+
+    public ErrorHandlingPublisher(string connectionString, string eventHubName)
+    {
+        _producer = new EventHubProducerClient(connectionString, eventHubName);
+    }
+
+    // Publish with retry logic
+    public async Task PublishWithRetryAsync(
+        List<EventData> events,
+        int maxRetries = 3)
+    {
+        int retryCount = 0;
+        var exponentialBackoff = new System.Diagnostics.Stopwatch();
+
+        while (retryCount < maxRetries)
+        {
+            try
+            {
+                await PublishBatchAsync(events);
+                return;  // Success
+            }
+            catch (Azure.Messaging.EventHubs.EventHubsException ex) when (ex.IsTransient)
+            {
+                retryCount++;
+                int delayMs = (int)Math.Pow(2, retryCount) * 1000;  // Exponential backoff
+
+                Console.WriteLine($"Transient error, retrying in {delayMs}ms");
+                await Task.Delay(delayMs);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Fatal error: {ex.Message}");
+                throw;
+            }
+        }
+
+        throw new InvalidOperationException($"Failed after {maxRetries} retries");
+    }
+
+    private async Task PublishBatchAsync(List<EventData> events)
+    {
+        var batch = await _producer.CreateBatchAsync();
+
+        foreach (var @event in events)
+        {
+            if (!batch.TryAdd(@event))
+            {
+                await _producer.SendAsync(batch);
+                batch = await _producer.CreateBatchAsync();
+                batch.TryAdd(@event);
+            }
+        }
+
+        if (batch.Count > 0)
+        {
+            await _producer.SendAsync(batch);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await _producer.CloseAsync();
+    }
+}
+
+// ============= PERFORMANCE MONITORING =============
+
+public class PerformanceMonitoring
+{
+    public async Task MeasurePublishThroughputAsync(
+        string connectionString,
+        string eventHubName,
+        int totalEvents)
+    {
+        var producer = new EventHubProducerClient(connectionString, eventHubName);
+        var stopwatch = Stopwatch.StartNew();
+
+        try
+        {
+            var batch = await producer.CreateBatchAsync();
+            int eventCount = 0;
+
+            for (int i = 0; i < totalEvents; i++)
+            {
+                var eventData = new EventData(System.Text.Encoding.UTF8.GetBytes(
+                    $"Event {i}: {DateTime.UtcNow}"
+                ));
+
+                if (!batch.TryAdd(eventData))
+                {
+                    await producer.SendAsync(batch);
+                    batch = await producer.CreateBatchAsync();
+                    batch.TryAdd(eventData);
+                }
+
+                eventCount++;
+            }
+
+            if (batch.Count > 0)
+            {
+                await producer.SendAsync(batch);
+            }
+
+            stopwatch.Stop();
+
+            double eventsPerSecond = totalEvents / stopwatch.Elapsed.TotalSeconds;
+            Console.WriteLine($"Published {totalEvents} events");
+            Console.WriteLine($"Duration: {stopwatch.ElapsedMilliseconds}ms");
+            Console.WriteLine($"Throughput: {eventsPerSecond:F0} events/sec");
+        }
+        finally
+        {
+            await producer.CloseAsync();
+        }
+    }
+}
+
+// ============= BEST PRACTICES =============
+
+Console.WriteLine("Event Hub Publishing Best Practices:");
+Console.WriteLine("");
+Console.WriteLine("✓ Always use batching for efficiency");
+Console.WriteLine("✓ Batch size: Aim for 1MB (max limit)");
+Console.WriteLine("✓ Use partition key for ordering requirements");
+Console.WriteLine("✓ Implement exponential backoff for retries");
+Console.WriteLine("✓ Handle EventHubsException.IsTransient for transient errors");
+Console.WriteLine("✓ Monitor throughput unit utilization");
+Console.WriteLine("✓ Use EventHubProducerClient connection pooling");
+Console.WriteLine("✓ Dispose producer when done to free resources");
+Console.WriteLine("✓ Size TU based on peak event rate");`}]},{id:"q4",question:"How do you consume events efficiently using EventProcessorClient?",answer:"EventProcessorClient automates consumption with: 1) Automatic checkpoint management - saves offset to blob storage. 2) Load balancing - distributes partitions across consumer instances. 3) Partition ownership - ensures each partition has max one owner. 4) Automatic recovery - handles consumer failures gracefully. 5) Event processing - delegates to ProcessEventAsync handler. Checkpointing strategy: automatic (after each event) or manual (batch of events). Use blob storage for checkpoint persistence - enables resuming from last checkpoint. Multiple EventProcessorClient instances with same consumer group scale horizontally. Benefits: no manual offset tracking, automatic partition rebalancing, high availability. Setup: configure storage client, define event/error handlers, start processing.",codeSnippets:[{language:"csharp",code:`// Event Hub - EventProcessorClient for Consumption
+using Azure.Messaging.EventHubs;
+using Azure.Messaging.EventHubs.Consumer;
+using Azure.Messaging.EventHubs.Processor;
+using Azure.Storage.Blobs;
+using Microsoft.Azure.WebJobs;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= EVENT PROCESSOR CLIENT SETUP =============
+
+public class EventHubConsumerSetup
+{
+    public static async Task SetupEventProcessorAsync(
+        string eventHubConnectionString,
+        string eventHubName,
+        string consumerGroup,
+        string storageConnectionString,
+        string containerName)
+    {
+        // Initialize storage client for checkpointing
+        var storageClient = new BlobContainerClient(
+            new Uri($"https://mystg.blob.core.windows.net/{containerName}"),
+            new Azure.Storage.StorageSharedKeyCredential("accountname", "accountkey")
+        );
+
+        // Create processor
+        var processor = new EventProcessorClient(
+            storageClient,
+            consumerGroup,
+            eventHubConnectionString,
+            eventHubName
+        );
+
+        // Register handlers
+        processor.ProcessEventAsync += ProcessEventHandlerAsync;
+        processor.ProcessErrorAsync += ProcessErrorHandlerAsync;
+
+        // Start processing
+        await processor.StartProcessingAsync();
+
+        // Keep processing until stopped
+        Console.WriteLine("Event processor started. Press Ctrl+C to stop.");
+        await Task.Delay(Timeout.Infinite);
+
+        // Stop processing
+        await processor.StopProcessingAsync();
+    }
+
+    private static async Task ProcessEventHandlerAsync(ProcessEventArgs args)
+    {
+        try
+        {
+            // Get event data
+            var eventBody = System.Text.Encoding.UTF8.GetString(args.Data.Body);
+            Console.WriteLine($"Event: {eventBody}");
+
+            // Process event (custom logic)
+            await ProcessOrderAsync(eventBody);
+
+            // Checkpoint after successful processing
+            // Saves offset to blob storage
+            await args.UpdateCheckpointAsync();
+
+            Console.WriteLine($"Checkpointed partition {args.Partition.PartitionId}, offset {args.Data.Offset}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error processing event: {ex.Message}");
+            // Don't checkpoint on error - will retry next time
+        }
+    }
+
+    private static async Task ProcessErrorHandlerAsync(ProcessErrorEventArgs args)
+    {
+        Console.WriteLine($"Error in partition {args.PartitionId}: {args.Exception.Message}");
+        Console.WriteLine($"Operation: {args.Operation}");
+
+        // Handle specific error types
+        if (args.Exception is Azure.Messaging.EventHubs.EventHubsException ehEx)
+        {
+            if (ehEx.IsTransient)
+            {
+                Console.WriteLine("Transient error - processor will retry");
+            }
+            else
+            {
+                Console.WriteLine("Permanent error - manual intervention needed");
+            }
+        }
+
+        await Task.CompletedTask;
+    }
+
+    private static async Task ProcessOrderAsync(string orderJson)
+    {
+        // Simulate processing
+        await Task.Delay(100);
+    }
+}
+
+// ============= CHECKPOINT MANAGEMENT =============
+
+public class CheckpointManagement
+{
+    // Automatic checkpointing (every event)
+    private static async Task AutomaticCheckpointAsync(ProcessEventArgs args)
+    {
+        await args.UpdateCheckpointAsync();
+        Console.WriteLine($"Checkpoint updated: {args.Data.Offset}");
+    }
+
+    // Manual checkpointing (batch of events)
+    public async Task ManualCheckpointingAsync(
+        string eventHubConnectionString,
+        string eventHubName,
+        string consumerGroup,
+        string storageConnectionString)
+    {
+        var storageClient = new BlobContainerClient(
+            new Uri("https://mystg.blob.core.windows.net/checkpoints"),
+            new Azure.Storage.StorageSharedKeyCredential("accountname", "key")
+        );
+
+        var processor = new EventProcessorClient(
+            storageClient,
+            consumerGroup,
+            eventHubConnectionString,
+            eventHubName
+        );
+
+        int eventCount = 0;
+        const int checkpointInterval = 100;
+
+        processor.ProcessEventAsync += async (args) =>
+        {
+            // Process event
+            await ProcessOrderAsync(System.Text.Encoding.UTF8.GetString(args.Data.Body));
+
+            eventCount++;
+
+            // Checkpoint every 100 events
+            if (eventCount % checkpointInterval == 0)
+            {
+                await args.UpdateCheckpointAsync();
+                Console.WriteLine($"Batch checkpoint: {eventCount} events processed");
+            }
+        };
+
+        processor.ProcessErrorAsync += (args) =>
+        {
+            Console.WriteLine($"Error: {args.Exception.Message}");
+            return Task.CompletedTask;
+        };
+
+        await processor.StartProcessingAsync();
+    }
+
+    // Resume from checkpoint
+    public async Task ResumeFromCheckpointAsync(
+        string eventHubConnectionString,
+        string eventHubName,
+        string consumerGroup,
+        string storageConnectionString)
+    {
+        var storageClient = new BlobContainerClient(
+            new Uri("https://mystg.blob.core.windows.net/checkpoints"),
+            new Azure.Storage.StorageSharedKeyCredential("accountname", "key")
+        );
+
+        var processor = new EventProcessorClient(
+            storageClient,
+            consumerGroup,
+            eventHubConnectionString,
+            eventHubName
+        );
+
+        Console.WriteLine("Processor will resume from last checkpoint...");
+
+        processor.ProcessEventAsync += (args) => ProcessEventHandlerAsync(args);
+        processor.ProcessErrorAsync += (args) => ProcessErrorHandlerAsync(args);
+
+        await processor.StartProcessingAsync();
+    }
+}
+
+// ============= PARTITION OWNERSHIP & LOAD BALANCING =============
+
+public class PartitionOwnershipTracking
+{
+    public async Task TrackPartitionOwnershipAsync(
+        EventProcessorClient processor)
+    {
+        processor.PartitionInitializingAsync += async (args) =>
+        {
+            Console.WriteLine($"Initializing partition {args.Partition.PartitionId}");
+            // Custom initialization logic
+            await Task.CompletedTask;
+        };
+
+        processor.PartitionClosingAsync += async (args) =>
+        {
+            Console.WriteLine($"Closing partition {args.Partition.PartitionId}");
+            Console.WriteLine($"Reason: {args.Reason}");
+            // Custom cleanup logic
+            await Task.CompletedTask;
+        };
+    }
+
+    public static void LoadBalancingBehavior()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("EventProcessorClient Load Balancing:");
+        Console.WriteLine("");
+
+        Console.WriteLine("Scenario 1: 4 Partitions, 1 Processor");
+        Console.WriteLine("  Processor owns all 4 partitions");
+        Console.WriteLine("");
+
+        Console.WriteLine("Scenario 2: 4 Partitions, 2 Processors");
+        Console.WriteLine("  Each processor owns 2 partitions");
+        Console.WriteLine("  Automatic rebalancing");
+        Console.WriteLine("");
+
+        Console.WriteLine("Scenario 3: 4 Partitions, 5 Processors");
+        Console.WriteLine("  4 processors own 1 partition each");
+        Console.WriteLine("  1 processor idle (no partitions assigned)");
+        Console.WriteLine("");
+
+        Console.WriteLine("When processor added/removed:");
+        Console.WriteLine("  - Automatic rebalancing triggers");
+        Console.WriteLine("  - Partitions reassigned to remaining processors");
+        Console.WriteLine("  - Minimal impact on processing");
+    }
+}
+
+// ============= CONSUMER GROUP MANAGEMENT =============
+
+public class ConsumerGroupScaling
+{
+    public static void HorizontalScaling()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Horizontal Scaling with EventProcessorClient:");
+        Console.WriteLine("");
+
+        Console.WriteLine("1. Multiple instances of same consumer group:");
+        Console.WriteLine("   - All connect to same Event Hub and consumer group");
+        Console.WriteLine("   - All share same storage account for checkpoints");
+        Console.WriteLine("   - Automatic partition distribution");
+        Console.WriteLine("");
+
+        Console.WriteLine("2. Scaling logic:");
+        Console.WriteLine("   - Add processor: Rebalance distributes partitions");
+        Console.WriteLine("   - Remove processor: Other processors take partitions");
+        Console.WriteLine("   - No message loss (checkpoints saved)");
+        Console.WriteLine("");
+
+        Console.WriteLine("3. Best practices:");
+        Console.WriteLine("   - Use separate consumer groups for different apps");
+        Console.WriteLine("   - Size instances: 1 instance per partition optimal");
+        Console.WriteLine("   - Monitor: Track partition ownership and lag");
+        Console.WriteLine("   - Handle rebalancing gracefully");
+    }
+}
+
+// ============= ERROR HANDLING STRATEGIES =============
+
+public class ErrorHandlingStrategies
+{
+    public static async Task ConfigureErrorHandlingAsync(EventProcessorClient processor)
+    {
+        processor.ProcessErrorAsync += async (args) =>
+        {
+            // Log error details
+            Console.WriteLine($"Partition: {args.PartitionId}");
+            Console.WriteLine($"Operation: {args.Operation}");
+            Console.WriteLine($"Exception: {args.Exception.Message}");
+
+            // Handle specific errors
+            if (args.Exception is Azure.Messaging.EventHubs.EventHubsException ehEx)
+            {
+                if (ehEx.IsTransient)
+                {
+                    // Transient error - processor will retry automatically
+                    Console.WriteLine("Transient error - automatic retry");
+                }
+                else if (args.Exception.InnerException is TimeoutException)
+                {
+                    // Timeout - likely network issue
+                    Console.WriteLine("Timeout - check connectivity");
+                }
+                else
+                {
+                    // Other error
+                    Console.WriteLine("Fatal error - may need intervention");
+                }
+            }
+
+            await Task.CompletedTask;
+        };
+    }
+}
+
+// ============= BEST PRACTICES =============
+
+Console.WriteLine("EventProcessorClient Best Practices:");
+Console.WriteLine("");
+Console.WriteLine("✓ Use blob storage for checkpoint persistence");
+Console.WriteLine("✓ Implement ProcessEventAsync handler for processing");
+Console.WriteLine("✓ Implement ProcessErrorAsync handler for error handling");
+Console.WriteLine("✓ Use UpdateCheckpointAsync() to save progress");
+Console.WriteLine("✓ Handle transient errors gracefully");
+Console.WriteLine("✓ Scale: Add multiple processor instances");
+Console.WriteLine("✓ Monitor: Track partition ownership and processing lag");
+Console.WriteLine("✓ Batch checkpointing for better performance");`}]},{id:"q5",question:"How do you monitor Event Hub performance and troubleshoot issues?",answer:"Monitor Event Hub using: 1) Azure Portal metrics - throughput, latency, consumer lag. 2) Diagnostic logs - operational logs, errors. 3) Application Insights - custom telemetry. 4) Azure Monitor alerts - high latency, throughput limits, errors. Key metrics: incoming messages, outgoing messages, active connections, server errors, incoming bytes. Consumer lag: difference between last enqueued offset and consumer offset. High lag indicates slow consumption. Troubleshooting: check TU/ECU limits (consider scaling), verify consumer is running, inspect error logs, validate network connectivity, review dead-letter behavior. Common issues: throttling (add TU), high latency (reduce batch size, check network), partition imbalance (verify consumer group), events lost (check retention policy).",codeSnippets:[{language:"csharp",code:`// Event Hub - Monitoring & Troubleshooting
+using Azure.Monitor.Query;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+// ============= MONITORING METRICS =============
+
+public class EventHubMonitoring
+{
+    public static void KeyMetricsToMonitor()
+    {
+        Console.WriteLine("Event Hub Key Metrics:");
+        Console.WriteLine("");
+
+        Console.WriteLine("Publisher Metrics:");
+        Console.WriteLine("- Incoming Messages: Total events published");
+        Console.WriteLine("- Incoming Bytes: Total data volume");
+        Console.WriteLine("- Successful Requests: % of successful publishes");
+        Console.WriteLine("- Server Errors: % of server-side failures");
+        Console.WriteLine("");
+
+        Console.WriteLine("Consumer Metrics:");
+        Console.WriteLine("- Outgoing Messages: Total events consumed");
+        Console.WriteLine("- Outgoing Bytes: Total data downloaded");
+        Console.WriteLine("- Active Connections: Connected consumers");
+        Console.WriteLine("");
+
+        Console.WriteLine("Performance Metrics:");
+        Console.WriteLine("- Consumer Lag: Offset difference between latest and consumed");
+        Console.WriteLine("- Latency: Time from publish to consumption");
+        Console.WriteLine("- Throughput Utilization: % of TU/ECU used");
+    }
+}
+
+// ============= APPLICATION INSIGHTS INTEGRATION =============
+
+public class ApplicationInsightsMonitoring
+{
+    private TelemetryClient _telemetryClient;
+
+    public ApplicationInsightsMonitoring(string instrumentationKey)
+    {
+        var config = new Microsoft.ApplicationInsights.Config.TelemetryConfiguration(instrumentationKey);
+        _telemetryClient = new TelemetryClient(config);
+    }
+
+    // Track publishing metrics
+    public async Task TrackPublishingAsync(
+        string eventHubName,
+        int eventCount,
+        long sizeBytes)
+    {
+        var startTime = DateTime.UtcNow;
+
+        try
+        {
+            // Simulate publishing
+            await Task.Delay(100);
+
+            var duration = DateTime.UtcNow - startTime;
+
+            _telemetryClient.TrackEvent(
+                "EventHub_Publish",
+                new Dictionary<string, string>
+                {
+                    { "EventHub", eventHubName },
+                    { "Status", "Success" }
+                },
+                new Dictionary<string, double>
+                {
+                    { "EventCount", eventCount },
+                    { "SizeBytes", sizeBytes },
+                    { "DurationMs", duration.TotalMilliseconds }
+                }
+            );
+        }
+        catch (Exception ex)
+        {
+            _telemetryClient.TrackException(ex);
+        }
+    }
+
+    // Track consumption metrics
+    public async Task TrackConsumptionAsync(
+        string eventHubName,
+        string consumerGroup,
+        int processedEvents,
+        long processingTimeMs)
+    {
+        _telemetryClient.TrackEvent(
+            "EventHub_Consume",
+            new Dictionary<string, string>
+            {
+                { "EventHub", eventHubName },
+                { "ConsumerGroup", consumerGroup }
+            },
+            new Dictionary<string, double>
+            {
+                { "ProcessedEvents", processedEvents },
+                { "ProcessingTimeMs", processingTimeMs },
+                { "AvgTimePerEventMs", processingTimeMs / (double)processedEvents }
+            }
+        );
+    }
+
+    // Track consumer lag
+    public void TrackConsumerLag(
+        string eventHubName,
+        string consumerGroup,
+        int partitionId,
+        long lagMessages)
+    {
+        var severity = lagMessages > 10000 ? SeverityLevel.Warning : SeverityLevel.Information;
+
+        _telemetryClient.TrackEvent(
+            "EventHub_ConsumerLag",
+            new Dictionary<string, string>
+            {
+                { "EventHub", eventHubName },
+                { "ConsumerGroup", consumerGroup },
+                { "Partition", partitionId.ToString() },
+                { "Severity", severity.ToString() }
+            },
+            new Dictionary<string, double>
+            {
+                { "LagMessages", lagMessages }
+            }
+        );
+    }
+}
+
+// ============= CONSUMER LAG TRACKING =============
+
+public class ConsumerLagAnalysis
+{
+    public async Task AnalyzeLagAsync(
+        string connectionString,
+        string eventHubName,
+        string consumerGroup)
+    {
+        var client = new EventHubConsumerClient(consumerGroup, connectionString, eventHubName);
+
+        try
+        {
+            var properties = await client.GetEventHubPropertiesAsync();
+
+            Console.WriteLine($"Event Hub: {eventHubName}");
+            Console.WriteLine($"Consumer Group: {consumerGroup}");
+            Console.WriteLine("");
+
+            foreach (var partitionId in properties.PartitionIds)
+            {
+                var partitionProperties = await client.GetPartitionPropertiesAsync(partitionId);
+                long lastEnqueuedSequence = partitionProperties.LastSequenceNumber;
+
+                // Get consumer group info
+                var adminClient = new EventHubAdministrationClient(connectionString);
+                var consumerGroupProperties = await adminClient.GetConsumerGroupAsync(
+                    eventHubName,
+                    consumerGroup
+                );
+
+                // Estimate lag
+                long lag = lastEnqueuedSequence - (partitionProperties.LastSequenceNumber - 1000);
+
+                Console.WriteLine($"Partition {partitionId}:");
+                Console.WriteLine($"  First Sequence: {partitionProperties.FirstSequenceNumber}");
+                Console.WriteLine($"  Last Sequence: {lastEnqueuedSequence}");
+                Console.WriteLine($"  Estimated Lag: {Math.Max(0, lag)} messages");
+                Console.WriteLine("");
+            }
+        }
+        finally
+        {
+            await client.CloseAsync();
+        }
+    }
+}
+
+// ============= THROTTLING & THROUGHPUT MANAGEMENT =============
+
+public class ThrottlingHandling
+{
+    public static void ThroughputUnitScaling()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Throughput Unit (TU) Scaling:");
+        Console.WriteLine("");
+
+        Console.WriteLine("When to add TU:");
+        Console.WriteLine("- Throttling errors (429)");
+        Console.WriteLine("- High latency (>1 second)");
+        Console.WriteLine("- TU utilization >80%");
+        Console.WriteLine("");
+
+        Console.WriteLine("Scaling formula:");
+        Console.WriteLine("TU Needed = (Events/sec * Avg Size) / 1MB");
+        Console.WriteLine("");
+
+        Console.WriteLine("Example:");
+        Console.WriteLine("- 50,000 events/sec");
+        Console.WriteLine("- 2KB average size");
+        Console.WriteLine("- (50,000 * 2048) / (1024 * 1024) = 97.7 MB/s");
+        Console.WriteLine("- Need ~98 TU (1 TU = 1 MB/s ingress)");
+        Console.WriteLine("");
+
+        Console.WriteLine("Premium tier (ECU):");
+        Console.WriteLine("- 1 ECU = 10 MB/s ingress, 20 MB/s egress");
+        Console.WriteLine("- Better for consistent high throughput");
+    }
+}
+
+// ============= HEALTH CHECK =============
+
+public class EventHubHealthCheck
+{
+    public async Task<HealthStatus> CheckEventHubHealthAsync(
+        string connectionString,
+        string eventHubName,
+        string consumerGroup)
+    {
+        var status = new HealthStatus();
+
+        try
+        {
+            // Check producer
+            using (var producer = new Azure.Messaging.EventHubs.Producer.EventHubProducerClient(
+                connectionString,
+                eventHubName))
+            {
+                var properties = await producer.GetEventHubPropertiesAsync();
+                status.ProducerHealthy = true;
+                status.PartitionCount = properties.PartitionIds.Length;
+            }
+
+            // Check consumer
+            using (var consumer = new Azure.Messaging.EventHubs.Consumer.EventHubConsumerClient(
+                consumerGroup,
+                connectionString,
+                eventHubName))
+            {
+                var properties = await consumer.GetEventHubPropertiesAsync();
+                status.ConsumerHealthy = true;
+            }
+
+            status.OverallHealthy = status.ProducerHealthy && status.ConsumerHealthy;
+        }
+        catch (Exception ex)
+        {
+            status.OverallHealthy = false;
+            status.LastError = ex.Message;
+        }
+
+        return status;
+    }
+
+    public class HealthStatus
+    {
+        public bool ProducerHealthy { get; set; }
+        public bool ConsumerHealthy { get; set; }
+        public bool OverallHealthy { get; set; }
+        public int PartitionCount { get; set; }
+        public string LastError { get; set; }
+
+        public override string ToString()
+        {
+            return $"Overall: {(OverallHealthy ? "Healthy" : "Unhealthy")}, " +
+                   $"Producer: {(ProducerHealthy ? "OK" : "Failed")}, " +
+                   $"Consumer: {(ConsumerHealthy ? "OK" : "Failed")}, " +
+                   $"Partitions: {PartitionCount}";
+        }
+    }
+}
+
+// ============= COMMON ISSUES & SOLUTIONS =============
+
+public class TroubleshootingGuide
+{
+    public static void CommonIssuesAndSolutions()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Event Hub Troubleshooting Guide:");
+        Console.WriteLine("");
+
+        Console.WriteLine("Issue 1: Throttling errors (429)");
+        Console.WriteLine("  Cause: Exceeding TU/ECU limits");
+        Console.WriteLine("  Solution:");
+        Console.WriteLine("    - Increase Throughput Units");
+        Console.WriteLine("    - Reduce publishing rate");
+        Console.WriteLine("    - Batch events efficiently");
+        Console.WriteLine("");
+
+        Console.WriteLine("Issue 2: High consumer lag");
+        Console.WriteLine("  Cause: Consumer can't keep up");
+        Console.WriteLine("  Solution:");
+        Console.WriteLine("    - Add more consumer instances");
+        Console.WriteLine("    - Increase partition count");
+        Console.WriteLine("    - Optimize event processing");
+        Console.WriteLine("");
+
+        Console.WriteLine("Issue 3: Events lost");
+        Console.WriteLine("  Cause: Consumer not checkpointing");
+        Console.WriteLine("  Solution:");
+        Console.WriteLine("    - Verify UpdateCheckpointAsync() called");
+        Console.WriteLine("    - Check blob storage for checkpoints");
+        Console.WriteLine("    - Monitor retention policy");
+        Console.WriteLine("");
+
+        Console.WriteLine("Issue 4: High latency");
+        Console.WriteLine("  Cause: Network or processing delays");
+        Console.WriteLine("  Solution:");
+        Console.WriteLine("    - Check network connectivity");
+        Console.WriteLine("    - Reduce batch size");
+        Console.WriteLine("    - Monitor CPU/memory on consumers");
+        Console.WriteLine("");
+
+        Console.WriteLine("Issue 5: Connection failures");
+        Console.WriteLine("  Cause: Network, authentication, or firewall");
+        Console.WriteLine("  Solution:");
+        Console.WriteLine("    - Verify connection string");
+        Console.WriteLine("    - Check firewall rules");
+        Console.WriteLine("    - Verify managed identity permissions");
+    }
+}
+
+// ============= MONITORING BEST PRACTICES =============
+
+Console.WriteLine("Event Hub Monitoring Best Practices:");
+Console.WriteLine("");
+Console.WriteLine("✓ Monitor TU/ECU utilization continuously");
+Console.WriteLine("✓ Set alerts for lag exceeding threshold");
+Console.WriteLine("✓ Track error rates and error types");
+Console.WriteLine("✓ Monitor consumer group lag");
+Console.WriteLine("✓ Set up Application Insights custom metrics");
+Console.WriteLine("✓ Use Azure Monitor dashboards");
+Console.WriteLine("✓ Review diagnostic logs regularly");
+Console.WriteLine("✓ Implement health check endpoints");
+Console.WriteLine("✓ Track end-to-end latency");
+Console.WriteLine("✓ Monitor partition distribution");`}]}]},Vv={id:"azure",name:"Microsoft Azure",topics:[Mv,Uv,Gv,qv,Bv,Hv,zv,jv,_v,Fv]},dl=[mv,hv,Av,Ev,Pv,Vv];function Qv(){const[w,F]=Yt.useState(null),[U,m]=Yt.useState(null),[x,M]=Yt.useState(!0),X=ue=>{F(ue);const E=dl.find(T=>T.id===ue);E&&E.topics.length>0?m(E.topics[0].id):m(null)};return Yt.useEffect(()=>{const ue=document.querySelector(".content-area");ue&&(ue.scrollTop=0)},[U]),S.jsxs("div",{className:"app",children:[S.jsx(iv,{subjects:dl,selectedSubject:w,selectedTopic:U,onSubjectSelect:X,onTopicSelect:m,isOpen:x,onToggle:()=>M(!x)}),S.jsx(sv,{subjects:dl,selectedSubject:w,selectedTopic:U})]})}nv.createRoot(document.getElementById("root")).render(S.jsx(Yt.StrictMode,{children:S.jsx(Qv,{})}));

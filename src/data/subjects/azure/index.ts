@@ -5,6 +5,10 @@ import { azureServiceBusTopic } from "./service-bus";
 import { azureCloudDeploymentTopic } from "./cloud-deployment";
 import { azureNetworkingTopic } from "./networking";
 import { azureApiSecurityTopic } from "./api-security";
+import { azureStorageServicesTopic } from "./storage-services";
+import { azureDurableFunctionsTopic } from "./durable-functions";
+import { azureEventGridTopic } from "./event-grid";
+import { azureEventHubTopic } from "./event-hub";
 
 export const azureSubject: Subject = {
   id: "azure",
@@ -16,5 +20,9 @@ export const azureSubject: Subject = {
     azureCloudDeploymentTopic,
     azureNetworkingTopic,
     azureApiSecurityTopic,
+    azureStorageServicesTopic,
+    azureDurableFunctionsTopic,
+    azureEventGridTopic,
+    azureEventHubTopic,
   ],
 };
