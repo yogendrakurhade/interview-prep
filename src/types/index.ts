@@ -26,5 +26,6 @@ export interface Topic {
 export interface Subject {
   id: string;
   name: string;
+  icon?: string;
   topics: Topic[];
 }

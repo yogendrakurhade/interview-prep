@@ -11,5 +11,6 @@ import { csharpNetCoreTopic } from "./net-core";
 export const csharpAdvancedSubject: Subject = {
   id: "csharp-advanced",
   name: "C# Advanced",
+  icon: "🔮",
   topics: [csharpOopsConceptsTopic, csharpSolidPrinciplesTopic, csharpMultiThreadingTopic, csharpAsynchronousProgrammingTopic, csharpLinqTopic, csharpGarbageCollectionTopic, csharpCollectionsTopic, csharpNetCoreTopic],
 };

@@ -1,26 +1,56 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import type { Question } from "../types";
-import { CodeSnippetComponent } from "./CodeSnippet";
-import { DiagramDisplay } from "./DiagramDisplay";
+
+// Lazy load heavy components
+const CodeSnippetComponent = lazy(() => import("./CodeSnippet").then(m => ({ default: m.CodeSnippetComponent })));
+const DiagramDisplay = lazy(() => import("./DiagramDisplay").then(m => ({ default: m.DiagramDisplay })));
+
+// Loading skeletons
+function CodeSkeleton() {
+  return (
+    <div className="bg-gray-900 rounded-xl p-4 animate-pulse">
+      <div className="h-4 bg-gray-700 rounded w-1/4 mb-3"></div>
+      <div className="space-y-2">
+        <div className="h-3 bg-gray-700 rounded w-full"></div>
+        <div className="h-3 bg-gray-700 rounded w-5/6"></div>
+        <div className="h-3 bg-gray-700 rounded w-4/6"></div>
+      </div>
+    </div>
+  );
+}
+
+function DiagramSkeleton() {
+  return (
+    <div className="bg-gray-100 rounded-xl p-4 animate-pulse">
+      <div className="h-32 bg-gray-200 rounded"></div>
+    </div>
+  );
+}
 
 interface QuestionDisplayProps {
   question: Question;
+  isExpanded?: boolean;
 }
 
-export function QuestionDisplay({ question }: QuestionDisplayProps) {
-  const [showAnswer, setShowAnswer] = useState(false);
+export function QuestionDisplay({ question, isExpanded }: QuestionDisplayProps) {
+  const [showAnswer, setShowAnswer] = useState(isExpanded ?? false);
+
+  // Sync with isExpanded prop when it changes to true
+  if (isExpanded && !showAnswer) {
+    setShowAnswer(true);
+  }
 
   return (
-    <div className="bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all duration-300">
+    <div className="bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all duration-300 p-4 sm:p-6">
       {/* Question Section - Clickable */}
       <div
-        className="flex items-center justify-between gap-4 cursor-pointer px-6 py-4"
+        className="flex items-center justify-between gap-4 cursor-pointer px-4 sm:px-6 py-4 h-12"
         onClick={() => setShowAnswer(!showAnswer)}
       >
-        <p className="text-lg font-bold text-gray-900 leading-relaxed flex-1">
+        <p className="text-lg font-bold text-gray-900 leading-tight flex-1">
           {question.question}
         </p>
-        <div className="flex-shrink-0 text-gray-400 hover:text-indigo-600 transition-colors">
+        <div className="flex-shrink-0 text-gray-400 hover:text-indigo-600 transition-colors flex items-center justify-center w-6 h-6">
           {showAnswer ? (
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
               <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
@@ -35,7 +65,7 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
 
       {/* Answer Section - Not clickable for toggle */}
       {showAnswer && (
-        <div className="mt-8 pt-8 px-6 pb-6 border-t-2 border-gray-100 space-y-6 animate-in fade-in duration-300">
+        <div className="mt-8 pt-8 px-4 sm:px-6 pb-6 border-t-2 border-gray-100 space-y-6 animate-in fade-in duration-300">
           {/* Answer Text */}
           <div>
             <h3 className="inline-block px-3 py-1 bg-green-100 rounded-full text-xs font-bold text-green-700 mb-3">
@@ -55,7 +85,9 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
               </h4>
               <div className="space-y-4">
                 {question.diagrams.map((diagram, index) => (
-                  <DiagramDisplay key={index} diagram={diagram} />
+                  <Suspense key={index} fallback={<DiagramSkeleton />}>
+                    <DiagramDisplay diagram={diagram} />
+                  </Suspense>
                 ))}
               </div>
             </div>
@@ -70,7 +102,9 @@ export function QuestionDisplay({ question }: QuestionDisplayProps) {
               </h4>
               <div className="space-y-3">
                 {question.codeSnippets.map((snippet, index) => (
-                  <CodeSnippetComponent key={index} snippet={snippet} />
+                  <Suspense key={index} fallback={<CodeSkeleton />}>
+                    <CodeSnippetComponent snippet={snippet} />
+                  </Suspense>
                 ))}
               </div>
             </div>

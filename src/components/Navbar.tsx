@@ -1,10 +1,11 @@
+import { useState } from "react";
 import type { Subject } from "../types";
 
 interface NavbarProps {
   subjects: Subject[];
   selectedSubject: string | null;
   selectedTopic: string | null;
-  onSubjectSelect: (subjectId: string) => void;
+  onSubjectSelect: (subjectId: string, topicId?: string) => void;
   onTopicSelect: (topicId: string) => void;
   isOpen: boolean;
   onToggle: () => void;
@@ -19,7 +20,8 @@ export function Navbar({
   isOpen,
   onToggle,
 }: NavbarProps) {
-  const currentSubject = subjects.find((s) => s.id === selectedSubject);
+  const [hoveredSubject, setHoveredSubject] = useState<string | null>(null);
+  const currentSubject = subjects.find((s) => s.id === (hoveredSubject || selectedSubject));
 
   return (
     <>
@@ -58,7 +60,10 @@ export function Navbar({
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex flex-1 overflow-hidden gap-0">
+        <div 
+          className="flex flex-1 overflow-hidden gap-0 group"
+          onMouseLeave={() => setHoveredSubject(null)}
+        >
           {/* Subjects Sidebar */}
           <div className="flex-1 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white">
             <div className="px-5 py-4 text-xs font-bold uppercase tracking-widest text-indigo-600 bg-white border-b border-gray-200 sticky top-0">
@@ -69,24 +74,29 @@ export function Navbar({
               {subjects.map((subject) => (
                 <li key={subject.id}>
                   <button
-                    className={`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 ${
+                    className={`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 flex items-center ${isOpen ? 'gap-3' : 'justify-center'} ${
                       selectedSubject === subject.id
                         ? "bg-indigo-600 text-white shadow-lg scale-105"
                         : "text-gray-700 hover:bg-indigo-100 hover:text-indigo-700"
                     }`}
                     onClick={() => onSubjectSelect(subject.id)}
+                    onMouseEnter={() => setHoveredSubject(subject.id)}
                     title={subject.name}
                   >
-                    {isOpen ? subject.name : subject.name.charAt(0).toUpperCase()}
+                    <span className={isOpen ? "text-xl" : "text-3xl"}>{subject.icon || "📖"}</span>
+                    {isOpen && <span>{subject.name}</span>}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Topics Sidebar */}
-          {currentSubject && isOpen && (
-            <div className="w-40 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white">
+          {/* Topics Sidebar - Shows on hover */}
+          {currentSubject && isOpen && hoveredSubject && (
+            <div 
+              className="w-48 border-r-2 border-gray-200 overflow-y-auto bg-gradient-to-b from-gray-50 to-white animate-in slide-in-from-left-2 duration-200"
+              onMouseEnter={() => setHoveredSubject(hoveredSubject)}
+            >
               <div className="px-5 py-4 text-xs font-bold uppercase tracking-widest text-purple-600 bg-white border-b border-gray-200 sticky top-0">
                 Topics
               </div>
@@ -95,11 +105,18 @@ export function Navbar({
                   <li key={topic.id}>
                     <button
                       className={`w-full text-left px-5 py-4 rounded-xl text-base font-semibold transition-all duration-200 flex items-center justify-between ${
-                        selectedTopic === topic.id
+                        selectedTopic === topic.id && selectedSubject === currentSubject.id
                           ? "bg-purple-600 text-white shadow-lg scale-105"
                           : "text-gray-700 hover:bg-purple-100 hover:text-purple-700"
                       }`}
-                      onClick={() => onTopicSelect(topic.id)}
+                      onClick={() => {
+                        // Select the subject with the specific topic
+                        if (hoveredSubject) {
+                          onSubjectSelect(hoveredSubject, topic.id);
+                        } else {
+                          onTopicSelect(topic.id);
+                        }
+                      }}
                     >
                       <span>{topic.name}</span>
                       <span

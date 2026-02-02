@@ -6,6 +6,7 @@ import { microservicesDataPatternsTopic } from "./data-patterns";
 export const microservicesSubject: Subject = {
   id: "microservices",
   name: "Microservices",
+  icon: "🔗",
   topics: [
     microservicesCommunicationPatternsTopic,
     microservicesResiliencePatternsTopic,

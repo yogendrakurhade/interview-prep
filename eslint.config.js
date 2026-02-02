@@ -20,4 +20,11 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  // Disable no-useless-escape for data files containing code examples
+  {
+    files: ['src/data/**/*.ts'],
+    rules: {
+      'no-useless-escape': 'off',
+    },
+  },
 ])

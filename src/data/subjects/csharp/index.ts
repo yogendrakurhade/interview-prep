@@ -6,5 +6,6 @@ import { csharpBehavioralPatternsTopic } from "./behavioral-patterns";
 export const csharpSubject: Subject = {
   id: "csharp",
   name: "C# Design Patterns",
+  icon: "🛠️",
   topics: [csharpCreationalPatternsTopic, csharpStructuralPatternsTopic, csharpBehavioralPatternsTopic],
 };

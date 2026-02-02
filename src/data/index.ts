@@ -5,6 +5,7 @@ import { csharpSubject } from "./subjects/csharp";
 import { microservicesSubject } from "./subjects/microservices";
 import { csharpAdvancedSubject } from "./subjects/csharp-advanced";
 import { azureSubject } from "./subjects/azure";
+import { azureDevOpsSubject } from "./subjects/azure-devops";
 
 export const subjects: Subject[] = [
   javaScriptSubject,
@@ -13,4 +14,5 @@ export const subjects: Subject[] = [
   microservicesSubject,
   csharpAdvancedSubject,
   azureSubject,
+  azureDevOpsSubject,
 ];

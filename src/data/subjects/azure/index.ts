@@ -9,10 +9,14 @@ import { azureStorageServicesTopic } from "./storage-services";
 import { azureDurableFunctionsTopic } from "./durable-functions";
 import { azureEventGridTopic } from "./event-grid";
 import { azureEventHubTopic } from "./event-hub";
+import { keyVaultTopic } from "./key-vault";
+import { azureLoggingMonitoringTopic } from "./logging-monitoring";
+import { azureKubernetesServicesTopic } from "./kubernetes-services";
 
 export const azureSubject: Subject = {
   id: "azure",
   name: "Microsoft Azure",
+  icon: "☁️",
   topics: [
     azureAppServicesTopic,
     azureContainersTopic,
@@ -24,5 +28,8 @@ export const azureSubject: Subject = {
     azureDurableFunctionsTopic,
     azureEventGridTopic,
     azureEventHubTopic,
+    keyVaultTopic,
+    azureLoggingMonitoringTopic,
+    azureKubernetesServicesTopic,
   ],
 };
