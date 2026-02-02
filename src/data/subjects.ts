@@ -1,5 +1,6 @@
 import type { Subject } from "../types";
 import { csharpSubject } from "./subjects/csharp";
+import { csharpAdvancedSubject } from "./subjects/csharp-advanced";
 
 export const subjects: Subject[] = [
   {
@@ -1228,4 +1229,5 @@ dog.bark();  // 'Rex barks'
     ],
   },
   csharpSubject,
+  csharpAdvancedSubject,
 ];

@@ -11,7 +11,7 @@ export const microservicesDataPatternsTopic: Topic = {
         "The Database per Service pattern assigns each microservice its own database, ensuring loose coupling and independent scaling. Advantages: autonomy, technology flexibility, easier scaling. Disadvantages: distributed transactions, data consistency challenges, cross-service queries.",
       codeSnippets: [
         {
-          language: "csharp",
+          language: "C#",
           code: `// Database per Service Pattern
 // OrderService - PostgreSQL
 public class OrderService
