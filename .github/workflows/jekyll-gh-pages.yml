@@ -39,18 +39,34 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          if [ $? -ne 0 ]; then
+            echo "Build failed!"
+            exit 1
+          fi
         env:
           NODE_ENV: production
       
-      - name: List build output
+      - name: Verify build output
         run: |
           echo "Current directory contents:"
           ls -la
-          echo "Checking for common build directories:"
-          ls -la dist/ 2>/dev/null || echo "dist/ not found"
-          ls -la build/ 2>/dev/null || echo "build/ not found"
-          ls -la out/ 2>/dev/null || echo "out/ not found"
+          echo ""
+          echo "Checking for build directories:"
+          if [ -d "dist" ]; then
+            echo "✓ dist/ found"
+            ls -la dist/
+          elif [ -d "build" ]; then
+            echo "✓ build/ found"
+            ls -la build/
+          elif [ -d "out" ]; then
+            echo "✓ out/ found"
+            ls -la out/
+          else
+            echo "✗ No build output directory found!"
+            exit 1
+          fi
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
