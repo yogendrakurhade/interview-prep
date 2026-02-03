@@ -1,6 +1,7 @@
 import type { Subject } from "../types";
 import { javaScriptSubject } from "./subjects/javascript";
 import { reactSubject } from "./subjects/react";
+import { angularSubject } from "./subjects/angular";
 import { csharpSubject } from "./subjects/csharp";
 import { microservicesSubject } from "./subjects/microservices";
 import { csharpAdvancedSubject } from "./subjects/csharp-advanced";
@@ -10,6 +11,7 @@ import { azureDevOpsSubject } from "./subjects/azure-devops";
 export const subjects: Subject[] = [
   javaScriptSubject,
   reactSubject,
+  angularSubject,
   csharpSubject,
   microservicesSubject,
   csharpAdvancedSubject,
